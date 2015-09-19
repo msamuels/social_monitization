@@ -19,5 +19,42 @@ $app->get('/', function () {
     echo "Hello World";
 });
 	
+
+$app->get('/get-started', function () {
+    echo "Get Started";
+});
+
+$app->get('/get-started/supporter/login', function () {
+    echo "Get Started";
+});
+
+$app->get('/supporter/campaigns', function () {
+    echo "Get Started";
+});
+
+$app->get('/supporter/campaigns/pending', function () {
+    echo "Get Started";
+});
+
+$app->get('/supporter/campaigns/supported', function () {
+    echo "Get Started";
+});
+
+$app->get('/supporter/campaigns/supported/status', function () {
+    echo "Get Started";
+});
+
+
+$app->get('/supporter/manage-account', function () {
+    echo "Get Started";
+});
+
+$app->get('/supporter/manage-account/profile', function () {
+    echo "Get Started";
+});
+
+$app->get('/supporter/manage-account/payment-options', function () {
+    echo "Get Started";
+});
 $app->run();
 
