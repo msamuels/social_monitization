@@ -1,0 +1,4 @@
+mysql_host = REPLACE_ME
+mysql_user = REPLACE_ME
+mysql_password = REPLACE_ME
+mysql_dbname = REPLACE_ME
