@@ -1,0 +1,13 @@
+<?php
+require_once '../vendor/php-activerecord/php-activerecord/ActiveRecord.php';
+ 
+ActiveRecord\Config::initialize(function($cfg)
+{
+     $cfg->set_model_directory('models');
+     $cfg->set_connections(array(
+         'development' => 'mysql://dbo591622819:f242Orqwel@db591622819.db.1and1.com/db591622819'));
+$cfg->set_default_connection('0');
+ });
+
+# create Tito
+$user = Producer::create(array('first_name' => 'Tito', 'last_name' => 'VA'));

@@ -1,0 +1,4 @@
+<?php
+require '../vendor/autoload.php';
+# create Tito
+$user = Producer::create(array('first_name' => 'Tito', 'last_name' => 'VA'));
