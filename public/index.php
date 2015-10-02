@@ -16,9 +16,9 @@ $app = new \Slim\Slim();
 $app->setName('Social Monitization');
 
 $app->get('/', function () {
+    phpinfo();
     echo "Hello World";
 });
-	
 
 $app->get('/get-started', function () {
     echo "Get Started";
@@ -56,5 +56,12 @@ $app->get('/supporter/manage-account/profile', function () {
 $app->get('/supporter/manage-account/payment-options', function () {
     echo "Get Started";
 });
+
+$app->get('/producer', function () {
+    # list producers
+    $producer = Producer::find_by_first_name('Tito');
+    print($producer->first_name);
+});
+
 $app->run();
 
