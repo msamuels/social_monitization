@@ -11,7 +11,9 @@ $cfg = ActiveRecord\Config::instance();
      $cfg->set_default_connection('development');
 
 
-$app = new \Slim\Slim();
+$app = new \Slim\Slim(array(
+    'templates.path' => '../templates/',
+));
 
 $app->setName('Social Monitization');
 
@@ -57,10 +59,10 @@ $app->get('/supporter/manage-account/payment-options', function () {
     echo "Get Started";
 });
 
-$app->get('/producer', function () {
+$app->get('/producer', function () use ($app){
     # list producers
     $producer = Producer::find_by_first_name('Tito');
-    print($producer->first_name);
+    $app->render('producer.php', array('producer' => $producer));
 });
 
 $app->run();

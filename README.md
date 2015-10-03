@@ -15,3 +15,7 @@ Marlon's site
 `        Order allow,deny`
 `        Allow from all`
 `    </Directory>`
+
+
+#Restart server to have changes take affect
+`sudo service apache2 restart`
