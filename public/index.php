@@ -13,6 +13,7 @@ $cfg = ActiveRecord\Config::instance();
 
 $app = new \Slim\Slim(array(
     'templates.path' => '../templates/',
+    'debug' => true
 ));
 
 $app->setName('Social Monitization');
@@ -59,10 +60,23 @@ $app->get('/supporter/manage-account/payment-options', function () {
     echo "Get Started";
 });
 
+$app->get('/create-producer', function () use ($app){
+    $app->render('create-producers.php');
+});
+
+$app->post('/save-producer', function () use ($app){
+
+    if ($app->request->getMethod() == 'POST'){
+       $req = $app->request;
+       $producer = Producer::create(array('first_name' => $req->get('first_name'), 'last_name' => $req->get('last_name'),'org_name'=>$req->get('org_name'),'organization_url'=>$req->get('organization_url'),'email_address'=>$req->get('email_address'),'description'=>$req->get('description'),'country'=>$req->get('country')));
+    }
+
+});
+
 $app->get('/producer', function () use ($app){
     # list producers
     $producer = Producer::find_by_first_name('Tito');
-    $app->render('producer.php', array('producer' => $producer));
+    $app->render('list-producers.php', array('producer' => $producer));
 });
 
 $app->run();
