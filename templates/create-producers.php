@@ -20,7 +20,7 @@
   <br />
 
   <label>Email Address:</label> 
-  <input type="text" name="email" />
+  <input type="text" name="email_address" />
   <br />
 
   <label>Organization Name:</label> 
@@ -28,7 +28,7 @@
   <br />
 
   <label>Website:</label> 
-  <input type="text" name="website" />
+  <input type="text" name="organization_url" />
   <br />
 
   <label>Org Description:</label> 

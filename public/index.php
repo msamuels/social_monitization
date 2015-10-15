@@ -67,8 +67,11 @@ $app->get('/create-producer', function () use ($app){
 $app->post('/save-producer', function () use ($app){
 
     if ($app->request->getMethod() == 'POST'){
-       $req = $app->request;
-       $producer = Producer::create(array('first_name' => $req->get('first_name'), 'last_name' => $req->get('last_name'),'org_name'=>$req->get('org_name'),'organization_url'=>$req->get('organization_url'),'email_address'=>$req->get('email_address'),'description'=>$req->get('description'),'country'=>$req->get('country')));
+       $req = $app->request->post();
+       $producer = Producer::create(
+           array('first_name' => $req['first_name'], 'last_name' => $req['last_name'],
+               'org_name'=>$req['org_name'],'organization_url'=>$req['organization_url'],
+               'email_address'=>$req['email_address'], 'description'=>$req['description'], 'country'=>$req['country']));
     }
 
 });
