@@ -78,8 +78,8 @@ $app->post('/save-producer', function () use ($app){
 
 $app->get('/producer', function () use ($app){
     # list producers
-    $producer = Producer::find_by_first_name('Tito');
-    $app->render('list-producers.php', array('producer' => $producer));
+    $producers = Producer::find('all');
+    $app->render('list-producers.php', array('producers' => $producers));
 });
 
 $app->run();
