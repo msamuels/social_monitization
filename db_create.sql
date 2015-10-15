@@ -9,7 +9,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 DROP TABLE IF EXISTS `producer` ;
 
 CREATE TABLE IF NOT EXISTS `producer` (
-  `id_producer` INT NOT NULL,
+  `id_producer` INT NOT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(255) NULL,
   `last_name` VARCHAR(255) NULL,
   `org_name` VARCHAR(255) NULL,
@@ -47,7 +47,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `supporter` ;
 
 CREATE TABLE IF NOT EXISTS `supporter` (
-  `id_supporter` INT NOT NULL,
+  `id_supporter` INT NOT NULL AUTO_INCREMENT,
   `id_follower_count` INT NULL,
   `interests` VARCHAR(45) NULL,
   `email_address` VARCHAR(45) NULL,
@@ -62,7 +62,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `campaign` ;
 
 CREATE TABLE IF NOT EXISTS `campaign` (
-  `campaign_id` INT NOT NULL,
+  `campaign_id` INT NOT NULL AUTO_INCREMENT,
   `budget` FLOAT NULL,
   `billing_approved` ENUM('Y','N') NULL,
   `estimate` FLOAT NULL,
@@ -80,7 +80,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `supporter_interest` ;
 
 CREATE TABLE IF NOT EXISTS `supporter_interest` (
-  `supporter_interest_if` INT NOT NULL,
+  `supporter_interest_if` INT NOT NULL AUTO_INCREMENT,
   `supporter_id` INT NULL,
   `id_interest` INT NULL,
   PRIMARY KEY (`supporter_interest_if`),
@@ -99,7 +99,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `campaign_response` ;
 
 CREATE TABLE IF NOT EXISTS `campaign_response` (
-  `campaign_response_id` INT NOT NULL,
+  `campaign_response_id` INT NOT NULL AUTO_INCREMENT,
   `campaign_id` INT NOT NULL,
   `supporter_id` INT NULL,
   `campaign_response` VARCHAR(45) NULL,
@@ -119,7 +119,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `follower_count` ;
 
 CREATE TABLE IF NOT EXISTS `follower_count` (
-  `follower_count_id` INT NOT NULL,
+  `follower_count_id` INT NOT NULL AUTO_INCREMENT,
   `source_id` INT NULL,
   `count` INT NULL,
   `supporter_id` INT NULL,
@@ -151,7 +151,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `escrow` ;
 
 CREATE TABLE IF NOT EXISTS `escrow` (
-  `escrow_id` INT NOT NULL,
+  `escrow_id` INT NOT NULL AUTO_INCREMENT,
   `estimate` DOUBLE NULL,
   `actual` DOUBLE NULL,
   `campaign_id` INT NULL,
@@ -171,7 +171,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `screen_shots` ;
 
 CREATE TABLE IF NOT EXISTS `screen_shots` (
-  `screen_shots_id` INT NOT NULL,
+  `screen_shots_id` INT NOT NULL AUTO_INCREMENT,
   `campaign_id` INT NULL,
   `image` VARCHAR(45) NULL,
   `approved` ENUM('Y','N') NULL,
@@ -192,7 +192,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `targeting` ;
 
 CREATE TABLE IF NOT EXISTS `targeting` (
-  `tag_id` INT NOT NULL,
+  `tag_id` INT NOT NULL AUTO_INCREMENT,
   `campaign_id` INT NULL,
   PRIMARY KEY (`tag_id`),
   INDEX `fk_targeting_1_idx` (`campaign_id` ASC),
@@ -210,7 +210,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `calculation` ;
 
 CREATE TABLE IF NOT EXISTS `calculation` (
-  `calculation_id` INT NOT NULL,
+  `calculation_id` INT NOT NULL AUTO_INCREMENT,
   `tag_id` INT NULL,
   `cpm` INT NULL,
   `discount` DECIMAL NULL,
@@ -231,7 +231,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `links` ;
 
 CREATE TABLE IF NOT EXISTS `links` (
-  `links_id` INT NOT NULL,
+  `links_id` INT NOT NULL AUTO_INCREMENT,
   `campaign_id` INT NULL,
   `link` VARCHAR(45) NULL,
   PRIMARY KEY (`links_id`),
@@ -250,10 +250,9 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `source` ;
 
 CREATE TABLE IF NOT EXISTS `source` (
-  `id_source` INT NOT NULL,
-  `name` VARCHAR(45) NULL,
-  `url` VARCHAR(45) NULL,
-  PRIMARY KEY (`id_source`))
+  `source_id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NULL,
+  PRIMARY KEY (`source_id`))
 ENGINE = InnoDB;
 
 
@@ -263,7 +262,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `account` ;
 
 CREATE TABLE IF NOT EXISTS `account` (
-  `idaccount` INT NOT NULL,
+  `idaccount` INT NOT NULL AUTO_INCREMENT,
   `id_producer` INT NOT NULL,
   `account_name` VARCHAR(45) NULL,
   `campaign_id` INT NULL,
@@ -324,6 +323,18 @@ CREATE TABLE IF NOT EXISTS `reward` (
     REFERENCES `supporter` ()
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `source`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `source` ;
+
+CREATE TABLE IF NOT EXISTS `source` (
+  `source_id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NULL,
+  PRIMARY KEY (`source_id`))
 ENGINE = InnoDB;
 
 
