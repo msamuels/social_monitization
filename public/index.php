@@ -60,26 +60,54 @@ $app->get('/supporter/manage-account/payment-options', function () {
     echo "Get Started";
 });
 
+#Create producers
 $app->get('/create-producer', function () use ($app){
     $app->render('create-producers.php');
 });
 
+#Save producers
 $app->post('/save-producer', function () use ($app){
 
-    if ($app->request->getMethod() == 'POST'){
+    if ($app->request->getMethod() == 'POST') {
+
+       // @TODO check if email address already in system before saving
        $req = $app->request->post();
        $producer = Producer::create(
            array('first_name' => $req['first_name'], 'last_name' => $req['last_name'],
                'org_name'=>$req['org_name'],'organization_url'=>$req['organization_url'],
-               'email_address'=>$req['email_address'], 'description'=>$req['description'], 'country'=>$req['country']));
+               'email_address'=>$req['email_address']));
+       
     }
 
 });
 
+#List producers
 $app->get('/producer', function () use ($app){
     # list producers
     $producers = Producer::find('all');
     $app->render('list-producers.php', array('producers' => $producers));
+});
+
+
+#Producer create campaign
+$app->get('/create-campaign', function () use ($app){
+    $app->render('create-campaign.php');
+});
+
+
+#Producer save campaign
+$app->post('/save-campaign', function () use ($app){
+
+    $campaign = Campaign::create(
+        array('budget' => $req['budget'], 'billing_approved' => $req['billing_approved'], 
+            'estimate' => $req['estimate'], 'start_date' => $req['start_date'], 
+            'end_date' => $req['end_date'], 'approved' => $req['approved'], 
+            'screen_shot' => $req['screen_shot']));
+
+    // create a new account with the campaign id
+    // @TODO remove hard-coded producer id
+    $account = Account::create(
+        array('account_name'=>'test','id_producer'=>7, 'campaign_id'=>$campaign->campaign_id));
 });
 
 $app->run();

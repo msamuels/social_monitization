@@ -1,5 +1,25 @@
+<table>
+<tr>
+    <td>First Name </td>
+    <td>First Name </td>
+    <td>First Name </td>
+    <td>First Name </td>
+    <td>First Name </td>
+    <td>First Name </td>
+<tr>
+
 <?php
 
 foreach($producers as $producer){
-    echo $producer->first_name. '<br />';
+
+?>
+    <tr>
+    echo '<td>'.$producer->first_name. '</td>';
+    </tr>
+
+<?php
 }
+?>
+
+
+</table>
