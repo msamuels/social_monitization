@@ -75,8 +75,8 @@ $app->post('/save-producer', function () use ($app){
        $producer = Producer::create(
            array('first_name' => $req['first_name'], 'last_name' => $req['last_name'],
                'org_name'=>$req['org_name'],'organization_url'=>$req['organization_url'],
-               'email_address'=>$req['email_address']));
-       
+               'email_address'=>$req['email_address'], 'description'=>$req['description'], 'country'=>$req['country']));
+
     }
 
 });
@@ -110,6 +110,13 @@ $app->post('/save-campaign', function () use ($app){
     // @TODO remove hard-coded producer id
     $account = Account::create(
         array('account_name'=>'test','id_producer'=>1, 'campaign_id'=>$campaign->campaign_id));
+});
+
+#List producers
+$app->get('/campaigns', function () use ($app){
+    # list producers
+    $campaigns = Campaign::find('all');
+    $app->render('list-campaigns.php', array('campaigns' => $campaigns));
 });
 
 $app->run();
