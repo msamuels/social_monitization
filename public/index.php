@@ -98,6 +98,8 @@ $app->get('/create-campaign', function () use ($app){
 #Producer save campaign
 $app->post('/save-campaign', function () use ($app){
 
+    $req = $app->request->post();
+
     $campaign = Campaign::create(
         array('budget' => $req['budget'], 'billing_approved' => $req['billing_approved'], 
             'estimate' => $req['estimate'], 'start_date' => $req['start_date'], 
@@ -107,7 +109,7 @@ $app->post('/save-campaign', function () use ($app){
     // create a new account with the campaign id
     // @TODO remove hard-coded producer id
     $account = Account::create(
-        array('account_name'=>'test','id_producer'=>7, 'campaign_id'=>$campaign->campaign_id));
+        array('account_name'=>'test','id_producer'=>1, 'campaign_id'=>$campaign->campaign_id));
 });
 
 $app->run();
