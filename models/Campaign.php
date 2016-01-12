@@ -1,4 +1,4 @@
 <?php
-class Campiaign extends ActiveRecord\Model
+class Campaign extends ActiveRecord\Model
  {
  }

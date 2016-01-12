@@ -4,39 +4,32 @@
 
 <H1>Create Supporter Account: </H1>
 
-<form action="/save-producer" method="POST">
-  <label>First Name:</label> 
-  <input type="text" name="first_name" />
-  <br />
-
-  <label>Last Name:</label> 
-  <input type="text" name="last_name" />
-  <br />
-
+<form action="/save-suporter" method="POST">
   <label>Username:</label> 
-  <input type="text" name="user_name" />
+  <input type="text" name="username" />
   <br />
 
   <label>Password:</label> 
   <input type="text" name="password" />
   <br />
 
+  <label>Confirm Password:</label> 
+  <input type="text" name="password_confirm" />
+  <br />
+
   <label>Email Address:</label> 
   <input type="text" name="email_address" />
   <br />
 
-  <label>Organization Name:</label> 
-  <input type="text" name="org_name" />
+  <label>Interests:</label> 
+  <input type="text" name="interests" />
   <br />
 
-  <label>Website:</label> 
-  <input type="text" name="organization_url" />
+  <label># of FB followers:</label> 
+  <input type="text" name="followers_fb" />
   <br />
 
-  <label>Org Description:</label> 
-  <input type="text" name="description" />
-  <br />
-  Country: <select name="country">
+  Location:   Country: <select name="country">
     <option value="Afghanistan">Afghanistan</option>
     <option value="Albania">Albania</option>
     <option value="Algeria">Algeria</option>
@@ -279,11 +272,6 @@
 </select>
   <br>
 
-  <label>Non Profits Click Here:</label> 
-  <input type="radio" name="non-profit" />
-  <br />
-
-  <br>
   <input type="submit">
   <br />
 

@@ -16,10 +16,12 @@ $app = new \Slim\Slim(array(
     'debug' => true
 ));
 
+require 'hooks.php';
+
 $app->setName('Social Monitization');
 
 $app->get('/', function () {
-    phpinfo();
+    //phpinfo();
     echo "Hello World";
 });
 
@@ -31,8 +33,30 @@ $app->get('/get-started/supporter/login', function () {
     echo "Get Started";
 });
 
+# Register suppporter
+$app->get('/get-started/supporter/register', function() use($app) {
+    //TODO only find one suporter by login
+    $app->render('create-supporter.php');
+});
+
+#Save producers
+$app->post('/save-supporter', function () use ($app){
+
+    if ($app->request->getMethod() == 'POST') {
+
+       // @TODO check if email address already in system before saving
+       $req = $app->request->post();
+       $producer = Supporter::create(
+           array('username' => $req['username'], 'password' => $req['password'],'email_address'=>$req['email_address'],
+               'interests'=>$req['interests'],'followers_fb'=>$req['followers_fb'] ,'country'=>$req['country']
+          ));
+
+    }
+
+});
+
 $app->get('/supporter/campaigns', function () {
-    echo "Get Started";
+    echo "Supporter Campaigns";
 });
 
 $app->get('/supporter/campaigns/pending', function () {
@@ -99,7 +123,7 @@ $app->get('/create-campaign', function () use ($app){
 $app->post('/save-campaign', function () use ($app){
 
     $campaign = Campaign::create(
-        array('budget' => $req['budget'], 'billing_approved' => $req['billing_approved'], 
+        array('campaign_name'=>$req['campaign_name'], 'budget' => $req['budget'], 'billing_approved' => $req['billing_approved'], 
             'estimate' => $req['estimate'], 'start_date' => $req['start_date'], 
             'end_date' => $req['end_date'], 'approved' => $req['approved'], 
             'screen_shot' => $req['screen_shot']));
@@ -109,6 +133,15 @@ $app->post('/save-campaign', function () use ($app){
     $account = Account::create(
         array('account_name'=>'test','id_producer'=>7, 'campaign_id'=>$campaign->campaign_id));
 });
+
+
+#List campaigns
+$app->get('/campaigns', function () use ($app){
+    # list campaigns
+    $campaigns = Campaign::find('all');
+    $app->render('list-campaigns.php', array('campaigns' => $campaigns));
+});
+
 
 $app->run();
 

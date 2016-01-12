@@ -5,6 +5,11 @@
 <H1>Create Campaign</H1>
 
 <form action="/save-campaign" method="POST">
+  <label>Campaign Name:</label> 
+  <input type="text" name="campaign_name" />
+  <br />
+
+
   <label>Budget:</label> 
   <input type="text" name="budget" />
   <br />

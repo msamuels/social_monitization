@@ -4,6 +4,18 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 
 -- -----------------------------------------------------
+-- Table `org class`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `org class` ;
+
+CREATE TABLE IF NOT EXISTS `org class` (
+  `orgclass_id` INT NOT NULL AUTO_INCREMENT,
+  `classname` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`orgclass_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `producer`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `producer` ;
@@ -19,7 +31,14 @@ CREATE TABLE IF NOT EXISTS `producer` (
   `password` VARCHAR(45) NULL,
   `description` BLOB NULL,
   `country` VARCHAR(255) NULL,
-  PRIMARY KEY (`id_producer`))
+  `orgclass_id` INT NULL,
+  PRIMARY KEY (`id_producer`),
+  INDEX `orgclass_id_idx` (`orgclass_id` ASC),
+  CONSTRAINT `orgclass_id`
+    FOREIGN KEY (`orgclass_id`)
+    REFERENCES `org class` (`orgclass_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -289,18 +308,12 @@ DROP TABLE IF EXISTS `reward` ;
 
 CREATE TABLE IF NOT EXISTS `reward` (
   `reward_id` INT NOT NULL AUTO_INCREMENT,
-  `supporter_id` INT NULL,
   `image` VARCHAR(255) NULL,
   `details` VARCHAR(255) NULL,
   `expiration_date` DATETIME NULL,
   `quantity_remaining` INT NULL,
   `point_value` INT NULL,
-  PRIMARY KEY (`reward_id`),
-  CONSTRAINT `fk_reward_1`
-    FOREIGN KEY ()
-    REFERENCES `supporter` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`reward_id`))
 ENGINE = InnoDB;
 
 
@@ -311,18 +324,12 @@ DROP TABLE IF EXISTS `reward` ;
 
 CREATE TABLE IF NOT EXISTS `reward` (
   `reward_id` INT NOT NULL AUTO_INCREMENT,
-  `supporter_id` INT NULL,
   `image` VARCHAR(255) NULL,
   `details` VARCHAR(255) NULL,
   `expiration_date` DATETIME NULL,
   `quantity_remaining` INT NULL,
   `point_value` INT NULL,
-  PRIMARY KEY (`reward_id`),
-  CONSTRAINT `fk_reward_1`
-    FOREIGN KEY ()
-    REFERENCES `supporter` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`reward_id`))
 ENGINE = InnoDB;
 
 
@@ -335,6 +342,67 @@ CREATE TABLE IF NOT EXISTS `source` (
   `source_id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NULL,
   PRIMARY KEY (`source_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `donation_type`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `donation_type` ;
+
+CREATE TABLE IF NOT EXISTS `donation_type` (
+  `donationtype_id` INT NOT NULL AUTO_INCREMENT,
+  `donation_name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`donationtype_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `donations`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `donations` ;
+
+CREATE TABLE IF NOT EXISTS `donations` (
+  `donation_id` INT NOT NULL AUTO_INCREMENT,
+  `campaign_id` INT NULL,
+  `donationtype_id` INT NULL,
+  INDEX `campaign_id_idx` (`campaign_id` ASC),
+  PRIMARY KEY (`donation_id`),
+  INDEX `fk_donationtype_id_idx` (`donationtype_id` ASC),
+  CONSTRAINT `campaign_id`
+    FOREIGN KEY (`campaign_id`)
+    REFERENCES `campaign` (`campaign_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_donationtype_id`
+    FOREIGN KEY (`donationtype_id`)
+    REFERENCES `donation_type` (`donationtype_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `reward_claimed`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `reward_claimed` ;
+
+CREATE TABLE IF NOT EXISTS `reward_claimed` (
+  `id_supporter` INT NOT NULL,
+  `reward_id` INT NOT NULL,
+  `date_claimed` DATETIME NULL,
+  PRIMARY KEY (`id_supporter`, `reward_id`),
+  INDEX `fk_reward_claimed_reward1_idx` (`reward_id` ASC),
+  CONSTRAINT `id_supporter`
+    FOREIGN KEY (`id_supporter`)
+    REFERENCES `supporter` (`id_supporter`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `reward_id`
+    FOREIGN KEY (`reward_id`)
+    REFERENCES `reward` (`reward_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
