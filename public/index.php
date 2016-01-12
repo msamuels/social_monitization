@@ -55,6 +55,13 @@ $app->post('/save-supporter', function () use ($app){
 
 });
 
+#List supporters
+$app->get('/supporters', function () use ($app){
+    # list producers
+    $producers = Producer::find('all');
+    $app->render('list-supporters.php', array('supporters' => $supporters));
+});
+
 $app->get('/supporter/campaigns', function () {
     echo "Supporter Campaigns";
 });
