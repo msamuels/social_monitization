@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
 <H1>Create Supporter Account: </H1>
 
 <form action="/save-producer" method="POST">
@@ -283,12 +279,8 @@
   <input type="radio" name="non-profit" />
   <br />
 
-  <br>
-  <input type="submit">
-  <br />
+    <button class="btn btn-primary" type="submit" >Submit</button>
 
   By clicking this form you agree to the Iliv8 terms and conditions.
 </form>
 
-</body>
-</html>

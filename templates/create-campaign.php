@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
 <H1>Create Campaign</H1>
 
 <form action="/save-campaign" method="POST">
@@ -38,11 +34,6 @@
   <input type="text" name="screen_shot" />
   <br />
 
-  <br>
-  <input type="submit">
-  <br />
+    <button class="btn btn-primary" type="submit" >Submit</button>
 
 </form>
-
-</body>
-</html>

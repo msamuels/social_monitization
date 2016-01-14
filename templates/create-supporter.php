@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
 <H1>Create Supporter Account: </H1>
 
 <form action="/save-suporter" method="POST">
@@ -270,13 +266,10 @@
     <option value="Zambia">Zambia</option>
     <option value="Zimbabwe">Zimbabwe</option>
 </select>
-  <br>
 
-  <input type="submit">
-  <br />
+  <button class="btn btn-primary" type="submit" >Submit</button>
 
+
+    
   By clicking this form you agree to the Iliv8 terms and conditions.
 </form>
-
-</body>
-</html>
