@@ -82,6 +82,7 @@ DROP TABLE IF EXISTS `campaign` ;
 
 CREATE TABLE IF NOT EXISTS `campaign` (
   `campaign_id` INT NOT NULL AUTO_INCREMENT,
+  `campaign_name` VARCHAR(255) NULL,
   `budget` FLOAT NULL,
   `billing_approved` ENUM('Y','N') NULL,
   `estimate` FLOAT NULL,
