@@ -49,7 +49,7 @@ $app->post('/save-supporter', function () use ($app){
        $req = $app->request->post();
        $supporter = Supporter::create(
            array('user_name' => $req['username'], 'password' => $req['password'],'email_address'=>$req['email_address'],
-               'interests'=>$req['interests'],'id_follower_count'=>$req['followers_fb']
+               'interests'=>$req['interests'],'id_follower_count'=>$req['followers_fb'] ,'country'=>$req['country']
           ));
 
         $app->redirect('/supporters');

@@ -24,7 +24,7 @@ foreach($supporters as $supporter){
 
     <?php echo '<td>'.$supporter->interests. '</td>'; ?>
 
-    <?php echo '<td>--</td>'; ?>
+    <?php echo '<td>'.$supporter->id_follower_count. '</td>'; ?>
 
     <?php echo '<td>--</td>'; ?>
 

@@ -73,6 +73,7 @@ CREATE TABLE IF NOT EXISTS `supporter` (
   `interests` VARCHAR(45) NULL,
   `email_address` VARCHAR(45) NULL,
   `approved` ENUM('Y','N') NULL,
+  `country` VARCHAR(255) NULL,
   PRIMARY KEY (`id_supporter`))
 ENGINE = InnoDB;
 
