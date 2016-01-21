@@ -17,6 +17,16 @@ foreach($producers as $producer){
 ?>
     <tr>
     <?php echo '<td>'.$producer->first_name. '</td>'; ?>
+
+    <?php echo '<td>'.$producer->last_name. '</td>'; ?>
+
+    <?php echo '<td>'.$producer->user_name. '</td>'; ?>
+
+    <?php echo '<td>'.$producer->email_address. '</td>'; ?>
+
+    <?php echo '<td>'.$producer->org_name. '</td>'; ?>
+
+    <?php echo '<td>'.$producer->organization_url. '</td>'; ?>
     </tr>
 
 <?php

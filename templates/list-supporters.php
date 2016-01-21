@@ -1,22 +1,38 @@
-<H1>Suporters</H1>
+<H1>Supporters</H1>
 
 <table  border=1>
 <tr>
-    <td>First Name </td>
-    <td>Last Name </td>
-    <td>username</td>
+    <td>Username </td>
     <td>Email </td>
-    <td>Org Name </td>
-    <td>Org Url </td>
+    <td>Interests</td>
+    <td># of Facebook Followers </td>
+    <td>FB screenshot </td>
+    <td>Account Approved </td>
+    <td>#Campaings Supported </td>
+    <td>Mailing List</td>
 <tr>
 
 <?php
 
-foreach($suporters as $suporter){
+foreach($supporters as $supporter){
 
 ?>
     <tr>
-    <?php echo '<td>'.$suporter->first_name. '</td>'; ?>
+    <?php echo '<td>'.$supporter->user_name. '</td>'; ?>
+
+    <?php echo '<td>'.$supporter->email_address. '</td>'; ?>
+
+    <?php echo '<td>'.$supporter->interests. '</td>'; ?>
+
+    <?php echo '<td>--</td>'; ?>
+
+    <?php echo '<td>--</td>'; ?>
+
+    <?php echo '<td>'.$supporter->approved. '</td>'; ?>
+
+    <?php echo '<td>--</td>'; ?>
+
+    <?php echo '<td>--</td>'; ?>
     </tr>
 
 <?php

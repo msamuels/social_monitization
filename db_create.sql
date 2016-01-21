@@ -67,6 +67,8 @@ DROP TABLE IF EXISTS `supporter` ;
 
 CREATE TABLE IF NOT EXISTS `supporter` (
   `id_supporter` INT NOT NULL AUTO_INCREMENT,
+  `user_name` VARCHAR(255) NULL,
+  `password` VARCHAR(255) NULL,
   `id_follower_count` INT NULL,
   `interests` VARCHAR(45) NULL,
   `email_address` VARCHAR(45) NULL,

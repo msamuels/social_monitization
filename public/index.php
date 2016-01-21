@@ -39,26 +39,29 @@ $app->get('/get-started/supporter/register', function() use($app) {
     $app->render('create-supporter.php');
 });
 
-#Save producers
+# Save supporter
 $app->post('/save-supporter', function () use ($app){
 
     if ($app->request->getMethod() == 'POST') {
 
        // @TODO check if email address already in system before saving
+       // @TODO id_follower_count is reference to follower_count table. Save to that instead
        $req = $app->request->post();
-       $producer = Supporter::create(
-           array('username' => $req['username'], 'password' => $req['password'],'email_address'=>$req['email_address'],
-               'interests'=>$req['interests'],'followers_fb'=>$req['followers_fb'] ,'country'=>$req['country']
+       $supporter = Supporter::create(
+           array('user_name' => $req['username'], 'password' => $req['password'],'email_address'=>$req['email_address'],
+               'interests'=>$req['interests'],'id_follower_count'=>$req['followers_fb']
           ));
+
+        $app->redirect('/supporters');
 
     }
 
 });
 
-#List supporters
+# List supporters
 $app->get('/supporters', function () use ($app){
-    # list producers
-    $supporters = Producer::find('all');
+    # list supporters
+    $supporters = Supporter::find('all');
     $app->render('list-supporters.php', array('supporters' => $supporters));
 });
 
@@ -104,9 +107,11 @@ $app->post('/save-producer', function () use ($app){
        // @TODO check if email address already in system before saving
        $req = $app->request->post();
        $producer = Producer::create(
-           array('first_name' => $req['first_name'], 'last_name' => $req['last_name'],
+           array('first_name' => $req['first_name'], 'last_name' => $req['last_name'], 'user_name' => $req['user_name'],
                'org_name'=>$req['org_name'],'organization_url'=>$req['organization_url'],
                'email_address'=>$req['email_address'], 'description'=>$req['description'], 'country'=>$req['country']));
+
+        $app->redirect('/producer');
 
     }
 
@@ -141,6 +146,8 @@ $app->post('/save-campaign', function () use ($app){
     // @TODO remove hard-coded producer id
     $account = Account::create(
         array('account_name'=>'test','id_producer'=>1, 'campaign_id'=>$campaign->campaign_id));
+
+    $app->redirect('/campaigns');
 });
 
 #List producers
