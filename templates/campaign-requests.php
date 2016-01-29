@@ -14,3 +14,22 @@
     }
     ?>
 </ul>
+
+<H1>Estimated Impressions</H1>
+
+<?php
+$i = 0;
+foreach($supporters as $supporter){
+
+    $i += $supporter->id_follower_count;
+}
+
+echo $i;
+?>
+
+
+<H1>Estimated Cost</H1>
+
+<H1>Details</H1>
+
+<button class="btn btn-primary" type="submit" >Approve</button>
