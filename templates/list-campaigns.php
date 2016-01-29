@@ -1,6 +1,6 @@
 <H1>Campaigns</H1>
 
-<table>
+<table border="1px solid grey">
 <tr>
     <td>Campaign Name </td>
     <td>Producer </td>
@@ -24,9 +24,9 @@ foreach($campaigns as $campaigns){
 
     <?php echo '<td> -- </td>'; ?>
 
-        <?php echo '<td>'.$campaigns->start_date. '/'.$campaigns->end_date.'</td>'; ?>
+        <?php echo '<td>--</td>'; ?>
 
-        <?php echo '<td> -- </td>'; ?>
+        <?php echo '<td>'.$campaigns->start_date. '/'.$campaigns->end_date.'</td>'; ?>
 
         <?php echo '<td> -- </td>'; ?>
 

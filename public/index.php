@@ -150,19 +150,20 @@ $app->post('/save-campaign', function () use ($app){
     $app->redirect('/campaigns');
 });
 
-#List producers
+#List campaigns
 $app->get('/campaigns', function () use ($app){
     # list producers
     $campaigns = Campaign::find('all');
     $app->render('list-campaigns.php', array('campaigns' => $campaigns));
 });
 
+# approve campaign requests
+$app->get('/campaign-requests', function () use ($app){
+    # list supporters for a particular campaign
+    $supporters = Supporter::find('all');
 
-#List campaigns
-$app->get('/campaigns', function () use ($app){
-    # list campaigns
-    $campaigns = Campaign::find('all');
-    $app->render('list-campaigns.php', array('campaigns' => $campaigns));
+    $campaign = Campaign::find('all');
+    $app->render('campaign-requests.php', array('supporters' => $supporters, 'campaign'=>$campaign));
 });
 
 
