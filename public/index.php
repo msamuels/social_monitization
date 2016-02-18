@@ -69,17 +69,35 @@ $app->get('/supporter/campaigns', function () {
     echo "Supporter Campaigns";
 });
 
-$app->get('/supporter/campaigns/pending', function () {
-    echo "Get Started";
+# Allow the user to select a campaign to support
+# Have this page show both pending and campaigns to approve
+$app->get('/supporter/campaigns/pending', function () use ($app){
+    # list producers
+    $campaigns = Campaign::find('all');
+    $app->render('support-campaigns.php', array('campaigns' => $campaigns));
 });
 
-$app->get('/supporter/campaigns/supported', function () {
-    echo "Get Started";
+$app->post('/save-campaign-support', function () use ($app) {
+
+    if ($app->request->getMethod() == 'POST') {
+
+        // @TODO check if supporter already supporting that campaign
+        $req = $app->request->post();
+        $campaignSupport = Campaign_response::create(
+            array('campaign_id' => $req['campaign_id'], 'supporter_id' => $req['supporter_id']));
+
+        $app->redirect('/supporter/campaigns/pending');
+
+    }
 });
 
-$app->get('/supporter/campaigns/supported/status', function () {
-    echo "Get Started";
+# Show all campaigns the supporter supports
+$app->get('/supporter/campaigns/supported', function () use($app) {
+    # list supported campaigns
+    $supportedCampaigns = Campaign_response::find('all');
+    $app->render('supported-campaigns.php', array('supported_campaigns' => $supportedCampaigns));
 });
+
 
 
 $app->get('/supporter/manage-account', function () {
@@ -94,12 +112,12 @@ $app->get('/supporter/manage-account/payment-options', function () {
     echo "Get Started";
 });
 
-#Create producers
+# Create producers
 $app->get('/create-producer', function () use ($app){
     $app->render('create-producers.php');
 });
 
-#Save producers
+# Save producers
 $app->post('/save-producer', function () use ($app){
 
     if ($app->request->getMethod() == 'POST') {
@@ -117,7 +135,7 @@ $app->post('/save-producer', function () use ($app){
 
 });
 
-#List producers
+# List producers
 $app->get('/producer', function () use ($app){
     # list producers
     $producers = Producer::find('all');
@@ -125,13 +143,13 @@ $app->get('/producer', function () use ($app){
 });
 
 
-#Producer create campaign
+# Producer create campaign
 $app->get('/create-campaign', function () use ($app){
     $app->render('create-campaign.php');
 });
 
 
-#Producer save campaign
+# Producer save campaign
 $app->post('/save-campaign', function () use ($app){
 
     $req = $app->request->post();
@@ -150,9 +168,9 @@ $app->post('/save-campaign', function () use ($app){
     $app->redirect('/campaigns');
 });
 
-#List campaigns
+# List campaigns
 $app->get('/campaigns', function () use ($app){
-    # list producers
+    # list campaigns
     $campaigns = Campaign::find('all');
     $app->render('list-campaigns.php', array('campaigns' => $campaigns));
 });

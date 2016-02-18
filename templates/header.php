@@ -23,6 +23,6 @@
 <span>Company X</span>
 <span>FAQ</span>
 <span><a href="/campaigns">Campaigns</a></span>
-<span>Manage Account</span>
+<span><a href="/campaign-requests">Manage Account</a></span>
 <span>Contact Us</span>
 </nav>
