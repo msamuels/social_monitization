@@ -1,5 +1,5 @@
 <?php
 class Producer extends ActiveRecord\Model
  {
-    static $table_name = 'producer';
+    static $table_name = 'producers';
  }
