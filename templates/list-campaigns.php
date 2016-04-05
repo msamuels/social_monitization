@@ -1,4 +1,4 @@
-<H1>Campaigns</H1>
+<H1>Campaigns</H1> <a href="create-campaign">Create Campaign</a>
 
 <table border="1px solid grey">
 <tr>

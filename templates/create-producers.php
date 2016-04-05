@@ -1,4 +1,4 @@
-<H1>Create Supporter Account: </H1>
+<H1>Create Producer Account: </H1>
 
 <form action="/save-producer" method="POST">
   <label>First Name:</label> 
