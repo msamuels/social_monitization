@@ -19,3 +19,6 @@ Marlon's site
 
 #Restart server to have changes take affect
 `sudo service apache2 restart`
+
+#login POC
+https://github.com/briannesbitt/Slim-ContextSensitiveLoginLogout/blob/master/index.php
