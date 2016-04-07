@@ -40,7 +40,7 @@ $app->get('/supporter/campaigns', function () use($app) {
     # list supported campaigns
     $supportedCampaigns = Campaign_response::find('all');
     foreach($supportedCampaigns as $supportedCampaign) {
-        $campaign = Campaign::find($supportedCampaign->id);
+        $campaign = Campaign::find($supportedCampaign->campaign_id);
         $supportedCampaign->setCampaign($campaign);
     }
     $app->render('supported-campaigns.php', array('supported_campaigns' => $supportedCampaigns));

@@ -59,7 +59,11 @@ $app->post('/save-campaign', function () use ($app){
 # List campaigns
 $app->get('/campaigns', function () use ($app){
     # list campaigns
-    $campaigns = Campaign::find('all');
+    if ($app->request()->get('id') != null) {
+        $campaigns = Campaign::find($app->request()->get('id'));
+    } else {
+        $campaigns = Campaign::find('all');
+    }
     $app->render('list-campaigns.php', array('campaigns' => $campaigns));
 });
 

@@ -12,33 +12,33 @@
     <td>CPM </td>
     <td>Impression (Planned) </td>
     <td>Impression (Delivered) </td>
-<tr>
+</tr>
 
 <?php
 
-foreach($campaigns as $campaigns){
+foreach($campaigns as $campaign){
 
 ?>
     <tr>
-    <?php echo '<td>'.$campaigns->campaign_name. '</td>'; ?>
+        <td><a href="/campaigns?id=<?php echo $campaign->campaign_id; ?>"><?php echo $campaign->campaign_name; ?></a></td>
 
-    <?php echo '<td> -- </td>'; ?>
+        <td> -- </td>
 
-        <?php echo '<td>--</td>'; ?>
+        <td>--</td>
 
-        <?php echo '<td>'.$campaigns->start_date. '/'.$campaigns->end_date.'</td>'; ?>
+       <td><?php echo $campaign->start_date. '/'.$campaign->end_date; ?></td>
 
-        <?php echo '<td> -- </td>'; ?>
+        <td> -- </td>
 
-        <?php echo '<td>'.$campaigns->approved. '</td>'; ?>
+        <td><?php echo $campaign->approved; ?></td>
 
-        <?php echo '<td> -- </td>'; ?>
+        <td> -- </td>
 
-        <?php echo '<td> -- </td>'; ?>
+        <td> -- </td>
 
-        <?php echo '<td> -- </td>'; ?>
+        <td> -- </td>
 
-        <?php echo '<td> -- </td>'; ?>
+        <td> -- </td>
     </tr>
 
 <?php

@@ -18,32 +18,32 @@
         foreach($campaigns as $campaign){
 
         ?>
-    <tr>
-        <?php echo '<td>'.$campaign->campaign->campaign_name. '</td>'; ?>
+            <tr>
+                <td><a href-"/campaings?id=<?php echo $campaign->campaign_id; ?>"><?php echo $campaign->campaign->campaign_name; ?></a></td>
 
-        <td> -- </td>
+                <td> -- </td>
 
-        <td> -- </td>
+                <td> -- </td>
 
-        <?php echo '<td>'.$campaign->start_date. '/'.$campaign->end_date.'</td>'; ?>
+                <?php echo '<td>'.$campaign->start_date. '/'.$campaign->end_date.'</td>'; ?>
 
-        <td> -- </td>
+                <td> -- </td>
 
-        <?php echo '<td>'; ?>
-            <form action="/save-campaign-support" method="POST">
-                <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>" />
-                <!-- @TODO remove hard-coded supporter id -->
-                <input type="hidden" name="supporter_id" value="1" />
-                <button class="btn btn-primary" type="submit" >Support Campaign</button>
-            </form>
-            </td>
+                <?php echo '<td>'; ?>
+                    <form action="/save-campaign-support" method="POST">
+                        <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>" />
+                        <!-- @TODO remove hard-coded supporter id -->
+                        <input type="hidden" name="supporter_id" value="1" />
+                        <button class="btn btn-primary" type="submit" >Support Campaign</button>
+                    </form>
+                    </td>
 
-        <td> -- </td>
+                <td> -- </td>
 
-        <td> -- </td>
+                <td> -- </td>
 
-        <td> -- </td>
-    </tr>
+                <td> -- </td>
+            </tr>
 
     <?php
     }
