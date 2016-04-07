@@ -21,17 +21,17 @@
 
         ?>
     <tr>
-        <?php echo '<td>'.$supported_campaign->campaign_name. '</td>'; ?>
+        <?php echo '<td>'.$supported_campaign->campaign->campaign_name. '</td>'; ?>
 
         <?php echo '<td> -- </td>'; ?>
 
         <?php echo '<td>--</td>'; ?>
 
-        <?php echo '<td>'.$supported_campaign->start_date. '/'.$supported_campaign->end_date.'</td>'; ?>
+        <?php echo '<td>'.$supported_campaign->campaign->start_date. '/'.$supported_campaign->campaign->end_date.'</td>'; ?>
 
         <?php echo '<td> -- </td>'; ?>
 
-        <?php echo '<td>'.$supported_campaign->approved. '</td>'; ?>
+        <?php echo '<td>'.$supported_campaign->campaign->approved. '</td>'; ?>
 
         <?php echo '<td> -- </td>'; ?>
 

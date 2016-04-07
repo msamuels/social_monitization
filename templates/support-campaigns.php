@@ -15,23 +15,23 @@
 
         <?php
 
-        foreach($campaigns as $campaigns){
+        foreach($campaigns as $campaign){
 
         ?>
     <tr>
-        <?php echo '<td>'.$campaigns->campaign_name. '</td>'; ?>
+        <?php echo '<td>'.$campaign->campaign->campaign_name. '</td>'; ?>
 
         <td> -- </td>
 
         <td> -- </td>
 
-        <?php echo '<td>'.$campaigns->start_date. '/'.$campaigns->end_date.'</td>'; ?>
+        <?php echo '<td>'.$campaign->start_date. '/'.$campaign->end_date.'</td>'; ?>
 
         <td> -- </td>
 
         <?php echo '<td>'; ?>
             <form action="/save-campaign-support" method="POST">
-                <input type="hidden" name="campaign_id" value="<?php echo $campaigns->campaign_id; ?>" />
+                <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>" />
                 <!-- @TODO remove hard-coded supporter id -->
                 <input type="hidden" name="supporter_id" value="1" />
                 <button class="btn btn-primary" type="submit" >Support Campaign</button>

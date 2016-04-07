@@ -23,6 +23,15 @@
 <span>Company X</span>
 <span>FAQ</span>
 <span><a href="/campaigns">Campaigns</a></span>
+    <span><a href="/campaign-requests">Campaign Requests</a></span>
 <span><a href="/campaign-requests">Manage Account</a></span>
 <span>Contact Us</span>
+</nav>
+
+
+<nav class="navbar navbar-default" id="supporter-nav">
+    <span><a href="/supporters">Supporters</a></span>
+    <span><a href="/get-started/supporter/register">Register</a></span>
+    <span><a href="/supporter/campaigns">Supporter Campaigns</a></span>
+    <span>Contact Us</span>
 </nav>

@@ -36,8 +36,14 @@ $app->get('/supporters', function () use ($app){
     $app->render('list-supporters.php', array('supporters' => $supporters));
 });
 
-$app->get('/supporter/campaigns', function () {
-    echo "Supporter Campaigns";
+$app->get('/supporter/campaigns', function () use($app) {
+    # list supported campaigns
+    $supportedCampaigns = Campaign_response::find('all');
+    foreach($supportedCampaigns as $supportedCampaign) {
+        $campaign = Campaign::find($supportedCampaign->id);
+        $supportedCampaign->setCampaign($campaign);
+    }
+    $app->render('supported-campaigns.php', array('supported_campaigns' => $supportedCampaigns));
 });
 
 # Allow the user to select a campaign to support
@@ -61,14 +67,6 @@ $app->post('/save-campaign-support', function () use ($app) {
 
     }
 });
-
-# Show all campaigns the supporter supports
-$app->get('/supporter/campaigns/supported', function () use($app) {
-    # list supported campaigns
-    $supportedCampaigns = Campaign_response::find('all');
-    $app->render('supported-campaigns.php', array('supported_campaigns' => $supportedCampaigns));
-});
-
 
 
 $app->get('/supporter/manage-account', function () {
