@@ -19,7 +19,7 @@
 
         ?>
             <tr>
-                <td><a href-"/campaings?id=<?php echo $campaign->campaign_id; ?>"><?php echo $campaign->campaign->campaign_name; ?></a></td>
+                <td><a href-"/campaings?id=<?php echo $campaign->campaign_id; ?>"><?php echo $campaign->campaign_name; ?></a></td>
 
                 <td> -- </td>
 

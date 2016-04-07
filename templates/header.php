@@ -32,6 +32,7 @@
 <nav class="navbar navbar-default" id="supporter-nav">
     <span><a href="/supporters">Supporters</a></span>
     <span><a href="/get-started/supporter/register">Register</a></span>
-    <span><a href="/supporter/campaigns">Supporter Campaigns</a></span>
+    <span><a href="/supporter/campaigns">My Campaigns</a></span>
+    <span><a href="/supporter/campaigns/pending">Support Campaigns</a></span>
     <span>Contact Us</span>
 </nav>
