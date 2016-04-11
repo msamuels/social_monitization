@@ -2,6 +2,8 @@
 require '../vendor/autoload.php';
 require_once '../vendor/php-activerecord/php-activerecord/ActiveRecord.php';
 
+session_start();
+
 $configs = parse_ini_file('../config.ini');
 
 $cfg = ActiveRecord\Config::instance();
@@ -16,6 +18,9 @@ $app = new \Slim\Slim(array(
     'debug' => true
 ));
 
+$app->add(new \Slim\Middleware\SessionCookie(array('secret' => 'myappsecret')));
+
+
 require 'hooks.php';
 
 $app->setName('Social Monitization');
@@ -29,6 +34,9 @@ $app->get('/get-started', function () {
     echo "Get Started";
 });
 
+
+#Login Stuff
+include "../routes/auth.php";
 
 #Supporter stuff
 

@@ -5,13 +5,13 @@ $app->get('/get-started/supporter/login', function () {
 });
 
 # Register suppporter
-$app->get('/get-started/supporter/register', function() use($app) {
+$app->get('/get-started/supporter/register', $authenticate($app), function() use($app) {
     //TODO only find one suporter by login
     $app->render('create-supporter.php');
 });
 
 # Save supporter
-$app->post('/save-supporter', function () use ($app){
+$app->post('/save-supporter', $authenticate($app), function () use ($app){
 
     if ($app->request->getMethod() == 'POST') {
 
@@ -30,13 +30,13 @@ $app->post('/save-supporter', function () use ($app){
 });
 
 # List supporters
-$app->get('/supporters', function () use ($app){
+$app->get('/supporters', $authenticate($app), function () use ($app){
     # list supporters
     $supporters = Supporter::find('all');
     $app->render('list-supporters.php', array('supporters' => $supporters));
 });
 
-$app->get('/supporter/campaigns', function () use($app) {
+$app->get('/supporter/campaigns', $authenticate($app), function () use($app) {
     # list supported campaigns
     $supportedCampaigns = Campaign_response::find('all');
     foreach($supportedCampaigns as $supportedCampaign) {
@@ -48,13 +48,13 @@ $app->get('/supporter/campaigns', function () use($app) {
 
 # Allow the user to select a campaign to support
 # Have this page show both pending and campaigns to approve
-$app->get('/supporter/campaigns/pending', function () use ($app){
+$app->get('/supporter/campaigns/pending', $authenticate($app), function () use ($app){
     # list producers
     $campaigns = Campaign::find('all');
     $app->render('support-campaigns.php', array('campaigns' => $campaigns));
 });
 
-$app->post('/save-campaign-support', function () use ($app) {
+$app->post('/save-campaign-support', $authenticate($app), function () use ($app) {
 
     if ($app->request->getMethod() == 'POST') {
 
@@ -69,15 +69,15 @@ $app->post('/save-campaign-support', function () use ($app) {
 });
 
 
-$app->get('/supporter/manage-account', function () {
+$app->get('/supporter/manage-account', $authenticate($app), function () {
     echo "Get Started";
 });
 
-$app->get('/supporter/manage-account/profile', function () {
+$app->get('/supporter/manage-account/profile', $authenticate($app), function () {
     echo "Get Started";
 });
 
-$app->get('/supporter/manage-account/payment-options', function () {
+$app->get('/supporter/manage-account/payment-options', $authenticate($app), function () {
     echo "Get Started";
 });
 

@@ -38,7 +38,7 @@ $app->get('/create-campaign', function () use ($app){
 
 
 # Producer save campaign
-$app->post('/save-campaign', function () use ($app){
+$app->post('/save-campaign', $authenticate($app), function () use ($app){
 
     $req = $app->request->post();
 
@@ -56,19 +56,25 @@ $app->post('/save-campaign', function () use ($app){
     $app->redirect('/campaigns');
 });
 
-# List campaigns
-$app->get('/campaigns', function () use ($app){
+# List campaign by id
+$app->get('/campaigns/:id', $authenticate($app), function ($id) use ($app){
     # list campaigns
-    if ($app->request()->get('id') != null) {
-        $campaigns = Campaign::find($app->request()->get('id'));
-    } else {
-        $campaigns = Campaign::find('all');
+    if ($id != null) {
+        $campaigns = Campaign::find($id);
     }
     $app->render('list-campaigns.php', array('campaigns' => $campaigns));
 });
 
+
+# List all campaigns
+$app->get('/campaigns', $authenticate($app), function () use ($app){
+    # list campaigns
+        $campaigns = Campaign::find('all');
+    $app->render('list-campaigns.php', array('campaigns' => $campaigns));
+});
+
 # approve campaign requests
-$app->get('/campaign-requests', function () use ($app){
+$app->get('/campaign-requests', $authenticate($app), function () use ($app){
     # list supporters for a particular campaign
     $supporters = Supporter::find('all');
 

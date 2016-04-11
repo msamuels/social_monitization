@@ -1,415 +1,294 @@
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+CREATE DATABASE  IF NOT EXISTS `social_monitization` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `social_monitization`;
+-- MySQL dump 10.13  Distrib 5.5.47, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: social_monitization
+-- ------------------------------------------------------
+-- Server version	5.5.47-0ubuntu0.14.04.1
 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- -----------------------------------------------------
--- Table `org class`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `org class` ;
+--
+-- Table structure for table `accounts`
+--
 
-CREATE TABLE IF NOT EXISTS `org class` (
-  `orgclass_id` INT NOT NULL AUTO_INCREMENT,
-  `classname` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`orgclass_id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `producer`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `producer` ;
-
-CREATE TABLE IF NOT EXISTS `producer` (
-  `id_producer` INT NOT NULL AUTO_INCREMENT,
-  `first_name` VARCHAR(255) NULL,
-  `last_name` VARCHAR(255) NULL,
-  `org_name` VARCHAR(255) NULL,
-  `organization_url` VARCHAR(255) NULL,
-  `email_address` VARCHAR(255) NULL,
-  `user_name` VARCHAR(45) NULL,
-  `password` VARCHAR(45) NULL,
-  `description` BLOB NULL,
-  `country` VARCHAR(255) NULL,
-  `orgclass_id` INT NULL,
-  PRIMARY KEY (`id_producer`),
-  INDEX `orgclass_id_idx` (`orgclass_id` ASC),
-  CONSTRAINT `orgclass_id`
-    FOREIGN KEY (`orgclass_id`)
-    REFERENCES `org class` (`orgclass_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `producer_account`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `producer_account` ;
-
-CREATE TABLE IF NOT EXISTS `producer_account` (
-  `producer_id` INT NOT NULL,
-  `campaign_id` INT NULL,
-  `account_name` VARCHAR(45) NULL,
-  PRIMARY KEY (`producer_id`),
-  CONSTRAINT `fk_producer_account_id`
-    FOREIGN KEY (`producer_id`)
-    REFERENCES `producer` (`id_producer`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `supporter`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `supporter` ;
-
-CREATE TABLE IF NOT EXISTS `supporter` (
-  `id_supporter` INT NOT NULL AUTO_INCREMENT,
-  `user_name` VARCHAR(255) NULL,
-  `password` VARCHAR(255) NULL,
-  `id_follower_count` INT NULL,
-  `interests` VARCHAR(45) NULL,
-  `email_address` VARCHAR(45) NULL,
-  `approved` ENUM('Y','N') NULL,
-  `country` VARCHAR(255) NULL,
-  PRIMARY KEY (`id_supporter`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `campaign`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `campaign` ;
-
-CREATE TABLE IF NOT EXISTS `campaign` (
-  `campaign_id` INT NOT NULL AUTO_INCREMENT,
-  `campaign_name` VARCHAR(255) NULL,
-  `budget` FLOAT NULL,
-  `billing_approved` ENUM('Y','N') NULL,
-  `estimate` FLOAT NULL,
-  `start_date` DATETIME NULL,
-  `end_date` DATETIME NULL,
-  `approved` ENUM('Y','N') NULL,
-  `screen_shot` VARCHAR(45) NULL,
-  PRIMARY KEY (`campaign_id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `supporter_interest`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `supporter_interest` ;
-
-CREATE TABLE IF NOT EXISTS `supporter_interest` (
-  `supporter_interest_if` INT NOT NULL AUTO_INCREMENT,
-  `supporter_id` INT NULL,
-  `id_interest` INT NULL,
-  PRIMARY KEY (`supporter_interest_if`),
-  INDEX `fk_supporter_interest_1_idx` (`supporter_id` ASC),
-  CONSTRAINT `fk_supporter_interest_1`
-    FOREIGN KEY (`supporter_id`)
-    REFERENCES `supporter` (`id_supporter`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `campaign_response`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `campaign_response` ;
-
-CREATE TABLE IF NOT EXISTS `campaign_response` (
-  `campaign_response_id` INT NOT NULL AUTO_INCREMENT,
-  `campaign_id` INT NOT NULL,
-  `supporter_id` INT NULL,
-  `campaign_response` VARCHAR(45) NULL,
-  PRIMARY KEY (`campaign_response_id`),
-  INDEX `fk_campaign_response_1_idx` (`campaign_id` ASC),
-  CONSTRAINT `fk_campaign_response_1`
-    FOREIGN KEY (`campaign_id`)
-    REFERENCES `campaign` (`campaign_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `follower_count`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `follower_count` ;
-
-CREATE TABLE IF NOT EXISTS `follower_count` (
-  `follower_count_id` INT NOT NULL AUTO_INCREMENT,
-  `source_id` INT NULL,
-  `count` INT NULL,
-  `supporter_id` INT NULL,
-  PRIMARY KEY (`follower_count_id`),
-  INDEX `fk_follower_count_1_idx` (`supporter_id` ASC),
-  CONSTRAINT `fk_follower_count_1`
-    FOREIGN KEY (`supporter_id`)
-    REFERENCES `supporter` (`id_supporter`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `tags`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `tags` ;
-
-CREATE TABLE IF NOT EXISTS `tags` (
-  `id_tag` INT NOT NULL,
-  `tag_name` INT NULL,
-  PRIMARY KEY (`id_tag`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `escrow`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `escrow` ;
-
-CREATE TABLE IF NOT EXISTS `escrow` (
-  `escrow_id` INT NOT NULL AUTO_INCREMENT,
-  `estimate` DOUBLE NULL,
-  `actual` DOUBLE NULL,
-  `campaign_id` INT NULL,
-  PRIMARY KEY (`escrow_id`),
-  INDEX `fk_escrow_1_idx` (`campaign_id` ASC),
-  CONSTRAINT `fk_escrow_1`
-    FOREIGN KEY (`campaign_id`)
-    REFERENCES `campaign` (`campaign_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `screen_shots`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `screen_shots` ;
-
-CREATE TABLE IF NOT EXISTS `screen_shots` (
-  `screen_shots_id` INT NOT NULL AUTO_INCREMENT,
-  `campaign_id` INT NULL,
-  `image` VARCHAR(45) NULL,
-  `approved` ENUM('Y','N') NULL,
-  `id_supporter` INT NULL,
-  PRIMARY KEY (`screen_shots_id`),
-  INDEX `fk_screen_shots_1_idx` (`campaign_id` ASC),
-  CONSTRAINT `fk_screen_shots_1`
-    FOREIGN KEY (`campaign_id`)
-    REFERENCES `campaign` (`campaign_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `targeting`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `targeting` ;
-
-CREATE TABLE IF NOT EXISTS `targeting` (
-  `tag_id` INT NOT NULL AUTO_INCREMENT,
-  `campaign_id` INT NULL,
-  PRIMARY KEY (`tag_id`),
-  INDEX `fk_targeting_1_idx` (`campaign_id` ASC),
-  CONSTRAINT `fk_targeting_1`
-    FOREIGN KEY (`campaign_id`)
-    REFERENCES `campaign` (`campaign_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `calculation`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `calculation` ;
-
-CREATE TABLE IF NOT EXISTS `calculation` (
-  `calculation_id` INT NOT NULL AUTO_INCREMENT,
-  `tag_id` INT NULL,
-  `cpm` INT NULL,
-  `discount` DECIMAL NULL,
-  `campaign_id` INT NULL,
-  PRIMARY KEY (`calculation_id`),
-  INDEX `fk_calculation_1_idx` (`campaign_id` ASC),
-  CONSTRAINT `fk_calculation_1`
-    FOREIGN KEY (`campaign_id`)
-    REFERENCES `campaign` (`campaign_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `links`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `links` ;
-
-CREATE TABLE IF NOT EXISTS `links` (
-  `links_id` INT NOT NULL AUTO_INCREMENT,
-  `campaign_id` INT NULL,
-  `link` VARCHAR(45) NULL,
-  PRIMARY KEY (`links_id`),
-  INDEX `fk_links_1_idx` (`campaign_id` ASC),
-  CONSTRAINT `fk_links_1`
-    FOREIGN KEY (`campaign_id`)
-    REFERENCES `campaign` (`campaign_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `source`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `source` ;
-
-CREATE TABLE IF NOT EXISTS `source` (
-  `source_id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(255) NULL,
-  PRIMARY KEY (`source_id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `account`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `account` ;
-
-CREATE TABLE IF NOT EXISTS `account` (
-  `idaccount` INT NOT NULL AUTO_INCREMENT,
-  `id_producer` INT NOT NULL,
-  `account_name` VARCHAR(45) NULL,
-  `campaign_id` INT NULL,
+DROP TABLE IF EXISTS `accounts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `accounts` (
+  `idaccount` int(11) NOT NULL AUTO_INCREMENT,
+  `id_producer` int(11) NOT NULL,
+  `account_name` varchar(45) DEFAULT NULL,
+  `campaign_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`idaccount`),
-  INDEX `fk_account_1_idx` (`id_producer` ASC),
-  INDEX `fk_account_2_idx` (`campaign_id` ASC),
-  CONSTRAINT `fk_account_1`
-    FOREIGN KEY (`id_producer`)
-    REFERENCES `producer` (`id_producer`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_account_2`
-    FOREIGN KEY (`campaign_id`)
-    REFERENCES `campaign` (`campaign_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  KEY `fk_account_1_idx` (`id_producer`),
+  KEY `fk_account_2_idx` (`campaign_id`),
+  CONSTRAINT `fk_account_1` FOREIGN KEY (`id_producer`) REFERENCES `producers` (`id_producer`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_account_2` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`campaign_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `calculations`
+--
 
--- -----------------------------------------------------
--- Table `reward`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `reward` ;
+DROP TABLE IF EXISTS `calculations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `calculations` (
+  `calculation_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tag_id` int(11) DEFAULT NULL,
+  `cpm` int(11) DEFAULT NULL,
+  `discount` decimal(10,0) DEFAULT NULL,
+  `campaign_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`calculation_id`),
+  KEY `fk_calculation_1_idx` (`campaign_id`),
+  CONSTRAINT `fk_calculation_1` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`campaign_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-CREATE TABLE IF NOT EXISTS `reward` (
-  `reward_id` INT NOT NULL AUTO_INCREMENT,
-  `image` VARCHAR(255) NULL,
-  `details` VARCHAR(255) NULL,
-  `expiration_date` DATETIME NULL,
-  `quantity_remaining` INT NULL,
-  `point_value` INT NULL,
-  PRIMARY KEY (`reward_id`))
-ENGINE = InnoDB;
+--
+-- Table structure for table `campaign_responses`
+--
 
+DROP TABLE IF EXISTS `campaign_responses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `campaign_responses` (
+  `campaign_response_id` int(11) NOT NULL AUTO_INCREMENT,
+  `campaign_id` int(11) NOT NULL,
+  `supporter_id` int(11) DEFAULT NULL,
+  `campaign_response` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`campaign_response_id`),
+  KEY `fk_campaign_response_1_idx` (`campaign_id`),
+  CONSTRAINT `fk_campaign_response_1` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`campaign_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
--- -----------------------------------------------------
--- Table `reward`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `reward` ;
+--
+-- Table structure for table `campaigns`
+--
 
-CREATE TABLE IF NOT EXISTS `reward` (
-  `reward_id` INT NOT NULL AUTO_INCREMENT,
-  `image` VARCHAR(255) NULL,
-  `details` VARCHAR(255) NULL,
-  `expiration_date` DATETIME NULL,
-  `quantity_remaining` INT NULL,
-  `point_value` INT NULL,
-  PRIMARY KEY (`reward_id`))
-ENGINE = InnoDB;
+DROP TABLE IF EXISTS `campaigns`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `campaigns` (
+  `campaign_id` int(11) NOT NULL AUTO_INCREMENT,
+  `budget` float DEFAULT NULL,
+  `billing_approved` enum('Y','N') DEFAULT NULL,
+  `estimate` float DEFAULT NULL,
+  `start_date` datetime DEFAULT NULL,
+  `end_date` datetime DEFAULT NULL,
+  `approved` enum('Y','N') DEFAULT NULL,
+  `screen_shot` varchar(45) DEFAULT NULL,
+  `campaign_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`campaign_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `escrow`
+--
 
--- -----------------------------------------------------
--- Table `source`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `source` ;
+DROP TABLE IF EXISTS `escrow`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `escrow` (
+  `escrow_id` int(11) NOT NULL AUTO_INCREMENT,
+  `estimate` double DEFAULT NULL,
+  `actual` double DEFAULT NULL,
+  `campaign_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`escrow_id`),
+  KEY `fk_escrow_1_idx` (`campaign_id`),
+  CONSTRAINT `fk_escrow_1` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`campaign_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-CREATE TABLE IF NOT EXISTS `source` (
-  `source_id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(255) NULL,
-  PRIMARY KEY (`source_id`))
-ENGINE = InnoDB;
+--
+-- Table structure for table `follower_counts`
+--
 
+DROP TABLE IF EXISTS `follower_counts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `follower_counts` (
+  `follower_count_id` int(11) NOT NULL AUTO_INCREMENT,
+  `source_id` int(11) DEFAULT NULL,
+  `count` int(11) DEFAULT NULL,
+  `supporter_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`follower_count_id`),
+  KEY `fk_follower_count_1_idx` (`supporter_id`),
+  CONSTRAINT `fk_follower_count_1` FOREIGN KEY (`supporter_id`) REFERENCES `supporters` (`id_supporter`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
--- -----------------------------------------------------
--- Table `donation_type`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `donation_type` ;
+--
+-- Table structure for table `links`
+--
 
-CREATE TABLE IF NOT EXISTS `donation_type` (
-  `donationtype_id` INT NOT NULL AUTO_INCREMENT,
-  `donation_name` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`donationtype_id`))
-ENGINE = InnoDB;
+DROP TABLE IF EXISTS `links`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `links` (
+  `links_id` int(11) NOT NULL AUTO_INCREMENT,
+  `campaign_id` int(11) DEFAULT NULL,
+  `link` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`links_id`),
+  KEY `fk_links_1_idx` (`campaign_id`),
+  CONSTRAINT `fk_links_1` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`campaign_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `producer_account`
+--
 
--- -----------------------------------------------------
--- Table `donations`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `donations` ;
+DROP TABLE IF EXISTS `producer_account`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `producer_account` (
+  `producer_id` int(11) NOT NULL,
+  `campaign_id` int(11) DEFAULT NULL,
+  `account_name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`producer_id`),
+  CONSTRAINT `fk_producer_account_id` FOREIGN KEY (`producer_id`) REFERENCES `producers` (`id_producer`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-CREATE TABLE IF NOT EXISTS `donations` (
-  `donation_id` INT NOT NULL AUTO_INCREMENT,
-  `campaign_id` INT NULL,
-  `donationtype_id` INT NULL,
-  INDEX `campaign_id_idx` (`campaign_id` ASC),
-  PRIMARY KEY (`donation_id`),
-  INDEX `fk_donationtype_id_idx` (`donationtype_id` ASC),
-  CONSTRAINT `campaign_id`
-    FOREIGN KEY (`campaign_id`)
-    REFERENCES `campaign` (`campaign_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_donationtype_id`
-    FOREIGN KEY (`donationtype_id`)
-    REFERENCES `donation_type` (`donationtype_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+--
+-- Table structure for table `producers`
+--
 
+DROP TABLE IF EXISTS `producers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `producers` (
+  `id_producer` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `org_name` varchar(255) DEFAULT NULL,
+  `organization_url` varchar(255) DEFAULT NULL,
+  `email_address` varchar(255) DEFAULT NULL,
+  `user_name` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_producer`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
--- -----------------------------------------------------
--- Table `reward_claimed`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `reward_claimed` ;
+--
+-- Table structure for table `screen_shots`
+--
 
-CREATE TABLE IF NOT EXISTS `reward_claimed` (
-  `id_supporter` INT NOT NULL,
-  `reward_id` INT NOT NULL,
-  `date_claimed` DATETIME NULL,
-  PRIMARY KEY (`id_supporter`, `reward_id`),
-  INDEX `fk_reward_claimed_reward1_idx` (`reward_id` ASC),
-  CONSTRAINT `id_supporter`
-    FOREIGN KEY (`id_supporter`)
-    REFERENCES `supporter` (`id_supporter`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `reward_id`
-    FOREIGN KEY (`reward_id`)
-    REFERENCES `reward` (`reward_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+DROP TABLE IF EXISTS `screen_shots`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `screen_shots` (
+  `screen_shots_id` int(11) NOT NULL AUTO_INCREMENT,
+  `campaign_id` int(11) DEFAULT NULL,
+  `image` varchar(45) DEFAULT NULL,
+  `approved` enum('Y','N') DEFAULT NULL,
+  `id_supporter` int(11) DEFAULT NULL,
+  PRIMARY KEY (`screen_shots_id`),
+  KEY `fk_screen_shots_1_idx` (`campaign_id`),
+  CONSTRAINT `fk_screen_shots_1` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`campaign_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `source`
+--
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+DROP TABLE IF EXISTS `source`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `source` (
+  `id_source` int(11) NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `url` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id_source`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `supporter_interests`
+--
+
+DROP TABLE IF EXISTS `supporter_interests`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `supporter_interests` (
+  `supporter_interest_if` int(11) NOT NULL AUTO_INCREMENT,
+  `supporter_id` int(11) DEFAULT NULL,
+  `id_interest` int(11) DEFAULT NULL,
+  PRIMARY KEY (`supporter_interest_if`),
+  KEY `fk_supporter_interest_1_idx` (`supporter_id`),
+  CONSTRAINT `fk_supporter_interest_1` FOREIGN KEY (`supporter_id`) REFERENCES `supporters` (`id_supporter`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `supporters`
+--
+
+DROP TABLE IF EXISTS `supporters`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `supporters` (
+  `id_supporter` int(11) NOT NULL AUTO_INCREMENT,
+  `id_follower_count` int(11) DEFAULT NULL,
+  `interests` varchar(45) DEFAULT NULL,
+  `email_address` varchar(45) DEFAULT NULL,
+  `approved` enum('Y','N') DEFAULT NULL,
+  PRIMARY KEY (`id_supporter`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `tags`
+--
+
+DROP TABLE IF EXISTS `tags`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tags` (
+  `id_tag` int(11) NOT NULL,
+  `tag_name` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_tag`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `targeting`
+--
+
+DROP TABLE IF EXISTS `targeting`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `targeting` (
+  `tag_id` int(11) NOT NULL AUTO_INCREMENT,
+  `campaign_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`tag_id`),
+  KEY `fk_targeting_1_idx` (`campaign_id`),
+  CONSTRAINT `fk_targeting_1` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`campaign_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2016-04-11  8:36:05
