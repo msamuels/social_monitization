@@ -94,7 +94,10 @@ $app->get("/login", function () use ($app) {
 
 // log user out
 $app->get("/logout", function () use ($app) {
+
    unset($_SESSION['user']);
+   unset($_SESSION['user_type']);
+
    $app->view()->setData('user', null);
    $app->render('logout.php');
 });

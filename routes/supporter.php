@@ -5,13 +5,13 @@ $app->get('/get-started/supporter/login', function () {
 });
 
 # Register suppporter
-$app->get('/get-started/supporter/register', $authenticate($app), function() use($app) {
+$app->get('/get-started/supporter/register', function() use($app) {
     //TODO only find one suporter by login
     $app->render('create-supporter.php');
 });
 
 # Save supporter
-$app->post('/save-supporter', $authenticate($app), function () use ($app){
+$app->post('/save-supporter', function () use ($app){
 
     if ($app->request->getMethod() == 'POST') {
 
