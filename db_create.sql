@@ -248,8 +248,11 @@ CREATE TABLE `supporters` (
   `interests` varchar(45) DEFAULT NULL,
   `email_address` varchar(45) DEFAULT NULL,
   `approved` enum('Y','N') DEFAULT NULL,
+  `password` varchar(45) NOT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `user_name` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_supporter`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -291,4 +294,4 @@ CREATE TABLE `targeting` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-11  8:36:05
+-- Dump completed on 2016-04-11 11:17:52

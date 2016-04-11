@@ -17,7 +17,7 @@
     <label>Account Type:</label>
 
     <select name="user_type">
-        <option value="suporter">Suporter</option>
+        <option value="supporter">Supporter</option>
         <option value="producer">Producer</option>
     </select>
     <br />
