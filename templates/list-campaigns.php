@@ -20,7 +20,7 @@ foreach($campaigns as $campaign){
 
 ?>
     <tr>
-        <td><a href="/campaigns?id=<?php echo $campaign->campaign_id; ?>"><?php echo $campaign->campaign_name; ?></a></td>
+        <td><a href="/campaign-detail?id=<?php echo $campaign->campaign_id; ?>"><?php echo $campaign->campaign_name; ?></a></td>
 
         <td> -- </td>
 

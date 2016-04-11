@@ -81,12 +81,34 @@ $app->get('/campaigns', $authenticate($app), function () use ($app){
     $app->render('list-campaigns.php', array('campaigns' => $campaigns));
 });
 
-# approve campaign requests
-$app->get('/campaign-requests', $authenticate($app), function () use ($app){
-    # list supporters for a particular campaign
-    $supporters = Supporter::find('all');
+# approve campaign
+$app->get('/campaign-detail', $authenticate($app), function () use ($app){
 
-    $campaign = Campaign::find('all');
-    $app->render('campaign-requests.php', array('supporters' => $supporters, 'campaign'=>$campaign));
+    # list supporters for a particular campaign
+    $id = $app->request()->get('id');
+
+    if (is_null($id)) {
+        $app->redirect('/campaigns');
+    }
+
+    $campaign_supporters = Campaign_response::find('all',
+	 array('conditions' => array('campaign_id in (?)', array($id))));
+
+    $supporter_ids = array();
+
+    foreach ($campaign_supporters as $cs) {
+        $supporter_ids[] = $cs->supporter_id;
+    }
+
+    $supporters = Supporter::find($supporter_ids);
+
+
+    if (count($supporters) == 1) {
+        $supporters = array($supporters);
+    }
+
+    $campaign = Campaign::find($id);
+    $app->render('campaign-detail.php', array('supporters' => $supporters, 'campaign'=>$campaign));
 });
+
 

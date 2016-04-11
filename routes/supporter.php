@@ -43,7 +43,8 @@ $app->get('/supporter/campaigns', $authenticate($app), function () use($app) {
     $email = $app->view()->getData('user');
     $supporter = Supporter::find_by_email_address($email);
 
-    $supportedCampaigns = Campaign_response::find('all', array('conditions' => array('supporter_id in (?)', array($supporter->id_supporter))));
+    $supportedCampaigns = Campaign_response::find('all',
+	 array('conditions' => array('supporter_id in (?)', array($supporter->id_supporter))));
 
     // grab the associated campaigns
     foreach($supportedCampaigns as $supportedCampaign) {
