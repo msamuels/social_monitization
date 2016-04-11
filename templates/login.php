@@ -13,14 +13,23 @@
 <?php } ?>
 
 <form action="/login" method="POST">
-  <label>Username:</label> 
-  <input type="text" name="email" />
-  <br />
 
-  <label>Password:</label> 
-  <input type="text" name="password" />
-  <br />
+    <label>Account Type:</label>
 
-  <button class="btn btn-primary" type="submit" >Submit</button>
+    <select name="user_type">
+        <option value="suporter">Suporter</option>
+        <option value="producer">Producer</option>
+    </select>
+    <br />
+
+    <label>Username:</label> 
+    <input type="text" name="email" />
+    <br />
+
+    <label>Password:</label> 
+    <input type="text" name="password" />
+    <br />
+
+    <button class="btn btn-primary" type="submit" >Submit</button>
 
 </form>

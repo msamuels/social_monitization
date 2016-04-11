@@ -20,21 +20,40 @@ $app->hook('slim.before.dispatch', function() use ($app) {
 
 
 $app->post("/login", function () use ($app) {
+
     $email = $app->request()->post('email');
     $password = $app->request()->post('password');
+    $user_type = $app->request()->post('user_type');
+    $client = null;
+
     $errors = array();
-    if ($email != "brian@nesbot.com") {
-        $errors['email'] = "Email is not found.";
-    } else if ($password != "aaaa") {
-        $app->flash('email', $email);
-        $errors['password'] = "Password does not match.";
+
+    // check the user type to know when model to request from
+    if ($user_type == "supporter") {
+        $client = Supporter::find_by_email_address($email);
+    } elseif($user_type == "producer") {
+        $client = Producer::find_by_email_address($email);
     }
+
+    // is the user even in the system
+    if ($client != null) {
+        if ($password != $client->password) {
+	    $app->flash('email', $email);
+            $errors['password'] = "Password does not match.";
+        }
+    } else {
+        $errors['email'] = "Email is not found.";
+    }
+
     if (count($errors) > 0) {
         $app->flash('errors', $errors);
 
         $app->redirect('/login');
     }
+
     $_SESSION['user'] = $email;
+    $_SESSION['user_type'] = $user_type;
+
     if (isset($_SESSION['urlRedirect'])) {
        $tmp = $_SESSION['urlRedirect'];
        unset($_SESSION['urlRedirect']);
@@ -45,7 +64,7 @@ $app->post("/login", function () use ($app) {
 });
 
 
-
+// present login screen to user
 $app->get("/login", function () use ($app) {
    $flash = $app->view()->getData('flash');
    $error = '';	
@@ -73,6 +92,7 @@ $app->get("/login", function () use ($app) {
       'email_error' => $email_error, 'password_error' => $password_error, 'urlRedirect' => $urlRedirect));
 });
 
+// log user out
 $app->get("/logout", function () use ($app) {
    unset($_SESSION['user']);
    $app->view()->setData('user', null);

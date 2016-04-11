@@ -18,23 +18,38 @@
 </head>
 
 <body>
-
 <nav class="navbar navbar-default">
-<span>Company X</span> | 
-<span>FAQ</span> | 
-<span><a href="/campaigns">Campaigns</a></span> | 
-    <span><a href="/campaign-requests">Campaign Requests</a></span> | 
-<span><a href="/campaign-requests">Manage Account</a></span> | 
-<span><a href="/login">Login</a></span> | 
-<span><a href="/logout">Logout</a></span> | 
-<span>Contact Us</span>
+	<span><a href="/login">Login</a></span> | <span>Contact Us</span>
 </nav>
 
+<?php if(isset($_SESSION['user_type'])) { ?>
 
-<nav class="navbar navbar-default" id="supporter-nav">
-    <span><a href="/supporters">Supporters</a></span>
-    <span><a href="/get-started/supporter/register">Register</a></span>
-    <span><a href="/supporter/campaigns">My Campaigns</a></span>
-    <span><a href="/supporter/campaigns/pending">Support Campaigns</a></span>
-    <span>Contact Us</span>
-</nav>
+	<?php if($_SESSION['user_type'] == "supporter") { ?>
+
+		<nav class="navbar navbar-default" id="supporter-nav">
+			<span><a href="/supporters">Supporters</a></span>
+			<span><a href="/get-started/supporter/register">Register</a></span>
+			<span><a href="/supporter/campaigns">My Campaigns</a></span>
+			<span><a href="/supporter/campaigns/pending">Support Campaigns</a></span>
+			<span>Contact Us</span>
+                        <span><a href="/logout">Logout</a></span>
+		</nav>
+
+	<?php } ?>
+
+
+	<?php if($_SESSION['user_type'] == "producer") { ?>
+
+		<nav class="navbar navbar-default">
+			<span>Company X</span> | 
+			<span>FAQ</span> | 
+			<span><a href="/campaigns">Campaigns</a></span> | 
+			<span><a href="/campaign-requests">Campaign Requests</a></span> | 
+			<span><a href="/campaign-requests">Manage Account</a></span> | 
+			<span><a href="/logout">Logout</a></span>
+		</nav>
+
+	<?php } ?>
+
+<?php } ?>
+
