@@ -1,4 +1,4 @@
-<H1>Campaigns</H1> <a href="create-campaign">Create Campaign</a>
+<H1>Campaigns</H1>
 
 <table border="1px solid grey">
 <tr>
@@ -24,11 +24,11 @@ foreach($campaigns as $campaign){
 
         <td> -- </td>
 
-        <td>--</td>
+        <td>$<?php echo $campaign->budget; ?></td>
 
        <td><?php echo $campaign->start_date. '/'.$campaign->end_date; ?></td>
 
-        <td> -- </td>
+        <td> <?php echo $campaign->num_supporters; ?> </td>
 
         <td><?php echo $campaign->approved; ?></td>
 

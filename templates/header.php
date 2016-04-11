@@ -45,6 +45,7 @@
 			<span>Company X</span> | 
 			<span>FAQ</span> | 
 			<span><a href="/campaigns">Campaigns</a></span> | 
+			<a href="create-campaign">Create Campaign</a> | 
 			<span><a href="/campaign-requests">Campaign Requests</a></span> | 
 			<span><a href="/campaign-requests">Manage Account</a></span> | 
 			<span><a href="/logout">Logout</a></span>

@@ -68,8 +68,16 @@ $app->get('/campaigns/:id', $authenticate($app), function ($id) use ($app){
 
 # List all campaigns
 $app->get('/campaigns', $authenticate($app), function () use ($app){
+
     # list campaigns
-        $campaigns = Campaign::find('all');
+    $query = "SELECT c.*, count(cr.supporter_id) as num_supporters
+	FROM campaigns c
+	LEFT JOIN campaign_responses cr
+	ON c.campaign_id = cr.campaign_id
+	GROUP by cr.campaign_id";
+
+    // @TODO filter by the producer_id
+    $campaigns = Campaign::find_by_sql($query);
     $app->render('list-campaigns.php', array('campaigns' => $campaigns));
 });
 
