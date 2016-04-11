@@ -19,24 +19,23 @@
 
         ?>
             <tr>
-                <td><a href-"/campaings?id=<?php echo $campaign->campaign_id; ?>"><?php echo $campaign->campaign_name; ?></a></td>
+                <td><a href="/campaings?id=<?php echo $campaign->campaign_id; ?>"><?php echo $campaign->campaign_name; ?></a></td>
 
                 <td> -- </td>
 
                 <td> -- </td>
 
-                <?php echo '<td>'.$campaign->start_date. '/'.$campaign->end_date.'</td>'; ?>
+                <td><?php echo $campaign->start_date. '/'.$campaign->end_date; ?></td>
 
                 <td> -- </td>
 
-                <?php echo '<td>'; ?>
+                <td>
                     <form action="/save-campaign-support" method="POST">
                         <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>" />
-                        <!-- @TODO remove hard-coded supporter id -->
-                        <input type="hidden" name="supporter_id" value="1" />
+                        <input type="hidden" name="supporter_id" value="<?php echo $user_id; ?>" />
                         <button class="btn btn-primary" type="submit" >Support Campaign</button>
                     </form>
-                    </td>
+                </td>
 
                 <td> -- </td>
 
