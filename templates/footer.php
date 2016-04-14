@@ -1,3 +1,4 @@
+</div>
 <nav class="navbar navbar-default">
 <span>Get Started<span>
 <span>About Us<span>

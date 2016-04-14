@@ -1,38 +1,61 @@
 <H1>Create Campaign</H1>
 
-<form action="/save-campaign" method="POST">
-  <label>Campaign Name:</label> 
-  <input type="text" name="campaign_name" />
-  <br />
+<form action="/save-campaign" method="POST" class="form-horizontal" role="form">
+  <div class="form-group">
+      <label class="control-label col-sm-2">Campaign Name:</label>
+    <div class="col-sm-10">
+      <input type="text" name="campaign_name" />
+      </div>
+  </div>
 
+  <div class="form-group">
+    <label class="control-label col-sm-2">Budget:</label>
+    <div class="col-sm-10">
+    <input type="text" name="budget" />
+    </div>
+  </div>
 
-  <label>Budget:</label> 
-  <input type="text" name="budget" />
-  <br />
+  <div class="form-group">
+    <label class="control-label col-sm-2">Billing Approved:</label>
+    <div class="col-sm-10">
+    <input type="text" name="billing_approved" />
+    </div>
+  </div>
 
-  <label>Billing Approved:</label> 
-  <input type="text" name="billing_approved" />
-  <br />
+  <div class="form-group">
+    <label class="control-label col-sm-2">Estimate:</label>
+    <div class="col-sm-10">
+    <input type="text" name="estimate" />
+    </div>
+  </div>
 
-  <label>Estimate:</label> 
-  <input type="text" name="estimate" />
-  <br />
+  <div class="form-group">
+    <label class="control-label col-sm-2">Start Date:</label>
+    <div class="col-sm-10">
+    <input type="text" name="start_date" />
+    </div>
+  </div>
 
-  <label>Start Date:</label> 
-  <input type="text" name="start_date" />
-  <br />
+  <div class="form-group">
+    <label class="control-label col-sm-2">End Date:</label>
+    <div class="col-sm-10">
+    <input type="text" name="end_date" />
+    </div>
+  </div>
 
-  <label>End Date:</label> 
-  <input type="text" name="end_date" />
-  <br />
+  <div class="form-group">
+    <label class="control-label col-sm-2">Approved:</label>
+    <div class="col-sm-10">
+    <input type="text" name="approved" />
+    </div>
+  </div>
 
-  <label>Approved:</label> 
-  <input type="text" name="approved" />
-  <br />
-
-  <label>Screen Shot:</label> 
-  <input type="text" name="screen_shot" />
-  <br />
+  <div class="form-group">
+    <label class="control-label col-sm-2">Screen Shot:</label>
+    <div class="col-sm-10">
+    <input type="text" name="screen_shot" />
+    </div>
+  </div>
 
     <button class="btn btn-primary" type="submit" >Submit</button>
 

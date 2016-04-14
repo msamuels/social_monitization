@@ -80,7 +80,11 @@ $app->get('/supporter/campaigns/pending', $authenticate($app), function () use (
     }
 
     # list campaigns
-    $campaigns = Campaign::find('all', array('conditions' => array('campaign_id NOT IN (?)', $ar_campaigns)));
+    if (count($ar_campaigns) == 0) {
+        $campaigns = array();
+    } else {
+        $campaigns = Campaign::find('all', array('conditions' => array('campaign_id NOT IN (?)', $ar_campaigns)));
+    }
     $app->render('support-campaigns.php', array('campaigns' => $campaigns, 'user_id' => $supporter->id));
 });
 

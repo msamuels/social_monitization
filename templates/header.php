@@ -15,43 +15,73 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+	<style>
+		#navbar-fixed-bottom, .navbar-fixed-top {
+			position: relative;
+		}
+		.subnav{
+			border-top-color: #3c3c3c;
+		}
+	</style>
 </head>
 
 <body>
-<nav class="navbar navbar-default">
-	<span><a href="/login">Login</a></span> | <span>Contact Us</span>
-	 | <a href="/create-producer">Producer Register </a> |
-	 <span><a href="/get-started/supporter/register">Supporter Register</a></span>
+<nav class="navbar navbar-default navbar-fixed-top" style="clear:both">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Logo</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/login">Login</a></li>
+				<li><a href="#services">Contact Us</a></li>
+				<li><a href="/create-producer">Producer Register</a></li>
+				<li><a href="/get-started/supporter/register">Supporter Register</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<?php if(isset($_SESSION['user_type'])) { ?>
+
+		<?php if($_SESSION['user_type'] == "supporter") { ?>
+
+			<nav class="navbar subnav">
+
+				<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/supporters">Supporters</a></li>
+					<li><a href="/supporter/campaigns">My Campaigns</a></li>
+					<li><a href="/supporter/campaigns/pending">Support Campaigns</a></li>
+					<li><a href="//logout">Logout</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<?php } ?>
+
+
+		<?php if($_SESSION['user_type'] == "producer") { ?>
+
+			<nav class="navbar subnav">
+
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/campaigns">Campaigns</a></li>
+						<li><a href="create-campaign">Create Campaign</a></li>
+						<li><a href="/get-started/supporter/register">Manage Account</a></li>
+						<li><a href="/logout">Logout</a></li>
+					</ul>
+				</div>
+			</nav>
+
+		<?php } ?>
+
+	<?php } ?>
+
 </nav>
-
-<?php if(isset($_SESSION['user_type'])) { ?>
-
-	<?php if($_SESSION['user_type'] == "supporter") { ?>
-
-		<nav class="navbar navbar-default" id="supporter-nav">
-			<span><a href="/supporters">Supporters</a></span>
-			<span><a href="/supporter/campaigns">My Campaigns</a></span>
-			<span><a href="/supporter/campaigns/pending">Support Campaigns</a></span>
-			<span>Contact Us</span>
-                        <span><a href="/logout">Logout</a></span>
-		</nav>
-
-	<?php } ?>
-
-
-	<?php if($_SESSION['user_type'] == "producer") { ?>
-
-		<nav class="navbar navbar-default">
-			<span>Company X</span> | 
-			<span>FAQ</span> | 
-			<span><a href="/campaigns">Campaigns</a></span> | 
-			<a href="create-campaign">Create Campaign</a> | 
-			<span><a href="/campaign-requests">Campaign Requests</a></span> | 
-			<span><a href="/campaign-requests">Manage Account</a></span> | 
-			<span><a href="/logout">Logout</a></span>
-		</nav>
-
-	<?php } ?>
-
-<?php } ?>
-
+<div class="container-fluid text-center bg-grey">
