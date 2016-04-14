@@ -48,7 +48,7 @@
         }
 
     } else {
-        echo "No capaigns found";
+        echo "No campaigns found";
     }
     ?>
 

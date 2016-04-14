@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `social_monitization` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `social_monitization`;
+CREATE DATABASE  IF NOT EXISTS `social_monitiztion` /*!40100 DEFAULT CHARACTER SET big5 */;
+USE `social_monitiztion`;
 -- MySQL dump 10.13  Distrib 5.5.47, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: social_monitization
+-- Host: 127.0.0.1    Database: social_monitiztion
 -- ------------------------------------------------------
 -- Server version	5.5.47-0ubuntu0.14.04.1
 
@@ -34,17 +34,17 @@ CREATE TABLE `accounts` (
   KEY `fk_account_2_idx` (`campaign_id`),
   CONSTRAINT `fk_account_1` FOREIGN KEY (`id_producer`) REFERENCES `producers` (`id_producer`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_account_2` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`campaign_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `calculations`
+-- Table structure for table `calculation`
 --
 
-DROP TABLE IF EXISTS `calculations`;
+DROP TABLE IF EXISTS `calculation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `calculations` (
+CREATE TABLE `calculation` (
   `calculation_id` int(11) NOT NULL AUTO_INCREMENT,
   `tag_id` int(11) DEFAULT NULL,
   `cpm` int(11) DEFAULT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE `calculations` (
   PRIMARY KEY (`calculation_id`),
   KEY `fk_calculation_1_idx` (`campaign_id`),
   CONSTRAINT `fk_calculation_1` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`campaign_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,7 +71,7 @@ CREATE TABLE `campaign_responses` (
   PRIMARY KEY (`campaign_response_id`),
   KEY `fk_campaign_response_1_idx` (`campaign_id`),
   CONSTRAINT `fk_campaign_response_1` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`campaign_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,6 +83,7 @@ DROP TABLE IF EXISTS `campaigns`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `campaigns` (
   `campaign_id` int(11) NOT NULL AUTO_INCREMENT,
+  `campaign_name` varchar(255) DEFAULT NULL,
   `budget` float DEFAULT NULL,
   `billing_approved` enum('Y','N') DEFAULT NULL,
   `estimate` float DEFAULT NULL,
@@ -90,9 +91,41 @@ CREATE TABLE `campaigns` (
   `end_date` datetime DEFAULT NULL,
   `approved` enum('Y','N') DEFAULT NULL,
   `screen_shot` varchar(45) DEFAULT NULL,
-  `campaign_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`campaign_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=big5;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `donation_type`
+--
+
+DROP TABLE IF EXISTS `donation_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `donation_type` (
+  `donationtype_id` int(11) NOT NULL AUTO_INCREMENT,
+  `donation_name` varchar(45) NOT NULL,
+  PRIMARY KEY (`donationtype_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=big5;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `donations`
+--
+
+DROP TABLE IF EXISTS `donations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `donations` (
+  `donation_id` int(11) NOT NULL AUTO_INCREMENT,
+  `campaign_id` int(11) DEFAULT NULL,
+  `donationtype_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`donation_id`),
+  KEY `campaign_id_idx` (`campaign_id`),
+  KEY `fk_donationtype_id_idx` (`donationtype_id`),
+  CONSTRAINT `campaign_id` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`campaign_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_donationtype_id` FOREIGN KEY (`donationtype_id`) REFERENCES `donation_type` (`donationtype_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -110,17 +143,17 @@ CREATE TABLE `escrow` (
   PRIMARY KEY (`escrow_id`),
   KEY `fk_escrow_1_idx` (`campaign_id`),
   CONSTRAINT `fk_escrow_1` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`campaign_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `follower_counts`
+-- Table structure for table `follower_count`
 --
 
-DROP TABLE IF EXISTS `follower_counts`;
+DROP TABLE IF EXISTS `follower_count`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `follower_counts` (
+CREATE TABLE `follower_count` (
   `follower_count_id` int(11) NOT NULL AUTO_INCREMENT,
   `source_id` int(11) DEFAULT NULL,
   `count` int(11) DEFAULT NULL,
@@ -128,7 +161,7 @@ CREATE TABLE `follower_counts` (
   PRIMARY KEY (`follower_count_id`),
   KEY `fk_follower_count_1_idx` (`supporter_id`),
   CONSTRAINT `fk_follower_count_1` FOREIGN KEY (`supporter_id`) REFERENCES `supporters` (`id_supporter`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,7 +178,21 @@ CREATE TABLE `links` (
   PRIMARY KEY (`links_id`),
   KEY `fk_links_1_idx` (`campaign_id`),
   CONSTRAINT `fk_links_1` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`campaign_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=big5;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `org class`
+--
+
+DROP TABLE IF EXISTS `org class`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `org class` (
+  `orgclass_id` int(11) NOT NULL AUTO_INCREMENT,
+  `classname` varchar(45) NOT NULL,
+  PRIMARY KEY (`orgclass_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -161,7 +208,7 @@ CREATE TABLE `producer_account` (
   `account_name` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`producer_id`),
   CONSTRAINT `fk_producer_account_id` FOREIGN KEY (`producer_id`) REFERENCES `producers` (`id_producer`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,15 +220,56 @@ DROP TABLE IF EXISTS `producers`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `producers` (
   `id_producer` int(11) NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(45) DEFAULT NULL,
-  `last_name` varchar(45) DEFAULT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
   `org_name` varchar(255) DEFAULT NULL,
   `organization_url` varchar(255) DEFAULT NULL,
   `email_address` varchar(255) DEFAULT NULL,
-  `user_name` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id_producer`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+  `user_name` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `description` blob,
+  `country` varchar(255) DEFAULT NULL,
+  `orgclass_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_producer`),
+  KEY `orgclass_id_idx` (`orgclass_id`),
+  CONSTRAINT `orgclass_id` FOREIGN KEY (`orgclass_id`) REFERENCES `org class` (`orgclass_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=big5;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `reward`
+--
+
+DROP TABLE IF EXISTS `reward`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `reward` (
+  `reward_id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) DEFAULT NULL,
+  `details` varchar(255) DEFAULT NULL,
+  `expiration_date` datetime DEFAULT NULL,
+  `quantity_remaining` int(11) DEFAULT NULL,
+  `point_value` int(11) DEFAULT NULL,
+  PRIMARY KEY (`reward_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=big5;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `reward_claimed`
+--
+
+DROP TABLE IF EXISTS `reward_claimed`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `reward_claimed` (
+  `id_supporter` int(11) NOT NULL,
+  `reward_id` int(11) NOT NULL,
+  `date_claimed` datetime DEFAULT NULL,
+  PRIMARY KEY (`id_supporter`,`reward_id`),
+  KEY `fk_reward_claimed_reward1_idx` (`reward_id`),
+  CONSTRAINT `id_supporter` FOREIGN KEY (`id_supporter`) REFERENCES `supporters` (`id_supporter`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `reward_id` FOREIGN KEY (`reward_id`) REFERENCES `reward` (`reward_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -200,7 +288,7 @@ CREATE TABLE `screen_shots` (
   PRIMARY KEY (`screen_shots_id`),
   KEY `fk_screen_shots_1_idx` (`campaign_id`),
   CONSTRAINT `fk_screen_shots_1` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`campaign_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -211,28 +299,27 @@ DROP TABLE IF EXISTS `source`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `source` (
-  `id_source` int(11) NOT NULL,
-  `name` varchar(45) DEFAULT NULL,
-  `url` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id_source`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `source_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`source_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `supporter_interests`
+-- Table structure for table `supporter_interest`
 --
 
-DROP TABLE IF EXISTS `supporter_interests`;
+DROP TABLE IF EXISTS `supporter_interest`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `supporter_interests` (
+CREATE TABLE `supporter_interest` (
   `supporter_interest_if` int(11) NOT NULL AUTO_INCREMENT,
   `supporter_id` int(11) DEFAULT NULL,
   `id_interest` int(11) DEFAULT NULL,
   PRIMARY KEY (`supporter_interest_if`),
   KEY `fk_supporter_interest_1_idx` (`supporter_id`),
   CONSTRAINT `fk_supporter_interest_1` FOREIGN KEY (`supporter_id`) REFERENCES `supporters` (`id_supporter`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -244,15 +331,15 @@ DROP TABLE IF EXISTS `supporters`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `supporters` (
   `id_supporter` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
   `id_follower_count` int(11) DEFAULT NULL,
   `interests` varchar(45) DEFAULT NULL,
   `email_address` varchar(45) DEFAULT NULL,
   `approved` enum('Y','N') DEFAULT NULL,
-  `password` varchar(45) NOT NULL,
   `country` varchar(255) DEFAULT NULL,
-  `user_name` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_supporter`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -266,7 +353,7 @@ CREATE TABLE `tags` (
   `id_tag` int(11) NOT NULL,
   `tag_name` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_tag`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -282,7 +369,7 @@ CREATE TABLE `targeting` (
   PRIMARY KEY (`tag_id`),
   KEY `fk_targeting_1_idx` (`campaign_id`),
   CONSTRAINT `fk_targeting_1` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`campaign_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -294,4 +381,4 @@ CREATE TABLE `targeting` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-11 13:51:14
+-- Dump completed on 2016-04-14 15:05:23

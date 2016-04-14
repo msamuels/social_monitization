@@ -49,9 +49,11 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
             'screen_shot' => $req['screen_shot']));
 
     // create a new account with the campaign id
-    // @TODO remove hard-coded producer id
+    $email = $app->view()->getData('user');
+    $producer = Producer::find_by_email_address($email);
+
     $account = Account::create(
-        array('account_name'=>'test','id_producer'=>1, 'campaign_id'=>$campaign->campaign_id));
+        array('account_name'=>'test','id_producer'=>$producer->id_producer, 'campaign_id'=>$campaign->campaign_id));
 
     $app->redirect('/campaigns');
 });
