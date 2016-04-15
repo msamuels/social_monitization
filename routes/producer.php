@@ -71,12 +71,16 @@ $app->get('/campaigns/:id', $authenticate($app), function ($id) use ($app){
 # List all campaigns
 $app->get('/campaigns', $authenticate($app), function () use ($app){
 
+    $email = $app->view()->getData('user');
+    $producer = Producer::find_by_email_address($email);
+
     # list campaigns
-    $query = "SELECT c.*, count(cr.supporter_id) as num_supporters
-	FROM campaigns c
-	LEFT JOIN campaign_responses cr
-	ON c.campaign_id = cr.campaign_id
-	GROUP by cr.campaign_id";
+    $query = "SELECT  c.*, (SELECT Count(cr.supporter_id) FROM campaign_responses cr
+        WHERE c.campaign_id = cr.campaign_id) as num_supporters
+        FROM campaigns c
+        LEFT JOIN accounts ac ON ac.campaign_id = c.campaign_id
+        WHERE ac.id_producer = ".$producer->id_producer."
+        ORDER BY campaign_id DESC";
 
     // @TODO filter by the producer_id
     $campaigns = Campaign::find_by_sql($query);
