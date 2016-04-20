@@ -43,9 +43,9 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $req = $app->request->post();
 
     $campaign = Campaign::create(
-        array('campaign_name'=>$req['campaign_name'], 'budget' => $req['budget'], 'billing_approved' => $req['billing_approved'], 
+        array('campaign_name'=>$req['campaign_name'], 'budget' => $req['budget'],
             'estimate' => $req['estimate'], 'start_date' => $req['start_date'], 
-            'end_date' => $req['end_date'], 'approved' => $req['approved'], 
+            'end_date' => $req['end_date'],
             'screen_shot' => $req['screen_shot']));
 
     // create a new account with the campaign id

@@ -16,13 +16,6 @@
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2">Billing Approved:</label>
-    <div class="col-sm-10">
-    <input type="text" name="billing_approved" />
-    </div>
-  </div>
-
-  <div class="form-group">
     <label class="control-label col-sm-2">Estimate:</label>
     <div class="col-sm-10">
     <input type="text" name="estimate" />
@@ -40,13 +33,6 @@
     <label class="control-label col-sm-2">End Date:</label>
     <div class="col-sm-10">
     <input type="text" name="end_date" />
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label class="control-label col-sm-2">Approved:</label>
-    <div class="col-sm-10">
-    <input type="text" name="approved" />
     </div>
   </div>
 
