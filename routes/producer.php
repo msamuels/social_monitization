@@ -15,7 +15,7 @@ $app->post('/save-producer', function () use ($app){
        $producer = Producer::create(
            array('first_name' => $req['first_name'], 'last_name' => $req['last_name'], 'user_name' => $req['user_name'],
 		'password' => $req['password'], 'org_name'=>$req['org_name'],'organization_url'=>$req['organization_url'],
-               'email_address'=>$req['email_address']/*, 'description'=>$req['description'], 'country'=>$req['country']*/));
+               'email_address'=>$req['email_address'], 'description'=>$req['description'], 'country'=>$req['country']));
 
         $app->redirect('/producer');
 
@@ -118,3 +118,23 @@ $app->get('/campaign-detail', $authenticate($app), function () use ($app){
 });
 
 
+# Approve campaign
+$app->put('/approve-campaign', $authenticate($app), function () use ($app){
+
+    $req = $app->request->put();
+
+    $campaign = Campaign::update(
+        array('campaign_id'=>$req['campaign_id'], 'approved'=>'Y'));
+
+    $app->redirect('/campaigns-performance', array('campaign' => $campaign));
+});
+
+
+# Show campaign performance of approved campaign
+$app->get('/campaigns-performance', $authenticate($app), function () use ($app){
+
+    # show campaign
+    $campaigns = Campaign::find('all');
+
+    $app->render('campaign-performance.php', array('campaigns' => $campaigns));
+});

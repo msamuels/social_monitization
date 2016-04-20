@@ -1,0 +1,1 @@
+<?php echo $campaign->campaign_name; ?>
