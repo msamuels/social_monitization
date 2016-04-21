@@ -55,6 +55,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $account = Account::create(
         array('account_name'=>'test','id_producer'=>$producer->id_producer, 'campaign_id'=>$campaign->campaign_id));
 
+    $app->flash('info', 'Campaign Saved');
     $app->redirect('/campaigns');
 });
 
@@ -72,6 +73,13 @@ $app->get('/campaigns/:id', $authenticate($app), function ($id) use ($app){
 $app->get('/campaigns', $authenticate($app), function () use ($app){
 
     $email = $app->view()->getData('user');
+    $flash = $app->view()->getData('flash');
+
+    $info = '';
+    if (isset($flash['info'])) {
+        $info = $flash['info'];
+    }
+
     $producer = Producer::find_by_email_address($email);
 
     # list campaigns
@@ -84,7 +92,7 @@ $app->get('/campaigns', $authenticate($app), function () use ($app){
 
     // @TODO filter by the producer_id
     $campaigns = Campaign::find_by_sql($query);
-    $app->render('list-campaigns.php', array('campaigns' => $campaigns));
+    $app->render('list-campaigns.php', array('campaigns' => $campaigns, 'info' => $info));
 });
 
 # approve campaign

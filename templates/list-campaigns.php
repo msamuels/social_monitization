@@ -1,5 +1,5 @@
 <H1>Campaigns</H1>
-
+<?php echo $info; ?>
 <table border="1px solid grey">
 <tr>
     <td>Campaign Name </td>
