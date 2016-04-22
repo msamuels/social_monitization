@@ -1,6 +1,10 @@
 <H1>Campaigns</H1>
-<?php echo $info; ?>
-<table border="1px solid grey">
+
+<?php if(isset($success_info)){ ?>
+    <div class="alert alert-success"><?php echo $success_info; ?></div>
+<?php } ?>
+
+<table border="1px solid grey;">
 <tr>
     <td>Campaign Name </td>
     <td>Producer </td>
@@ -26,7 +30,7 @@ foreach($campaigns as $campaign){
 
         <td>$<?php echo $campaign->budget; ?></td>
 
-       <td><?php echo $campaign->start_date. '/'.$campaign->end_date; ?></td>
+       <td><?php echo date_format($campaign->start_date, 'Y-m-d '). ' - '.date_format($campaign->end_date, 'Y-m-d '); ?></td>
 
         <td> <?php echo $campaign->num_supporters; ?> </td>
 

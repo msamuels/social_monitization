@@ -1,3 +1,3 @@
-<h2>You have logged out.</h2>
+<div class="alert alert-success">You have logged out.</div>
 
 <p><a href="/">Back Home</a></p>

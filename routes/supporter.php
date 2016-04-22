@@ -23,6 +23,8 @@ $app->post('/save-supporter', function () use ($app){
                'interests'=>$req['interests'],'id_follower_count'=>$req['followers_fb'] ,'country'=>$req['country']
           ));
 
+        $app->flash('success_info', 'Supporter Saved');
+
         $app->redirect('/supporters');
 
     }
@@ -33,7 +35,15 @@ $app->post('/save-supporter', function () use ($app){
 $app->get('/supporters', $authenticate($app), function () use ($app){
     # list supporters
     $supporters = Supporter::find('all');
-    $app->render('list-supporters.php', array('supporters' => $supporters));
+
+    $flash = $app->view()->getData('flash');
+
+    $success_info = '';
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
+    }
+
+    $app->render('list-supporters.php', array('supporters' => $supporters, 'success_info' => $success_info));
 });
 
 
@@ -42,17 +52,24 @@ $app->get('/supporter/campaigns', $authenticate($app), function () use($app) {
     # list supported campaigns
     $email = $app->view()->getData('user');
     $supporter = Supporter::find_by_email_address($email);
+    $flash = $app->view()->getData('flash');
 
     $supportedCampaigns = Campaign_response::find('all',
 	 array('conditions' => array('supporter_id in (?)', array($supporter->id_supporter))));
 
     // grab the associated campaigns
     foreach($supportedCampaigns as $supportedCampaign) {
-	$campaign = Campaign::find($supportedCampaign->campaign_id);
-	$supportedCampaign->setCampaign($campaign);
+        $campaign = Campaign::find($supportedCampaign->campaign_id);
+        $supportedCampaign->setCampaign($campaign);
     }
 
-    $app->render('supported-campaigns.php', array('supported_campaigns' => $supportedCampaigns));
+    $success_info = '';
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
+    }
+
+    $app->render('supported-campaigns.php', array('supported_campaigns' => $supportedCampaigns,
+        'success_info' => $success_info));
 });
 
 
@@ -81,7 +98,7 @@ $app->get('/supporter/campaigns/pending', $authenticate($app), function () use (
 
     # list campaigns
     if (count($ar_campaigns) == 0) {
-        // if they aren't supported any campaigns return them all
+        // if they aren't supporting any campaigns return them all
         $campaigns = Campaign::find('all');
     } else {
         $campaigns = Campaign::find('all', array('conditions' => array('campaign_id NOT IN (?)', $ar_campaigns)));
@@ -98,6 +115,8 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
         $req = $app->request->post();
         $campaignSupport = Campaign_response::create(
             array('campaign_id' => $req['campaign_id'], 'supporter_id' => $req['supporter_id']));
+
+        $app->flash('success_info', 'You are now supporting a new campaign');
 
         $app->redirect('/supporter/campaigns');
 

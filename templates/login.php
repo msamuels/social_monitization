@@ -1,15 +1,15 @@
 <H1>Login </H1>
 
 <?php if(!empty($email_error)){ ?>
-    <p class="error"><?php echo $email_error; ?></p>
+    <div class="alert alert-danger"><?php echo $email_error; ?></div>
 <?php } ?>
 
 <?php if(!empty($password_error)){ ?>
-    <p class="error"><?php echo $password_error; ?></p>
+    <div class="alert alert-danger"><?php echo $password_error; ?></div>
 <?php } ?>
 
 <?php if(!empty($error)){ ?>
-    <p class="error"><?php echo $error; ?></p>
+    <div class="alert alert-danger"><?php echo $error; ?></div>
 <?php } ?>
 
 <form action="/login" method="POST">

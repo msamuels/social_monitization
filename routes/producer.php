@@ -17,6 +17,8 @@ $app->post('/save-producer', function () use ($app){
 		'password' => $req['password'], 'org_name'=>$req['org_name'],'organization_url'=>$req['organization_url'],
                'email_address'=>$req['email_address'], 'description'=>$req['description'], 'country'=>$req['country']));
 
+        $app->flash('success_info', 'Producer Saved');
+
         $app->redirect('/producer');
 
     }
@@ -27,7 +29,15 @@ $app->post('/save-producer', function () use ($app){
 $app->get('/producer', function () use ($app){
     # list producers
     $producers = Producer::find('all');
-    $app->render('list-producers.php', array('producers' => $producers));
+
+    $flash = $app->view()->getData('flash');
+
+    $success_info = '';
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
+    }
+
+    $app->render('list-producers.php', array('producers' => $producers, 'success_info' => $success_info));
 });
 
 
@@ -55,7 +65,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $account = Account::create(
         array('account_name'=>'test','id_producer'=>$producer->id_producer, 'campaign_id'=>$campaign->campaign_id));
 
-    $app->flash('info', 'Campaign Saved');
+    $app->flash('success_info', 'Campaign Saved');
     $app->redirect('/campaigns');
 });
 
@@ -75,9 +85,9 @@ $app->get('/campaigns', $authenticate($app), function () use ($app){
     $email = $app->view()->getData('user');
     $flash = $app->view()->getData('flash');
 
-    $info = '';
-    if (isset($flash['info'])) {
-        $info = $flash['info'];
+    $success_info = '';
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
     }
 
     $producer = Producer::find_by_email_address($email);
@@ -92,7 +102,7 @@ $app->get('/campaigns', $authenticate($app), function () use ($app){
 
     // @TODO filter by the producer_id
     $campaigns = Campaign::find_by_sql($query);
-    $app->render('list-campaigns.php', array('campaigns' => $campaigns, 'info' => $info));
+    $app->render('list-campaigns.php', array('campaigns' => $campaigns, 'success_info' => $success_info));
 });
 
 # approve campaign
