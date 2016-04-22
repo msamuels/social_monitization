@@ -137,12 +137,16 @@ $app->get('/campaign-detail', $authenticate($app), function () use ($app){
 
 
 # Approve campaign
-$app->put('/approve-campaign', $authenticate($app), function () use ($app){
+$app->post('/approve-campaign', $authenticate($app), function () use ($app){
 
-    $req = $app->request->put();
+    $req = $app->request->post();
 
-    $campaign = Campaign::update(
-        array('campaign_id'=>$req['campaign_id'], 'approved'=>'Y'));
+    $campaign = Campaign::find($req['campaign_id']);
+
+    $campaign->update_attributes(
+        array('approved'=>'Y', 'campaign_id'=>$req['campaign_id']));
+
+    $app->flash('success_info', 'Campaign Approved');
 
     $app->redirect('/campaigns-performance', array('campaign' => $campaign));
 });
@@ -152,7 +156,15 @@ $app->put('/approve-campaign', $authenticate($app), function () use ($app){
 $app->get('/campaigns-performance', $authenticate($app), function () use ($app){
 
     # show campaign
-    $campaigns = Campaign::find('all');
+    // @TODO remove hard-coded campaign id
+    $campaign = Campaign::find(7);
 
-    $app->render('campaign-performance.php', array('campaigns' => $campaigns));
+    $flash = $app->view()->getData('flash');
+
+    $success_info = '';
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
+    }
+
+    $app->render('campaign-performance.php', array('campaign' => $campaign, 'success_info' => $success_info));
 });
