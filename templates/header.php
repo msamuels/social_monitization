@@ -38,8 +38,8 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/get-started/supporter/login">get started</a></li>
 				<li><a href="/login">Login</a></li>
-				<li><a href="#services">Contact Us</a></li>
 				<li><a href="/create-producer">Producer Register</a></li>
 				<li><a href="/get-started/supporter/register">Supporter Register</a></li>
 			</ul>

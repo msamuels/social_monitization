@@ -1,9 +1,5 @@
 <?php
 
-$app->get('/get-started/supporter/login', function () {
-    echo "Get Started";
-});
-
 # Register suppporter
 $app->get('/get-started/supporter/register', function() use($app) {
     //TODO only find one suporter by login

@@ -36,6 +36,11 @@ $app->get('/get-started', function () {
 
 
 #Login Stuff
+
+include "../routes/frontpage.php";
+
+#Login Stuff
+
 include "../routes/auth.php";
 
 #Supporter stuff
