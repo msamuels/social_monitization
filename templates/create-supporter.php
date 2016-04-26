@@ -1,5 +1,10 @@
 <H1>Create Supporter Account: </H1>
 
+<?php if(isset($success_info)){ ?>
+  <div class="alert alert-success"><?php echo $success_info; ?></div>
+<?php } ?>
+
+
 <form action="/save-supporter" method="POST">
   <label>Username:</label> 
   <input type="text" name="username" />
@@ -17,15 +22,21 @@
   <input type="text" name="email_address" />
   <br />
 
-  <label>Interests:</label> 
-  <input type="text" name="interests" />
+  <label>Interests:</label>
+    <SELECT NAME="interests" MULTIPLE SIZE=5>
+      <OPTION VALUE="sports">sports
+      <OPTION VALUE="music">music
+      <OPTION VALUE="outdoors">onions
+      <OPTION VALUE="culture">tomatoes
+      <OPTION VALUE="religion">olives
+    </SELECT>
   <br />
 
   <label># of FB followers:</label> 
   <input type="text" name="followers_fb" />
   <br />
 
-  Location:   Country: <select name="country">
+  Location: <select name="country">
     <option value="Afghanistan">Afghanistan</option>
     <option value="Albania">Albania</option>
     <option value="Algeria">Algeria</option>
@@ -267,7 +278,7 @@
     <option value="Zimbabwe">Zimbabwe</option>
 </select>
     <br />
-    
+
   <button class="btn btn-primary" type="submit" >Submit</button>
 
 <br />

@@ -11,9 +11,18 @@ $app->post('/save-supporter', function () use ($app){
 
     if ($app->request->getMethod() == 'POST') {
 
+        $req = $app->request->post();
+
        // @TODO check if email address already in system before saving
+        $supporter = Supporter::find_by_email_address($req['email_address']);
+
+        if (count($supporter) > 0) {
+            $app->flash('success_info', 'Email already exists');
+
+            $app->redirect('/get-started/supporter/register');
+        }
+
        // @TODO id_follower_count is reference to follower_count table. Save to that instead
-       $req = $app->request->post();
        $supporter = Supporter::create(
            array('user_name' => $req['username'], 'password' => $req['password'],'email_address'=>$req['email_address'],
                'interests'=>$req['interests'],'id_follower_count'=>$req['followers_fb'] ,'country'=>$req['country']
