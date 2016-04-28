@@ -24,7 +24,7 @@
 
   <div class="form-group">
     <label class="control-label col-sm-2">Start Date:</label>
-    <div class="col-sm-10">
+    <div class="col-sm-10">c
     <input type="text" name="start_date" />
     </div>
   </div>

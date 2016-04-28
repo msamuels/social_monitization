@@ -171,3 +171,16 @@ $app->get('/campaigns-performance', $authenticate($app), function () use ($app){
 
     $app->render('campaign-performance.php', array('campaign' => $campaign, 'success_info' => $success_info));
 });
+
+# create-reward
+$app->get('/create-reward', $authenticate($app), function () use ($app){
+
+    $flash = $app->view()->getData('flash');
+
+    $success_info = '';
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
+    }
+
+    $app->render('create-reward.php', array('success_info' => $success_info));
+});
