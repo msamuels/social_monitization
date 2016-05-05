@@ -184,3 +184,21 @@ $app->get('/create-reward', $authenticate($app), function () use ($app){
 
     $app->render('create-reward.php', array('success_info' => $success_info));
 });
+
+# Producer save campaign
+$app->post('/save-reward', $authenticate($app), function () use ($app){
+
+    $req = $app->request->post();
+
+    // handle uploaded file
+    // $upload = new \MyNamespace\Upload($target_path, $destination, $tmp_dir);
+
+    // @TODO remove the hard-coded campaign id. Commit updated schema
+    $reward = Reward::create(
+        array('campaign_id'=>2,'image'=>$req['image'], 'details' => $req['details'],
+            'expiration_date' => $req['expiration_date'], 'quantity_remaining' => $req['quantity_remaining'], 
+            'point_value' => $req['point_value']));
+
+    $app->flash('success_info', 'Reward Saved');
+    $app->redirect('/campaigns');
+});

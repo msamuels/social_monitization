@@ -4,5 +4,10 @@
         "php": ">=5.4",
         "php-activerecord/php-activerecord":">=1.1.2",
         "twitter/bootstrap": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "MyNamespace\\": "lib/"
+        }
     }
 }

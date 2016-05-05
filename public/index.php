@@ -25,16 +25,6 @@ require 'hooks.php';
 
 $app->setName('Social Monitization');
 
-$app->get('/', function () {
-    //phpinfo();
-    echo "Hello World";
-});
-
-$app->get('/get-started', function () {
-    echo "Get Started";
-});
-
-
 #Login Stuff
 
 include "../routes/frontpage.php";

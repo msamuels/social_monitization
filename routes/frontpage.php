@@ -1,7 +1,7 @@
 <?php
 
 # Supporter Login page
-$app->get('/get-started/supporter/login', function () use ($app){
+$app->get('/', function () use ($app){
 
 	$options = array('limit' => 3);
     $campaigns = Campaign::all($options);
