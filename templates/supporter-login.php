@@ -1,6 +1,6 @@
 <div class="row"> 
-	<div class="col-xs-6 col-md-8">COL 1</div>
-	<div class="col-xs-6 col-md-4">
+	<!--<div class="col-xs-6 col-md-6">image off to the left</div>-->
+	<div class="col-xs-6 col-md-12">
 
 	<H2>Welcome </H2>
 
@@ -58,7 +58,7 @@
 </div>
 
 <H2>Campaigns</H2>
-<?php if (count($campaigns) > 0) { ?>
+
 <div class="row" style="margin-bottom: 15px; "> 
 	<div class="col-xs-6 col-md-4">
 		<p><?php echo $campaigns[0]->campaign_name; ?></p>
@@ -73,4 +73,4 @@
 		<button class="btn btn-primary">Support</button>
 	</div>
 </div>
-<?php } ?>
+
