@@ -11,7 +11,7 @@
     <div class="form-group">
         <label class="control-label col-sm-2">Quanity:</label>
         <div class="col-sm-10">
-            <input type="text" name="quanity" />
+            <input type="text" name="quantity_remaining" />
         </div>
     </div>
 
@@ -41,6 +41,13 @@
         <label class="control-label col-sm-2">URL:</label>
         <div class="col-sm-10">
             <input type="text" name="url" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">Point Value:</label>
+        <div class="col-sm-10">
+            <input type="text" name="point_value" />
         </div>
     </div>
 

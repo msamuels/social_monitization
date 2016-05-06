@@ -53,7 +53,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $req = $app->request->post();
 
     // handle uploaded file
-    $upload = new \MyNamespace\Upload($target_path, $destination, $tmp_dir);
+    // $upload = new \MyNamespace\Upload($target_path, $destination, $tmp_dir);
 
     $campaign = Campaign::create(
         array('campaign_name'=>$req['campaign_name'], 'budget' => $req['budget'],

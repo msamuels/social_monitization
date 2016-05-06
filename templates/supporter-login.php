@@ -58,6 +58,7 @@
 </div>
 
 <H2>Campaigns</H2>
+<?php if (count($campaigns) > 0) { ?>
 <div class="row" style="margin-bottom: 15px; "> 
 	<div class="col-xs-6 col-md-4">
 		<p><?php echo $campaigns[0]->campaign_name; ?></p>
@@ -72,4 +73,4 @@
 		<button class="btn btn-primary">Support</button>
 	</div>
 </div>
-
+<?php } ?>

@@ -24,7 +24,7 @@
 
   <div class="form-group">
     <label class="control-label col-sm-2">Start Date:</label>
-    <div class="col-sm-10">c
+    <div class="col-sm-10">
     <input type="text" name="start_date" />
     </div>
   </div>
@@ -62,6 +62,7 @@
     <li style="display: inline">Booth at Event</li>
   </ul>
 
-  <button class="btn btn-primary" type="submit" >Submit</button>
+  <button class="btn btn-primary" type="submit">Submit</button>
 
 </form>
+

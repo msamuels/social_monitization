@@ -20,32 +20,34 @@
 
 <?php
 
-foreach($campaigns as $campaign){
+if (count($campaigns) > 0) {
+	foreach($campaigns as $campaign){
 
-?>
-    <tr>
-        <td><a href="/campaign-detail?id=<?php echo $campaign->campaign_id; ?>"><?php echo $campaign->campaign_name; ?></a></td>
+	?>
+	    <tr>
+		<td><a href="/campaign-detail?id=<?php echo $campaign->campaign_id; ?>"><?php echo $campaign->campaign_name; ?></a></td>
 
-        <td> -- </td>
+		<td> -- </td>
 
-        <td>$<?php echo $campaign->budget; ?></td>
+		<td>$<?php echo $campaign->budget; ?></td>
 
-       <td><?php echo date_format($campaign->start_date, 'Y-m-d '). ' - '.date_format($campaign->end_date, 'Y-m-d '); ?></td>
+	       <td><?php echo date_format($campaign->start_date, 'Y-m-d '). ' - '.date_format($campaign->end_date, 'Y-m-d '); ?></td>
 
-        <td> <?php echo $campaign->num_supporters; ?> </td>
+		<td> <?php echo $campaign->num_supporters; ?> </td>
 
-        <td><?php echo $campaign->approved; ?></td>
+		<td><?php echo $campaign->approved; ?></td>
 
-        <td> -- </td>
+		<td> -- </td>
 
-        <td> -- </td>
+		<td> -- </td>
 
-        <td> -- </td>
+		<td> -- </td>
 
-        <td> -- </td>
-    </tr>
+		<td> -- </td>
+	    </tr>
 
-<?php
+	<?php
+	}
 }
 ?>
 
