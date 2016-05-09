@@ -57,6 +57,7 @@
 					<li><a href="/supporters">Supporters</a></li>
 					<li><a href="/supporter/campaigns">My Campaigns</a></li>
 					<li><a href="/supporter/campaigns/pending">Support Campaigns</a></li>
+					<li><a href="/rewards">Rewards</a></li>
 					<li><a href="/logout">Logout</a></li>
 				</ul>
 			</div>

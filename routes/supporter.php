@@ -128,6 +128,20 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
     }
 });
 
+# List rewards
+$app->get('/rewards', $authenticate($app), function () use ($app){
+
+    $rewards = Reward::find('all');
+
+    $flash = $app->view()->getData('flash');
+
+    $success_info = '';
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
+    }
+
+    $app->render('list-rewards.php', array('rewards' => $rewards, 'success_info' => $success_info));
+});
 
 $app->get('/supporter/manage-account', $authenticate($app), function () {
     echo "Get Started";
