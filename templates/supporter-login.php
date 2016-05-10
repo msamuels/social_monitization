@@ -42,14 +42,25 @@
 
 <div class="row"> 
 	<div class="col-xs-6 col-md-12" style="border: 1px solid grey; margin: 5px;">
-		Join our mailing list <input type="text"></input>
+		Join our mailing list <input type="text">
 	</div>
 </div>
 
-<div class="row"> 
-	<div class="col-xs-6 col-md-12" style="border: 1px solid grey; margin: 5px;">
-		<p><H2>How it works</H2></p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacinia accumsan tincidunt. Aenean viverra convallis tristique. In venenatis viverra neque, ac eleifend quam rutrum et. Integer sit amet commodo turpis. Donec orci neque, elementum ut lacinia eu, condimentum ut arcu. </p>
+<div class="row" id="how-it-works">
+	<p><H2>How it works</H2></p>
+	<div class="col-xs-4 col-sm-3 pull-left" class="how-it-works-steps">
+		<div class="circle pull-left"><span>1</span></div>
+		<div class="pull-left">Create an account</div>
+	</div>
+	<div class="col-xs-4 col-sm-3 pull-left" class="how-it-works-steps">
+		<div class="circle pull-left"><span>2</span></div>
+		<div class="pull-left">Create Campaign</div>
+	</div>
+
+
+	<div class="col-xs-4 col-sm-3" class="how-it-works-steps">
+		<div class="circle pull-left"><span>3</span></div>
+		<div class="pull-left">Supporters spread the word</div>
 	</div>
 </div>
 

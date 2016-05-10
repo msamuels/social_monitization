@@ -1,0 +1,38 @@
+.circle{
+    background: #d0d0d0;
+    border-radius: 50%;
+    text-align: center;
+    width: 28px;
+    height: 28px;
+    color: #525252;
+    line-height: 1.8;
+    margin-right: 15px;
+    min-height: 28px;
+    min-width: 28px;
+}
+
+#how-it-works{
+    height: 150px;
+    border: 1px solid grey;
+}
+
+.how-it-works-steps {
+    border: 1px solid grey;
+    margin: 5px;
+    height: 28px;
+    padding: 5px;
+}
+
+#navbar-fixed-bottom, .navbar-fixed-top {
+    position: relative;
+}
+
+.pull-left {
+    float: left;
+}
+
+.subnav{
+    border-top-color: #3c3c3c;
+}
+
+
