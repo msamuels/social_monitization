@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `social_monitiztion` /*!40100 DEFAULT CHARACTER SET big5 */;
-USE `social_monitiztion`;
+CREATE DATABASE  IF NOT EXISTS `social_monitization` /*!40100 DEFAULT CHARACTER SET big5 */;
+USE `social_monitization`;
 -- MySQL dump 10.13  Distrib 5.5.49, for debian-linux-gnu (x86_64)
 --
--- Host: 127.0.0.1    Database: social_monitiztion
+-- Host: 127.0.0.1    Database: social_monitization
 -- ------------------------------------------------------
 -- Server version	5.5.49-0ubuntu0.14.04.1
 
