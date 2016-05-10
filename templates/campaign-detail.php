@@ -5,6 +5,8 @@
 <p><img src="images/screenshots/<?php echo $campaign->screen_shot; ?>" /></p>
 
 <H3>Supporters: </H3>
+
+<div class="row" id="supporters-list">
 <ul style="border-color: #222222">
 	<?php
 	if (count($supporters) > 0) {
@@ -21,11 +23,15 @@
 	}
 	?>
 </ul>
+</div>
 
-<H2>Details</H2> 
-	Duration: <?php echo date_format($campaign->start_date, 'Y-m-d '); ?> - <?php echo date_format($campaign->end_date, 'Y-m-d '); ?>
+<div class="row">
+
+<H2>Details</H2>
+	<label>Duration:</label> <?php echo date_format($campaign->start_date, 'Y-m-d '); ?> -
+	<?php echo date_format($campaign->end_date, 'Y-m-d '); ?>
 <br />
-	Platforms:
+		<label>Platforms:</label>
 
 <H2>Impressions:</H2>
 <?php
@@ -38,7 +44,7 @@ if (count($supporters) > 0) {
 	}
 }
 ?>
-
+</div>
 <label>Estimated:</label> <input type="text" name="estimated_impression" value="<?php echo $campaign->estimate; ?>"/>
 <label>Actual:</label> <input type="text" name="actual_impression" value=""/>
 
