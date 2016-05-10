@@ -53,13 +53,15 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $req = $app->request->post();
 
     // handle uploaded file
-    // $upload = new \MyNamespace\Upload($target_path, $destination, $tmp_dir);
+    $upload = new \Wilsonshop\Utils\Upload('/var/www/html/social_monitization/public/images/screenshots', 'screen_shot');
+    // @TODO check the result message to see if the upload was successful
+    $result = $upload->uploadFile("Upload Succeeded","Upload failed");
 
     $campaign = Campaign::create(
         array('campaign_name'=>$req['campaign_name'], 'budget' => $req['budget'],
             'estimate' => $req['estimate'], 'start_date' => $req['start_date'], 
             'end_date' => $req['end_date'],
-            'screen_shot' => $req['screen_shot']));
+            'screen_shot' => $_FILES['screen_shot']['name']));
 
     // create a new account with the campaign id
     $email = $app->view()->getData('user');
@@ -127,8 +129,11 @@ $app->get('/campaign-detail', $authenticate($app), function () use ($app){
         $supporter_ids[] = $cs->supporter_id;
     }
 
-    $supporters = Supporter::find($supporter_ids);
-
+    if (count($supporter_ids) == 0) {
+        $supporters = array();
+    }else{
+        $supporters = Supporter::find($supporter_ids);
+    }
 
     if (count($supporters) == 1) {
         $supporters = array($supporters);
@@ -191,10 +196,13 @@ $app->post('/save-reward', $authenticate($app), function () use ($app){
     $req = $app->request->post();
 
     // handle uploaded file
-    // $upload = new \MyNamespace\Upload($target_path, $destination, $tmp_dir);
+    // @TODO move path to config file
+    $upload = new \Wilsonshop\Utils\Upload('/var/www/html/social_monitization/public/images/rewards', 'image');
+    // @TODO check the result message to see if the upload was successful
+    $result = $upload->uploadFile("Upload Succeeded","Upload failed");
 
     $reward = Reward::create(
-        array('reward_name'=>$req['reward_name'], 'image'=>$req['image'], 'details' => $req['details'],
+        array('reward_name'=>$req['reward_name'], 'image'=>$_FILES['image']['name'], 'details' => $req['details'],
             'expiration_date' => $req['expiration_date'], 'quantity_remaining' => $req['quantity_remaining'], 
             'point_value' => $req['point_value']));
 

@@ -2,25 +2,28 @@
 
 <H3><?php echo $campaign->campaign_name; ?></H3>
 
+<p><img src="images/screenshots/<?php echo $campaign->screen_shot; ?>" /></p>
+
 <H3>Supporters: </H3>
 <ul style="border-color: #222222">
 	<?php
+	if (count($supporters) > 0) {
+		foreach($supporters as $supporter){
 
-	foreach($supporters as $supporter){
+		?>
+			<li style="border: solid; border-color: #0f0f0f; margin-right: 2px; width:200px; float: left">
+				<?php echo $supporter->email_address; ?>
+				<?php echo $supporter->id_follower_count; ?>
+			</li>
 
-	?>
-		<li style="border: solid; border-color: #0f0f0f; margin-right: 2px; width:200px; float: left">
-			<?php echo $supporter->email_address; ?>
-			<?php echo $supporter->id_follower_count; ?>
-		</li>
-
-	<?php
+		<?php
+		}
 	}
 	?>
 </ul>
 
 <H2>Details</H2> 
-	Duration: <?php echo $campaign->start_date; ?> - <?php echo $campaign->end_date; ?>
+	Duration: <?php echo date_format($campaign->start_date, 'Y-m-d '); ?> - <?php echo date_format($campaign->end_date, 'Y-m-d '); ?>
 <br />
 	Platforms:
 
@@ -28,21 +31,22 @@
 <?php
 
 $i = 0;
-foreach($supporters as $supporter){
+if (count($supporters) > 0) {
+	foreach ($supporters as $supporter) {
 
-    $i += $supporter->id_follower_count;
+		$i += $supporter->id_follower_count;
+	}
 }
-
 ?>
 
-Estimated: <input type="text" name="estimated_impression" value="<?php echo $i; ?>"/>
-Actual: <input type="text" name="actual_impression" value=""/>
+<label>Estimated:</label> <input type="text" name="estimated_impression" value="<?php echo $campaign->estimate; ?>"/>
+<label>Actual:</label> <input type="text" name="actual_impression" value=""/>
 
 
 
 <H2>Cost: </H2>
-Estimated: <input type="text" name="estimated_impression" value="<?php echo $campaign->budget; ?>"/>
-Actual: <input type="text" name="actual_impression" value="<?php echo $campaign->budget; ?>"/>
+<label>Estimated:</label> <input type="text" name="estimated_impression" value="<?php echo $campaign->budget; ?>"/>
+<label>Actual:</label> <input type="text" name="actual_impression" value=""/>
 
 
 <H2>Final Bill: </H2>

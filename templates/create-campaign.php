@@ -1,6 +1,6 @@
 <H1>Create Campaign</H1>
 
-<form action="/save-campaign" method="POST" class="form-horizontal" role="form">
+<form action="/save-campaign"  enctype="multipart/form-data" method="POST" class="form-horizontal" role="form">
   <div class="form-group">
       <label class="control-label col-sm-2">Campaign Name:</label>
     <div class="col-sm-10">
@@ -16,7 +16,7 @@
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2">Estimate:</label>
+    <label class="control-label col-sm-2">Estimated Impressions:</label>
     <div class="col-sm-10">
     <input type="text" name="estimate" />
     </div>
@@ -36,10 +36,12 @@
     </div>
   </div>
 
+  <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+
   <div class="form-group">
     <label class="control-label col-sm-2">Image:</label>
     <div class="col-sm-10">
-    <input type="text" name="screen_shot" />
+    <input type="file" name="screen_shot" id="screen_shot" />
     </div>
   </div>
 
