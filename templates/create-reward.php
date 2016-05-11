@@ -1,6 +1,6 @@
 <H1>Campaign Setup</H1>
 <h2>Non-Profit Donation:Reward</h2>
-<form action="/save-reward" method="POST" class="form-horizontal" role="form">
+<form action="/save-reward"  enctype="multipart/form-data" method="POST" class="form-horizontal" role="form">
     <div class="form-group">
         <label class="control-label col-sm-2">Reward Name:</label>
         <div class="col-sm-10">
@@ -33,7 +33,7 @@
     <div class="form-group">
         <label class="control-label col-sm-2">Image:</label>
         <div class="col-sm-10">
-            <input type="text" name="image" />
+            <input type="file" name="image" id="image" />
         </div>
     </div>
 
