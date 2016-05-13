@@ -72,7 +72,7 @@
 
 <div class="row" style="margin-bottom: 15px; "> 
 	<div class="col-xs-6 col-md-4">
-		<p><img src=images/screenshots/"<?php echo $campaigns[0]->screen_shot; ?>" height="100" width="100" /></p>
+		<p><img src="images/screenshots/<?php echo $campaigns[0]->screen_shot; ?>" height="100" width="100" /></p>
 		<p><?php echo $campaigns[0]->campaign_name; ?></p>
 		<button class="btn btn-primary">Support</button>
 	</div>
