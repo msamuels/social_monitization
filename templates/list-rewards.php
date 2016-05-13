@@ -1,3 +1,6 @@
+My Points:
+<H1><?php echo $points_earned; ?></H1>
+
 <H1>Rewards</H1>
 
 <ul>

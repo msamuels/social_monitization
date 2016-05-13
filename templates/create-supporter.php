@@ -1,3 +1,5 @@
+<!-- @TODO remove margin-top -->
+<div style="margin-top: 200px">
 <H1>Create Supporter Account: </H1>
 
 <?php if(isset($success_info)){ ?>
@@ -285,3 +287,4 @@
     
   By clicking this form you agree to the Iliv8 terms and conditions.
 </form>
+</div>

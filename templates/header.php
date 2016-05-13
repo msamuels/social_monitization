@@ -20,6 +20,7 @@
 </head>
 
 <body>
+
 <nav class="navbar navbar-default navbar-fixed-top" style="clear:both">
 	<div class="container">
 		<div class="navbar-header">
@@ -79,4 +80,5 @@
 	<?php } ?>
 
 </nav>
+
 <div class="container-fluid text-center bg-grey">

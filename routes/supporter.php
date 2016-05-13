@@ -140,7 +140,17 @@ $app->get('/rewards', $authenticate($app), function () use ($app){
         $success_info = $flash['success_info'];
     }
 
-    $app->render('list-rewards.php', array('rewards' => $rewards, 'success_info' => $success_info));
+    # Campaigns supported
+    $email = $app->view()->getData('user');
+    $supporter = Supporter::find_by_email_address($email);
+
+    $supportedCampaigns = Campaign_response::find('all',
+        array('conditions' => array('supporter_id in (?)', array($supporter->id_supporter))));
+
+    $pointsEarned = count($supportedCampaigns) * 10;
+
+    $app->render('list-rewards.php', array('rewards' => $rewards, 'success_info' => $success_info,
+        'points_earned' => $pointsEarned));
 });
 
 $app->get('/supporter/manage-account', $authenticate($app), function () {
