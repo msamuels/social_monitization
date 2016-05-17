@@ -66,6 +66,9 @@ $app->post("/login", function () use ($app) {
 
 // present login screen to user
 $app->get("/login", function () use ($app) {
+
+   $configs = parse_ini_file('../config.ini');
+
    $flash = $app->view()->getData('flash');
    $error = '';	
    if (isset($flash['error'])) {
@@ -88,8 +91,21 @@ $app->get("/login", function () use ($app) {
    if (isset($flash['errors']['password'])) {
       $password_error = $flash['errors']['password'];
    }
+
+    $fb = new Facebook\Facebook([
+        'app_id' => $configs['fb_app_id'], // Replace {app-id} with your app id
+        'app_secret' => $configs['fb_app_secret'],
+        'default_graph_version' => 'v2.2',
+    ]);
+
+    $helper = $fb->getRedirectLoginHelper();
+
+    $permissions = ['email']; // Optional permissions
+    $loginUrl = $helper->getLoginUrl($configs['app_url'].'/fb-callback.php', $permissions);
+
    $app->render('login.php', array('error' => $error, 'email_value' => $email_value,
-      'email_error' => $email_error, 'password_error' => $password_error, 'urlRedirect' => $urlRedirect));
+      'email_error' => $email_error, 'password_error' => $password_error, 'urlRedirect' => $urlRedirect,
+       'fb_login_url' => $loginUrl));
 });
 
 // log user out

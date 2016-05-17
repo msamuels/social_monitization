@@ -5,3 +5,9 @@ mysql_dbname = REPLACE_ME
 
 ;directory of active record models
 model_dir = REPLACE_ME
+
+;Facebook
+fb_app_id =  REPLACE_ME
+fb_app_secret =  REPLACE_ME
+
+app_url = REPLACE_ME
