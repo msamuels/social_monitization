@@ -20,8 +20,8 @@
 </head>
 
 <body>
-
-<nav class="navbar navbar-default navbar-fixed-top" style="clear:both">
+<div style="clear:both">
+<nav class="navbar navbar-fixed-top" style="clear:both">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -29,14 +29,16 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/">Logo</a>
+			<a class="navbar-brand" href="/"><img src="iliv8-Logo2-PNG.png" /></a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="/get-started/supporter/login">get started</a></li>
-				<li><a href="/login">Login</a></li>
+				<li><a href="/">about us</a></li>
+				<li><a href="/">faq</a></li>
+				<li><a href="/login">log-in</a></li>
+				<li><a href="/">organizations</a></li>
 				<li><a href="/create-producer">Producer Register</a></li>
-				<li><a href="/get-started/supporter/register">Supporter Register</a></li>
 			</ul>
 		</div>
 	</div>
@@ -80,5 +82,6 @@
 	<?php } ?>
 
 </nav>
+</div>
 
 <div class="container-fluid text-center bg-grey">

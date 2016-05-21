@@ -1,19 +1,39 @@
+.support-btns{
+    background-color: orange;
+    color: white"
+}
+
 .circle{
     background: #d0d0d0;
     border-radius: 50%;
     text-align: center;
-    width: 28px;
-    height: 28px;
+    width: 48px;
+    height: 48px;
     color: #525252;
-    line-height: 1.8;
-    margin-right: 15px;
-    min-height: 28px;
-    min-width: 28px;
+    line-height: 3.4;
+    margin-left: 95px;
+    min-height: 70px;
+    min-width: 70px;
+    text-align: center;
+}
+
+.desc{
+    color: grey;
+}
+
+#get-started-banner{
+    background-color: blue; 
+    height: 180px;
+    padding-top: 20px;
+}
+
+H1{
+    color: grey;
 }
 
 #how-it-works{
     height: 150px;
-    border: 1px solid grey;
+    /*border: 1px solid grey;*/
 }
 
 .how-it-works-steps {
