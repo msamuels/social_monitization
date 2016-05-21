@@ -10,11 +10,12 @@
     width: 48px;
     height: 48px;
     color: #525252;
-    line-height: 3.4;
+    line-height: 2.4;
     margin-left: 95px;
     min-height: 70px;
     min-width: 70px;
     text-align: center;
+    font-size: 30px;
 }
 
 .desc{
@@ -22,7 +23,7 @@
 }
 
 #get-started-banner{
-    background-color: blue; 
+    background-color: #3CA6C9;
     height: 180px;
     padding-top: 20px;
 }

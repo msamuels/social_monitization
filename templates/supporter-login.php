@@ -1,5 +1,5 @@
 <div class="row" id="get-started-banner"> 
-    <H2 style="color: white">Get Rewarded for your support</H2>
+    <H2 style="color: white" id="call-out">Get Rewarded for <br />Your Support</H2>
     <p><a href="/get-started/supporter/register" class="btn support-btns">Get Started</a></p>
 </div>
 
