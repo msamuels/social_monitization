@@ -42,7 +42,7 @@ $app->get('/producer', function () use ($app){
 
 
 # Producer create campaign
-$app->get('/create-campaign', function () use ($app){
+$app->get('/create-campaign', $authenticate($app), function () use ($app){
     $app->render('create-campaign.php');
 });
 

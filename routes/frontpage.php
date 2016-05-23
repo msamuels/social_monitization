@@ -9,3 +9,9 @@ $app->get('/', function () use ($app){
     $app->render('supporter-login.php', array('campaigns'=>$campaigns));
 });
 
+# Organizations page
+$app->get('/organizations', function () use ($app){
+
+    $app->render('frontpage/organizations.php');
+});
+

@@ -20,7 +20,11 @@
 </head>
 
 <body>
-<div style="clear:both">
+
+
+<div class="container-fluid text-center bg-grey">
+
+<div style="clear:both" class="row">
 <nav class="navbar navbar-fixed-top" style="clear:both">
 	<div class="container">
 		<div class="navbar-header">
@@ -33,12 +37,11 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/get-started/supporter/login">get started</a></li>
+				<li><a href="/">get started</a></li>
 				<li><a href="/">about us</a></li>
 				<li><a href="/">faq</a></li>
 				<li><a href="/login">log-in</a></li>
-				<li><a href="/">organizations</a></li>
-				<li><a href="/create-producer">Producer Register</a></li>
+				<li><a href="/organizations">organizations</a></li>
 			</ul>
 		</div>
 	</div>
@@ -83,5 +86,3 @@
 
 </nav>
 </div>
-
-<div class="container-fluid text-center bg-grey">
