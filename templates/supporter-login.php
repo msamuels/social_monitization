@@ -10,14 +10,14 @@
 	<div class="col-xs-4 col-sm-1 pull-left" class="how-it-works-steps"></div>
 
 	<div class="col-xs-4 col-sm-3 pull-left" class="how-it-works-steps">
-		<div class="circle"><span>1</span></div>
+		<div><img class="icon" src="images/no1.png" /></div>
 		<div class="pull-left">
 			<p><H2>Organizations post campaign</H2></p>
 			<p class="desc">Producer posts promotional message to shareitcamp and supporters on platform are notified</p>
 		</div>
 	</div>
 	<div class="col-xs-4 col-sm-3 pull-left" class="how-it-works-steps">
-		<div class="circle pull-left"><span>2</span></div>
+		<div><img class="icon" src="images/no2.png" /></div>
 		<div class="pull-left">
 			<p><H2>You Receive Points</H2></p>
 			<p class="desc">You share the campaigns you like with your social network</p>
@@ -26,7 +26,7 @@
 
 
 	<div class="col-xs-4 col-sm-3" class="how-it-works-steps">
-		<div class="circle pull-left"><span>3</span></div>
+		<div><img class="icon" src="images/no3.png" /></div>
 		<div class="pull-left">
 			<p><H2>You Share It</H2></p>
 			<p class="desc">You share the campaigns you like with your social network</p>

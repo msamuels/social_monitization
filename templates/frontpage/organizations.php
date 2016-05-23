@@ -8,15 +8,15 @@
 <div class="row"><strong>Why use Shareitcamp?</strong></div>
 
 <div class="row">
-    <div class="col-xs-4" class="how-it-works-steps">Icon</div>
-    <div class="col-xs-8 col-sm-4 pull-left" class="how-it-works-steps">
-	<H3>Efficient Social Outreach</H3>
-        <p>Spend your time on more important things. We help to bring your supporters to your message. </p>
-    </div>
+    <p><img class="icon" src="images/hourglass.png" />
+
+	<strong>Efficient Social Outreach</strong><br />
+	Spend your time on more important things. We help to bring your supporters to your message. </p>
+
 </div>
 
 <div class="row">
-    <div class="col-xs-4" class="how-it-works-steps">Icon</div>
+    <div class="col-xs-4" class="how-it-works-steps"><img class="icon" src="images/handsup.png" /></div>
     <div class="col-xs-8 col-sm-4 pull-left" class="how-it-works-steps">
 	<H3>Engage your Supporters</H3>
         <p>Your supporters have been great for your brand. Here bring them on board as part of your 
@@ -26,7 +26,7 @@
 
 
 <div class="row">
-    <div class="col-xs-4" class="how-it-works-steps">Icon</div>
+    <div class="col-xs-4" class="how-it-works-steps"><img class="icon" src="images/reward.png" /></div>
     <div class="col-xs-8 col-sm-4 pull-left" class="how-it-works-steps">
 	<H3>We reward your Supporters</H3>
         <p>Your supporters earn points for each campaign they support. These can be redeemed for 
@@ -47,7 +47,7 @@
 	<div class="col-xs-4 col-sm-1 pull-left" class="how-it-works-steps"></div>
 
 	<div class="col-xs-4 col-sm-3 pull-left" class="how-it-works-steps">
-		<div class="circle"><span>1</span></div>
+		<div><img class="icon" src="images/no1.png" /></div>
 		<div class="pull-left">
 			<p><H2>Complete short form</H2></p>
 			<p class="desc">Give us a few details about the campaign you are promoting,
@@ -55,7 +55,7 @@
 		</div>
 	</div>
 	<div class="col-xs-4 col-sm-3 pull-left" class="how-it-works-steps">
-		<div class="circle pull-left"><span>2</span></div>
+		<div><img class="icon" src="images/no2.png" /></div>
 		<div class="pull-left">
 			<p><H2>Set a 'reply by date'</H2></p>
 			<p class="desc">Give supporters a deadline that they need to agree to support you campaign by.</p>
@@ -64,7 +64,7 @@
 
 
 	<div class="col-xs-4 col-sm-3" class="how-it-works-steps">
-		<div class="circle pull-left"><span>3</span></div>
+		<div><img class="icon" src="images/no3.png" /></div>
 		<div class="pull-left">
 			<p><H2>Supporters share your message</H2></p>
 			<p class="desc">Supporters agree to share your message with their social networks. </p>
