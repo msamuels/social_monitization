@@ -33,7 +33,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/"><img src="iliv8-Logo2-PNG.png" /></a>
+			<a class="navbar-brand" href="/"><img src="/iliv8-Logo2-PNG.png" /></a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav navbar-right">
@@ -54,7 +54,6 @@
 
 				<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/supporters">Supporters</a></li>
 					<li><a href="/supporter/campaigns">My Campaigns</a></li>
 					<li><a href="/supporter/campaigns/pending">Support Campaigns</a></li>
 					<li><a href="/rewards">Rewards</a></li>

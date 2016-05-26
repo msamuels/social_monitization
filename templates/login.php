@@ -29,7 +29,7 @@
     <br />
 
     <label>Password:</label> 
-    <input type="text" name="password" />
+    <input type="password" name="password" />
     <br />
 
     <button class="btn btn-primary" type="submit" >Submit</button>
