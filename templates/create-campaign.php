@@ -36,6 +36,8 @@
     </div>
   </div>
 
+ <textarea name="copy" rows="4" cols="50"></textarea> 
+
   <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
 
   <div class="form-group">
