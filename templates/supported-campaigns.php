@@ -27,7 +27,7 @@
 
         ?>
     <tr>
-        <?php echo '<td>'.$supported_campaign->campaign->campaign_name. '</td>'; ?>
+        <?php echo '<td><a href="/supporter/campaign/1">'.$supported_campaign->campaign->campaign_name. '</a></td>'; ?>
 
         <?php echo '<td> -- </td>'; ?>
 

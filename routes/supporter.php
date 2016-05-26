@@ -128,6 +128,60 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
     }
 });
 
+# show supported campaign individually
+$app->get('/supporter/campaign', $authenticate($app), function () use($app) {
+
+    # list supported campaigns
+    $email = $app->view()->getData('user');
+    $supporter = Supporter::find_by_email_address($email);
+    $flash = $app->view()->getData('flash');
+
+    $campaign = Campaign::find_by_id(1);
+
+    $app->render('supporter/supported-campaign.php', array('campaign' => $campaign));
+});
+
+$app->post('/save-post-to-fb', $authenticate($app), function () use ($app) {
+
+    if ($app->request->getMethod() == 'POST') {
+
+        $configs = parse_ini_file('../config.ini');
+
+        $req = $app->request->post();
+
+        $fb = new Facebook\Facebook([
+            'app_id' => $configs['fb_app_id'],
+            'app_secret' => $configs['fb_app_secret'],
+            'default_graph_version' => 'v2.2',
+        ]);
+
+        $linkData = [
+            'link' => 'http://www.example.com',
+            'message' => $req['campaign_id'],
+        ];
+
+        try {
+            // Returns a `Facebook\FacebookResponse` object
+            $response = $fb->post('/me/feed', $linkData, '{access-token}');
+        } catch(Facebook\Exceptions\FacebookResponseException $e) {
+            echo 'Graph returned an error: ' . $e->getMessage();
+            exit;
+        } catch(Facebook\Exceptions\FacebookSDKException $e) {
+            echo 'Facebook SDK returned an error: ' . $e->getMessage();
+            exit;
+        }
+
+        $graphNode = $response->getGraphNode();
+
+        echo 'Posted with id: ' . $graphNode['id'];
+
+        $app->flash('success_info', 'You are now supporting a new campaign');
+
+        $app->redirect('/supporter/campaigns');
+
+    }
+});
+
 # List rewards
 $app->get('/rewards', $authenticate($app), function () use ($app){
 
