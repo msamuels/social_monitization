@@ -9,7 +9,7 @@
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2">Budget:</label>
+    <label class="control-label col-sm-2">Budget(Optional):</label>
     <div class="col-sm-10">
     <input type="text" name="budget" />
     </div>
