@@ -61,6 +61,15 @@
     </div>
   </div>
 
+  <div class="form-group">
+    <label class="control-label col-sm-2">Platform:</label>
+    <div class="col-sm-10">
+	 <select name="platform" id="platform">
+	  <option value="facebook">Facebook</option>
+	</select> 
+    </div>
+  </div>
+
   <label>Targeting:</label>
   <SELECT NAME="interests" MULTIPLE SIZE=5>
     <OPTION VALUE="sports">sports

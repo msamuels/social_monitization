@@ -34,7 +34,7 @@ CREATE TABLE `accounts` (
   KEY `fk_account_2_idx` (`campaign_id`),
   CONSTRAINT `fk_account_1` FOREIGN KEY (`id_producer`) REFERENCES `producers` (`id_producer`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_account_2` FOREIGN KEY (`campaign_id`) REFERENCES `campaigns` (`campaign_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=big5;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -92,8 +92,10 @@ CREATE TABLE `campaigns` (
   `approved` enum('Y','N') DEFAULT NULL,
   `screen_shot` varchar(45) DEFAULT NULL,
   `copy` varchar(45) DEFAULT NULL,
+  `url` varchar(255) DEFAULT NULL,
+  `platform` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`campaign_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=big5;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=big5;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -383,4 +385,4 @@ CREATE TABLE `targeting` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-26  7:02:49
+-- Dump completed on 2016-05-26  7:24:12
