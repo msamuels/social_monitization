@@ -36,7 +36,14 @@
     </div>
   </div>
 
- <textarea name="copy" rows="4" cols="50"></textarea> 
+  <div class="form-group">
+    <label class="control-label col-sm-2">Copy:</label>
+    <div class="col-sm-10">
+        <textarea name="copy" rows="4" cols="50"></textarea>
+    </div>
+  </div>
+
+ 
 
   <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
 
@@ -44,6 +51,13 @@
     <label class="control-label col-sm-2">Image:</label>
     <div class="col-sm-10">
     <input type="file" name="screen_shot" id="screen_shot" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">Url:</label>
+    <div class="col-sm-10">
+    <input type="text" name="url" />
     </div>
   </div>
 

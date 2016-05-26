@@ -61,7 +61,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
         array('campaign_name'=>$req['campaign_name'], 'budget' => $req['budget'],
             'estimate' => $req['estimate'], 'start_date' => $req['start_date'], 
             'end_date' => $req['end_date'],'copy' => $req['copy'],
-            'screen_shot' => $_FILES['screen_shot']['name']));
+            'screen_shot' => $_FILES['screen_shot']['name'],'url' => $req['url']));
 
     // create a new account with the campaign id
     $email = $app->view()->getData('user');
