@@ -16,6 +16,7 @@
     <td>CPM </td>
     <td>Impression (Planned) </td>
     <td>Impression (Delivered) </td>
+    <td>Respond by date </td>
 </tr>
 
 <?php
@@ -36,6 +37,8 @@ if (count($campaigns) > 0) {
 		<td> <?php echo $campaign->num_supporters; ?> </td>
 
 		<td><?php echo $campaign->approved; ?></td>
+
+		<td> -- </td>
 
 		<td> -- </td>
 

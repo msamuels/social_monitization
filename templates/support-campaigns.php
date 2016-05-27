@@ -4,15 +4,16 @@
 
 <table border="1px solid grey">
     <tr>
-        <td>Campaign Name </td>
+        <td>Campaign</td>
         <td>Producer </td>
         <td>Budget </td>
         <td>Start/End Date </td>
-        <td># Supporters </td>
         <td>Creative </td>
         <td>CPM </td>
         <td>Impression (Planned) </td>
         <td>Impression (Delivered) </td>
+        <td>Respond needed by</td>
+        <td>Copy</td>
     <tr>
 
         <?php
@@ -21,15 +22,16 @@
 
             ?>
                 <tr>
-                    <td><a href="/campaings?id=<?php echo $campaign->campaign_id; ?>"><?php echo $campaign->campaign_name; ?></a></td>
+                    <td><a href="/campaings?id=<?php echo $campaign->campaign_id; ?>">
+			<?php echo $campaign->campaign_name; ?></a> <br />
+			<img src="images/screenshots/<?php echo $campaign->screen_shot; ?>" />
+		    </td>
 
                     <td> -- </td>
 
                     <td> -- </td>
 
-                    <td><?php echo $campaign->start_date. '/'.$campaign->end_date; ?></td>
-
-                    <td> -- </td>
+                    <td><?php echo date_format($campaign->start_date, 'Y-m-d '). '/'.date_format($campaign->end_date, 'Y-m-d '); ?></td>
 
                     <td>
                         <form action="/save-campaign-support" method="POST">
@@ -44,6 +46,10 @@
                     <td> -- </td>
 
                     <td> -- </td>
+
+                    <td> -- </td>
+
+		    <td> <?php echo $campaign->copy; ?> </td>
                 </tr>
 
         <?php
