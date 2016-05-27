@@ -13,6 +13,7 @@
         <td>Respond By Date </td>
         <td>Creative </td>
         <td>Points Earned</td>
+        <td>Points Earned</td>
     <tr>
 
         <?php
@@ -29,7 +30,12 @@
 
 	<td>--</td>
 
-
+        <td>
+		<form method="POST" action="/save-post-to-fb">
+			<input type="hidden" name="message" id="messgae" value="<?php echo $supported_campaign->campaign->campaign_name; ?>" />
+			<button class="btn btn-primary" type="submit" >Post to facebook</button>
+		</form>
+	</td>
     </tr>
 
     <?php

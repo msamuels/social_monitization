@@ -157,7 +157,7 @@ $app->post('/save-post-to-fb', $authenticate($app), function () use ($app) {
 
         $linkData = [
             'link' => 'http://www.example.com',
-            'message' => $req['campaign_id'],
+            'message' => $req['message'],
         ];
 
         try {
