@@ -6,14 +6,11 @@
     <tr>
         <td>Campaign</td>
         <td>Producer </td>
-        <td>Budget </td>
         <td>Start/End Date </td>
         <td>Creative </td>
-        <td>CPM </td>
-        <td>Impression (Planned) </td>
-        <td>Impression (Delivered) </td>
         <td>Respond needed by</td>
         <td>Copy</td>
+	<td>Url</td>
     <tr>
 
         <?php
@@ -27,10 +24,6 @@
 			<img src="images/screenshots/<?php echo $campaign->screen_shot; ?>" />
 		    </td>
 
-                    <td> -- </td>
-
-                    <td> -- </td>
-
                     <td><?php echo date_format($campaign->start_date, 'Y-m-d '). '/'.date_format($campaign->end_date, 'Y-m-d '); ?></td>
 
                     <td>
@@ -41,15 +34,15 @@
                         </form>
                     </td>
 
-                    <td> -- </td>
 
-                    <td> -- </td>
 
                     <td> -- </td>
 
                     <td> -- </td>
 
 		    <td> <?php echo $campaign->copy; ?> </td>
+
+		    <td> <?php echo $campaign->url; ?> </td>
                 </tr>
 
         <?php

@@ -10,15 +10,9 @@
 <table border="1px solid grey">
     <tr>
         <td>Campaign Name </td>
-        <td>Producer </td>
-        <td>Budget </td>
-        <td>Start/End Date </td>
-        <td># Supporters </td>
+        <td>Respond By Date </td>
         <td>Creative </td>
-        <td>Approve/Decline </td>
-        <td>CPM </td>
-        <td>Impression (Planned) </td>
-        <td>Impression (Delivered) </td>
+        <td>Points Earned</td>
     <tr>
 
         <?php
@@ -29,23 +23,13 @@
     <tr>
         <?php echo '<td><a href="/supporter/campaign/1">'.$supported_campaign->campaign->campaign_name. '</a></td>'; ?>
 
-        <?php echo '<td> -- </td>'; ?>
-
         <?php echo '<td>--</td>'; ?>
 
-        <td><?php echo date_format($supported_campaign->campaign->start_date, 'Y-m-d '). ' - '.date_format($supported_campaign->campaign->end_date, 'Y-m-d '); ?></td>
+        <td> <img src="images/screenshots/<?php echo $supported_campaign->campaign->screen_shot; ?>" /> </td>
 
-        <?php echo '<td> -- </td>'; ?>
+	<td>--</td>
 
-        <?php echo '<td>'.$supported_campaign->campaign->approved. '</td>'; ?>
 
-        <?php echo '<td> -- </td>'; ?>
-
-        <?php echo '<td> -- </td>'; ?>
-
-        <?php echo '<td> -- </td>'; ?>
-
-        <?php echo '<td> -- </td>'; ?>
     </tr>
 
     <?php
