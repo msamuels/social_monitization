@@ -22,7 +22,7 @@
 
         ?>
     <tr>
-        <?php echo '<td><a href="/supporter/campaign/1">'.$supported_campaign->campaign->campaign_name. '</a></td>'; ?>
+        <td><a href="/supporter/campaign/<?php echo $supported_campaign->campaign->campaign_id; ?> "><?php echo $supported_campaign->campaign->campaign_name; ?> </a></td>
 
         <?php echo '<td>--</td>'; ?>
 
@@ -33,7 +33,8 @@
         <td>
 		<form method="POST" action="/save-post-to-fb">
 			<input type="hidden" name="message" id="messgae" value="<?php echo $supported_campaign->campaign->campaign_name; ?>" />
-			<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-mobile-iframe="true"></div>
+			<!-- @TODO remove hard-coded url -- >
+			<div class="fb-share-button" data-href="http://social.wilsonshop.biz/supporter/campaign/<?php echo $supported_campaign->campaign->campaign_id; ?>" data-layout="button_count" data-mobile-iframe="true"></div>
 		</form>
 	</td>
     </tr>

@@ -129,14 +129,15 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
 });
 
 # show supported campaign individually
-$app->get('/supporter/campaign', $authenticate($app), function () use($app) {
+// @TODO add back authentication. Just when user not  logged in store their destination
+$app->get('/supporter/campaign/:id', function ($id) use($app) {
 
     # list supported campaigns
     $email = $app->view()->getData('user');
     $supporter = Supporter::find_by_email_address($email);
     $flash = $app->view()->getData('flash');
 
-    $campaign = Campaign::find_by_id(1);
+    $campaign = Campaign::find_by_campaign_id($id);
 
     $app->render('supporter/supported-campaign.php', array('campaign' => $campaign));
 });
