@@ -160,9 +160,14 @@ $app->post('/save-post-to-fb', $authenticate($app), function () use ($app) {
             'message' => $req['message'],
         ];
 
+
+        $helper = $fb->getRedirectLoginHelper();  
+
         try {
             // Returns a `Facebook\FacebookResponse` object
-            $response = $fb->post('/me/feed', $linkData, '{access-token}');
+	  $accessToken = $helper->getAccessToken();  	
+          $response = $fb->post('/me/feed', $linkData, $accessToken);
+
         } catch(Facebook\Exceptions\FacebookResponseException $e) {
             echo 'Graph returned an error: ' . $e->getMessage();
             exit;
