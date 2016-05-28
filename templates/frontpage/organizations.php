@@ -7,16 +7,18 @@
 
 <div class="row"><strong>Why use Shareitcamp?</strong></div>
 
+
+
 <div class="row">
-    <p><img class="icon" src="images/hourglass.png" />
-
-	<strong>Efficient Social Outreach</strong><br />
-	Spend your time on more important things. We help to bring your supporters to your message. </p>
-
+    <div class="col-xs-4" class="how-it-works-steps" style="text-align:right"><img class="icon" src="images/hourglass.png" /></div>
+    <div class="col-xs-8 col-sm-4 pull-left" class="how-it-works-steps">
+	<H3>Efficient Social Outreach</H3>
+        <p>Spend your time on more important things. We help to bring your supporters to your message.</p>
+    </div>
 </div>
 
 <div class="row">
-    <div class="col-xs-4" class="how-it-works-steps"><img class="icon" src="images/handsup.png" /></div>
+    <div class="col-xs-4" class="how-it-works-steps" style="text-align:right"><img class="icon" src="images/handsup.png" /></div>
     <div class="col-xs-8 col-sm-4 pull-left" class="how-it-works-steps">
 	<H3>Engage your Supporters</H3>
         <p>Your supporters have been great for your brand. Here bring them on board as part of your 
@@ -26,7 +28,7 @@
 
 
 <div class="row">
-    <div class="col-xs-4" class="how-it-works-steps"><img class="icon" src="images/reward.png" /></div>
+    <div class="col-xs-4" class="how-it-works-steps" style="text-align:right"><img class="icon" src="images/reward.png" /></div>
     <div class="col-xs-8 col-sm-4 pull-left" class="how-it-works-steps">
 	<H3>We reward your Supporters</H3>
         <p>Your supporters earn points for each campaign they support. These can be redeemed for 
