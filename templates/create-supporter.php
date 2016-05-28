@@ -9,31 +9,31 @@
 
 <form action="/save-supporter" method="POST">
       <div class="form-group">
-      <label class="control-label col-sm-4">Username:</label> 
-  <div class="col-sm-8"><input type="text" class="form-control" name="username" />
+      <label class="control-label col-sm-4" style="text-align:right">Username:</label> 
+  <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control" name="username" />
         </div>
   </div>
 
       <div class="form-group">
-      <label class="control-label col-sm-4">Password:</label> 
-  <div class="col-sm-8"><input type="text" class="form-control" name="password" />
+      <label class="control-label col-sm-4" style="text-align:right">Password:</label> 
+  <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control" name="password" />
         </div>
   </div>
 
       <div class="form-group">
-      <label class="control-label col-sm-4">Confirm Password:</label> 
-  <div class="col-sm-8"><input type="text" class="form-control" name="password_confirm" />
+      <label class="control-label col-sm-4" style="text-align:right">Confirm Password:</label> 
+  <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control" name="password_confirm" />
         </div>
   </div>
 
       <div class="form-group">
-      <label class="control-label col-sm-4">Email Address:</label> 
-  <div class="col-sm-8"><input type="text" class="form-control" name="email_address" />
+      <label class="control-label col-sm-4" style="text-align:right">Email Address:</label> 
+  <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control" name="email_address" />
         </div>
   </div>
 
       <div class="form-group">
-      <label class="control-label col-sm-4">Interests:</label>
+      <label class="control-label col-sm-4" style="text-align:right">Interests:</label>
     <SELECT NAME="interests" MULTIPLE SIZE=5>
       <OPTION VALUE="sports">sports
       <OPTION VALUE="music">music
@@ -45,8 +45,8 @@
   </div>
 
       <div class="form-group">
-      <label class="control-label col-sm-4"># of FB followers:</label> 
-  <div class="col-sm-8"><input type="text" class="form-control" name="followers_fb" />
+      <label class="control-label col-sm-4" style="text-align:right"># of FB followers:</label> 
+  <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control" name="followers_fb" />
         </div>
   </div>
 
@@ -297,12 +297,13 @@
 <div class="row">
 <div style="text-align:center">
     <button class="btn btn-primary" type="submit" >Submit</button>
+  By clicking this form you agree to the Iliv8 terms and conditions.
 </div>
 </div>
 
       </div>
   </div>
     
-  By clicking this form you agree to the Iliv8 terms and conditions.
+
 </form>
 </div>
