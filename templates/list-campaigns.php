@@ -36,17 +36,18 @@ if (count($campaigns) > 0) {
 
 		<td> <?php echo $campaign->num_supporters; ?> </td>
 
+
+		<td> <img src="images/screenshots/<?php echo $campaign->screen_shot; ?>" /> </td>
+
 		<td><?php echo $campaign->approved; ?></td>
 
-		<td> -- </td>
+			<td> -- </td>
 
 		<td> -- </td>
 
 		<td> -- </td>
 
-		<td> -- </td>
-
-		<td> -- </td>
+		<td> <?php echo date_format($campaign->end_date, 'Y-m-d '); ?> </td>
 	    </tr>
 
 	<?php
