@@ -26,7 +26,7 @@
 
         <?php echo '<td>--</td>'; ?>
 
-        <td> <img src="/images/screenshots/<?php echo $supported_campaign->campaign->screen_shot; ?>" /> </td>
+        <td> <img src="/images/screenshots/<?php echo $supported_campaign->campaign->screen_shot; ?>"  width="150" /> </td>
 
 	<td>--</td>
 

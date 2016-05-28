@@ -21,7 +21,7 @@
                 <tr>
                     <td><a href="/campaings?id=<?php echo $campaign->campaign_id; ?>">
 			<?php echo $campaign->campaign_name; ?></a> <br />
-			<img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" />
+			<img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" width="150" />
 		    </td>
 
                     <td><?php echo date_format($campaign->start_date, 'Y-m-d '). '/'.date_format($campaign->end_date, 'Y-m-d '); ?></td>
