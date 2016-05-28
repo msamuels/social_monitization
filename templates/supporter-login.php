@@ -16,13 +16,6 @@
 			<p class="desc">Producer posts promotional message to shareitcamp and supporters on platform are notified</p>
 		</div>
 	</div>
-	<div class="col-xs-4 col-sm-3 pull-left" class="how-it-works-steps">
-		<div><img class="icon" src="images/no2.png" /></div>
-		<div class="pull-left">
-			<p><H2>You Receive Points</H2></p>
-			<p class="desc">You share the campaigns you like with your social network</p>
-		</div>
-	</div>
 
 
 	<div class="col-xs-4 col-sm-3" class="how-it-works-steps">
@@ -32,6 +25,15 @@
 			<p class="desc">You share the campaigns you like with your social network</p>
 		</div>
 	</div>
+
+	<div class="col-xs-4 col-sm-3 pull-left" class="how-it-works-steps">
+		<div><img class="icon" src="images/no2.png" /></div>
+		<div class="pull-left">
+			<p><H2>You Receive Points</H2></p>
+			<p class="desc">You receive points that can be redeemed for rewards</p>
+		</div>
+	</div>
+
 </div>
 
 <div class="row" style="margin-bottom: 15px;clear:both">

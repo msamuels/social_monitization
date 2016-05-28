@@ -1,37 +1,53 @@
 <H1>Create Producer Account: </H1>
 
 <form action="/save-producer" method="POST">
-  <label>First Name:</label> 
-  <input type="text" name="first_name" />
-  <br />
+    <div class="form-group">
+      <label class="control-label col-sm-4">First Name:</label> 
+      <div class="col-sm-8"><input type="text" class="form-control name="first_name" />
+      </div>
+  </div>
 
-  <label>Last Name:</label> 
-  <input type="text" name="last_name" />
-  <br />
+    <div class="form-group">
+      <label class="control-label col-sm-4">Last Name:</label> 
+      <div class="col-sm-8"><input type="text" class="form-control name="last_name" />
+      </div>
+  </div>
 
-  <label>Username:</label> 
-  <input type="text" name="user_name" />
-  <br />
+    <div class="form-group">
+      <label class="control-label col-sm-4">Username:</label> 
+      <div class="col-sm-8"><input type="text" class="form-control name="user_name" />
+      </div>
+  </div>
 
-  <label>Password:</label> 
-  <input type="text" name="password" />
-  <br />
+    <div class="form-group">
+      <label class="control-label col-sm-4">Password:</label> 
+      <div class="col-sm-8"><input type="text" class="form-control name="password" />
+      </div>
+  </div>
 
-  <label>Email Address:</label> 
-  <input type="text" name="email_address" />
-  <br />
+    <div class="form-group">
+      <label class="control-label col-sm-4">Email Address:</label> 
+      <div class="col-sm-8"><input type="text" class="form-control name="email_address" />
+      </div>
+  </div>
 
-  <label>Organization Name:</label> 
-  <input type="text" name="org_name" />
-  <br />
+    <div class="form-group">
+      <label class="control-label col-sm-4">Organization Name:</label> 
+      <div class="col-sm-8"><input type="text" class="form-control name="org_name" />
+      </div>
+  </div>
 
-  <label>Website:</label> 
-  <input type="text" name="organization_url" />
-  <br />
+    <div class="form-group">
+      <label class="control-label col-sm-4">Website:</label> 
+      <div class="col-sm-8"><input type="text" class="form-control name="organization_url" />
+      </div>
+  </div>
 
-  <label>Org Description:</label> 
-  <input type="text" name="description" />
-  <br />
+    <div class="form-group">
+      <label class="control-label col-sm-4">Org Description:</label> 
+      <div class="col-sm-8"><input type="text" class="form-control name="description" />
+      </div>
+  </div>
   Country: <select name="country">
     <option value="Afghanistan">Afghanistan</option>
     <option value="Albania">Albania</option>
@@ -275,12 +291,18 @@
 </select>
   <br>
 
-  <label>Non Profits Click Here:</label> 
+    <div class="form-group">
+      <label class="control-label col-sm-4">Non Profits Click Here:</label> 
   <input type="radio" name="non-profit" />
-  <br />
-
+      </div>
+  </div>
+<div class="row">
+<div style="text-align:center">
     <button class="btn btn-primary" type="submit" >Submit</button>
 
-  By clicking this form you agree to the Iliv8 terms and conditions.
+  By submitting this form you agree to the Iliv8 terms and conditions.
+</div>
+</div>
+
 </form>
 
