@@ -7,15 +7,15 @@
 <H3>Supporters: </H3>
 
 <div class="row" id="supporters-list" style="margin-left:300px">
-<ul style="border-color: #222222; list-style: none">
+<ul style="list-style: none">
 	<?php
 	if (count($supporters) > 0) {
 		foreach($supporters as $supporter){
 
 		?>
-			<li style="border: solid; border-color: #0f0f0f; margin-right: 2px; width:200px; float: left">
-				<?php echo $supporter->user_name; ?>
-				<?php echo $supporter->id_follower_count; ?>
+			<li style="border: 1px solid  #0f0f0f; margin-right: 2px; width:170px; float: left">
+				<?php echo $supporter->user_name; ?><br />
+				Followers: <?php echo $supporter->id_follower_count; ?>
 			</li>
 
 		<?php
