@@ -19,7 +19,7 @@
 
 
 	<div class="col-xs-4 col-sm-3" class="how-it-works-steps">
-		<div><img class="icon" src="images/no3.png" /></div>
+		<div><img class="icon" src="images/no2.png" /></div>
 		<div class="pull-left">
 			<p><H2>You Share It</H2></p>
 			<p class="desc">You share the campaigns you like with your social network</p>
@@ -27,7 +27,7 @@
 	</div>
 
 	<div class="col-xs-4 col-sm-3 pull-left" class="how-it-works-steps">
-		<div><img class="icon" src="images/no2.png" /></div>
+		<div><img class="icon" src="images/no3.png" /></div>
 		<div class="pull-left">
 			<p><H2>You Receive Points</H2></p>
 			<p class="desc">You receive points that can be redeemed for rewards</p>
