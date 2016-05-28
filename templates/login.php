@@ -1,7 +1,5 @@
 <H1>Login </H1>
 
-<p><?php echo '<a href="' . htmlspecialchars($fb_login_url) . '">Log in with Facebook!</a>'; ?></p>
-
 <?php if(!empty($email_error)){ ?>
     <div class="alert alert-danger"><?php echo $email_error; ?></div>
 <?php } ?>
