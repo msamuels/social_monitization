@@ -2,44 +2,44 @@
 
 <form action="/save-campaign"  enctype="multipart/form-data" method="POST" class="form-horizontal" role="form">
   <div class="form-group">
-      <label class="control-label col-sm-2">Campaign Name:</label>
-    <div class="col-sm-10">
-      <input type="text" name="campaign_name" />
+      <label class="control-label col-sm-4">Campaign Name:</label>
+    <div class="col-sm-8">
+      <input type="text"   class="form-control" name="campaign_name" />
       </div>
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2">Budget(Optional):</label>
-    <div class="col-sm-10">
-    <input type="text" name="budget" />
+    <label class="control-label col-sm-4">Budget(Optional):</label>
+    <div class="col-sm-8">
+    <input type="text"  class="form-control" name="budget" />
     </div>
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2">Estimated Impressions:</label>
-    <div class="col-sm-10">
-    <input type="text" name="estimate" />
+    <label class="control-label col-sm-4">Estimated Impressions:</label>
+    <div class="col-sm-8">
+    <input type="text"  class="form-control" name="estimate" />
     </div>
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2">Start Date:</label>
-    <div class="col-sm-10">
-    <input type="text" name="start_date" />
+    <label class="control-label col-sm-4">Start Date:</label>
+    <div class="col-sm-8">
+    <input type="text"  class="form-control" name="start_date" />
     </div>
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2">End Date:</label>
-    <div class="col-sm-10">
-    <input type="text" name="end_date" />
+    <label class="control-label col-sm-4">End Date:</label>
+    <div class="col-sm-8">
+    <input type="text"  class="form-control" name="end_date" />
     </div>
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2">Copy:</label>
-    <div class="col-sm-10">
-        <textarea name="copy" rows="4" cols="50"></textarea>
+    <label class="control-label col-sm-4">Copy:</label>
+    <div class="col-sm-8">
+        <textarea name="copy"  class="form-control" rows="4" cols="50"></textarea>
     </div>
   </div>
 
@@ -48,23 +48,23 @@
   <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
 
   <div class="form-group">
-    <label class="control-label col-sm-2">Image:</label>
-    <div class="col-sm-10">
+    <label class="control-label col-sm-4">Image:</label>
+    <div class="col-sm-8">
     <input type="file" name="screen_shot" id="screen_shot" />
     </div>
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2">Url:</label>
-    <div class="col-sm-10">
-    <input type="text" name="url" />
+    <label class="control-label col-sm-4">Url:</label>
+    <div class="col-sm-8">
+    <input type="text"  class="form-control" name="url" />
     </div>
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2">Platform:</label>
-    <div class="col-sm-10">
-	 <select name="platform" id="platform">
+    <label class="control-label col-sm-4">Platform:</label>
+    <div class="col-sm-8">
+	 <select name="platform" id="platform"  class="form-control">
 	  <option value="facebook">Facebook</option>
 	</select> 
     </div>
