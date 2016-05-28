@@ -8,23 +8,32 @@
 
 
 <form action="/save-supporter" method="POST">
-  <label>Username:</label> 
-  <input type="text" name="username" />
-  <br />
+      <div class="form-group">
+      <label class="control-label col-sm-4">Username:</label> 
+  <div class="col-sm-8"><input type="text" class="form-control" name="username" />
+        </div>
+  </div>
 
-  <label>Password:</label> 
-  <input type="text" name="password" />
-  <br />
+      <div class="form-group">
+      <label class="control-label col-sm-4">Password:</label> 
+  <div class="col-sm-8"><input type="text" class="form-control" name="password" />
+        </div>
+  </div>
 
-  <label>Confirm Password:</label> 
-  <input type="text" name="password_confirm" />
-  <br />
+      <div class="form-group">
+      <label class="control-label col-sm-4">Confirm Password:</label> 
+  <div class="col-sm-8"><input type="text" class="form-control" name="password_confirm" />
+        </div>
+  </div>
 
-  <label>Email Address:</label> 
-  <input type="text" name="email_address" />
-  <br />
+      <div class="form-group">
+      <label class="control-label col-sm-4">Email Address:</label> 
+  <div class="col-sm-8"><input type="text" class="form-control" name="email_address" />
+        </div>
+  </div>
 
-  <label>Interests:</label>
+      <div class="form-group">
+      <label class="control-label col-sm-4">Interests:</label>
     <SELECT NAME="interests" MULTIPLE SIZE=5>
       <OPTION VALUE="sports">sports
       <OPTION VALUE="music">music
@@ -32,11 +41,14 @@
       <OPTION VALUE="culture">tomatoes
       <OPTION VALUE="religion">olives
     </SELECT>
-  <br />
+        </div>
+  </div>
 
-  <label># of FB followers:</label> 
-  <input type="text" name="followers_fb" />
-  <br />
+      <div class="form-group">
+      <label class="control-label col-sm-4"># of FB followers:</label> 
+  <div class="col-sm-8"><input type="text" class="form-control" name="followers_fb" />
+        </div>
+  </div>
 
   Location: <select name="country">
     <option value="Afghanistan">Afghanistan</option>
@@ -279,11 +291,17 @@
     <option value="Zambia">Zambia</option>
     <option value="Zimbabwe">Zimbabwe</option>
 </select>
-    <br />
+          </div>
+  </div>
 
-  <button class="btn btn-primary" type="submit" >Submit</button>
+<div class="row">
+<div style="text-align:center">
+    <button class="btn btn-primary" type="submit" >Submit</button>
+</div>
+</div>
 
-<br />
+      </div>
+  </div>
     
   By clicking this form you agree to the Iliv8 terms and conditions.
 </form>

@@ -2,50 +2,50 @@
 
 <form action="/save-producer" method="POST">
     <div class="form-group">
-      <label class="control-label col-sm-4">First Name:</label> 
-      <div class="col-sm-8"><input type="text" class="form-control name="first_name" />
+      <label class="control-label col-sm-4" style="text-align:right">First Name:</label> 
+      <div class="col-sm-8" style="text-align:left"><input type="text" class=form-control" name="first_name" />
       </div>
   </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-4">Last Name:</label> 
-      <div class="col-sm-8"><input type="text" class="form-control name="last_name" />
+      <label class="control-label col-sm-4" style="text-align:right">Last Name:</label> 
+      <div class="col-sm-8" style="text-align:left"><input type="text" class=form-control" name="last_name" />
       </div>
   </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-4">Username:</label> 
-      <div class="col-sm-8"><input type="text" class="form-control name="user_name" />
+      <label class="control-label col-sm-4" style="text-align:right">Username:</label> 
+      <div class="col-sm-8" style="text-align:left"><input type="text" class=form-control" name="user_name" />
       </div>
   </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-4">Password:</label> 
-      <div class="col-sm-8"><input type="text" class="form-control name="password" />
+      <label class="control-label col-sm-4" style="text-align:right">Password:</label> 
+      <div class="col-sm-8" style="text-align:left"><input type="text" class=form-control" name="password" />
       </div>
   </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-4">Email Address:</label> 
-      <div class="col-sm-8"><input type="text" class="form-control name="email_address" />
+      <label class="control-label col-sm-4" style="text-align:right">Email Address:</label> 
+      <div class="col-sm-8" style="text-align:left"><input type="text" class=form-control" name="email_address" />
       </div>
   </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-4">Organization Name:</label> 
-      <div class="col-sm-8"><input type="text" class="form-control name="org_name" />
+      <label class="control-label col-sm-4" style="text-align:right">Organization Name:</label> 
+      <div class="col-sm-8" style="text-align:left"><input type="text" class=form-control" name="org_name" />
       </div>
   </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-4">Website:</label> 
-      <div class="col-sm-8"><input type="text" class="form-control name="organization_url" />
+      <label class="control-label col-sm-4" style="text-align:right">Website:</label> 
+      <div class="col-sm-8" style="text-align:left"><input type="text" class=form-control" name="organization_url" />
       </div>
   </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-4">Org Description:</label> 
-      <div class="col-sm-8"><input type="text" class="form-control name="description" />
+      <label class="control-label col-sm-4" style="text-align:right">Org Description:</label> 
+      <div class="col-sm-8" style="text-align:left"><input type="text" class=form-control" name="description" />
       </div>
   </div>
   Country: <select name="country">
@@ -292,7 +292,7 @@
   <br>
 
     <div class="form-group">
-      <label class="control-label col-sm-4">Non Profits Click Here:</label> 
+      <label class="control-label col-sm-4" style="text-align:right">Non Profits Click Here:</label> 
   <input type="radio" name="non-profit" />
       </div>
   </div>
