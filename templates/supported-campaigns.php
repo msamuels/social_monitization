@@ -28,7 +28,7 @@
 
         <td> <img src="/images/screenshots/<?php echo $supported_campaign->campaign->screen_shot; ?>"  width="150" /> </td>
 
-	<td>--</td>
+	<td> 10 </td>
 
         <td>
 		<form method="POST" action="/save-post-to-fb">
