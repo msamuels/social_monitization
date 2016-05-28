@@ -14,7 +14,7 @@
 
 		?>
 			<li style="border: solid; border-color: #0f0f0f; margin-right: 2px; width:200px; float: left">
-				<?php echo $supporter->email_address; ?>
+				<?php echo $supporter->user_name; ?>
 				<?php echo $supporter->id_follower_count; ?>
 			</li>
 
