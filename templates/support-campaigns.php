@@ -1,8 +1,8 @@
 <!-- @TODO remove margin-top -->
 <div style="margin-top: 200px;margin-left: 200px;">
 <H1>Campaigns</H1>
-
-<table border="1px solid grey">
+<!-- @TODO remove width -->
+<table border="1px solid grey" width="700">
     <tr>
         <td>Campaign</td>
         <td>Support </td>

@@ -7,7 +7,7 @@
     <div class="alert alert-success"><?php echo $success_info; ?></div>
 <?php } ?>
 
-<table border="1px solid grey;">
+<table border="1px solid grey;" width="700">
     <tr>
         <td>Campaign Name </td>
         <td>Respond By Date </td>
