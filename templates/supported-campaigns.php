@@ -1,5 +1,5 @@
 <!-- @TODO remove margin-top -->
-<div style="margin-top: 200px">
+<div style="margin-top: 200px; margin-left: 200px;"">
 <!-- Show campaigns supported -->
 <H1>Supported Campaigns</H1>
 
@@ -7,7 +7,7 @@
     <div class="alert alert-success"><?php echo $success_info; ?></div>
 <?php } ?>
 
-<table border="1px solid grey">
+<table border="1px solid grey;">
     <tr>
         <td>Campaign Name </td>
         <td>Respond By Date </td>
@@ -24,7 +24,7 @@
     <tr>
         <td><a href="/supporter/campaign/<?php echo $supported_campaign->campaign->campaign_id; ?> "><?php echo $supported_campaign->campaign->campaign_name; ?> </a></td>
 
-        <?php echo '<td>--</td>'; ?>
+        <td><?php echo date_format($supported_campaign->campaign->end_date, 'Y-m-d '); ?></td>
 
         <td> <img src="/images/screenshots/<?php echo $supported_campaign->campaign->screen_shot; ?>"  width="150" /> </td>
 
