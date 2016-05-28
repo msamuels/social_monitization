@@ -1,14 +1,12 @@
 <!-- @TODO remove margin-top -->
-<div style="margin-top: 200px">
+<div style="margin-top: 200px;margin-left: 200px;">
 <H1>Campaigns</H1>
 
 <table border="1px solid grey">
     <tr>
         <td>Campaign</td>
-        <td>Producer </td>
-        <td>Start/End Date </td>
-        <td>Creative </td>
-        <td>Respond needed by</td>
+        <td>Support </td>
+        <td>Response needed by</td>
         <td>Copy</td>
 	<td>Url</td>
     <tr>
@@ -24,7 +22,7 @@
 			<img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" width="150" />
 		    </td>
 
-                    <td><?php echo date_format($campaign->start_date, 'Y-m-d '). '/'.date_format($campaign->end_date, 'Y-m-d '); ?></td>
+
 
                     <td>
                         <form action="/save-campaign-support" method="POST">
@@ -35,10 +33,7 @@
                     </td>
 
 
-
-                    <td> -- </td>
-
-                    <td> -- </td>
+                    <td> <?php echo date_format($campaign->end_date, 'Y-m-d '); ?> </td>
 
 		    <td> <?php echo $campaign->copy; ?> </td>
 
