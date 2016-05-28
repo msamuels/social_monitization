@@ -7,7 +7,7 @@
 <H3>Supporters: </H3>
 
 <div class="row" id="supporters-list" style="margin-left:300px">
-<ul style="border-color: #222222">
+<ul style="border-color: #222222; list-style: none">
 	<?php
 	if (count($supporters) > 0) {
 		foreach($supporters as $supporter){
@@ -31,7 +31,7 @@
 	<label>Duration:</label> <?php echo date_format($campaign->start_date, 'Y-m-d '); ?> -
 	<?php echo date_format($campaign->end_date, 'Y-m-d '); ?>
 <br />
-		<label>Platforms:</label>
+		<label>Platforms: Facebook</label>
 
 <H2>Impressions:</H2>
 <?php
