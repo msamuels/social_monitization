@@ -5,5 +5,5 @@
 
            <H1> <?php echo '<td>'.$campaign->campaign_name; ?> </H1>
 
-            <img src="images/screenshots/<?php echo $campaign->screen_shot; ?>" />
+            <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" />
 </div>
