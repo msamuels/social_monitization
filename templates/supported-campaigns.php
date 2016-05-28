@@ -33,7 +33,7 @@
         <td>
 		<form method="POST" action="/save-post-to-fb">
 			<input type="hidden" name="message" id="messgae" value="<?php echo $supported_campaign->campaign->campaign_name; ?>" />
-			<!-- @TODO remove hard-coded url -- >
+			
 			<div class="fb-share-button" data-href="http://social.wilsonshop.biz/supporter/campaign/<?php echo $supported_campaign->campaign->campaign_id; ?>" data-layout="button_count" data-mobile-iframe="true"></div>
 		</form>
 	</td>
