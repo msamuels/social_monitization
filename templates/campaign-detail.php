@@ -6,7 +6,7 @@
 
 <H3>Supporters: </H3>
 
-<div class="row" id="supporters-list">
+<div class="row" id="supporters-list" style="margin-left:300px">
 <ul style="border-color: #222222">
 	<?php
 	if (count($supporters) > 0) {
