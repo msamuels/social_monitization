@@ -33,6 +33,7 @@
     background-color: #3CA6C9;
     height: 180px;
     padding-top: 20px;
+    margin-top:20px;
 }
 
 H1{
@@ -52,7 +53,7 @@ H1{
 }
 
 .icon {
-    max-width: 100px;
+    max-width: 90px;
 }
 
 img {
