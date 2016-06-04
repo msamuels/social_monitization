@@ -3,7 +3,7 @@
     <p><a href="/get-started/supporter/register" class="btn support-btns">Get Started</a></p>
 </div>
 
-	<div class="row"><H1>How it works</H1></div>
+	<div class="row" id="works"><H1>How it works</H1></div>
 
 <div class="row" id="how-it-works" style="align:center">
 

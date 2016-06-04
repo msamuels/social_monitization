@@ -34,6 +34,7 @@
     height: 180px;
     padding-top: 20px;
     margin-top:20px;
+    margin-bottom:20px;
 }
 
 H1{
@@ -42,7 +43,11 @@ H1{
 
 #how-it-works{
     height: 150px;
-    /*border: 1px solid grey;*/
+    margin-left: 50px;
+}
+
+#works{
+    margin-bottom:20px;
 }
 
 .how-it-works-steps {
