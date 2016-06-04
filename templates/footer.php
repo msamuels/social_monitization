@@ -1,7 +1,7 @@
-<!-- @TODO remov 
-<div class="row">
+ 
+<div class="row" style="backgroun" id="bottom-nav">
 	<div class="col-xs-12">
-		<nav class="navbar-fixed-bottom navbar-default" id="myNavbar">
+		<nav class="navbar-default" id="myNavbar">
 			<ul class="nav navbar-nav">
 				<li><a href="/">get started</a></li>
 				<li><a href="/">About Us</a></li>
@@ -12,6 +12,6 @@
 		</nav>
 	</div>
 </div>
--->
+
 </div>
 </body>
