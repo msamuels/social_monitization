@@ -14,14 +14,14 @@
     <input type="text"  class="form-control" name="budget" />
     </div>
   </div>
-
+<!--
   <div class="form-group">
     <label class="control-label col-sm-4">Estimated Impressions:</label>
     <div class="col-sm-8">
     <input type="text"  class="form-control" name="estimate" />
     </div>
   </div>
-
+-->
   <div class="form-group">
     <label class="control-label col-sm-4">Start Date:</label>
     <div class="col-sm-8">
@@ -69,7 +69,7 @@
 	</select> 
     </div>
   </div>
-
+<!--
   <label>Targeting:</label>
   <SELECT NAME="interests" MULTIPLE SIZE=5>
     <OPTION VALUE="sports">sports
@@ -79,7 +79,7 @@
     <OPTION VALUE="religion">olives
   </SELECT>
   <br />
-
+-->
   Non-profits: please consider donating one of the following
   <ul id="donation-types">
 
