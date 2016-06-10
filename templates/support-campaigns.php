@@ -5,6 +5,7 @@
 <table border="1px solid grey" width="700">
     <tr>
         <td>Campaign</td>
+        <td>Producer</td>
         <td>Support </td>
         <td>Response needed by</td>
         <td>Copy</td>
@@ -23,6 +24,7 @@
 		    </td>
 
 
+		    <td> -- </td>
 
                     <td>
                         <form action="/save-campaign-support" method="POST">

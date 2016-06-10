@@ -70,6 +70,14 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $account = Account::create(
         array('account_name'=>'test','id_producer'=>$producer->id_producer, 'campaign_id'=>$campaign->campaign_id));
 
+    // @TODO implement email functionality
+    /*$to = 'All supporters';
+    $body = 'New campaign';
+    $subject = 'New campaign posted to Shareitcamp';
+    $from = 'infor@shareitcamp.com';
+    $upload = new \Wilsonshop\Utils\Email($to,$body,$subject,$from);*/
+
+
     $app->flash('success_info', 'Campaign Saved');
     $app->redirect('/campaigns');
 });
