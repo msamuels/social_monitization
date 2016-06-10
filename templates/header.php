@@ -59,7 +59,7 @@
 				<li><a href="/">get started</a></li>
 				<li><a href="/">about us</a></li>
 				<li><a href="/">faq</a></li>
-				<li><a href="/login">log-in</a></li>
+				<?php if(!isset($_SESSION['user_type'])) { ?><li><a href="/login">log-in</a></li><?php } ?>
 				<li><a href="/organizations">organizations</a></li>
 			</ul>
 		</div>
