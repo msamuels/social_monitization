@@ -30,11 +30,12 @@ body{
 
 .form-control{
     border-radius:0px;
+
 }
 
 .form-group {
     padding-bottom: 25px;
-
+    width: 50%;
 }
 
 #get-started-banner{
