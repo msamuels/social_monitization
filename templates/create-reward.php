@@ -18,7 +18,7 @@
     <div class="form-group">
         <label class="control-label col-sm-2">Expiration date:</label>
         <div class="col-sm-10">
-            <input type="text" name="expiration date" placeholder="yyyy/mm/dd"/>
+            <input type="text" name="expiration date" placeholder="yyyy-mm-dd"/>
         </div>
     </div>
 
