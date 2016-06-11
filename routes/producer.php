@@ -77,7 +77,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $body = 'New campaign';
     $subject = 'New campaign posted to Shareitcamp';
     $from = 'infor@shareitcamp.com';
-    $upload = new \Wilsonshop\Utils\Email($to,$body,$subject,$from);*/
+    $email = new \Wilsonshop\Utils\Email($to,$body,$subject,$from);*/
 
 
     $app->flash('success_info', 'Campaign Saved');
@@ -206,8 +206,9 @@ $app->post('/save-reward', $authenticate($app), function () use ($app){
     $req = $app->request->post();
 
     // handle uploaded file
-    // @TODO move path to config file
-    $upload = new \Wilsonshop\Utils\Upload('/var/www/html/social_monitization/public/images/rewards', 'image');
+    $destination = $app->config('configs')['rewards_creative_upload_dir'];
+
+    $upload = new \Wilsonshop\Utils\Upload($destination, 'image');
     // @TODO check the result message to see if the upload was successful
     $result = $upload->uploadFile("Upload Succeeded","Upload failed");
 

@@ -13,3 +13,4 @@ fb_app_secret =  REPLACE_ME
 app_url = REPLACE_ME
 
 campaign_creative_upload_dir = REPLACE_ME
+rewards_creative_upload_dir = REPLACE_ME
