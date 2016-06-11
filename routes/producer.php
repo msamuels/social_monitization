@@ -53,7 +53,9 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $req = $app->request->post();
 
     // handle uploaded file
-    $upload = new \Wilsonshop\Utils\Upload('/var/www/html/social_monitization/public/images/screenshots', 'screen_shot');
+    $destination = $app->config('configs')['campaign_creative_upload_dir'];
+
+    $upload = new \Wilsonshop\Utils\Upload($destination, 'screen_shot');
     // @TODO check the result message to see if the upload was successful
     $result = $upload->uploadFile("Upload Succeeded","Upload failed");
 

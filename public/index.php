@@ -15,7 +15,8 @@ $cfg = ActiveRecord\Config::instance();
 
 $app = new \Slim\Slim(array(
     'templates.path' => '../templates/',
-    'debug' => true
+    'debug' => true,
+    'configs' => $configs
 ));
 
 $app->add(new \Slim\Middleware\SessionCookie(array('secret' => 'myappsecret')));
