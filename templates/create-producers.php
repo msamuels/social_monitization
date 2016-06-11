@@ -3,49 +3,49 @@
 <form action="/save-producer" method="POST">
     <div class="form-group">
       <label class="control-label col-sm-4" style="text-align:right">First Name:</label> 
-      <div class="col-sm-8" style="text-align:left"><input type="text" class=form-control" name="first_name" />
+      <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control" name="first_name" />
       </div>
   </div>
 
     <div class="form-group">
       <label class="control-label col-sm-4" style="text-align:right">Last Name:</label> 
-      <div class="col-sm-8" style="text-align:left"><input type="text" class=form-control" name="last_name" />
+      <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control" name="last_name" />
       </div>
   </div>
 
     <div class="form-group">
       <label class="control-label col-sm-4" style="text-align:right">Username:</label> 
-      <div class="col-sm-8" style="text-align:left"><input type="text" class=form-control" name="user_name" />
+      <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control" name="user_name" />
       </div>
   </div>
 
     <div class="form-group">
       <label class="control-label col-sm-4" style="text-align:right">Password:</label> 
-      <div class="col-sm-8" style="text-align:left"><input type="text" class=form-control" name="password" />
+      <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control" name="password" />
       </div>
   </div>
 
     <div class="form-group">
       <label class="control-label col-sm-4" style="text-align:right">Email Address:</label> 
-      <div class="col-sm-8" style="text-align:left"><input type="text" class=form-control" name="email_address" />
+      <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control" name="email_address" />
       </div>
   </div>
 
     <div class="form-group">
       <label class="control-label col-sm-4" style="text-align:right">Organization Name:</label> 
-      <div class="col-sm-8" style="text-align:left"><input type="text" class=form-control" name="org_name" />
+      <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control" name="org_name" />
       </div>
   </div>
 
     <div class="form-group">
       <label class="control-label col-sm-4" style="text-align:right">Website:</label> 
-      <div class="col-sm-8" style="text-align:left"><input type="text" class=form-control" name="organization_url" />
+      <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control" name="organization_url" />
       </div>
   </div>
 
     <div class="form-group">
       <label class="control-label col-sm-4" style="text-align:right">Org Description:</label> 
-      <div class="col-sm-8" style="text-align:left"><input type="text" class=form-control" name="description" />
+      <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control" name="description" />
       </div>
   </div>
   Country: <select name="country">
