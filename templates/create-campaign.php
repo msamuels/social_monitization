@@ -1,3 +1,9 @@
+<div class="row">
+
+<div class="col-sm-3"></div>
+
+<div class="col-sm-6">
+
 <H1>Create Campaign</H1>
 
 <form action="/save-campaign"  enctype="multipart/form-data" method="POST" class="form-horizontal" role="form">
@@ -22,6 +28,7 @@
     </div>
   </div>
 -->
+
   <div class="form-group">
     <label class="control-label col-sm-4">Start Date:</label>
     <div class="col-sm-8">
@@ -92,4 +99,8 @@
   <button class="btn btn-primary" type="submit">Submit</button>
 
 </form>
+</div>
+</div>
+
+<div class="col-sm-3"></div>
 
