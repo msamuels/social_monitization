@@ -2,8 +2,9 @@
 
 namespace Wilsonshop\Utils;
 
+use Wilsonshop\Interfaces\Ithreadable;
 
-class Message implements ItThreadable{
+class Message implements Ithreadable{
     public $id;
     public $threadId=null;
     public $userid;
@@ -19,7 +20,7 @@ class Message implements ItThreadable{
     public $isread=0;
 
     /**********************************
-     *implemented methods from ITthreadable
+     *implemented methods from Ithreadable
      **********************************/
     public function getSubject(){
         return $this->msgsubject;
@@ -30,14 +31,14 @@ class Message implements ItThreadable{
     public function getStatus(){
         return 1;
     }
-    public function deliverMsg(ItThreadable $msg){
+    public function deliverMsg(Ithreadable $msg){
 
         $rs = $this->sendMsg($msg);
 
         return $rs;
     }
     /**********************************
-     * finish implementing methods  from ITthreadable
+     * finish implementing methods  from Ithreadable
      *********************************/
 
     function getId(){
