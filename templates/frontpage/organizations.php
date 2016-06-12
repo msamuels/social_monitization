@@ -44,11 +44,11 @@
 
 <div class="row"><H1>How it works</H1></div>
 
-<div class="row" id="how-it-works" style="align:center">
+<div class="row" id="how-it-works">
 
-	<div class="col-xs-4 col-sm-1 pull-left" class="how-it-works-steps"></div>
+	<div class="col-sm-1 pull-left"></div>
 
-	<div class="col-xs-4 col-sm-3 pull-left" class="how-it-works-steps">
+	<div class="col-sm-3 pull-left">
 		<div><img class="icon" src="images/no1.png" /></div>
 		<div class="pull-left">
 			<p><H2>Complete short form</H2></p>
@@ -56,7 +56,8 @@
                             preferably with a picture and a link.</p>
 		</div>
 	</div>
-	<div class="col-xs-4 col-sm-3 pull-left" class="how-it-works-steps">
+
+	<div class="col-sm-3 pull-left">
 		<div><img class="icon" src="images/no2.png" /></div>
 		<div class="pull-left">
 			<p><H2>Set a 'reply by date'</H2></p>
@@ -65,7 +66,7 @@
 	</div>
 
 
-	<div class="col-xs-4 col-sm-3" class="how-it-works-steps">
+	<div class="col-sm-3 pull-left">
 		<div><img class="icon" src="images/no3.png" /></div>
 		<div class="pull-left">
 			<p><H2>Supporters share your message</H2></p>
