@@ -7,33 +7,30 @@
 
 <div class="row" id="how-it-works">
 
-    <div class="col-xs-4 col-sm-1 pull-left"></div>
+    <div class="col-sm-1 pull-left"></div>
 
-    <div class="col-xs-4 col-sm-3 pull-left">
+    <div class="col-sm-3 pull-left">
         <div><img class="icon" src="images/no1.png"/></div>
         <div class="pull-left">
-            <p>
-            <H3>Organizations post campaign</H3></p>
+            <H3>Organizations post campaign</H3>
             <p class="desc">Producer posts promotional message to shareitcamp and supporters on platform are
                 notified</p>
         </div>
     </div>
 
 
-    <div class="col-xs-4 col-sm-3">
+    <div class="col-sm-3">
         <div><img class="icon" src="images/no2.png"/></div>
         <div class="pull-left">
-            <p>
-            <H3>You Share It</H3></p>
+            <H3>You Share It</H3>
             <p class="desc">You share the campaigns you like with your social network</p>
         </div>
     </div>
 
-    <div class="col-xs-4 col-sm-3 pull-left "how-it-works-steps">
+    <div class="col-sm-3 pull-left">
         <div><img class="icon" src="images/no3.png"/></div>
         <div class="pull-left">
-            <p>
-            <H3>You Receive Points</H3></p>
+            <H3>You Receive Points</H3>
             <p class="desc">You receive points that can be redeemed for rewards</p>
         </div>
     </div>
@@ -41,9 +38,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-12">
         <H1>Campaigns</H1>
-    </div>
 </div>
 
 <div class="row">
