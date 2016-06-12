@@ -73,12 +73,13 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
         array('account_name'=>'test','id_producer'=>$producer->id_producer, 'campaign_id'=>$campaign->campaign_id));
 
     // @TODO implement email functionality
-    /*$to = 'All supporters';
+    $to = 'markspeed_718@yahoo.com';
     $body = 'New campaign';
     $subject = 'New campaign posted to Shareitcamp';
     $from = 'infor@shareitcamp.com';
-    $email = new \Wilsonshop\Utils\Email($to,$body,$subject,$from);*/
-
+    $email = new \Wilsonshop\Utils\Email($to,$body,$subject,$from);
+    // @TODO do something with a false return
+    $result = $email->sendEmail();
 
     $app->flash('success_info', 'Campaign Saved');
     $app->redirect('/campaigns');
