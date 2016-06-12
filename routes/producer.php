@@ -76,7 +76,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $to = 'markspeed_718@yahoo.com';
     $body = 'New campaign';
     $subject = 'New campaign posted to Shareitcamp';
-    $from = 'infor@shareitcamp.com';
+    $from = 'info@wilsonshop.biz';
     $email = new \Wilsonshop\Utils\Email($to,$body,$subject,$from);
     // @TODO do something with a false return
     $result = $email->sendEmail();
