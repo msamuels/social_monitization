@@ -1,35 +1,58 @@
-<H1>Login </H1>
+        <div class="row">
 
-<?php if(!empty($email_error)){ ?>
-    <div class="alert alert-danger"><?php echo $email_error; ?></div>
-<?php } ?>
+    <div class="col-sm-3"></div>
 
-<?php if(!empty($password_error)){ ?>
-    <div class="alert alert-danger"><?php echo $password_error; ?></div>
-<?php } ?>
+    <div class="col-sm-6">
 
-<?php if(!empty($error)){ ?>
-    <div class="alert alert-danger"><?php echo $error; ?></div>
-<?php } ?>
+        <H1>Login </H1>
 
-<form action="/login" method="POST">
+        <?php if (!empty($email_error)) { ?>
+            <div class="alert alert-danger"><?php echo $email_error; ?></div>
+        <?php } ?>
 
-    <label>Account Type:</label>
+        <?php if (!empty($password_error)) { ?>
+            <div class="alert alert-danger"><?php echo $password_error; ?></div>
+        <?php } ?>
 
-    <select name="user_type">
-        <option value="supporter">Supporter</option>
-        <option value="producer">Producer</option>
-    </select>
-    <br />
+        <?php if (!empty($error)) { ?>
+            <div class="alert alert-danger"><?php echo $error; ?></div>
+        <?php } ?>
 
-    <label>Email:</label> 
-    <input type="text" name="email" />
-    <br />
+            <form action="/login" method="POST">
 
-    <label>Password:</label> 
-    <input type="password" name="password" />
-    <br />
+                <div class="form-group">
+                <label class="control-label col-sm-4">Account Type:</label>
 
-    <button class="btn btn-primary" type="submit" >Submit</button>
+                <div class="col-sm-8">
+                    <select name="user_type"  class="form-control"  >
+                        <option value="supporter">Supporter</option>
+                        <option value="producer">Producer</option>
+                    </select>
+                </div>
+                </div>
 
-</form>
+
+                <div class="form-group">
+                <label class="control-label col-sm-4">Email:</label>
+                <div class="col-sm-8">
+                    <input type="text"  class="form-control" name="email"/>
+                </div>
+                </div>
+
+                <div class="form-group">
+                <label class="control-label col-sm-4">Password:</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control" name="password"/>
+                </div>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Submit</button>
+
+            </form>
+        </div>
+
+    </div>
+
+    <div class="col-sm-3"></div>
+
+</div>
