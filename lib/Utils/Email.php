@@ -1,8 +1,7 @@
 <?php
+
 namespace Wilsonshop\Utils;
 
-use Wilsonshop\Utils\Message;
-//require_once(ClSS_PATH.'com/web/messages/Message.class');
 
 class Email extends Message {
     var $headers;

@@ -1,8 +1,6 @@
-<?
-namespace Wilsonshop\Utils;
+<?php
 
-use Wilsonshop\Utils\ItThreadable;
-//require_once(ClSS_PATH.'com/web/interfaces/ItThreadable.php');
+namespace Wilsonshop\Utils;
 
 
 class Message implements ItThreadable{
