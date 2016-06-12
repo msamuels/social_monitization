@@ -5,9 +5,6 @@ body{
     background-color: #3CA6C9;
     margin-top: 40px;
 }
-.navbar-default .navbar-nav > li > a{
-    color:#fff;
-}
 
 .circle{
     background: #d0d0d0;
@@ -79,6 +76,10 @@ img {
 
 .navbar-right{
     margin-top: 30px;
+}
+
+.navbar-default .navbar-nav > li > a{
+    color:#1b6d85;
 }
 
 .pull-left {

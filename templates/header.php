@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>shareitcamp</title>
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/override.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,11 +41,8 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="container-fluid text-center bg-grey">
-
-<div style="clear:both" class="row">
-<nav class="navbar navbar-fixed-top" style="clear:both">
-	<div class="container">
+<nav class="navbar">
+	<div class="container-fluid">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 				<span class="icon-bar"></span>
@@ -54,7 +51,7 @@
 			</button>
 			<a class="navbar-brand" href="/"><img src="/iliv8-Logo2-PNG.png" /></a>
 		</div>
-		<div class="collapse navbar-collapse" id="myNavbar">
+		<div class="navbar-default" id="myNavbar">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="/">get started</a></li>
 				<li><a href="/">about us</a></li>
@@ -103,4 +100,5 @@
 	<?php } ?>
 
 </nav>
-</div>
+
+<div class="container-fluid text-center bg-grey">
