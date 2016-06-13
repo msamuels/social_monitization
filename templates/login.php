@@ -35,14 +35,14 @@
                 <div class="form-group">
                 <label class="control-label col-sm-4">Email:</label>
                 <div class="col-sm-8">
-                    <input type="text"  class="form-control" name="email"/>
+                    <input type="text"  class="form-control" name="email" placeholder="Enter Email"/>
                 </div>
                 </div>
 
                 <div class="form-group">
                 <label class="control-label col-sm-4">Password:</label>
                 <div class="col-sm-8">
-                    <input type="password" class="form-control" name="password"/>
+                    <input type="password" class="form-control" name="password" placeholder="Enter Password" />
                 </div>
                 </div>
 
