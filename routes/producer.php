@@ -72,7 +72,15 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $account = Account::create(
         array('account_name'=>'test','id_producer'=>$producer->id_producer, 'campaign_id'=>$campaign->campaign_id));
 
-    $to = 'markspeed_718@yahoo.com';
+    // grab all the supporters to email
+    $supporter_email = array();
+    $supporters = Supporter::find('all');
+
+    foreach ($supporters as $supporter) {
+        array_push($supporter_email, $supporter->email_address);
+    }
+
+    $to = implode(',',$supporter_email);
     $subject = 'New campaign posted to Shareitcamp: '.$campaign->title;
     $body = $campaign->copy;
     $from = 'From: info@wilsonshop.biz';

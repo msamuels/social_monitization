@@ -17,7 +17,10 @@
             <div class="form-group">
                 <label class="control-label col-sm-4">Budget(Optional):</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="budget"/>
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        <input type="text" class="form-control" name="budget" />
+                    </div>
                 </div>
             </div>
             <!--

@@ -115,5 +115,5 @@ $app->get("/logout", function () use ($app) {
    unset($_SESSION['user_type']);
 
    $app->view()->setData('user', null);
-   $app->render('logout.php');
+   $app->redirect('/');
 });

@@ -1,14 +1,14 @@
-<meta property="og:url"                content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
+<meta property="og:url"                content="<?php echo $base_url; ?>/campaigns/1" />
 <meta property="og:type"               content="article" />
-<meta property="og:title"              content="When Great Minds Don’t Think Alike" />
-<meta property="og:description"        content="How much does culture influence creative thinking?" />
-<meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+<meta property="og:title"              content="<?php echo $campaign->campaign_name; ?>" />
+<meta property="og:description"        content="<?php echo $campaign->copy; ?>" />" />
+<meta property="og:image"              content="<?php echo $base_url; ?>/images/screenshots/<?php echo $campaign->screen_shot; ?>" />
     
 <!-- @TODO remove margin-top -->
 <div style="margin-top: 200px">
     <!-- Show campaigns supported -->
 
-           <H1> <?php echo '<td>'.$campaign->campaign_name; ?> </H1>
+               <H1> <?php echo '<td>'.$campaign->campaign_name; ?> </H1>
 
             <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" />
 </div>

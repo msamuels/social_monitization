@@ -132,6 +132,8 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
 // @TODO add back authentication. Just when user not  logged in store their destination
 $app->get('/supporter/campaign/:id', function ($id) use($app) {
 
+    $base_url = $app->config('configs')['base_url'];
+
     # list supported campaigns
     $email = $app->view()->getData('user');
     $supporter = Supporter::find_by_email_address($email);
@@ -139,7 +141,7 @@ $app->get('/supporter/campaign/:id', function ($id) use($app) {
 
     $campaign = Campaign::find_by_campaign_id($id);
 
-    $app->render('supporter/supported-campaign.php', array('campaign' => $campaign));
+    $app->render('supporter/supported-campaign.php', array('campaign' => $campaign, 'base_url' => $base_url));
 });
 
 $app->post('/save-post-to-fb', $authenticate($app), function () use ($app) {
