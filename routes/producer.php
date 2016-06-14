@@ -71,11 +71,11 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
 
     $account = Account::create(
         array('account_name'=>'test','id_producer'=>$producer->id_producer, 'campaign_id'=>$campaign->campaign_id));
-    
+
     $to = 'markspeed_718@yahoo.com';
-    $body = 'New campaign';
-    $subject = 'New campaign posted to Shareitcamp';
-    $from = 'info@wilsonshop.biz';
+    $subject = 'New campaign posted to Shareitcamp: '.$campaign->title;
+    $body = $campaign->copy;
+    $from = 'From: info@wilsonshop.biz';
     // @TODO look into using class if headers get more intense
     //$email = new \Wilsonshop\Utils\Email($to,$body,$subject,$from);
     //$result = $email->sendEmail();

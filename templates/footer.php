@@ -1,5 +1,5 @@
  
-<div class="row" style="backgroun" id="bottom-nav">
+<div class="row" id="bottom-nav">
 	<div class="col-xs-12">
 		<nav class="navbar-default" id="myNavbar">
 			<ul class="nav navbar-nav">
