@@ -1,3 +1,24 @@
+<script>
+
+    $(document).ready(function () {
+
+        $('#create-campaign').validate({ // initialize the plugin
+            rules: {
+                campaign_name: {
+                    required: true,
+                    email: true
+                },
+                end_date: {
+                    required: true,
+                    minlength: 5
+                }
+            }
+        });
+
+    });
+
+</script>
+
 <div class="row">
 
     <div class="col-sm-3"></div>
@@ -6,7 +27,7 @@
 
         <H1>Create Campaign</H1>
 
-        <form action="/save-campaign" enctype="multipart/form-data" method="POST" class="form-horizontal" role="form">
+        <form action="/save-campaign" enctype="multipart/form-data" method="POST" class="form-horizontal" role="form" id="create-campaign">
             <div class="form-group">
                 <label class="control-label col-sm-4">Campaign Name:</label>
                 <div class="col-sm-8">

@@ -1,3 +1,41 @@
+<script>
+
+    $(document).ready(function () {
+
+        $('#create-producer').validate({ // initialize the plugin
+            debug: true,
+            rules: {
+                first_name: {
+                    required: true,
+                    minlength: 5
+                },
+                last_name: {
+                    required: true,
+                    minlength: 5
+                },
+                user_name: {
+                    required: true,
+                    minlength: 5
+                },
+                password: {
+                    required: true,
+                    minlength: 5
+                },
+                email_address: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                first_name: "Please enter your firstname",
+                last_name: "Please enter your lastname"
+            }
+        });
+
+    });
+
+</script>
+
 <div class="row">
 
     <div class="col-sm-3"></div>
@@ -6,11 +44,10 @@
 
         <H1>Create Producer Account: </H1>
 
-        <form action="/save-producer" method="POST">
+        <form action="" method="POST" id="create-producer">
             <div class="form-group">
                 <label class="control-label col-sm-4">First Name:</label>
-                <div class="col-sm-8"><input type="text" class="form-control"
-                                             name="first_name"/>
+                <div class="col-sm-8"><input type="text" class="form-control" name="first_name" id="first_name"/>
                 </div>
             </div>
 
