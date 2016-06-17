@@ -17,6 +17,15 @@ $app->post('/save-producer', function () use ($app){
 		'password' => $req['password'], 'org_name'=>$req['org_name'],'organization_url'=>$req['organization_url'],
                'email_address'=>$req['email_address'], 'description'=>$req['description'], 'country'=>$req['country']));
 
+        // Auto respond to to producer
+        $to = $req['email_address'];
+        $subject = 'Welcome to Shareitcamp';
+        $body = "Thanks for creating an account";
+        $from = 'From: info@wilsonshop.biz';
+
+        mail($to, $subject, $body, $from);
+
+
         $app->flash('success_info', 'Producer Saved');
 
         $app->redirect('/producer');

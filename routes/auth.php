@@ -59,7 +59,12 @@ $app->post("/login", function () use ($app) {
        unset($_SESSION['urlRedirect']);
        $app->redirect($tmp);
     }
-    $app->redirect('/');
+
+    if ($user_type == "supporter") {
+        $app->redirect('/');
+    }else{
+        $app->redirect('/create-campaign');
+    }
 
 });
 

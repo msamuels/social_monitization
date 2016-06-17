@@ -28,6 +28,14 @@ $app->post('/save-supporter', function () use ($app){
                'interests'=>$req['interests'],'id_follower_count'=>$req['followers_fb'] ,'country'=>$req['country']
           ));
 
+        // Auto respond to to supporter
+        $to = $req['email_address'];
+        $subject = 'Welcome to Shareitcamp';
+        $body = "Thanks for creating an account";
+        $from = 'From: info@wilsonshop.biz';
+
+        mail($to, $subject, $body, $from);
+
         $app->flash('success_info', 'Supporter Saved');
 
         $app->redirect('/supporters');

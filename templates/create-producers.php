@@ -47,7 +47,7 @@
 
         <H1>Create Producer Account: </H1>
 
-        <form action="" method="POST" id="create-producer">
+        <form action="/save-producer" method="POST" id="create-producer">
             <div class="form-group">
                 <label class="control-label col-sm-4">First Name:</label>
                 <div class="col-sm-8"><input type="text" class="form-control" name="first_name" id="first_name"/>
