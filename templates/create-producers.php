@@ -28,7 +28,10 @@
             },
             messages: {
                 first_name: "Please enter your firstname",
-                last_name: "Please enter your lastname"
+                last_name: "Please enter your lastname",
+                user_name: "Please enter your username",
+                password: "Please enter your password",
+                email_address: "Please enter your email address"
             }
         });
 
@@ -71,7 +74,8 @@
 
             <div class="form-group">
                 <label class="control-label col-sm-4">Email Address:</label>
-                <div class="col-sm-8"><input type="text" class="form-control" name="email_address"/>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="email_address"/>
                 </div>
             </div>
 
@@ -81,7 +85,7 @@
                     <input type="text" class="form-control" name="org_name"/>
                 </div>
             </div>
-
+            <br />
             <div class="form-group">
                 <label class="control-label col-sm-4">Website:</label>
                 <div class="col-sm-8">
@@ -352,7 +356,7 @@
 
 
             <button class="btn btn-primary" type="submit">Submit</button>
-
+            <br />
             By submitting this form you agree to the Iliv8 terms and conditions.
 
 

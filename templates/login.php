@@ -1,3 +1,29 @@
+<script>
+
+    $(document).ready(function () {
+
+        $('#login').validate({ // initialize the plugin
+            debug: true,
+            rules: {
+                email: {
+                    required: true,
+                    minlength: 5
+                },
+                password: {
+                    required: true,
+                    minlength: 5
+                }
+            },
+            messages: {
+                email: "Please enter your email address",
+                password: "Please enter your password"
+            }
+        });
+
+    });
+
+</script>
+
         <div class="row">
 
     <div class="col-sm-3"></div>
@@ -18,7 +44,7 @@
             <div class="alert alert-danger"><?php echo $error; ?></div>
         <?php } ?>
 
-            <form action="/login" method="POST">
+            <form action="/login" method="POST" id="login">
 
                 <div class="form-group">
                 <label class="control-label col-sm-4">Account Type:</label>

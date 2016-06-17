@@ -1,3 +1,35 @@
+<script>
+
+    $(document).ready(function () {
+
+        $('#create-supporter').validate({ // initialize the plugin
+            debug: true,
+            rules: {
+                username: {
+                    required: true,
+                    minlength: 5
+                },
+                password: {
+                    required: true,
+                    minlength: 5
+                },
+                email_address: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                user_name: "Please enter your username",
+                password: "Please enter your password",
+                email_address: "Please enter your email address"
+            }
+        });
+
+    });
+
+</script>
+
+
 <!-- @TODO remove margin-top -->
 <div style="margin-top: 200px" class="row">
 
@@ -12,7 +44,7 @@
         <?php } ?>
 
 
-        <form action="/save-supporter" method="POST" class="form-horizontal" role="form">
+        <form action="/save-supporter" method="POST" class="form-horizontal" role="form" id="create-supporter">
             <div class="form-group">
                 <label class="control-label col-sm-4">Username:</label>
                 <div class="col-sm-8">
