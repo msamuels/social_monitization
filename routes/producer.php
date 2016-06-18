@@ -90,7 +90,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     }
 
     $to = implode(',',$supporter_email);
-    $subject = 'New campaign posted to Shareitcamp: '.$campaign->title;
+    $subject = 'New campaign posted to Shareitcamp: '.$campaign->campaign_name  ;
     $body = $campaign->copy;
     $from = 'From: info@wilsonshop.biz';
     // @TODO look into using class if headers get more intense
