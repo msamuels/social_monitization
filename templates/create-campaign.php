@@ -6,7 +6,7 @@
             rules: {
                 campaign_name: {
                     required: true,
-                    email: true
+                    minlength: 5
                 },
                 end_date: {
                     required: true,
