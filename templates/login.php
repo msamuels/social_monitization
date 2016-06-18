@@ -11,15 +11,18 @@
                 },
                 password: {
                     required: true,
-                    minlength: 5
+                    minlength: 4
                 }
             },
             messages: {
                 email: "Please enter your email address",
                 password: "Please enter your password"
+            },
+            submitHandler: function(form) {
+                form.submit();
             }
-        });
 
+        });
     });
 
 </script>

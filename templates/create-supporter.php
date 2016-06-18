@@ -22,6 +22,9 @@
                 user_name: "Please enter your username",
                 password: "Please enter your password",
                 email_address: "Please enter your email address"
+            },
+            submitHandler: function(form) {
+                form.submit();
             }
         });
 
