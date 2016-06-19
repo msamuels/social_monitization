@@ -57,66 +57,38 @@
 		</div>
 		<div class="navbar-default" id="myNavbar">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/">get started</a></li>
-				<li><a href="/">about us</a></li>
 				<li><a href="/">faq</a></li>
-				<?php if(!isset($_SESSION['user_type'])) { ?><li><a href="/login">log-in</a></li><?php } ?>
-				<li><a href="/organizations">organizations</a></li>
+
+				<?php if(!isset($_SESSION['user_type'])) { ?>
+					<li><a href="/login">log-in</a></li>
+					<li><a href="/">get started</a></li>
+					<li><a href="/">about us</a></li>
+				    <li><a href="/organizations">organizations</a></li>
+
+                <?php } else { ?>
+                        <?php if($_SESSION['user_type'] == "supporter") { ?>
+                            <li><a href="/supporter/campaigns">My Campaigns</a></li>
+                            <li><a href="/supporter/campaigns/pending">Support Campaigns</a></li>
+                            <li><a href="/rewards">Rewards</a></li>
+                        <?php } ?>
+
+                        <?php if($_SESSION['user_type'] == "producer") { ?>
+                            <li><a href="/campaigns">Campaigns</a></li>
+                            <li><a href="create-campaign">Create Campaign</a></li>
+                            <li><a href="#">Manage Account</a></li>
+                        <?php } ?>
+
+                        <?php if($_SESSION['user_type'] == "admin") { ?>
+                            <li><a href="/create-reward">Create Rewards</a></li>
+                            <li><a href="/admin-rewards">List Rewards</a></li>
+                        <?php } ?>
+
+                            <li><a href="/logout">Logout</a></li>
+
+                    <?php } ?>
+
 			</ul>
 		</div>
-	</div>
-
-	<?php if(isset($_SESSION['user_type'])) { ?>
-
-		<?php if($_SESSION['user_type'] == "supporter") { ?>
-
-			<nav class="navbar subnav">
-
-				<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/supporter/campaigns">My Campaigns</a></li>
-					<li><a href="/supporter/campaigns/pending">Support Campaigns</a></li>
-					<li><a href="/rewards">Rewards</a></li>
-					<li><a href="/logout">Logout</a></li>
-				</ul>
-			</div>
-		</nav>
-
-		<?php } ?>
-
-
-		<?php if($_SESSION['user_type'] == "producer") { ?>
-
-			<nav class="navbar subnav">
-
-				<div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/campaigns">Campaigns</a></li>
-						<li><a href="create-campaign">Create Campaign</a></li>
-						<li><a href="#">Manage Account</a></li>
-						<li><a href="/logout">Logout</a></li>
-					</ul>
-				</div>
-			</nav>
-
-		<?php } ?>
-
-	    <?php if($_SESSION['user_type'] == "admin") { ?>
-
-			<nav class="navbar subnav">
-
-				<div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/create-reward">Create Rewards</a></li>
-						<li><a href="/admin-rewards">List Rewards</a></li>
-						<li><a href="/logout">Logout</a></li>
-					</ul>
-				</div>
-			</nav>
-
-		<?php } ?>
-
-	<?php } ?>
 
 </nav>
 
