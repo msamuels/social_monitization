@@ -96,4 +96,8 @@ img {
     width: 800px;
 }
 
-
+ul.list-rewards li {
+    display:inline;
+    float: left;
+    padding:20px;
+}

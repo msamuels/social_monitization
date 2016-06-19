@@ -31,7 +31,7 @@ $app->post('/save-supporter', function () use ($app){
         // Auto respond to to supporter
         $to = $req['email_address'];
         $subject = 'Welcome to Shareitcamp';
-        $body = "Thanks for creating an account";
+        $body = "Thanks! Just one last step. Please like us on Facebook by clicking here.";
         $from = 'From: info@wilsonshop.biz';
 
         mail($to, $subject, $body, $from);
@@ -130,6 +130,17 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
         $campaignSupport = Campaign_response::create(
             array('campaign_id' => $req['campaign_id'], 'supporter_id' => $req['supporter_id']));
 
+        $campaign = Campaign::find_by_campaign_id($req['campaign_id']);
+        $supporter = Supporter::find_by_id_supporter($req['supporter_id']);
+
+        // Auto respond to to supporter
+        $to = $supporter->email_address;
+        $subject = 'Shareitcamp: Thanks for your support';
+        $body = "Thank you for supporting ".$campaign->campaign_name." You have now earned 10 points";
+        $from = 'From: info@wilsonshop.biz';
+
+        mail($to, $subject, $body, $from);
+        
         $app->flash('success_info', 'You are now supporting a new campaign');
 
         $app->redirect('/supporter/campaigns');

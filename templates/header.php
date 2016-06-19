@@ -99,6 +99,21 @@
 
 		<?php } ?>
 
+	    <?php if($_SESSION['user_type'] == "admin") { ?>
+
+			<nav class="navbar subnav">
+
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/create-reward">Create Rewards</a></li>
+						<li><a href="/admin-rewards">List Rewards</a></li>
+						<li><a href="/logout">Logout</a></li>
+					</ul>
+				</div>
+			</nav>
+
+		<?php } ?>
+
 	<?php } ?>
 
 </nav>

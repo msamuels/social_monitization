@@ -43,5 +43,10 @@ include "../routes/supporter.php";
 
 include "../routes/producer.php";
 
+
+#Admin stuff
+
+include "../routes/admin.php";
+
 $app->run();
 

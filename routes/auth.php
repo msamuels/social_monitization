@@ -29,10 +29,16 @@ $app->post("/login", function () use ($app) {
     $errors = array();
 
     // check the user type to know when model to request from
-    if ($user_type == "supporter") {
-        $client = Supporter::find_by_email_address($email);
-    } elseif($user_type == "producer") {
-        $client = Producer::find_by_email_address($email);
+    if($email == 'admin'){
+        $client = Owner::find_by_username($email);
+        $user_type = "admin";
+    }else {
+
+        if ($user_type == "supporter") {
+            $client = Supporter::find_by_email_address($email);
+        } elseif($user_type == "producer") {
+            $client = Producer::find_by_email_address($email);
+        }
     }
 
     // is the user even in the system
@@ -62,6 +68,8 @@ $app->post("/login", function () use ($app) {
 
     if ($user_type == "supporter") {
         $app->redirect('/');
+    }elseif($user_type == "admin"){
+        $app->redirect('/create-reward  ');
     }else{
         $app->redirect('/create-campaign');
     }

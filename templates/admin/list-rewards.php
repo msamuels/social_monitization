@@ -4,10 +4,11 @@
 
     <div class="col-sm-6">
 
-        My Points:
-        <H1><?php echo $points_earned; ?></H1>
-
         <H1>Rewards</H1>
+
+        <?php if (isset($success_info)) { ?>
+            <div class="alert alert-success"><?php echo $success_info; ?></div>
+        <?php } ?>
 
         <ul class="list-rewards">
             <?php
@@ -17,14 +18,12 @@
                 <li>
                     <p><img src="images/rewards/<?php echo $reward->image; ?>" height="100" width="100"/></p>
                     <p><?php echo $reward->reward_name ?></p>
-                    <p><?php echo $reward->point_value; ?></p>
                 </li>
                 <?php
             }
             ?>
 
         </ul>
-
 
     </div>
 </div>

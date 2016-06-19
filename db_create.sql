@@ -26,8 +26,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `accounts`
 --
 
-USE social_monitization;
-
 CREATE TABLE IF NOT EXISTS `accounts` (
   `idaccount` int(11) NOT NULL AUTO_INCREMENT,
   `id_producer` int(11) NOT NULL,
@@ -339,6 +337,19 @@ CREATE TABLE IF NOT EXISTS `targeting` (
   `campaign_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`tag_id`),
   KEY `fk_targeting_1_idx` (`campaign_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=big5;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `owner`
+--
+
+CREATE TABLE `owner` (
+  `id_owner` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_owner`)
 ) ENGINE=MyISAM DEFAULT CHARSET=big5;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
