@@ -66,6 +66,7 @@ $app->get('/supporter/campaigns', $authenticate($app), function () use($app) {
     $email = $app->view()->getData('user');
     $supporter = Supporter::find_by_email_address($email);
     $flash = $app->view()->getData('flash');
+    $base_url = $app->config('configs')['base_url'];
 
     $supportedCampaigns = Campaign_response::find('all',
 	 array('conditions' => array('supporter_id in (?)', array($supporter->id_supporter))));
@@ -82,7 +83,7 @@ $app->get('/supporter/campaigns', $authenticate($app), function () use($app) {
     }
 
     $app->render('supported-campaigns.php', array('supported_campaigns' => $supportedCampaigns,
-        'success_info' => $success_info));
+        'success_info' => $success_info, 'base_url' => $base_url));
 });
 
 

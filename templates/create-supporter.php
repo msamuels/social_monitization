@@ -75,7 +75,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <!--<div class="form-group">
                 <label class="control-label col-sm-4" style="text-align:right">Interests:</label>
                 <SELECT NAME="interests" MULTIPLE SIZE=5>
                     <OPTION VALUE="sports">sports
@@ -84,10 +84,10 @@
                     <OPTION VALUE="culture">tomatoes
                     <OPTION VALUE="religion">olives
                 </SELECT>
-            </div>
+            </div>-->
 
             <div class="form-group">
-                <label class="control-label col-sm-4" style="text-align:right"># of FB followers:</label>
+                <label class="control-label col-sm-4" style="text-align:right"># of Facebook followers:</label>
                 <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control"
                                                                      name="followers_fb"/>
                 </div>
@@ -341,7 +341,7 @@
 
             <br/>
 
-            By submitting this form you agree to the Iliv8 terms and conditions.
+            By submitting this form you agree to shareitcamp.com terms.
 
         </form>
 
