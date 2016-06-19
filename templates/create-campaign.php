@@ -17,6 +17,10 @@
 
     });
 
+    $(function() {
+        $( ".datepicker" ).datepicker();
+    });
+
 </script>
 
 <div class="row">
@@ -56,14 +60,14 @@
             <div class="form-group">
                 <label class="control-label col-sm-4">Start Date:</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="start_date" placeholder="yyyy-mm-dd"/>
+                    <input type="text" class="form-control datepicker" name="start_date" placeholder="mm/dd/yyyy"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-4">End Date:</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="end_date" placeholder="yyyy-mm-dd"/>
+                    <input type="text" class="form-control datepicker" name="end_date" placeholder="mm/dd/yyyy"/>
                 </div>
             </div>
 
