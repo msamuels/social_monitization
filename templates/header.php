@@ -93,7 +93,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="/campaigns">Campaigns</a></li>
 						<li><a href="create-campaign">Create Campaign</a></li>
-						<li><a href="/get-started/supporter/register">Manage Account</a></li>
+						<li><a href="#">Manage Account</a></li>
 						<li><a href="/logout">Logout</a></li>
 					</ul>
 				</div>

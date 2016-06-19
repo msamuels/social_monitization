@@ -76,6 +76,7 @@
         <label class="control-label col-sm-4">Campaign (optional):</label>
         <div class="col-sm-8">
             <select name="campaign">
+                <option selected>Select One:</option>
                 <?php foreach ($campaigns as $campaign){ ?>
                     <option value="<?php echo $campaign->campaign_id; ?>"><?php echo $campaign->campaign_name; ?></option>
                 <?php } ?>

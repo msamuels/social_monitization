@@ -27,10 +27,12 @@ $app->post('/save-reward', $authenticate($app), function () use ($app){
     // @TODO check the result message to see if the upload was successful
     $result = $upload->uploadFile("Upload Succeeded","Upload failed");
 
+    $reward = $req['campaign'] == 0 ? NULL : $req['campaign'];
+
     $reward = Reward::create(
         array('reward_name'=>$req['reward_name'], 'image'=>$_FILES['image']['name'], 'details' => $req['details'],
             'expiration_date' => $req['expiration_date'], 'quantity_remaining' => $req['quantity_remaining'],
-            'point_value' => $req['point_value'], 'campaign_id' => $req['campaign']));
+            'point_value' => $req['point_value'], 'campaign_id' => $reward));
 
     $msg = 'Reward Saved: '. $req['reward_name'];
     $app->flash('success_info', $msg);
