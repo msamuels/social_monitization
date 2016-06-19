@@ -5,7 +5,11 @@
     <p><a href="/create-producer" class="btn support-btns">Get Started</a></p>
 </div>
 
-<div class="row"><strong>Why use Shareitcamp?</strong></div>
+<div class="row">
+	<div class="col-xs-12">
+		<strong>Why use Shareitcamp?</strong>
+	</div>
+</div>
 
 
 
