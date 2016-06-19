@@ -1,3 +1,11 @@
+<script>
+
+    $(function() {
+        $( ".datepicker" ).datepicker();
+    });
+
+</script>
+
 <div class="row">
 
     <div class="col-sm-3"></div>
@@ -24,7 +32,7 @@
     <div class="form-group">
         <label class="control-label col-sm-4">Expiration date:</label>
         <div class=" col-sm-8">
-            <input type="text" class="form-control" name="expiration date" placeholder="yyyy-mm-dd"/>
+            <input type="text" class="form-control datepicker" name="expiration date" placeholder="yyyy-mm-dd"/>
         </div>
     </div>
 
@@ -62,6 +70,17 @@
         <div class=" col-sm-8">
             <textarea rows="4" cols="50" name="details" class="form-control">   </textarea>
         </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-4">Campaign (optional):</label>
+        <div class="col-sm-8">
+            <select name="campaign">
+                <?php foreach ($campaigns as $campaign){ ?>
+                    <option value="<?php echo $campaign->campaign_id; ?>"><?php echo $campaign->campaign_name; ?></option>
+                <?php } ?>
+            </select>
+         </div>
     </div>
 
     <button class="btn btn-primary" type="submit" >Submit</button>

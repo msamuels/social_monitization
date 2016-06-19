@@ -5,12 +5,14 @@ $app->get('/create-reward', $authenticate($app), function () use ($app){
 
     $flash = $app->view()->getData('flash');
 
+    $campaigns = Campaign::find('all');
+
     $success_info = '';
     if (isset($flash['success_info'])) {
         $success_info = $flash['success_info'];
     }
 
-    $app->render('admin/create-reward.php', array('success_info' => $success_info));
+    $app->render('admin/create-reward.php', array('success_info' => $success_info, 'campaigns' => $campaigns));
 });
 
 # Save rewards
@@ -28,7 +30,7 @@ $app->post('/save-reward', $authenticate($app), function () use ($app){
     $reward = Reward::create(
         array('reward_name'=>$req['reward_name'], 'image'=>$_FILES['image']['name'], 'details' => $req['details'],
             'expiration_date' => $req['expiration_date'], 'quantity_remaining' => $req['quantity_remaining'],
-            'point_value' => $req['point_value']));
+            'point_value' => $req['point_value'], 'campaign_id' => $req['campaign']));
 
     $msg = 'Reward Saved: '. $req['reward_name'];
     $app->flash('success_info', $msg);

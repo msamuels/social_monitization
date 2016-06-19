@@ -18,7 +18,7 @@
 
             ?>
                 <tr>
-                    <td><a href="/campaings?id=<?php echo $campaign->campaign_id; ?>">
+                    <td><a href="/supporter/campaign/<?php echo $campaign->campaign_id; ?>">
 			<?php echo $campaign->campaign_name; ?></a> <br />
 			<img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" width="150" />
 		    </td>

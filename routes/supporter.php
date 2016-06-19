@@ -161,7 +161,10 @@ $app->get('/supporter/campaign/:id', function ($id) use($app) {
 
     $campaign = Campaign::find_by_campaign_id($id);
 
-    $app->render('supporter/supported-campaign.php', array('campaign' => $campaign, 'base_url' => $base_url));
+    $reward = Reward::find_by_campaign_id($campaign->campaign_id);
+
+    $app->render('supporter/supported-campaign.php', array('campaign' => $campaign, 'base_url' => $base_url,
+        'reward' => $reward));
 });
 
 $app->post('/save-post-to-fb', $authenticate($app), function () use ($app) {
