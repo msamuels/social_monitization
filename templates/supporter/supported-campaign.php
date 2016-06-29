@@ -4,7 +4,7 @@
     <!-- Show campaigns supported -->
 
                <H1> <?php echo $campaign->campaign_name; ?> </H1>
-
+               <h2> By: <?php echo $campaign->getProducer()->org_name; ?></h2>
             <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" />
 
             <?php echo $campaign->copy; ?>
