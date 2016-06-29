@@ -104,6 +104,7 @@ ul{
 ul.list-things li {
     display:inline;
     float: left;
-    margin-right: 2px;
+    margin-right: 35px;
     width:170px;
+    height:300px;
 }
