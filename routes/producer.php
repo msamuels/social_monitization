@@ -19,8 +19,16 @@ $app->post('/save-producer', function () use ($app){
 
         // Auto respond to to producer
         $to = $req['email_address'];
-        $subject = 'Welcome to Shareitcamp';
-        $body = "Thanks for creating an account";
+        $subject = 'Welcome to shareitcamp';
+        $body = "<p>Thank you for joining shareitacamp. We hope that by working with us, you are able to achieve your
+            objectives. If you are ready to get started simply click the link below to set up your first campaign.</p>";
+
+        $body .= "<button>Get Started</button>";
+
+        $body .= "<p>If not you can always log-in to SIC at any time to get started. </p>";
+
+        $body .= "Thanks, <br />The shareitcamp team";
+
         $from = 'From: info@wilsonshop.biz';
 
         mail($to, $subject, $body, $from);
@@ -89,14 +97,49 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
         array_push($supporter_email, $supporter->email_address);
     }
 
-    $to = implode(',',$supporter_email);
-    $subject = 'New campaign posted to Shareitcamp: '.$campaign->campaign_name  ;
-    $body = $campaign->copy;
+    // Email Producer that campaign has been created
+    $to = $producer->email_address;
+    $subject = 'Confirmation of your order!';
+
+    $body = "<p>Congratulations, your campaign - [campaign-name] - has been successfully uploaded. We will get back to
+        you with any questions in 24 hrs. Once approved, supporters on the shareticamp will be notified of your campaign
+         and will be able to share it with their social networks. </p>";
+
+    $body .= "<p>Please log-in to shareitacamp in 24hrs to view the approval status of your campaign. </p>";
+
+    $body .= "<p>Order Summary
+        Order #: 1234567890
+        Date Posted: 02/20/16
+        Campaign Name: ".$campaign->campaign_name."
+        Start Date:  ".$campaign->start_date."
+        End Date:  ".$campaign->end_date."
+        </p>";
+
+    $body .= "<p>Thanks, <br />
+        The shareitcamp team</p>";
+
     $from = 'From: info@wilsonshop.biz';
-    // @TODO look into using class if headers get more intense
-    //$email = new \Wilsonshop\Utils\Email($to,$body,$subject,$from);
-    //$result = $email->sendEmail();
+
     mail($to, $subject, $body, $from);
+
+
+
+    // Email supporter to let them know campaign has been created
+    $to_supporter = implode(',',$supporter_email);
+    $subject_supporter = 'New campaign posted to shareitcamp! ';
+
+    $body_supporter = "<p>is asking for your support for their ".$producer->org_name." effort. Click on the link below to find
+    out more and, if you are interested, hit the support button. Once you’ve don’t that just post to Facebook. </p>";
+
+    $body_supporter .= "<button>Click here to support</button>";
+
+    $body_supporter .= "<p>Oh, and for sharing the link you will earn [x] points.</p>";
+
+    $body_supporter .= "<p>Thanks, <br />
+        The shareitcamp team</p>";
+
+    mail($to_supporter, $subject_supporter, $body_supporter, $from);
+
     $app->flash('success_info', 'Campaign Saved');
     $app->redirect('/campaigns');
 });

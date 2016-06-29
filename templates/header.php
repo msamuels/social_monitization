@@ -61,7 +61,7 @@
 				<?php if(!isset($_SESSION['user_type'])) { ?>
 					<li><a href="/login">log-in</a></li>
 					<li><a href="/">get started</a></li>
-					<li><a href="/">about us</a></li>
+					<li><a href="/about-us">about us</a></li>
 				    <li><a href="/organizations">organizations</a></li>
 
                 <?php } else { ?>

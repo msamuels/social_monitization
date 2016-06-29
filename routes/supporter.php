@@ -30,8 +30,23 @@ $app->post('/save-supporter', function () use ($app){
 
         // Auto respond to to supporter
         $to = $req['email_address'];
-        $subject = 'Welcome to Shareitcamp';
-        $body = "Thanks! Just one last step. Please like us on Facebook by clicking here.";
+        $subject = 'Welcome to shareitcamp!';
+
+        $body = "<p>Thank you for joining this effort. We will notify you of new campaigns via email so please be on the
+            lookout.<.p>";
+        $body .= "<p>Don’t want to wait until then? Great. Here are 2 ways you can get a head start:</p>";
+
+        $body .= "<p>1) Go to shareitcamp and support us as your first campaign! Just click here.</p>";
+
+        $body .= "<button>Click here to support</button>";
+
+        $body .= "<p>2) Like us on Facebook</p>";
+
+        $body .= "<button>Facebok</button>";
+
+        $body .= "<p>Thanks, <br />
+        The shareitcamp team</p>";
+
         $from = 'From: info@wilsonshop.biz';
 
         mail($to, $subject, $body, $from);
@@ -136,7 +151,16 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
         // Auto respond to to supporter
         $to = $supporter->email_address;
         $subject = 'Shareitcamp: Thanks for your support';
-        $body = "Thank you for supporting ".$campaign->campaign_name." You have now earned 10 points";
+
+        $body = "Thank you for agreeing to support ".$campaign->campaign_name.". Please click on the link below to go
+            the campaign page . Once there, click on the “share on Facebook” link. <p>For sharing the link you will earn 10
+            points. </p>";
+
+        $body .= "<button>Click here to support</button>";
+
+        $body .= "<p>Thanks, <br />
+        The shareitcamp team</p>";
+
         $from = 'From: info@wilsonshop.biz';
 
         mail($to, $subject, $body, $from);
