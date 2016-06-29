@@ -10,6 +10,8 @@
     <meta property="og:title"              content="<?php echo $campaign->campaign_name; ?>" />
     <meta property="og:description"        content="<?php echo $campaign->copy; ?>" />
     <meta property="og:image"              content="http://social.wilsonshop.biz/images/screenshots/<?php echo $campaign->screen_shot; ?>" />
+    <meta property="og:image:width" content="196" />
+    <meta property="og:image:height" content="300" />
     <title>shareitcamp</title>
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/override.css" rel="stylesheet">
