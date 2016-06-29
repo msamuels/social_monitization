@@ -3,12 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:url"                content="http://social.wilsonshop.biz/supporter/campaign/1" />
-        <meta property="og:type"               content="article" />
-        <meta property="og:title"              content="Fashion in the Black" />
-        <meta property="og:description"        content="This is test copy" />
-        <meta property="og:image"              content="http://social.wilsonshop.biz/images/screenshots/Flyer1.jpg" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>shareitcamp</title>
 	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/override.css" rel="stylesheet">
