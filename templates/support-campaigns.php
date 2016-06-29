@@ -16,7 +16,7 @@
                     <p> By: <?php echo $campaigns[0]->getProducer()->org_name; ?></p>
                     <p>
                     <p><img src="images/rewards/<?php echo $campaign->screen_shot; ?>" height="100" width="100"/></p>
-                    <p><?php echo $campaign->copy; ?> Pts</p>
+                    <p><?php echo $campaign->copy; ?></p>
 
                     <form action="/save-campaign-support" method="POST">
                         <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>

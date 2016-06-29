@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>shareitcamp</title>
 	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/override.css" rel="stylesheet">
-	<link href="css/jquery-ui.min.css" rel="stylesheet">
+	<link href="/css/override.css" rel="stylesheet">
+	<link href="/css/jquery-ui.min.css" rel="stylesheet">
 	<script src="/js/jquery-3.0.0.min.js"></script>
 	<script src="/js/jquery.validate.min.js"></script>
 	<script src="/js/jquery-ui.min.js"></script>
