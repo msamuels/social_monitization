@@ -11,10 +11,8 @@
             foreach ($campaigns as $campaign) {
                 ?>
                 <li>
-                    <p><?php echo $campaign->campaign_name; ?></
-                    <p>
-                    <p> By: <?php echo $campaigns[0]->getProducer()->org_name; ?></
-                    <p>
+                    <p><?php echo $campaign->campaign_name; ?></p>
+                    <p> By: <?php echo $campaigns[0]->getProducer()->org_name; ?></p>
                     <p><img src="images/rewards/<?php echo $campaign->screen_shot; ?>" height="100" width="100"/></p>
                     <p><?php echo $campaign->copy; ?> Pts</p>
                 </li>
