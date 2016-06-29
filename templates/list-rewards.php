@@ -9,7 +9,7 @@
 
         <H1>Rewards</H1>
 
-        <ul class="list-rewards">
+        <ul class="list-things">
             <?php
 
             foreach ($rewards as $reward) {

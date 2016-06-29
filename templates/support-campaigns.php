@@ -1,56 +1,34 @@
 <!-- @TODO remove margin-top -->
-<div style="margin-top: 200px;margin-left: 200px;">
+
 <H1>Campaigns</H1>
-<!-- @TODO remove width -->
-<table border="1px solid grey" width="700">
-    <tr>
-        <td>Campaign</td>
-        <td>Producer</td>
-        <td>Support </td>
-        <td>Response needed by</td>
-        <td>Copy</td>
-	<td>Url</td>
-    <tr>
+<div class="row" id="supporters-list" style="margin-left:300px">
 
+    <!-- @TODO remove width -->
+
+    <ul class="list-things" style="list-style: none">
         <?php
-        if(count($campaigns) > 0) {
-            foreach($campaigns as $campaign){
+        if (count($campaigns) > 0) {
+            foreach ($campaigns as $campaign) {
+                ?>
+                <li>
+                    <p><?php echo $campaign->campaign_name; ?></p>
+                    <p>
+                    <p> By: <?php echo $campaigns[0]->getProducer()->org_name; ?></p>
+                    <p>
+                    <p><img src="images/rewards/<?php echo $campaign->screen_shot; ?>" height="100" width="100"/></p>
+                    <p><?php echo $campaign->copy; ?> Pts</p>
 
-            ?>
-                <tr>
-                    <td><a href="/supporter/campaign/<?php echo $campaign->campaign_id; ?>">
-			<?php echo $campaign->campaign_name; ?></a> <br />
-			<img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" width="150" />
-		    </td>
+                    <form action="/save-campaign-support" method="POST">
+                        <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
+                        <input type="hidden" name="supporter_id" value="<?php echo $user_id; ?>"/>
+                        <button class="btn btn-primary" type="submit">Support Campaign</button>
+                    </form>
 
-
-		    <td> -- </td>
-
-                    <td>
-                        <form action="/save-campaign-support" method="POST">
-                            <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>" />
-                            <input type="hidden" name="supporter_id" value="<?php echo $user_id; ?>" />
-                            <button class="btn btn-primary" type="submit" >Support Campaign</button>
-                        </form>
-                    </td>
-
-
-                    <td> <?php echo date_format($campaign->end_date, 'Y-m-d '); ?> </td>
-
-		    <td> <?php echo $campaign->copy; ?> </td>
-
-		    <td> <?php echo $campaign->url; ?> </td>
-                </tr>
-
-        <?php
+                </li>
+                <?php
+            }
         }
+        ?>
 
-    } else {
-        echo "No campaigns found";
-    }
-    ?>
-
-
-</table>
-
+    </ul>
 </div>

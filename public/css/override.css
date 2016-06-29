@@ -96,8 +96,14 @@ img {
     width: 800px;
 }
 
-ul.list-rewards li {
+ul{
+    list-style: none;
+
+}
+
+ul.list-things li {
     display:inline;
     float: left;
-    padding:20px;
+    margin-right: 2px;
+    width:170px;
 }
