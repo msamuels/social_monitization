@@ -15,7 +15,7 @@
                     <p>
                     <p> By: <?php echo $campaigns[0]->getProducer()->org_name; ?></p>
                     <p>
-                    <p><img src="images/rewards/<?php echo $campaign->screen_shot; ?>" height="100" width="100"/></p>
+                    <p><img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" height="100" width="100"/></p>
                     <p><?php echo $campaign->copy; ?></p>
 
                     <form action="/save-campaign-support" method="POST">

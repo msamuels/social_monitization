@@ -15,7 +15,7 @@
             <li>
                 <p><?php echo$supported_campaign->campaign->campaign_name; ?></p>
                 <p> By: <?php echo $supported_campaign->campaign->getProducer()->org_name; ?></p>
-                <p><img src="images/rewards/<?php echo $supported_campaign->campaign->screen_shot; ?>" height="100" width="100"/></p>
+                <p><img src="/images/screenshots/<?php echo $supported_campaign->campaign->screen_shot; ?>" height="100" width="100"/></p>
                 <p><?php echo $supported_campaign->campaign->copy; ?></p>
                 <form method="POST" action="/save-post-to-fb">
                     <input type="hidden" name="message" id="messgae" value="<?php echo $supported_campaign->campaign->campaign_name; ?>" />
