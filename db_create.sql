@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: db591622819.db.1and1.com
--- Generation Time: Jun 10, 2016 at 02:05 PM
+-- Generation Time: Jun 30, 2016 at 11:56 AM
 -- Server version: 5.5.49-0+deb7u1-log
 -- PHP Version: 5.4.45-0+deb7u3
 
@@ -55,21 +55,6 @@ CREATE TABLE IF NOT EXISTS `calculation` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `campaign_responses`
---
-
-CREATE TABLE IF NOT EXISTS `campaign_responses` (
-  `campaign_response_id` int(11) NOT NULL AUTO_INCREMENT,
-  `campaign_id` int(11) NOT NULL,
-  `supporter_id` int(11) DEFAULT NULL,
-  `campaign_response` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`campaign_response_id`),
-  KEY `fk_campaign_response_1_idx` (`campaign_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=big5;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `campaigns`
 --
 
@@ -92,14 +77,17 @@ CREATE TABLE IF NOT EXISTS `campaigns` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `donation_type`
+-- Table structure for table `campaign_responses`
 --
 
-CREATE TABLE IF NOT EXISTS `donation_type` (
-  `donationtype_id` int(11) NOT NULL AUTO_INCREMENT,
-  `donation_name` varchar(45) NOT NULL,
-  PRIMARY KEY (`donationtype_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=big5;
+CREATE TABLE IF NOT EXISTS `campaign_responses` (
+  `campaign_response_id` int(11) NOT NULL AUTO_INCREMENT,
+  `campaign_id` int(11) NOT NULL,
+  `supporter_id` int(11) DEFAULT NULL,
+  `campaign_response` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`campaign_response_id`),
+  KEY `fk_campaign_response_1_idx` (`campaign_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 
@@ -114,6 +102,18 @@ CREATE TABLE IF NOT EXISTS `donations` (
   PRIMARY KEY (`donation_id`),
   KEY `campaign_id_idx` (`campaign_id`),
   KEY `fk_donationtype_id_idx` (`donationtype_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=big5;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `donation_type`
+--
+
+CREATE TABLE IF NOT EXISTS `donation_type` (
+  `donationtype_id` int(11) NOT NULL AUTO_INCREMENT,
+  `donation_name` varchar(45) NOT NULL,
+  PRIMARY KEY (`donationtype_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
@@ -175,15 +175,15 @@ CREATE TABLE IF NOT EXISTS `org class` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `producer_account`
+-- Table structure for table `owner`
 --
 
-CREATE TABLE IF NOT EXISTS `producer_account` (
-  `producer_id` int(11) NOT NULL,
-  `campaign_id` int(11) DEFAULT NULL,
-  `account_name` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`producer_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=big5;
+CREATE TABLE IF NOT EXISTS `owner` (
+  `id_owner` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_owner`)
+) ENGINE=MyISAM  DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 
@@ -210,6 +210,19 @@ CREATE TABLE IF NOT EXISTS `producers` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `producer_account`
+--
+
+CREATE TABLE IF NOT EXISTS `producer_account` (
+  `producer_id` int(11) NOT NULL,
+  `campaign_id` int(11) DEFAULT NULL,
+  `account_name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`producer_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=big5;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `reward`
 --
 
@@ -220,21 +233,8 @@ CREATE TABLE IF NOT EXISTS `reward` (
   `expiration_date` datetime DEFAULT NULL,
   `quantity_remaining` int(11) DEFAULT NULL,
   `point_value` int(11) DEFAULT NULL,
+  `campaign_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`reward_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=big5;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `reward_claimed`
---
-
-CREATE TABLE IF NOT EXISTS `reward_claimed` (
-  `id_supporter` int(11) NOT NULL,
-  `reward_id` int(11) NOT NULL,
-  `date_claimed` datetime DEFAULT NULL,
-  PRIMARY KEY (`id_supporter`,`reward_id`),
-  KEY `fk_reward_claimed_reward1_idx` (`reward_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
@@ -251,7 +251,22 @@ CREATE TABLE IF NOT EXISTS `rewards` (
   `expiration_date` datetime DEFAULT NULL,
   `quantity_remaining` int(11) DEFAULT NULL,
   `point_value` int(11) DEFAULT NULL,
+  `campaign_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`reward_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=big5;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reward_claimed`
+--
+
+CREATE TABLE IF NOT EXISTS `reward_claimed` (
+  `id_supporter` int(11) NOT NULL,
+  `reward_id` int(11) NOT NULL,
+  `date_claimed` datetime DEFAULT NULL,
+  PRIMARY KEY (`id_supporter`,`reward_id`),
+  KEY `fk_reward_claimed_reward1_idx` (`reward_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
@@ -285,20 +300,6 @@ CREATE TABLE IF NOT EXISTS `source` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `supporter_interest`
---
-
-CREATE TABLE IF NOT EXISTS `supporter_interest` (
-  `supporter_interest_if` int(11) NOT NULL AUTO_INCREMENT,
-  `supporter_id` int(11) DEFAULT NULL,
-  `id_interest` int(11) DEFAULT NULL,
-  PRIMARY KEY (`supporter_interest_if`),
-  KEY `fk_supporter_interest_1_idx` (`supporter_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=big5;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `supporters`
 --
 
@@ -313,6 +314,20 @@ CREATE TABLE IF NOT EXISTS `supporters` (
   `country` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_supporter`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=big5;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `supporter_interest`
+--
+
+CREATE TABLE IF NOT EXISTS `supporter_interest` (
+  `supporter_interest_if` int(11) NOT NULL AUTO_INCREMENT,
+  `supporter_id` int(11) DEFAULT NULL,
+  `id_interest` int(11) DEFAULT NULL,
+  PRIMARY KEY (`supporter_interest_if`),
+  KEY `fk_supporter_interest_1_idx` (`supporter_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 
@@ -337,19 +352,6 @@ CREATE TABLE IF NOT EXISTS `targeting` (
   `campaign_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`tag_id`),
   KEY `fk_targeting_1_idx` (`campaign_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=big5;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `owner`
---
-
-CREATE TABLE `owner` (
-  `id_owner` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_owner`)
 ) ENGINE=MyISAM DEFAULT CHARSET=big5;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
