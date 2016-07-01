@@ -11,7 +11,7 @@
             foreach ($campaigns as $campaign) {
                 ?>
                 <li>
-                    <p><strong><?php echo $campaign->campaign_name; ?></strong></p>
+                    <p><strong><?php echo $campaign->campaign_name; ?></strong> </p>
                     <p>
                     <p><i> by <?php echo $campaigns[0]->getProducer()->org_name; ?></i></p>
                     <p>

@@ -6,6 +6,9 @@ body{
     margin-top: 40px;
 }
 
+.campaign-icons{
+    max-width: 30px;
+}
 .circle{
     background: #d0d0d0;
     border-radius: 50%;

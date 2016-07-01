@@ -37,8 +37,7 @@
                 <input type="hidden" name="message" id="messgae"
                        value="<?php echo $supported_campaign->campaign->campaign_name; ?>"/>
 
-                <divT
-                " ass="fb-share-button"
+                <div class="fb-share-button"
                 data-href="<?php echo $base_url; ?>
                 /supporter/campaign/<?php echo $supported_campaign->campaign->campaign_id; ?>"
                 data-layout="button_count" data-mobile-iframe="true">
@@ -47,13 +46,40 @@
     </div>
 
     <div class="col-sm-4">
-        <p><strong>Start Date:</strong> <?php echo date_format($campaign->start_date, 'Y-m-d '); ?></p>
-        <p><strong>Start Date:</strong> <?php echo date_format($campaign->end_date, 'Y-m-d '); ?></p>
-        <p><strong>Respond By:</strong> <?php echo date_format($campaign->end_date, 'Y-m-d '); ?></p>
+
+        <div class="row">
+            <div class="col-sm-1">
+                <img src="/images/cal.png" class="campaign-icons" />
+            </div>
+            <div class="col-sm-11" style="text-align: left;">
+                <p><strong>Start Date:</strong> <?php echo date_format($campaign->start_date, 'Y-m-d '); ?></p>
+                <p><strong>Start Date:</strong> <?php echo date_format($campaign->end_date, 'Y-m-d '); ?></p>
+                <p><strong>Respond By:</strong> <?php echo date_format($campaign->end_date, 'Y-m-d '); ?></p>
+            </div>
+
+        </div>
+
+
         <br/>
-        <p><strong>Visit:</strong> <?php echo $campaign->url; ?></p>
+        <div class="row">
+            <div class="col-sm-1">
+                <img src="/images/www.png" class="campaign-icons" />
+            </div>
+            <div class="col-sm-11" style="text-align: left;">
+                <p><strong>Visit:</strong> <?php echo $campaign->url; ?></p>
+            </div>
+        </div>
+
         <br/>
-        <p><strong>Points:</strong> 10</p>
+        <div class="row">
+            <div class="col-sm-1">
+                <img src="/images/prize.png" class="campaign-icons" />
+            </div>
+            <div class="col-sm-11" style="text-align: left;">
+                <p><strong>10 Points</strong></p>
+            </div>
+         </div>
+
         <br />
         <?php
         if(isset($_SESSION['user_type'])){

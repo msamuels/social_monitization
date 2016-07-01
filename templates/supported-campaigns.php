@@ -17,7 +17,7 @@
                         <?php echo$supported_campaign->campaign->campaign_name; ?>
                     </a>
                 </p>
-                <p><i> by: <?php echo $supported_campaign->campaign->getProducer()->org_name; ?></i></p>
+                <p><i> by <?php echo $supported_campaign->campaign->getProducer()->org_name; ?></i></p>
                 <p><img src="/images/screenshots/<?php echo $supported_campaign->campaign->screen_shot; ?>" height="100" width="100"/></p>
                 <p><?php echo $supported_campaign->campaign->copy; ?></p>
                 <p><button class="btn btn-success" type="submit">Support Pledged</button></p>
