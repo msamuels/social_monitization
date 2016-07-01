@@ -3,11 +3,9 @@
     <div class="col-sm-3"></div>
 
     <div class="col-sm-6">
+        <p> <a href="#producer"> Producer</a> | <a href="#supporter"> Supporter</a> </p>
 
-        <?php
-
-        if (true) {
-            ?>
+<a name="producer">Producer</a>
 
             <p><strong>Can persons donate on shareitecamp.com?</strong></p>
 
@@ -68,8 +66,8 @@
                 innovative
                 approaches that support and strengthen their communities.</p>
 
-        <?php } else { ?>
 
+        <a name="supporter"> Supporter</a>
             <p><strong>What is a campaign?</strong></p>
 
             <p>On shareitcamp a campaign is a promotional message that a person or an organization posts to make others
@@ -125,9 +123,6 @@
                 We do not
                 share your name or any other identifying information about you.</p>
 
-            <?php
-        }
-        ?>
     </div>
 
     <div class="col-sm-3"></div>
