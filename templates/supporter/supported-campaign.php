@@ -71,7 +71,7 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <div class="row"><h2>About</h2></div>
+            <div class="row"><h2>About <?php echo $producer->org_name; ?></h2></div>
             <div class="row">
                 <?php echo $producer->description; ?>
             </div>

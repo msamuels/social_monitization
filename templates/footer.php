@@ -13,5 +13,12 @@
 	</div>
 </div>
 
+<div class="row">
+	Copyright 2016 shareitcamp.com. All rights reserved<br />
+	Terms of Service | Privacy Policy
 </div>
+
+</div>
+
+
 </body>
