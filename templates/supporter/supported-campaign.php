@@ -16,7 +16,9 @@
              data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->campaign_id; ?>"
              data-layout="button_count" data-mobile-iframe="true">
         </div>
-        <div><img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>"/></div>
+
+        <div><img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" class="campaign_image"/></div>
+
         <div class="fb-share-button"
              data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->campaign_id; ?>"
              data-layout="button_count" data-mobile-iframe="true">
@@ -38,9 +40,9 @@
                        value="<?php echo $supported_campaign->campaign->campaign_name; ?>"/>
 
                 <div class="fb-share-button"
-                data-href="<?php echo $base_url; ?>
+                     data-href="<?php echo $base_url; ?>
                 /supporter/campaign/<?php echo $supported_campaign->campaign->campaign_id; ?>"
-                data-layout="button_count" data-mobile-iframe="true">
+                     data-layout="button_count" data-mobile-iframe="true">
             </form>
         <?php } ?>
     </div>
@@ -49,7 +51,7 @@
 
         <div class="row">
             <div class="col-sm-1">
-                <img src="/images/cal.png" class="campaign-icons" />
+                <img src="/images/cal.png" class="campaign-icons"/>
             </div>
             <div class="col-sm-11" style="text-align: left;">
                 <p><strong>Start Date:</strong> <?php echo date_format($campaign->start_date, 'Y-m-d '); ?></p>
@@ -59,11 +61,10 @@
 
         </div>
 
-
         <br/>
         <div class="row">
             <div class="col-sm-1">
-                <img src="/images/www.png" class="campaign-icons" />
+                <img src="/images/www.png" class="campaign-icons"/>
             </div>
             <div class="col-sm-11" style="text-align: left;">
                 <p><strong>Visit:</strong> <?php echo $campaign->url; ?></p>
@@ -73,35 +74,43 @@
         <br/>
         <div class="row">
             <div class="col-sm-1">
-                <img src="/images/prize.png" class="campaign-icons" />
+                <img src="/images/prize.png" class="campaign-icons"/>
             </div>
             <div class="col-sm-11" style="text-align: left;">
                 <p><strong>10 Points</strong></p>
             </div>
-         </div>
-
-        <br />
-        <?php
-        if(isset($_SESSION['user_type'])){
-            if($isPending){ ?>
-                <button class="btn btn-success">Support Pledged</button>
-        <?php } else { ?>
-            <form action="/save-campaign-support" method="POST">
-                <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
-                <input type="hidden" name="supporter_id" value="<?php echo $user_id; ?>"/>
-                <button class="btn support-btns" type="submit">Support Campaign</button>
-            </form>
-
-        <?php } } ?>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="row"><h2>About <?php echo $producer->org_name; ?></h2></div>
-            <div class="row">
-                <?php echo $producer->description; ?>
-            </div>
         </div>
+
+
+        <br/>
+        <?php
+        if (isset($_SESSION['user_type'])) {
+            if ($isPending) { ?>
+                <button class="btn btn-success">Support Pledged</button>
+            <?php } else { ?>
+                <form action="/save-campaign-support" method="POST">
+                    <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
+                    <input type="hidden" name="supporter_id" value="<?php echo $user_id; ?>"/>
+                    <button class="btn support-btns" type="submit">Support Campaign</button>
+                </form>
+
+            <?php }
+        } ?>
+        
     </div>
+
+
+
 
 </div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="row"><h2>About <?php echo $producer->org_name; ?></h2></div>
+        <div class="row">
+            <?php echo $producer->description; ?>
+        </div>
+    </div>
+</div>
+
+

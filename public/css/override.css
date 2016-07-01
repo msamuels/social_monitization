@@ -9,6 +9,11 @@ body{
 .campaign-icons{
     max-width: 30px;
 }
+
+.campaign_image{
+    max-width: 300px;
+}
+
 .circle{
     background: #d0d0d0;
     border-radius: 50%;
