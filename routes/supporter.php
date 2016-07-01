@@ -29,6 +29,10 @@ $app->post('/save-supporter', function () use ($app){
           ));
 
         // Auto respond to to supporter
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $headers .= 'From: Birthday Reminder info@wilsonshop.biz' . "\r\n";
+
         $to = $req['email_address'];
         $subject = 'Welcome to shareitcamp!';
 
@@ -49,7 +53,7 @@ $app->post('/save-supporter', function () use ($app){
 
         $from = 'From: info@wilsonshop.biz';
 
-        mail($to, $subject, $body, $from);
+        mail($to, $subject, $body, $headers);
 
         $app->flash('success_info', 'Supporter Saved');
 
@@ -149,6 +153,10 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
         $supporter = Supporter::find_by_id_supporter($req['supporter_id']);
 
         // Auto respond to to supporter
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $headers .= 'From: Birthday Reminder info@wilsonshop.biz' . "\r\n";
+
         $to = $supporter->email_address;
         $subject = 'Shareitcamp: Thanks for your support';
 
@@ -161,9 +169,7 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
         $body .= "<p>Thanks, <br />
         The shareitcamp team</p>";
 
-        $from = 'From: info@wilsonshop.biz';
-
-        mail($to, $subject, $body, $from);
+        mail($to, $subject, $body, $headers);
         
         $app->flash('success_info', 'You are now supporting a new campaign');
 

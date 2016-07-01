@@ -18,6 +18,10 @@ $app->post('/save-producer', function () use ($app){
                'email_address'=>$req['email_address'], 'description'=>$req['description'], 'country'=>$req['country']));
 
         // Auto respond to to producer
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $headers .= 'From: Birthday Reminder info@wilsonshop.biz' . "\r\n";
+
         $to = $req['email_address'];
         $subject = 'Welcome to shareitcamp';
         $body = "<p>Thank you for joining shareitacamp. We hope that by working with us, you are able to achieve your
@@ -29,9 +33,7 @@ $app->post('/save-producer', function () use ($app){
 
         $body .= "Thanks, <br />The shareitcamp team";
 
-        $from = 'From: info@wilsonshop.biz';
-
-        mail($to, $subject, $body, $from);
+        mail($to, $subject, $body, $headers);
 
 
         $app->flash('success_info', 'Producer Saved');
@@ -97,6 +99,10 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
         array_push($supporter_email, $supporter->email_address);
     }
 
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    $headers .= 'From: Birthday Reminder info@wilsonshop.biz' . "\r\n";
+    
     // Email Producer that campaign has been created
     $to = $producer->email_address;
     $subject = 'Confirmation of your order!';
@@ -118,9 +124,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $body .= "<p>Thanks, <br />
         The shareitcamp team</p>";
 
-    $from = 'From: info@wilsonshop.biz';
-
-    mail($to, $subject, $body, $from);
+    mail($to, $subject, $body, $headers);
 
 
 
@@ -128,7 +132,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $to_supporter = implode(',',$supporter_email);
     $subject_supporter = 'New campaign posted to shareitcamp! ';
 
-    $body_supporter = "<p>is asking for your support for their ".$producer->org_name." effort. Click on the link below to find
+    $body_supporter = $producer->org_name. "<p> is asking for your support for their ".$producer->org_name." effort. Click on the link below to find
     out more and, if you are interested, hit the support button. Once you’ve don’t that just post to Facebook. </p>";
 
     $body_supporter .= "<button>Click here to support</button>";
@@ -138,7 +142,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $body_supporter .= "<p>Thanks, <br />
         The shareitcamp team</p>";
 
-    mail($to_supporter, $subject_supporter, $body_supporter, $from);
+    mail($to_supporter, $subject_supporter, $body_supporter, $headers);
 
     $app->flash('success_info', 'Campaign Saved');
     $app->redirect('/campaigns');
