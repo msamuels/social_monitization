@@ -2,12 +2,12 @@
 <div class="row" id="bottom-nav">
 	<div class="col-xs-12">
 		<nav class="navbar-default" id="myNavbar">
-			<ul class="nav navbar-nav">
-				<li><a href="/">get started</a></li>
-				<li><a href="/">About Us</a></li>
-				<li><a href="/">FAQ</a></li>
-				<li><a href="/">Advertisements</a></li>
-				<li><a href="/">Blog</a></li>
+			<ul class="nav navbar-nav footer-nav">
+				<li><a class="footer-nav" href="/">get started</a></li>
+				<li><a class="footer-nav" href="/about-us">about Us</a></li>
+				<li><a class="footer-nav" href="/faqs">faq</a></li>
+				<li><a class="footer-nav" href="/">avertisements</a></li>
+				<li><a class="footer-nav" href="/">blog</a></li>
 			</ul>
 		</nav>
 	</div>

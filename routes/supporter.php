@@ -104,7 +104,7 @@ $app->get('/supporter/campaigns', $authenticate($app), function () use($app) {
     }
 
     $app->render('supported-campaigns.php', array('supported_campaigns' => $supportedCampaigns,
-        'success_info' => $success_info, 'base_url' => $base_url));
+        'success_info' => $success_info, 'base_url' => $base_url, 'isPending' => false));
 });
 
 
@@ -138,7 +138,8 @@ $app->get('/supporter/campaigns/pending', $authenticate($app), function () use (
     } else {
         $campaigns = Campaign::find('all', array('conditions' => array('campaign_id NOT IN (?)', $ar_campaigns)));
     }
-    $app->render('support-campaigns.php', array('campaigns' => $campaigns, 'user_id' => $supporter->id));
+    $app->render('support-campaigns.php', array('campaigns' => $campaigns, 'user_id' => $supporter->id,
+        'isPEnding' => true));
 });
 
 
@@ -200,7 +201,7 @@ $app->get('/supporter/campaign/:id', function ($id) use($app) {
     $producer = $campaign->getProducer();
 
     $app->render('supporter/supported-campaign.php', array('campaign' => $campaign, 'base_url' => $base_url,
-        'reward' => $reward, 'producer' => $producer));
+        'reward' => $reward, 'producer' => $producer, 'isPending' => true));
 });
 
 $app->post('/save-post-to-fb', $authenticate($app), function () use ($app) {

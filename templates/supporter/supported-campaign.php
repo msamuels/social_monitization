@@ -54,6 +54,19 @@
         <p><strong>Visit:</strong> <?php echo $campaign->url; ?></p>
         <br/>
         <p><strong>Points:</strong> 10</p>
+        <br />
+        <?php
+        if(isset($_SESSION['user_type'])){
+            if($isPending){ ?>
+                <button class="btn btn-success">Support Pledged</button>
+        <?php } else { ?>
+            <form action="/save-campaign-support" method="POST">
+                <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
+                <input type="hidden" name="supporter_id" value="<?php echo $user_id; ?>"/>
+                <button class="btn support-btns" type="submit">Support Campaign</button>
+            </form>
+
+        <?php } } ?>
     </div>
 
     <div class="row">

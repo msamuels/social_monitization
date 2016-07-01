@@ -25,6 +25,10 @@ body{
     color: grey;
 }
 
+ul.nav.navbar-nav.footer-nav li > a{
+    color: white;
+}
+
 .form-control{
     border-radius:0px;
 

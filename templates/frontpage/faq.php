@@ -62,7 +62,7 @@
             <p>Supporters can choose how often they want to be notified of new campaigns.</p>
 
 
-            <p><strong>How much is this going to cost me?<p><strong>
+            <p><strong>How much is this going to cost me?</strong></p>
 
             <p>shareitcamp is free to recognized non-profits, particularly Diaspora organizations who are pioneering
                 innovative
