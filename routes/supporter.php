@@ -36,13 +36,15 @@ $app->post('/save-supporter', function () use ($app){
         $to = $req['email_address'];
         $subject = 'Welcome to shareitcamp!';
 
+        $baseurl =  $destination = $app->config('configs')['base_url'];
+
         $body = "<p>Thank you for joining this effort. We will notify you of new campaigns via email so please be on the
             lookout.<.p>";
         $body .= "<p>Don’t want to wait until then? Great. Here are 2 ways you can get a head start:</p>";
 
         $body .= "<p>1) Go to shareitcamp and support us as your first campaign! Just click here.</p>";
 
-        $body .= "<button>Click here to support</button>";
+        $body .= "<a href='".$baseurl."'>Click here to support</a>";
 
         $body .= "<p>2) Like us on Facebook</p>";
 
@@ -157,6 +159,8 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
         $headers .= 'From: info@wilsonshop.biz' . "\r\n";
 
+        $baseurl =  $destination = $app->config('configs')['base_url'];
+
         $to = $supporter->email_address;
         $subject = 'Shareitcamp: Thanks for your support';
 
@@ -164,7 +168,7 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
             the campaign page . Once there, click on the “share on Facebook” link. <p>For sharing the link you will earn 10
             points. </p>";
 
-        $body .= "<button>Click here to support</button>";
+        $body .= "<a href='".$baseurl."/supporter/campaign/".$campaign->campaign_id."'>Click here to support</a>";
 
         $body .= "<p>Thanks, <br />
         The shareitcamp team</p>";

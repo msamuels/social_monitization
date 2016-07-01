@@ -115,7 +115,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
 
     $body .= "<p>Order Summary<br />
         Order #: 1234567890<br />
-        Date Posted: 02/20/16<br />
+        Date Posted: 07/01/16<br />
         Campaign Name: ".$campaign->campaign_name."<br />
         Start Date:  ".date_format($campaign->start_date, 'Y-m-d ')."<br />
         End Date:  ".date_format($campaign->end_date, 'Y-m-d ')."<br />
@@ -135,7 +135,9 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $body_supporter = "<p>".$producer->org_name. " is asking for your support for their ".$producer->org_name." effort. Click on the link below to find
     out more and, if you are interested, hit the support button. Once you’ve don’t that just post to Facebook. </p>";
 
-    $body_supporter .= "<button>Click here to support</button>";
+    $baseurl =  $destination = $app->config('configs')['base_url'];
+
+    $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->campaign_id."'>Click here to support</a>";
 
     $body_supporter .= "<p>Oh, and for sharing the link you will earn 10 points.</p>";
 
