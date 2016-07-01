@@ -43,25 +43,21 @@
                      data-href="<?php echo $base_url; ?>
                 /supporter/campaign/<?php echo $supported_campaign->campaign->campaign_id; ?>"
                      data-layout="button_count" data-mobile-iframe="true">
+                </div>
             </form>
         <?php } ?>
     </div>
 
     <div class="col-sm-4">
-
-        <div class="row">
-            <div class="col-sm-1">
-                <img src="/images/cal.png" class="campaign-icons"/>
-            </div>
-            <div class="col-sm-11" style="text-align: left;">
-                <p><strong>Start Date:</strong> <?php echo date_format($campaign->start_date, 'Y-m-d '); ?></p>
-                <p><strong>Start Date:</strong> <?php echo date_format($campaign->end_date, 'Y-m-d '); ?></p>
-                <p><strong>Respond By:</strong> <?php echo date_format($campaign->end_date, 'Y-m-d '); ?></p>
-            </div>
-
+        <div class="col-sm-1">
+            <img src="/images/cal.png" class="campaign-icons"/>
+        </div>
+        <div class="col-sm-11" style="text-align: left;">
+            <p><strong>Start Date:</strong> <?php echo date_format($campaign->start_date, 'Y-m-d '); ?></p>
+            <p><strong>Start Date:</strong> <?php echo date_format($campaign->end_date, 'Y-m-d '); ?></p>
+            <p><strong>Respond By:</strong> <?php echo date_format($campaign->end_date, 'Y-m-d '); ?></p>
         </div>
 
-        <br/>
         <div class="row">
             <div class="col-sm-1">
                 <img src="/images/www.png" class="campaign-icons"/>
@@ -71,7 +67,6 @@
             </div>
         </div>
 
-        <br/>
         <div class="row">
             <div class="col-sm-1">
                 <img src="/images/prize.png" class="campaign-icons"/>
@@ -81,36 +76,42 @@
             </div>
         </div>
 
+        <div class="row">
+            <?php
+            if (isset($_SESSION['user_type'])) {
+                if ($isPending) { ?>
+                    <button class="btn btn-success">Support Pledged</button>
+                <?php } else { ?>
+                    <form action="/save-campaign-support" method="POST">
+                        <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
+                        <input type="hidden" name="supporter_id" value="<?php echo $user_id; ?>"/>
+                        <button class="btn support-btns" type="submit">Support Campaign</button>
+                    </form>
 
-        <br/>
-        <?php
-        if (isset($_SESSION['user_type'])) {
-            if ($isPending) { ?>
-                <button class="btn btn-success">Support Pledged</button>
-            <?php } else { ?>
-                <form action="/save-campaign-support" method="POST">
-                    <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
-                    <input type="hidden" name="supporter_id" value="<?php echo $user_id; ?>"/>
-                    <button class="btn support-btns" type="submit">Support Campaign</button>
-                </form>
+                <?php }
+            } ?>
+        </div>
 
-            <?php }
-        } ?>
-        
     </div>
 
+    <br/>
+
+
+    <br/>
 
 
 
-</div>
+    <br/>
 
-<div class="row">
-    <div class="col-sm-12">
-        <div class="row"><h2>About <?php echo $producer->org_name; ?></h2></div>
-        <div class="row">
-            <?php echo $producer->description; ?>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row"><h2>About <?php echo $producer->org_name; ?></h2></div>
+            <div class="row">
+                <?php echo $producer->description; ?>
+            </div>
         </div>
     </div>
-</div>
 
 
