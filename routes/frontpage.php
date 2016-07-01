@@ -15,8 +15,14 @@ $app->get('/organizations', function () use ($app){
     $app->render('frontpage/organizations.php');
 });
 
-# Organizations page
+# About us page
 $app->get('/about-us', function () use ($app){
 
     $app->render('frontpage/about.php');
+});
+
+# FAQ page
+$app->get('/faqs', function () use ($app){
+
+    $app->render('frontpage/faq.php');
 });

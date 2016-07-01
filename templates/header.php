@@ -56,7 +56,7 @@
 		</div>
 		<div class="navbar-default" id="myNavbar">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/">faq</a></li>
+				<li><a href="/faqs">faq</a></li>
 
 				<?php if(!isset($_SESSION['user_type'])) { ?>
 					<li><a href="/login">log-in</a></li>
