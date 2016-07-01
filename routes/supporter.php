@@ -197,8 +197,10 @@ $app->get('/supporter/campaign/:id', function ($id) use($app) {
 
     $reward = Reward::find_by_campaign_id($campaign->campaign_id);
 
+    $producer = $campaign->getProducer();
+
     $app->render('supporter/supported-campaign.php', array('campaign' => $campaign, 'base_url' => $base_url,
-        'reward' => $reward));
+        'reward' => $reward, 'producer' => $producer));
 });
 
 $app->post('/save-post-to-fb', $authenticate($app), function () use ($app) {
