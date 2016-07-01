@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: db591622819.db.1and1.com
--- Generation Time: Jun 30, 2016 at 11:56 AM
+-- Generation Time: Jul 01, 2016 at 05:06 PM
 -- Server version: 5.5.49-0+deb7u1-log
 -- PHP Version: 5.4.45-0+deb7u3
 
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `campaigns` (
   `end_date` datetime DEFAULT NULL,
   `approved` enum('Y','N') DEFAULT NULL,
   `screen_shot` varchar(45) DEFAULT NULL,
-  `copy` varchar(45) DEFAULT NULL,
+  `copy` longtext,
   `url` varchar(255) DEFAULT NULL,
   `platform` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`campaign_id`)
@@ -200,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `producers` (
   `email_address` varchar(255) DEFAULT NULL,
   `user_name` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
-  `description` blob,
+  `description` longtext,
   `country` varchar(255) DEFAULT NULL,
   `orgclass_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_producer`),
