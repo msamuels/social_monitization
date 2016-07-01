@@ -46,25 +46,33 @@
                 <p><?php echo $campaigns[0]->campaign_name; ?></p>
                 <p><i> by <?php echo $campaigns[0]->getProducer()->org_name; ?></i></<p>
                 <p><img src="images/screenshots/<?php echo $campaigns[0]->screen_shot; ?>"/></p>
-                <button class="btn support-btns">Support</button>
+                <a href="supporter/campaign/<?php echo $campaigns[0]->campaign_id; ?>" target="_parent">
+                    <button class="btn support-btns">Support</button>
+                </a>
             </div>
             <div class="col-md-3">
                 <p><?php echo $campaigns[1]->campaign_name; ?></p>
                 <p><i> by <?php echo $campaigns[1]->getProducer()->org_name; ?></i></<p>
                 <p><img src="images/screenshots/<?php echo $campaigns[1]->screen_shot; ?>"/></p>
-                <button class="btn support-btns">Support</button>
+                <a href="supporter/campaign/<?php echo $campaigns[1]->campaign_id; ?>" target="_parent">
+                    <button class="btn support-btns">Support</button>
+                </a>
             </div>
             <div class="col-md-3">
                 <p><?php echo $campaigns[2]->campaign_name; ?></p>
                 <p><i> by <?php echo $campaigns[2]->getProducer()->org_name; ?></i></<p>
                 <p><img src="images/screenshots/<?php echo $campaigns[2]->screen_shot; ?>"/></p>
-                <button class="btn support-btns">Support</button>
+                <a href="supporter/campaign/<?php echo $campaigns[2]->campaign_id; ?>" target="_parent">
+                    <button class="btn support-btns">Support</button>
+                </a>
             </div>
             <div class="col-md-3">
                 <p><?php echo $campaigns[3]->campaign_name; ?></p>
                 <p><i> by <?php echo $campaigns[3]->getProducer()->org_name; ?></i></<p>
                 <p><img src="images/screenshots/<?php echo $campaigns[3]->screen_shot; ?>"/></p>
-                <button class="btn support-btns">Support</button>
+                <a href="supporter/campaign/<?php echo $campaigns[3]->campaign_id; ?>" target="_parent">
+                    <button class="btn support-btns">Support</button>
+                </a>
             </div>
         </div>
 
