@@ -20,7 +20,7 @@ $app->post('/save-producer', function () use ($app){
         // Auto respond to to producer
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $headers .= 'From: Birthday Reminder info@wilsonshop.biz' . "\r\n";
+        $headers .= 'From: info@wilsonshop.biz' . "\r\n";
 
         $to = $req['email_address'];
         $subject = 'Welcome to shareitcamp';
@@ -101,25 +101,25 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
 
     $headers  = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-    $headers .= 'From: Birthday Reminder info@wilsonshop.biz' . "\r\n";
+    $headers .= 'From: info@wilsonshop.biz' . "\r\n";
     
     // Email Producer that campaign has been created
     $to = $producer->email_address;
     $subject = 'Confirmation of your order!';
 
-    $body = "<p>Congratulations, your campaign - [campaign-name] - has been successfully uploaded. We will get back to
+    $body = "<p>Congratulations, your campaign - ".$campaign->campaign_name." - has been successfully uploaded. We will get back to
         you with any questions in 24 hrs. Once approved, supporters on the shareticamp will be notified of your campaign
-         and will be able to share it with their social networks. </p>";
+         and will be able to share it with their social networks. </p><br /><br />";
 
-    $body .= "<p>Please log-in to shareitacamp in 24hrs to view the approval status of your campaign. </p>";
+    $body .= "<p>Please log-in to shareitacamp in 24hrs to view the approval status of your campaign. </p><br />";
 
-    $body .= "<p>Order Summary
-        Order #: 1234567890
-        Date Posted: 02/20/16
-        Campaign Name: ".$campaign->campaign_name."
-        Start Date:  ".$campaign->start_date."
-        End Date:  ".$campaign->end_date."
-        </p>";
+    $body .= "<p>Order Summary<br />
+        Order #: 1234567890<br />
+        Date Posted: 02/20/16<br />
+        Campaign Name: ".$campaign->campaign_name."<br />
+        Start Date:  ".$campaign->start_date."<br />
+        End Date:  ".$campaign->end_date."<br />
+        </p><br /><br />";
 
     $body .= "<p>Thanks, <br />
         The shareitcamp team</p>";
@@ -132,7 +132,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $to_supporter = implode(',',$supporter_email);
     $subject_supporter = 'New campaign posted to shareitcamp! ';
 
-    $body_supporter = $producer->org_name. "<p> is asking for your support for their ".$producer->org_name." effort. Click on the link below to find
+    $body_supporter = "<p>".$producer->org_name. " is asking for your support for their ".$producer->org_name." effort. Click on the link below to find
     out more and, if you are interested, hit the support button. Once you’ve don’t that just post to Facebook. </p>";
 
     $body_supporter .= "<button>Click here to support</button>";

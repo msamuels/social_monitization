@@ -31,7 +31,7 @@ $app->post('/save-supporter', function () use ($app){
         // Auto respond to to supporter
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $headers .= 'From: Birthday Reminder info@wilsonshop.biz' . "\r\n";
+        $headers .= 'From: info@wilsonshop.biz' . "\r\n";
 
         $to = $req['email_address'];
         $subject = 'Welcome to shareitcamp!';
@@ -155,7 +155,7 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
         // Auto respond to to supporter
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $headers .= 'From: Birthday Reminder info@wilsonshop.biz' . "\r\n";
+        $headers .= 'From: info@wilsonshop.biz' . "\r\n";
 
         $to = $supporter->email_address;
         $subject = 'Shareitcamp: Thanks for your support';
