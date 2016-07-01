@@ -117,8 +117,8 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
         Order #: 1234567890<br />
         Date Posted: 02/20/16<br />
         Campaign Name: ".$campaign->campaign_name."<br />
-        Start Date:  ".$campaign->start_date."<br />
-        End Date:  ".$campaign->end_date."<br />
+        Start Date:  ".date_format($campaign->start_date, 'Y-m-d ')."<br />
+        End Date:  ".date_format($campaign->end_date, 'Y-m-d ')."<br />
         </p><br /><br />";
 
     $body .= "<p>Thanks, <br />
@@ -137,7 +137,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
 
     $body_supporter .= "<button>Click here to support</button>";
 
-    $body_supporter .= "<p>Oh, and for sharing the link you will earn [x] points.</p>";
+    $body_supporter .= "<p>Oh, and for sharing the link you will earn 10 points.</p>";
 
     $body_supporter .= "<p>Thanks, <br />
         The shareitcamp team</p>";
