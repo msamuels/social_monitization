@@ -7,10 +7,10 @@ $app->hook('slim.before.dispatch', function () use ($app) {
     if($parts[1] == "supporter" && $parts[2] == "campaign"){
 
         $campaign = Campaign::find_by_campaign_id($parts[3]);
-        $app->render('../templates/facebook_header.php', array('campaign'=>$campaign));
+        $app->render('../templates/facebook_header.php', array('campaign'=>$campaign, 'path' => $parts));
 
     }else {
-	    $app->render('../templates/header.php');
+	    $app->render('../templates/header.php', array('path' => $parts));
     }
 });
   
