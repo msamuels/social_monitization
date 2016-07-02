@@ -48,8 +48,9 @@ ul.nav.navbar-nav.footer-nav li > a{
 #get-started-banner{
     background-color: #3CA6C9;
     padding-top: 20px;
-    margin-top:20px;
+    margin-top:5px;
     margin-bottom:20px;
+    height: 250px;
 }
 
 H1{
