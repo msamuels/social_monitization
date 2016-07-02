@@ -139,7 +139,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
 
     $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->campaign_id."'>Click here to support</a>";
 
-    $body_supporter .= "<p>Oh, and for sharing the link you will earn 10 points.</p>";
+    $body_supporter .= "<p>Oh, and for sharing the link you will earn 5 points.</p>";
 
     $body_supporter .= "<p>Thanks, <br />
         The shareitcamp team</p>";

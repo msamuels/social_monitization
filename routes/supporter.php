@@ -166,7 +166,7 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
         $subject = 'Shareitcamp: Thanks for your support';
 
         $body = "Thank you for agreeing to support ".$campaign->campaign_name.". Please click on the link below to go
-            the campaign page . Once there, click on the “share on Facebook” link. <p>For sharing the link you will earn 10
+            the campaign page . Once there, click on the “share on Facebook” link. <p>For sharing the link you will earn 5
             points. </p>";
 
         $body .= "<a href='".$baseurl."/supporter/campaign/".$campaign->campaign_id."'>Click here to support</a>";
@@ -269,7 +269,7 @@ $app->get('/rewards', $authenticate($app), function () use ($app){
     $supportedCampaigns = Campaign_response::find('all',
         array('conditions' => array('supporter_id in (?)', array($supporter->id_supporter))));
 
-    $pointsEarned = count($supportedCampaigns) * 10;
+    $pointsEarned = count($supportedCampaigns) * 5;
 
     $app->render('list-rewards.php', array('rewards' => $rewards, 'success_info' => $success_info,
         'points_earned' => $pointsEarned));

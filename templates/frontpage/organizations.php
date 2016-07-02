@@ -15,7 +15,7 @@
 <div class="row">
     <div class="col-xs-4" class="how-it-works-steps" style="text-align:right"><img class="icon" src="images/hourglass.png" /></div>
     <div class="col-xs-8 col-sm-4 pull-left" class="how-it-works-steps">
-	<H3>Efficient Social Outreach</H3>
+	<H3>Efficient social outreach</H3>
         <p>Spend your time on more important things. We help to bring your supporters to your message.</p>
     </div>
 </div>
@@ -23,7 +23,7 @@
 <div class="row">
     <div class="col-xs-4" class="how-it-works-steps" style="text-align:right"><img class="icon" src="images/handsup.png" /></div>
     <div class="col-xs-8 col-sm-4 pull-left" class="how-it-works-steps">
-	<H3>Engage your Supporters</H3>
+	<H3>Engage your supporters</H3>
         <p>Your supporters have been great for your brand. Here bring them on board as part of your 
            promotion team and reward them for it… </p>
     </div>
@@ -33,7 +33,7 @@
 <div class="row">
     <div class="col-xs-4" class="how-it-works-steps" style="text-align:right"><img class="icon" src="images/reward.png" /></div>
     <div class="col-xs-8 col-sm-4 pull-left" class="how-it-works-steps">
-	<H3>We reward your Supporters</H3>
+	<H3>We reward your supporters</H3>
         <p>Your supporters earn points for each campaign they support. These can be redeemed for 
             rewards, on us. Feel free to contribute too though. </p>
     </div>
@@ -41,7 +41,7 @@
 
 <div class="row">
 	<div class="col-xs-12">
-		<a class="btn support-btns" href="create-campaign">Start a Campaign Today</a>
+		<a class="btn support-btns" href="create-campaign">Start a campaign today</a>
 	</div>
 </div>
 

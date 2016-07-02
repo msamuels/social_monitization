@@ -72,7 +72,7 @@
                 <img src="/images/prize.png" class="campaign-icons"/>
             </div>
             <div class="col-sm-11" style="text-align: left;">
-                <p><strong>10 Points</strong></p>
+                <p><strong>5 Points</strong></p>
             </div>
         </div>
 
