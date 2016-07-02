@@ -176,7 +176,7 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
 
         mail($to, $subject, $body, $headers);
         
-        $app->flash('success_info', 'You are now supporting a new campaign');
+        $app->flash('success_info', 'Click on the Facebook share icon to share the campaign. Thank you.');
 
         $app->redirect('/supporter/campaigns');
 
