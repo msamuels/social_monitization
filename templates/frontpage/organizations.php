@@ -24,7 +24,7 @@
     <div class="col-xs-4" class="how-it-works-steps" style="text-align:right"><img class="icon" src="images/handsup.png" /></div>
     <div class="col-xs-8 col-sm-4 pull-left" class="how-it-works-steps">
 	<H3>Engage your supporters</H3>
-        <p>Your supporters have been great for your brand. Here bring them on board as part of your 
+        <p>Your supporters have been great for your brand. Here you can bring them on board as part of your
            promotion team and reward them for it… </p>
     </div>
 </div>
