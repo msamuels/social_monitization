@@ -45,6 +45,8 @@
 	</div>
 </div>
 
+<br /><br />
+
 <div class="row"><H1>How it works</H1></div>
 
 <div class="row" id="how-it-works">
@@ -69,13 +71,15 @@
 	</div>
 
 
-	<div class="col-sm-3 pull-left">
+	<div class="col-sm-4 pull-left">
 		<div><img class="icon" src="images/no3.png" /></div>
 		<div class="pull-left">
 			<p><H2>Supporters share your message</H2></p>
 			<p class="desc">Supporters agree to share your message with their social networks. </p>
 		</div>
 	</div>
+
+	<div class="col-sm-1 pull-left"></div>
 </div>
 
 <div class="row">

@@ -1,3 +1,9 @@
+h1, h2, h3, p, blockquote, pre {
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+    font-style: normal;
+    font-variant: normal;
+}
+
 a{
     color: #2b2b2b;
 }
@@ -123,3 +129,4 @@ ul.list-things li {
     width:170px;
     height:300px;
 }
+
