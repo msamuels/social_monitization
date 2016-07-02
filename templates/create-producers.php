@@ -71,7 +71,7 @@
 
             <div class="form-group">
                 <label class="control-label col-sm-4">Password:</label>
-                <div class="col-sm-8"><input type="text" class="form-control" name="password"/>
+                <div class="col-sm-8"><input  type="password" class="form-control" name="password"/>
                 </div>
             </div>
 

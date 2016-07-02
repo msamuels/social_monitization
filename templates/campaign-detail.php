@@ -1,4 +1,4 @@
-<H1>Invoice: </H1>
+<H1>	Invoice: </H1>
 
 <H3><?php echo $campaign->campaign_name; ?></H3>
 
@@ -45,19 +45,19 @@ if (count($supporters) > 0) {
 }
 ?>
 </div>
-<label>Estimated:</label> <input type="text" name="estimated_impression" value="<?php echo $campaign->estimate; ?>"/>
-<label>Actual:</label> <input type="text" name="actual_impression" value=""/>
+<label>Estimated:</label> <input type="text" name="estimated_impression" value="<?php echo $i; ?>"/>
+<!--<label>Actual:</label> <input type="text" name="actual_impression" value=""/>-->
 
 
 
 <H2>Cost: </H2>
 <label>Estimated:</label> <input type="text" name="estimated_impression" value="<?php echo $campaign->budget; ?>"/>
-<label>Actual:</label> <input type="text" name="actual_impression" value=""/>
+<!--<label>Actual:</label> <input type="text" name="actual_impression" value=""/>-->
 
-
+<!--
 <H2>Final Bill: </H2>
 <input type="text" name="final_cost" value="100000"/>
-
+-->
 
 <br />
 By approving this plan you will be billed the above

@@ -57,13 +57,13 @@
 
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align:right">Password:</label>
-                <div class="col-sm-8"><input type="text" class="form-control" name="password"/>
+                <div class="col-sm-8"><input  type="password" class="form-control" name="password"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-4">Confirm Password:</label>
-                <div class="col-sm-8"><input type="text" class="form-control"
+                <div class="col-sm-8"><input  type="password" class="form-control"
                                                                      name="password_confirm"/>
                 </div>
             </div>
@@ -87,7 +87,7 @@
             </div>-->
 
             <div class="form-group">
-                <label class="control-label col-sm-4" style="text-align:right"># of Facebook followers:</label>
+                <label class="control-label col-sm-4" style="text-align:right"># of Facebook Friends:</label>
                 <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control"
                                                                      name="followers_fb"/>
                 </div>

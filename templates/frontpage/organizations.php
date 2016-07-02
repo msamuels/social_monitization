@@ -1,6 +1,5 @@
-<div class="row"><H1>Organizations</H1></div>
 
-<div class="row" id="get-started-banner"> 
+<div class="row" id="get-started-banner">
     <H2 style="color: white" id="call-out">Partner with your supporters to <br />Promote your Campaigns</H2>
     <p><a href="/create-producer" class="btn support-btns">Get Started</a></p>
 </div>
