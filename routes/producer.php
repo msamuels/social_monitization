@@ -38,7 +38,7 @@ $app->post('/save-producer', function () use ($app){
 
         $app->flash('success_info', 'Producer Saved');
 
-        $app->redirect('/producer');
+        $app->redirect('/create-campaign');
 
     }
 
