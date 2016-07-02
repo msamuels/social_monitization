@@ -21,7 +21,7 @@
                             <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" height="100" width="100"/>
                         </a>
                     </p>
-                    <p><?php echo $campaign->copy; ?> Pts</p>
+                    <p><?php echo substr($campaign->copy, 0, 50); ?>...</p>
                 </li>
                 <?php
             }

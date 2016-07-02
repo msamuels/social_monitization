@@ -16,7 +16,7 @@
                     <p><i> by <?php echo $campaigns[0]->getProducer()->org_name; ?></i></p>
                     <p>
                     <p><img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" height="100" width="100"/></p>
-                    <p><?php echo $campaign->copy; ?></p>
+                    <p><?php echo substr($campaign->copy, 0, 50); ?>...</p>
 
                     <form action="/save-campaign-support" method="POST">
                         <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
