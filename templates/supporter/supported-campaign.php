@@ -11,7 +11,7 @@
 
 <div class="row">
 
-    <div class="col-sm-4">
+    <div class="col-sm-4" style="margin-bottom: 5px;">
         <div class="fb-share-button"
              data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->campaign_id; ?>"
              data-layout="button_count" data-mobile-iframe="true">
