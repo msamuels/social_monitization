@@ -1,7 +1,12 @@
         <div class="row" id="get-started-banner">
-            <H1 style="color: white" id="call-out">Lend Your Support</H1>
-            <span style="color: white"> a simple investment today<br /> for a greater return <br />tomorrow</span>
-            <p><a href="/get-started/supporter/register" class="btn support-btns">Get Started</a></p>
+            <div class="col-sm-3">
+                <H1 style="color: white" id="call-out">Lend Your Support</H1>
+                <span style="color: white"> a simple investment today<br /> for a greater return <br />tomorrow</span>
+                <p><a href="/get-started/supporter/register" class="btn support-btns">Get Started</a></p>
+            </div>
+
+            <div class="col-sm-9"></div>
+
         </div>
 
         <div class="row" id="works"><H1>How it works</H1></div>

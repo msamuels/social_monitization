@@ -1,4 +1,9 @@
+<style>
 
+	#get-started-banner{
+		background-image: none;
+	}
+</style>
 <div class="row" id="get-started-banner">
     <H2 style="color: white" id="call-out">Partner with your supporters to <br />Promote your Campaigns</H2>
     <p><a href="/create-producer" class="btn support-btns">Get Started</a></p>
