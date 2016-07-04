@@ -1,5 +1,5 @@
 <!-- @TODO remove margin-top -->
-<div class="row" style="text-align: left;  background-color: #d9edf7; padding-left: 97px">
+<div class="row" style="text-align: left;  background-color: #d9edf7; padding-left: 49px">
     <!-- Show campaigns supported -->
 
     <H1> <?php echo $campaign->campaign_name; ?> </H1>
@@ -63,7 +63,7 @@
                 <img src="/images/www.png" class="campaign-icons"/>
             </div>
             <div class="col-sm-11" style="text-align: left;">
-                <p><strong>Visit:</strong> <?php echo $campaign->url; ?></p>
+                <p><strong>Visit:</strong> <a href="http://<?php echo $campaign->url; ?>" target="_blank"><?php echo $campaign->url; ?></a></p>
             </div>
         </div>
 
