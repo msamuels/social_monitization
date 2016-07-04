@@ -127,6 +127,9 @@ ul.list-things li {
     float: left;
     margin-right: 35px;
     width:170px;
-    height:300px;
+    height:325px;
 }
 
+.list-campaign-copy {
+    font-size: 13px;
+}
