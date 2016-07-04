@@ -200,8 +200,17 @@ $app->get('/supporter/campaign/:id', function ($id) use($app) {
 
     $producer = $campaign->getProducer();
 
+    $supportedCampaigns = Campaign_response::find('all',
+        array('conditions' => array('supporter_id in (?) AND campaign_id in (?)',
+            $supporter->id_supporter, $campaign->campaign_id)));
+
+    $isPending = false;
+    if(count ($supportedCampaigns ) == 0){
+        $isPending = true;
+    }
+
     $app->render('supporter/supported-campaign.php', array('campaign' => $campaign, 'base_url' => $base_url,
-        'reward' => $reward, 'producer' => $producer, 'isPending' => true));
+        'reward' => $reward, 'producer' => $producer, 'isPending' => $isPending,  'user_id' => $supporter->id));
 });
 
 $app->post('/save-post-to-fb', $authenticate($app), function () use ($app) {
