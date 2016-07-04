@@ -1,5 +1,5 @@
 <!-- @TODO remove margin-top -->
-<div class="row" style="text-align: left;  background-color: #d9edf7">
+<div class="row" style="text-align: left;  background-color: #d9edf7; padding-left: 97px">
     <!-- Show campaigns supported -->
 
     <H1> <?php echo $campaign->campaign_name; ?> </H1>
