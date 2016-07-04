@@ -12,7 +12,7 @@
 <div class="row">
 
     <div class="col-sm-4">
-        <div class="fb-share-button"  style="margin-bottom: 5px;"
+        <div class="fb-share-button" style="margin-bottom: 5px;"
              data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->campaign_id; ?>"
              data-layout="button_count" data-mobile-iframe="true">
         </div>
@@ -49,13 +49,15 @@
     </div>
 
     <div class="col-sm-4">
-        <div class="col-sm-1">
-            <img src="/images/cal.png" class="campaign-icons"/>
-        </div>
-        <div class="col-sm-11" style="text-align: left;">
-            <p><strong>Start Date:</strong> <?php echo date_format($campaign->start_date, 'Y-m-d '); ?></p>
-            <p><strong>End Date:</strong> <?php echo date_format($campaign->end_date, 'Y-m-d '); ?></p>
-            <p><strong>Respond By:</strong> <?php echo date_format($campaign->end_date, 'Y-m-d '); ?></p>
+        <div class="row">
+            <div class="col-sm-1">
+                <img src="/images/cal.png" class="campaign-icons"/>
+            </div>
+            <div class="col-sm-11" style="text-align: left;">
+                <p><strong>Start Date:</strong> <?php echo date_format($campaign->start_date, 'Y-m-d '); ?></p>
+                <p><strong>End Date:</strong> <?php echo date_format($campaign->end_date, 'Y-m-d '); ?></p>
+                <p><strong>Respond By:</strong> <?php echo date_format($campaign->end_date, 'Y-m-d '); ?></p>
+            </div>
         </div>
 
         <div class="row">
@@ -63,7 +65,8 @@
                 <img src="/images/www.png" class="campaign-icons"/>
             </div>
             <div class="col-sm-11" style="text-align: left;">
-                <p><strong>Visit:</strong> <a href="http://<?php echo $campaign->url; ?>" target="_blank"><?php echo $campaign->url; ?></a></p>
+                <p><strong>Visit:</strong> <a href="http://<?php echo $campaign->url; ?>"
+                                              target="_blank"><?php echo $campaign->url; ?></a></p>
             </div>
         </div>
 
@@ -100,9 +103,7 @@
     <br/>
 
 
-
     <br/>
-
 
 
     <div class="row">
