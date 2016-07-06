@@ -59,7 +59,7 @@ $app->post('/save-supporter', function () use ($app){
 
         $app->flash('success_info', 'Supporter Saved');
 
-        $app->redirect('/supporters');
+        $app->redirect('/supporter/campaigns/pending');
 
     }
 
