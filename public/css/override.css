@@ -126,10 +126,11 @@ ul.list-things li {
     display:inline;
     float: left;
     margin-right: 35px;
-    width:170px;
+    width:180px;
     height:355px;
 }
 
 .list-campaign-copy {
     font-size: 13px;
+    height: 70px;
 }
