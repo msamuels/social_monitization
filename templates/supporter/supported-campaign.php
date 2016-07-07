@@ -95,11 +95,11 @@
                         <button class="btn support-btns" type="submit">Support Campaign</button>
                     </form>
                 <?php } else { ?>
-                    <button class="btn btn-success">Support Pledged</button>
+                    <button class="btn btn-success support-pledged">Support Pledged</button>
 
                 <?php }
             } ?>
-                
+
             </div>
 
         </div>
