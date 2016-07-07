@@ -32,6 +32,7 @@
 
 </script>
 
+
 <div class="row">
     <?php
 
@@ -48,6 +49,10 @@
 
 </div>
 
+
+<div class="row">
+    The importance of your support can’t be overstated. Your support helps shine a light on great projects.
+</div>
 
 <!-- @TODO remove margin-top -->
 <div class="row">

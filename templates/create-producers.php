@@ -59,6 +59,10 @@
 </div>
 
 <div class="row">
+    Engage your supporters and let them help you get the word out.
+</div>
+
+<div class="row">
 
     <div class="col-sm-3"></div>
 
