@@ -67,7 +67,7 @@ $app->post("/login", function () use ($app) {
     }
 
     if ($user_type == "supporter") {
-        $app->redirect('/');
+        $app->redirect('/supporter/campaigns/pending');
     }elseif($user_type == "admin"){
         $app->redirect('/create-reward  ');
     }else{
