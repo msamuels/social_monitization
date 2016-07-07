@@ -115,12 +115,12 @@
               <br />
             -->
             Non-profits: please consider donating one of the following
-            <ul id="donation-types">
+            <ul id="donation-types" style="text-align: center;">
 
-                <li style="display: inline">Facebook Post</li>
-                <li style="display: inline"><a href="/create-reward">Reward</a></li>
-                <li style="display: inline">Newsletter Ad</li>
-                <li style="display: inline">Booth at Event</li>
+                <li>- <a href="/create-reward" class="highlighted">Reward</a></li>
+                <li>- Facebook Post</li>
+                <li>- Newsletter Ad</li>
+                <li>- Booth at Event</li>
             </ul>
 
             <button class="btn btn-primary" type="submit">Submit</button>
