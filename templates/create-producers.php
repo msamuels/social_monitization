@@ -119,7 +119,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-4">Org Description:</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="description"/>
+                    <textarea name="description" class="form-control" rows="4" cols="50"></textarea>
                 </div>
             </div>
 
