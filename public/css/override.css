@@ -116,6 +116,8 @@ img {
     background-color: orange;
     color: white;
     font-size:13pt;
+    margin-top: 20px;
+    width: 200px;
 }
 
 #supporters-list{
