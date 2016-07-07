@@ -70,27 +70,27 @@
 
         <form action="/save-supporter" method="POST" class="form-horizontal" role="form" id="create-supporter">
             <div class="form-group">
-                <label class="control-label col-sm-4">Username:</label>
+                <label class="control-label col-sm-4">Username</label>
                 <div class="col-sm-8">
                     <input class="form-control" type="text"  name="username"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4" style="text-align:right">Password:</label>
+                <label class="control-label col-sm-4" style="text-align:right">Password</label>
                 <div class="col-sm-8"><input  type="password" class="form-control" name="password"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Confirm Password:</label>
+                <label class="control-label col-sm-4">Confirm Password</label>
                 <div class="col-sm-8"><input  type="password" class="form-control"
                                                                      name="password_confirm"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4" style="text-align:right">Email Address:</label>
+                <label class="control-label col-sm-4" style="text-align:right">Email Address</label>
                 <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control"
                                                                      name="email_address"/>
                 </div>
@@ -108,13 +108,15 @@
             </div>-->
 
             <div class="form-group">
-                <label class="control-label col-sm-4" style="text-align:right"># of Facebook Friends:</label>
+                <label class="control-label col-sm-4" style="text-align:right"># of Facebook Friends</label>
                 <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control"
                                                                      name="followers_fb"/>
                 </div>
             </div>
 
-            Location: <select name="country">
+            <div class="form-group">
+                <label class="control-label col-sm-4">Location</label>
+                <select name="country">
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Albania">Albania</option>
                 <option value="Algeria">Algeria</option>
@@ -355,7 +357,7 @@
                 <option value="Zambia">Zambia</option>
                 <option value="Zimbabwe">Zimbabwe</option>
             </select>
-
+            </div>
             <br/>
 
             <button class="btn btn-primary" type="submit">Submit</button>

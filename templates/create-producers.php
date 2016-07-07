@@ -72,59 +72,59 @@
 
         <form action="/save-producer" method="POST" id="create-producer">
             <div class="form-group">
-                <label class="control-label col-sm-4">First Name:</label>
+                <label class="control-label col-sm-4">First Name</label>
                 <div class="col-sm-8"><input type="text" class="form-control" name="first_name" id="first_name"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Last Name:</label>
+                <label class="control-label col-sm-4">Last Name</label>
                 <div class="col-sm-8"><input type="text" class="form-control" name="last_name"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Username:</label>
+                <label class="control-label col-sm-4">Username</label>
                 <div class="col-sm-8"><input type="text" class="form-control" name="user_name"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Password:</label>
+                <label class="control-label col-sm-4">Password</label>
                 <div class="col-sm-8"><input  type="password" class="form-control" name="password"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Email Address:</label>
+                <label class="control-label col-sm-4">Email Address</label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control" name="email_address"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Organization Name:</label>
+                <label class="control-label col-sm-4">Organization Name</label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control" name="org_name"/>
                 </div>
             </div>
             <br />
             <div class="form-group">
-                <label class="control-label col-sm-4">Website:</label>
+                <label class="control-label col-sm-4">Website</label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control" name="organization_url"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Org Description:</label>
+                <label class="control-label col-sm-4">Org Description</label>
                 <div class="col-sm-8">
                     <textarea name="description" class="form-control" rows="4" cols="50"></textarea>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Country:</label>
+                <label class="control-label col-sm-4">Country</label>
                 <div class="col-sm-8">
                     <select name="country">
                         <option value="Afghanistan">Afghanistan</option>
@@ -373,7 +373,7 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Non Profits Click Here:</label>
+                <label class="control-label col-sm-4">Non Profits Click Here</label>
                 <input type="radio" name="non-profit"/>
             </div>
 

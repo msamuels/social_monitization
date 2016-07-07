@@ -38,6 +38,10 @@ body{
     font-size: 30px;
 }
 
+.control-label {
+    text-align: right;
+}
+
 .desc{
     color: grey;
 }
