@@ -2,7 +2,10 @@
 
 # Create producers
 $app->get('/create-producer', function () use ($app){
-    $app->render('create-producers.php');
+
+    $path = explode('/', $app->request->getPath());
+
+    $app->render('create-producers.php', array('path' => $path));
 });
 
 # Save producers

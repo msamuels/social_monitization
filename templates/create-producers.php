@@ -43,6 +43,22 @@
 </script>
 
 <div class="row">
+    <?php
+
+    $class = array();
+
+    if ($path[1] == "create-producer" ) {
+        $class[0] = "";
+        $class[1] = "class = 'highlighted'";
+    }
+        ?>
+
+        <a href="/get-started/supporter/register" <?php echo $class[0]; ?>>Supporter</a> |
+    <a href="/create-producer" <?php  echo $class[1];  ?>>Producer</a>
+
+</div>
+
+<div class="row">
 
     <div class="col-sm-3"></div>
 

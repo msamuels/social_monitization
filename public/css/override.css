@@ -67,6 +67,10 @@ H1{
     color: grey;
 }
 
+.highlighted{
+    color: blue;
+}
+
 #how-it-works{
     margin-left: 50px;
 }

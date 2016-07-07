@@ -32,9 +32,28 @@
 
 </script>
 
+<div class="row">
+    <?php
+
+    $class = array();
+
+    if ($path[1] == "get-started" ) {
+        $class[0] = "class = 'highlighted'";
+        $class[1] = "";
+    } else {
+        $class[1] = "class = 'highlighted'";
+        $class[0] = "";
+    }
+    ?>
+
+    <a href="/get-started/supporter/register" <?php echo $class[0]; ?>>Supporter</a> |
+    <a href="/create-producer" <?php  $class[1];  ?>>Producer</a>
+
+</div>
+
 
 <!-- @TODO remove margin-top -->
-<div style="margin-top: 200px" class="row">
+<div class="row">
 
     <div class="col-sm-3"></div>
 

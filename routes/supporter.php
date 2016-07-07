@@ -2,8 +2,11 @@
 
 # Register suppporter
 $app->get('/get-started/supporter/register', function() use($app) {
+
+    $path = explode('/', $app->request->getPath());
+
     //TODO only find one suporter by login
-    $app->render('create-supporter.php');
+    $app->render('create-supporter.php', array('path' => $path));
 });
 
 # Save supporter
