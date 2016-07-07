@@ -132,7 +132,8 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
 
 
     // Email supporter to let them know campaign has been created
-    $to_supporter = implode(',',$supporter_email);
+    $headers .= 'BCC: '. implode(",", $supporter_email) . "\r\n";
+
     $subject_supporter = 'New campaign posted to shareitcamp! ';
 
     $body_supporter = "<p>".$producer->org_name. " is asking for your support for their ".$producer->org_name." effort. Click on the link below to find
@@ -147,7 +148,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $body_supporter .= "<p>Thanks, <br />
         The shareitcamp team</p>";
 
-    mail($to_supporter, $subject_supporter, $body_supporter, $headers);
+    mail(null, $subject_supporter, $body_supporter, $headers);
 
     $app->flash('success_info', 'Campaign Saved');
     $app->redirect('/campaigns');
