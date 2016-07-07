@@ -108,6 +108,10 @@ img {
     color:#1b6d85;
 }
 
+.navbar-brand > img{
+    margin-top: 20px;
+}
+
 .pull-left {
     float: left;
 }

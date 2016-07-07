@@ -51,7 +51,7 @@
     <div class="col-sm-4">
         <div class="row">
             <div class="col-sm-1">
-                
+
             </div>
             <div class="col-sm-11" style="text-align: left;">
                 <p><strong>Start Date:</strong> <?php echo date_format($campaign->start_date, 'Y-m-d '); ?></p>
@@ -62,7 +62,7 @@
 
         <div class="row">
             <div class="col-sm-1">
-                <img src="/images/www.png" class="campaign-icons"/>
+
             </div>
             <div class="col-sm-11" style="text-align: left;">
                 <p><strong>Visit:</strong> <a href="http://<?php echo $campaign->url; ?>"
