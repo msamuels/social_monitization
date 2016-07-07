@@ -17,7 +17,7 @@
                             </a>
                         </strong></p>
                     <p>
-                    <p><i> by <?php echo $campaigns[0]->getProducer()->org_name; ?></i></p>
+                    <p><i> by <?php echo $campaign->getProducer()->org_name; ?></i></p>
                     <p>
                     <p>
                         <a href="/supporter/campaign/<?php echo $campaign->campaign_id; ?>">
