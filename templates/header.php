@@ -66,7 +66,7 @@
                     <?php if ($path[1] == "") { ?>
                         <li><a href="get-started/supporter/register">get started</a></li>
                     <?php } else { ?>
-                        <li><a href="create-producer">get started</a></li>
+                        <li><a href="/create-producer">get started</a></li>
                     <?php } ?>
                     <li><a href="/about-us">about us</a></li>
                     <li><a href="/organizations">organizations</a></li>
