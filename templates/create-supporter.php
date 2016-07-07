@@ -40,14 +40,11 @@
     if ($path[1] == "get-started" ) {
         $class[0] = "class = 'highlighted'";
         $class[1] = "";
-    } else {
-        $class[1] = "class = 'highlighted'";
-        $class[0] = "";
     }
     ?>
 
-    <a href="/get-started/supporter/register" <?php echo $class[0]; ?>>Supporter</a> |
-    <a href="/create-producer" <?php  $class[1];  ?>>Producer</a>
+    <a href="/get-started/supporter/register" <?php echo $class[1]; ?>>Supporter</a> |
+    <a href="/create-producer" <?php  echo $class[0];  ?>>Producer</a>
 
 </div>
 
