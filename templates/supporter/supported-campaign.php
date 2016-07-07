@@ -80,6 +80,12 @@
         </div>
 
         <div class="row">
+
+            <div class="col-sm-1">
+
+            </div>
+
+            <div class="col-sm-11" style="text-align: left;">
             <?php
             if (isset($_SESSION['user_type'])) {
                 if ($isPending) { ?>
@@ -93,6 +99,9 @@
 
                 <?php }
             } ?>
+                
+            </div>
+
         </div>
 
     </div>
