@@ -384,7 +384,7 @@
 
             <button class="btn btn-primary" type="submit">Submit</button>
             <br />
-            By submitting this form you agree to the Iliv8 terms and conditions.
+            By submitting this form you agree to the shareitcamp.com terms and conditions.
 
 
         </form>
