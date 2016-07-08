@@ -1,5 +1,6 @@
 <!-- @TODO remove margin-top -->
-<div class="row" id="supporters-list" style="margin-left:300px">
+<div class="row" id="supporters-list">
+    <div class="col-lg-12">
 <!-- Show campaigns supported -->
 <H1>Supported Campaigns</H1>
 
@@ -33,5 +34,5 @@
     ?>
 
 </ul>
-
+    </div>
 </div>

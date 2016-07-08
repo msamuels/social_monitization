@@ -68,58 +68,59 @@
 
     <div class="col-sm-6">
 
-        <H1>Create Producer Account: </H1>
+        <H1>Create Producer Account</H1>
 
         <form action="/save-producer" method="POST" id="create-producer">
             <div class="form-group">
                 <label class="control-label col-sm-4">First Name</label>
-                <div class="col-sm-8"><input type="text" class="form-control" name="first_name" id="first_name"/>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-4">Last Name</label>
-                <div class="col-sm-8"><input type="text" class="form-control" name="last_name"/>
+                <div class="col-sm-8"><input type="text" class="form-control" name="last_name" placeholder="Last Name"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-4">Username</label>
-                <div class="col-sm-8"><input type="text" class="form-control" name="user_name"/>
+                <div class="col-sm-8"><input type="text" class="form-control" name="user_name" placeholder="Username"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-4">Password</label>
-                <div class="col-sm-8"><input  type="password" class="form-control" name="password"/>
+                <div class="col-sm-8"><input  type="password" class="form-control" name="password" placeholder="Password"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-4">Email Address</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="email_address"/>
+                    <input type="text" class="form-control" name="email_address" placeholder="Email Address"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-4">Organization Name</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="org_name"/>
+                    <input type="text" class="form-control" name="org_name" placeholder="Organization Name"/>
                 </div>
             </div>
             <br />
             <div class="form-group">
                 <label class="control-label col-sm-4">Website</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="organization_url"/>
+                    <input type="text" class="form-control" name="organization_url" placeholder="Website"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-4">Org Description</label>
                 <div class="col-sm-8">
-                    <textarea name="description" class="form-control" rows="4" cols="50"></textarea>
+                    <textarea name="description" class="form-control" rows="4" cols="50" placeholder="Organization Description"></textarea>
                 </div>
             </div>
 
