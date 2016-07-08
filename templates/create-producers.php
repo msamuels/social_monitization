@@ -68,7 +68,7 @@
 
     <div class="col-sm-6">
 
-        <H1>Create Producer Account: </H1>
+        <H1>Create Producer Account</H1>
 
         <form action="/save-producer" method="POST" id="create-producer">
             <div class="form-group">
