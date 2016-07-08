@@ -55,7 +55,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><img src="images/iliv8-Logo2-PNG.png"/></a>
+            <a class="navbar-brand" href="/"><img src="/images/iliv8-Logo2-PNG.png"/></a>
         </div>
         <div class="navbar-default" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
