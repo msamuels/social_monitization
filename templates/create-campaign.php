@@ -89,9 +89,9 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Url</label>
+                <label class="control-label col-sm-4">URL</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="url"/>
+                    <input type="text" class="form-control" name="url" PLACEHOLDER="Where can supporters go to learn more?"/>
                 </div>
             </div>
 
