@@ -30,10 +30,10 @@
     <div class="col-sm-6">
 
         <H1>Create Campaign</H1>
-
+        <span class="required">* </span> = Required fields
         <form action="/save-campaign" enctype="multipart/form-data" method="POST" class="form-horizontal" role="form" id="create-campaign">
             <div class="form-group">
-                <label class="control-label col-sm-4">Campaign Name</label>
+                <label class="control-label col-sm-4"><span class="required">* </span>Campaign Name</label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control" name="campaign_name"/>
                 </div>
@@ -58,14 +58,14 @@
             -->
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Start Date</label>
+                <label class="control-label col-sm-4"><span class="required">* </span>Start Date</label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control datepicker" name="start_date" placeholder="mm/dd/yyyy"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">End Date</label>
+                <label class="control-label col-sm-4"><span class="required">* </span>End Date</label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control datepicker" name="end_date" placeholder="mm/dd/yyyy"/>
                 </div>

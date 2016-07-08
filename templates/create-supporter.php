@@ -62,6 +62,8 @@
     <div class="col-sm-6">
 
         <H1>Create Supporter Account</H1>
+        
+        <span class="required">* </span> = Required fields
 
         <?php if (isset($success_info)) { ?>
             <div class="alert alert-success"><?php echo $success_info; ?></div>
@@ -70,14 +72,14 @@
 
         <form action="/save-supporter" method="POST" class="form-horizontal" role="form" id="create-supporter">
             <div class="form-group">
-                <label class="control-label col-sm-4">Username</label>
+                <label class="control-label col-sm-4"><span class="required">* </span>Username</label>
                 <div class="col-sm-8">
                     <input class="form-control" type="text"  name="username" placeholder="username"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4" style="text-align:right">Password</label>
+                <label class="control-label col-sm-4" style="text-align:right"><span class="required">* </span>Password</label>
                 <div class="col-sm-8"><input  type="password" class="form-control" name="password" placeholder="password" />
                 </div>
             </div>
@@ -90,7 +92,7 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4" style="text-align:right">Email Address</label>
+                <label class="control-label col-sm-4" style="text-align:right"><span class="required">* </span>Email Address</label>
                 <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control"
                                                                      name="email_address" placeholder="email address"/>
                 </div>

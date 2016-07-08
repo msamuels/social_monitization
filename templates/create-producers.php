@@ -62,6 +62,7 @@
     Engage your supporters and let them help you get the word out.
 </div>
 
+
 <div class="row">
 
     <div class="col-sm-3"></div>
@@ -70,34 +71,36 @@
 
         <H1>Create Producer Account</H1>
 
+        <span class="required">* </span> = Required fields
+
         <form action="/save-producer" method="POST" id="create-producer">
             <div class="form-group">
-                <label class="control-label col-sm-4">First Name</label>
+                <label class="control-label col-sm-4"><span class="required">* </span>First Name</label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Last Name</label>
+                <label class="control-label col-sm-4"><span class="required">* </span>Last Name</label>
                 <div class="col-sm-8"><input type="text" class="form-control" name="last_name" placeholder="Last Name"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Username</label>
+                <label class="control-label col-sm-4"><span class="required">* </span>Username</label>
                 <div class="col-sm-8"><input type="text" class="form-control" name="user_name" placeholder="Username"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Password</label>
+                <label class="control-label col-sm-4"><span class="required">* </span>Password</label>
                 <div class="col-sm-8"><input  type="password" class="form-control" name="password" placeholder="Password"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Email Address</label>
+                <label class="control-label col-sm-4"><span class="required">* </span>Email Address</label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control" name="email_address" placeholder="Email Address"/>
                 </div>

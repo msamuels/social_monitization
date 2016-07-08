@@ -116,6 +116,10 @@ img {
     margin-top: 20px;
 }
 
+.required{
+    color: orange;
+}
+
 .pull-left {
     float: left;
 }
