@@ -62,7 +62,7 @@
     <div class="col-sm-6">
 
         <H1>Create Supporter Account</H1>
-        
+
         <span class="required">* </span> = Required fields
 
         <?php if (isset($success_info)) { ?>
@@ -110,7 +110,7 @@
             </div>-->
 
             <div class="form-group">
-                <label class="control-label col-sm-4" style="text-align:right"># of Facebook Friends</label>
+                <label class="control-label col-sm-4" style="text-align:right"><span class="required">* </span># of Facebook Friends</label>
                 <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control"
                                                                      name="followers_fb" placeholder="# of Facebook Friends"/>
                 </div>
