@@ -50,7 +50,7 @@
         <form action="/login" method="POST" id="login">
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Account Type:</label>
+                <label class="control-label col-sm-4">Account Type</label>
 
                 <div class="col-sm-8">
                     <select name="user_type" class="form-control">
@@ -62,14 +62,14 @@
 
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Email:</label>
+                <label class="control-label col-sm-4">Email</label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control" name="email" placeholder="Enter Email"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Password:</label>
+                <label class="control-label col-sm-4">Password</label>
                 <div class="col-sm-8">
                     <input type="password" class="form-control" name="password" placeholder="Enter Password"/>
                 </div>

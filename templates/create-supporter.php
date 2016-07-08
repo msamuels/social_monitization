@@ -72,27 +72,27 @@
             <div class="form-group">
                 <label class="control-label col-sm-4">Username</label>
                 <div class="col-sm-8">
-                    <input class="form-control" type="text"  name="username"/>
+                    <input class="form-control" type="text"  name="username" placeholder="username"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align:right">Password</label>
-                <div class="col-sm-8"><input  type="password" class="form-control" name="password"/>
+                <div class="col-sm-8"><input  type="password" class="form-control" name="password" placeholder="password" />
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-4">Confirm Password</label>
                 <div class="col-sm-8"><input  type="password" class="form-control"
-                                                                     name="password_confirm"/>
+                                                                     name="password_confirm" placeholder="confirm password"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align:right">Email Address</label>
                 <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control"
-                                                                     name="email_address"/>
+                                                                     name="email_address" placeholder="email address"/>
                 </div>
             </div>
 
@@ -110,7 +110,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align:right"># of Facebook Friends</label>
                 <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control"
-                                                                     name="followers_fb"/>
+                                                                     name="followers_fb" placeholder="# of Facebook Friends"/>
                 </div>
             </div>
 
