@@ -81,14 +81,17 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $destination = $app->config('configs')['campaign_creative_upload_dir'];
 
     $upload = new \Wilsonshop\Utils\Upload($destination, 'screen_shot');
+
+    $rename_to = strtotime("now") .".jpg";
+
     // @TODO check the result message to see if the upload was successful
-    $result = $upload->uploadFile("Upload Succeeded","Upload failed");
+    $result = $upload->uploadFile("Upload Succeeded","Upload failed", $rename_to);
 
     $campaign = Campaign::create(
         array('campaign_name'=>$req['campaign_name'], 'budget' => $req['budget'],
             'start_date' => $req['start_date'], 
             'end_date' => $req['end_date'],'copy' => $req['copy'],
-            'screen_shot' => $_FILES['screen_shot']['name'],'url' => $req['url'],'platform' => $req['platform']));
+            'screen_shot' => $rename_to,'url' => $req['url'],'platform' => $req['platform']));
 
     // create a new account with the campaign id
     $user_name = $app->view()->getData('user');
