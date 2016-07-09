@@ -81,6 +81,10 @@ H1{
     font-size: 30px;
 }
 
+.highlighted-1{
+    color: blue;
+}
+
 #how-it-works{
     margin-left: 50px;
 }
