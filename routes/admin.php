@@ -24,13 +24,16 @@ $app->post('/save-reward', $authenticate($app), function () use ($app){
     $destination = $app->config('configs')['rewards_creative_upload_dir'];
 
     $upload = new \Wilsonshop\Utils\Upload($destination, 'image');
+
+    $rename_to = strtotime("now") .".jpg";
+
     // @TODO check the result message to see if the upload was successful
-    $result = $upload->uploadFile("Upload Succeeded","Upload failed");
+    $result = $upload->uploadFile("Upload Succeeded","Upload failed", $rename_to);
 
     $reward = $req['campaign'] == 0 ? NULL : $req['campaign'];
 
     $reward = Reward::create(
-        array('reward_name'=>$req['reward_name'], 'image'=>$_FILES['image']['name'], 'details' => $req['details'],
+        array('reward_name'=>$req['reward_name'], 'image'=>$rename_to, 'details' => $req['details'],
             'expiration_date' => $req['expiration_date'], 'quantity_remaining' => $req['quantity_remaining'],
             'point_value' => $req['point_value'], 'campaign_id' => $reward));
 

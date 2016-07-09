@@ -82,7 +82,7 @@
             <input type="hidden" name="MAX_FILE_SIZE" value="10000000"/>
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Image</label>
+                <label class="control-label col-sm-4">Image (.jpg)</label>
                 <div class="col-sm-8">
                     <input type="file" name="screen_shot" id="screen_shot"/>
                 </div>
