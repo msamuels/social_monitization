@@ -35,7 +35,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-4"><span class="required">* </span>Campaign Name</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="campaign_name"/>
+                    <input type="text" class="form-control" name="campaign_name" placeholder="Campaign name"/>
                 </div>
             </div>
 
@@ -44,7 +44,7 @@
                 <div class="col-sm-8">
                     <div class="input-group">
                         <div class="input-group-addon">$</div>
-                        <input type="text" class="form-control" name="budget" />
+                        <input type="text" class="form-control" name="budget" placeholder="Budget" />
                     </div>
                 </div>
             </div>
