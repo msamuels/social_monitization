@@ -13,6 +13,10 @@
                     required: true,
                     minlength: 5
                 },
+                password_confirm : {
+                    minlength : 5,
+                    equalTo : "#password"
+                },
                 email_address: {
                     required: true,
                     email: true
@@ -80,7 +84,7 @@
 
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align:right"><span class="required">* </span>Password</label>
-                <div class="col-sm-8"><input  type="password" class="form-control" name="password" placeholder="password" />
+                <div class="col-sm-8"><input  type="password" class="form-control" name="password" id="password" placeholder="password" />
                 </div>
             </div>
 
