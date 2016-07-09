@@ -193,7 +193,7 @@ $app->get('/campaigns', $authenticate($app), function () use ($app){
 
     // @TODO filter by the producer_id
     $campaigns = Campaign::find_by_sql($query);
-    $app->render('list-campaigns.php', array('campaigns' => $campaigns, 'success_info' => $success_info));
+    $app->render('producer/list-my-campaigns.php', array('campaigns' => $campaigns, 'success_info' => $success_info));
 });
 
 # approve campaign
@@ -263,3 +263,18 @@ $app->get('/campaigns-performance', $authenticate($app), function () use ($app){
     $app->render('campaign-performance.php', array('campaign' => $campaign, 'success_info' => $success_info));
 });
 
+# show  campaign individually
+
+$app->get('/producer/campaign/:id', function ($id) use($app) {
+
+    $base_url = $app->config('configs')['base_url'];
+
+    $campaign = Campaign::find_by_campaign_id($id);
+
+    $reward = Reward::find_by_campaign_id($campaign->campaign_id);
+
+    $producer = $campaign->getProducer();
+
+    $app->render('producer/campaign-detail.php', array('campaign' => $campaign, 'base_url' => $base_url,
+        'reward' => $reward, 'producer' => $producer,));
+});
