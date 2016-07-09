@@ -150,6 +150,9 @@ ul.list-things li {
     margin-bottom: 40px;
 }
 
+#ui-datepicker-div {
+    z-index: 9999999!important;
+}
 .list-campaign-copy {
     font-size: 13px;
     height: 70px;
