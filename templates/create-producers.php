@@ -21,6 +21,10 @@
                     required: true,
                     minlength: 5
                 },
+                password_confirm : {
+                    minlength : 5,
+                    equalTo : "#password"
+                },
                 email_address: {
                     required: true,
                     email: true
@@ -65,9 +69,9 @@
 
 <div class="row">
 
-    <div class="col-sm-3"></div>
+    <div class="col-sm-2"></div>
 
-    <div class="col-sm-6">
+    <div class="col-sm-9">
 
         <H1>Create Producer Account</H1>
 
@@ -95,7 +99,15 @@
 
             <div class="form-group">
                 <label class="control-label col-sm-4"><span class="required">* </span>Password</label>
-                <div class="col-sm-8"><input  type="password" class="form-control" name="password" placeholder="Password"/>
+                <div class="col-sm-8">
+                    <input  type="password" class="form-control" name="password" id="password" placeholder="Password"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-4"><span class="required">* </span>Confirm Password</label>
+                <div class="col-sm-8">
+                    <input  type="password" class="form-control" name="password_confirm" placeholder="Confirm Password"/>
                 </div>
             </div>
 
@@ -112,7 +124,7 @@
                     <input type="text" class="form-control" name="org_name" placeholder="Organization Name"/>
                 </div>
             </div>
-            <br />
+
             <div class="form-group">
                 <label class="control-label col-sm-4">Website</label>
                 <div class="col-sm-8">
@@ -389,6 +401,8 @@
 
         </form>
     </div>
+
+    <div class="col-sm-2"></div>
+
 </div>
 
-<div class="col-sm-3"></div>
