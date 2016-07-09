@@ -278,3 +278,64 @@ $app->get('/producer/campaign/:id', function ($id) use($app) {
     $app->render('producer/campaign-detail.php', array('campaign' => $campaign, 'base_url' => $base_url,
         'reward' => $reward, 'producer' => $producer,));
 });
+
+$app->get('/invoices', function () use($app) {
+
+    $base_url = $app->config('configs')['base_url'];
+
+    $user_name = $app->view()->getData('user');
+    $producer = Producer::find_by_user_name($user_name);
+
+    # list campaigns
+    $query = "SELECT  c.*, (SELECT Count(cr.supporter_id) FROM campaign_responses cr
+        WHERE c.campaign_id = cr.campaign_id) as num_supporters
+        FROM campaigns c
+        LEFT JOIN accounts ac ON ac.campaign_id = c.campaign_id
+        WHERE ac.id_producer = ".$producer->id_producer."
+        ORDER BY campaign_id DESC";
+
+    // @TODO filter by the producer_id
+    $campaigns = Campaign::find_by_sql($query);
+
+    //$reward = Reward::find_by_campaign_id($campaign->campaign_id);
+
+    $app->render('producer/list-invoices.php', array('campaigns' => $campaigns, 'base_url' => $base_url,
+        'producer' => $producer,));
+});
+
+$app->get('/producer/invoice/:id', function ($id) use($app) {
+
+    $base_url = $app->config('configs')['base_url'];
+
+    $campaign = Campaign::find_by_campaign_id($id);
+
+    $reward = Reward::find_by_campaign_id($campaign->campaign_id);
+
+    $producer = $campaign->getProducer();
+
+    if (is_null($id)) {
+        $app->redirect('/invoices');
+    }
+
+    $campaign_supporters = Campaign_response::find('all',
+        array('conditions' => array('campaign_id in (?)', array($id))));
+
+    $supporter_ids = array();
+
+    foreach ($campaign_supporters as $cs) {
+        $supporter_ids[] = $cs->supporter_id;
+    }
+
+    if (count($supporter_ids) == 0) {
+        $supporters = array();
+    }else{
+        $supporters = Supporter::find($supporter_ids);
+    }
+
+    if (count($supporters) == 1) {
+        $supporters = array($supporters);
+    }
+
+    $app->render('producer/invoice.php', array('campaign' => $campaign, 'base_url' => $base_url,
+        'reward' => $reward, 'producer' => $producer, 'supporters' => $supporters));
+});
