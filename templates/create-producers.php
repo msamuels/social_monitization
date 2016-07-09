@@ -7,11 +7,11 @@
             rules: {
                 first_name: {
                     required: true,
-                    minlength: 5
+                    minlength: 4
                 },
                 last_name: {
                     required: true,
-                    minlength: 5
+                    minlength: 4
                 },
                 user_name: {
                     required: true,
