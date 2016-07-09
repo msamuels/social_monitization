@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: db591622819.db.1and1.com
--- Generation Time: Jul 01, 2016 at 05:06 PM
+-- Generation Time: Jul 09, 2016 at 12:23 PM
 -- Server version: 5.5.49-0+deb7u1-log
--- PHP Version: 5.4.45-0+deb7u3
+-- PHP Version: 5.4.45-0+deb7u4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -199,7 +199,7 @@ CREATE TABLE IF NOT EXISTS `producers` (
   `organization_url` varchar(255) DEFAULT NULL,
   `email_address` varchar(255) DEFAULT NULL,
   `user_name` varchar(45) DEFAULT NULL,
-  `password` varchar(45) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
   `description` longtext,
   `country` varchar(255) DEFAULT NULL,
   `orgclass_id` int(11) DEFAULT NULL,

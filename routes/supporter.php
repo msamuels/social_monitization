@@ -26,8 +26,11 @@ $app->post('/save-supporter', function () use ($app){
         }
 
        // @TODO id_follower_count is reference to follower_count table. Save to that instead
+
+        $password = password_hash($req['password'], PASSWORD_DEFAULT);
+
        $supporter = Supporter::create(
-           array('user_name' => $req['username'], 'password' => $req['password'],'email_address'=>$req['email_address'],
+           array('user_name' => $req['username'], 'password' => $password,'email_address'=>$req['email_address'],
                'id_follower_count'=>$req['followers_fb'] ,'country'=>$req['country']
           ));
 
@@ -87,8 +90,8 @@ $app->get('/supporters', $authenticate($app), function () use ($app){
 $app->get('/supporter/campaigns', $authenticate($app), function () use($app) {
 
     # list supported campaigns
-    $email = $app->view()->getData('user');
-    $supporter = Supporter::find_by_email_address($email);
+    $user_name = $app->view()->getData('user');
+    $supporter = Supporter::find_by_user_name($user_name);
     $flash = $app->view()->getData('flash');
     $base_url = $app->config('configs')['base_url'];
 
@@ -116,8 +119,8 @@ $app->get('/supporter/campaigns/pending', $authenticate($app), function () use (
     
     // Get suporter. Join on campaign_response and get all the campaign ids already supporter
     // Get all campaigns where the supporter hasn't supported
-    $email = $app->view()->getData('user');
-    $supporter = Supporter::find_by_email_address($email);
+    $user_name = $app->view()->getData('user');
+    $supporter = Supporter::find_by_user_name($user_name);
 
     $query = "SELECT cr.* FROM supporters s
 	INNER JOIN campaign_responses cr 
@@ -193,8 +196,8 @@ $app->get('/supporter/campaign/:id', function ($id) use($app) {
     $base_url = $app->config('configs')['base_url'];
 
     # list supported campaigns
-    $email = $app->view()->getData('user');
-    $supporter = Supporter::find_by_email_address($email);
+    $user_name = $app->view()->getData('user');
+    $supporter = Supporter::find_by_user_name($user_name);
     $flash = $app->view()->getData('flash');
 
     $campaign = Campaign::find_by_campaign_id($id);
@@ -275,8 +278,8 @@ $app->get('/rewards', $authenticate($app), function () use ($app){
     }
 
     # Campaigns supported
-    $email = $app->view()->getData('user');
-    $supporter = Supporter::find_by_email_address($email);
+    $user_name = $app->view()->getData('user');
+    $supporter = Supporter::find_by_user_name($user_name);
 
     $supportedCampaigns = Campaign_response::find('all',
         array('conditions' => array('supporter_id in (?)', array($supporter->id_supporter))));

@@ -15,9 +15,12 @@ $app->post('/save-producer', function () use ($app){
 
        // @TODO check if email address already in system before saving
        $req = $app->request->post();
+
+       $password = password_hash($req['password'], PASSWORD_DEFAULT);
+
        $producer = Producer::create(
            array('first_name' => $req['first_name'], 'last_name' => $req['last_name'], 'user_name' => $req['user_name'],
-		'password' => $req['password'], 'org_name'=>$req['org_name'],'organization_url'=>$req['organization_url'],
+		'password' => $password, 'org_name'=>$req['org_name'],'organization_url'=>$req['organization_url'],
                'email_address'=>$req['email_address'], 'description'=>$req['description'], 'country'=>$req['country']));
 
         // Auto respond to to producer
@@ -88,8 +91,8 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
             'screen_shot' => $_FILES['screen_shot']['name'],'url' => $req['url'],'platform' => $req['platform']));
 
     // create a new account with the campaign id
-    $email = $app->view()->getData('user');
-    $producer = Producer::find_by_email_address($email);
+    $user_name = $app->view()->getData('user');
+    $producer = Producer::find_by_user_name($user_name);
 
     $account = Account::create(
         array('account_name'=>'test','id_producer'=>$producer->id_producer, 'campaign_id'=>$campaign->campaign_id));
@@ -167,7 +170,7 @@ $app->get('/campaigns/:id', $authenticate($app), function ($id) use ($app){
 # List all campaigns
 $app->get('/campaigns', $authenticate($app), function () use ($app){
 
-    $email = $app->view()->getData('user');
+    $user_name = $app->view()->getData('user');
     $flash = $app->view()->getData('flash');
 
     $success_info = '';
@@ -175,7 +178,7 @@ $app->get('/campaigns', $authenticate($app), function () use ($app){
         $success_info = $flash['success_info'];
     }
 
-    $producer = Producer::find_by_email_address($email);
+    $producer = Producer::find_by_user_name($user_name);
 
     # list campaigns
     $query = "SELECT  c.*, (SELECT Count(cr.supporter_id) FROM campaign_responses cr

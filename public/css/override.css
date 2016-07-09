@@ -46,6 +46,11 @@ body{
     color: grey;
 }
 
+.error {
+    color: orange;
+    font-size: 12px;
+}
+
 ul.nav.navbar-nav.footer-nav li > a{
     color: white;
 }

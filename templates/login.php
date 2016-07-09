@@ -5,7 +5,7 @@
         $('#login').validate({ // initialize the plugin
             debug: true,
             rules: {
-                email: {
+                username: {
                     required: true,
                     minlength: 5
                 },
@@ -15,7 +15,7 @@
                 }
             },
             messages: {
-                email: "Please enter your email address",
+                username: "Please enter your user name",
                 password: "Please enter your password"
             },
             submitHandler: function (form) {
@@ -39,8 +39,8 @@
             <div class="alert alert-danger"><?php echo $email_error; ?></div>
         <?php } ?>
 
-        <?php if (!empty($password_error)) { ?>
-            <div class="alert alert-danger"><?php echo $password_error; ?></div>
+        <?php if (!empty($username_error)) { ?>
+            <div class="alert alert-danger"><?php echo $username_error; ?></div>
         <?php } ?>
 
         <?php if (!empty($error)) { ?>
@@ -62,9 +62,9 @@
 
 
             <div class="form-group">
-                <label class="control-label col-sm-4">Email</label>
+                <label class="control-label col-sm-4">Username</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="email" placeholder="Enter Email"/>
+                    <input type="text" class="form-control" name="username" placeholder="Enter Username"/>
                 </div>
             </div>
 

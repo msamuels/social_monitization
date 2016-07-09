@@ -21,30 +21,30 @@ $app->hook('slim.before.dispatch', function() use ($app) {
 
 $app->post("/login", function () use ($app) {
 
-    $email = $app->request()->post('email');
+    $username = $app->request()->post('username');
     $password = $app->request()->post('password');
-    $user_type = $app->request()->post('user_type');
+    $user_type = $app->request()->post('user_type');//echo $user_type;exit;
     $client = null;
 
     $errors = array();
 
     // check the user type to know when model to request from
-    if($email == 'admin'){
-        $client = Owner::find_by_username($email);
+    if($username == 'admin'){
+        $client = Owner::find_by_username($username);
         $user_type = "admin";
     }else {
 
         if ($user_type == "supporter") {
-            $client = Supporter::find_by_email_address($email);
+            $client = Supporter::find_by_user_name($username);
         } elseif($user_type == "producer") {
-            $client = Producer::find_by_email_address($email);
+            $client = Producer::find_by_user_name($username);
         }
     }
 
     // is the user even in the system
     if ($client != null) {
-        if ($password != $client->password) {
-            $app->flash('email', $email);
+        if (!password_verify($password, $client->password)) {
+            $app->flash('username', $username);
             $errors['password'] = "Password does not match.";
         }
     } else {
@@ -57,7 +57,7 @@ $app->post("/login", function () use ($app) {
         $app->redirect('/login');
     }
 
-    $_SESSION['user'] = $email;
+    $_SESSION['user'] = $username;
     $_SESSION['user_type'] = $user_type;
 
     if (isset($_SESSION['urlRedirect'])) {
@@ -94,12 +94,12 @@ $app->get("/login", function () use ($app) {
    if (isset($_SESSION['urlRedirect'])) {
       $urlRedirect = $_SESSION['urlRedirect'];
    }
-   $email_value = $email_error = $password_error = '';
-   if (isset($flash['email'])) {
-      $email_value = $flash['email'];
+   $username_value = $username_error = $password_error = '';
+   if (isset($flash['username'])) {
+       $username_value = $flash['username'];
    }
-   if (isset($flash['errors']['email'])) {
-      $email_error = $flash['errors']['email'];
+   if (isset($flash['errors']['username'])) {
+      $username_error = $flash['errors']['username'];
    }
    if (isset($flash['errors']['password'])) {
       $password_error = $flash['errors']['password'];
@@ -116,8 +116,8 @@ $app->get("/login", function () use ($app) {
     $permissions = ['email']; // Optional permissions
     $loginUrl = $helper->getLoginUrl($configs['app_url'].'/fb-callback.php', $permissions);
 
-   $app->render('login.php', array('error' => $error, 'email_value' => $email_value,
-      'email_error' => $email_error, 'password_error' => $password_error, 'urlRedirect' => $urlRedirect,
+   $app->render('login.php', array('error' => $error, 'username_value' => $username_value,
+      'username_error' => $username_error, 'password_error' => $password_error, 'urlRedirect' => $urlRedirect,
        'fb_login_url' => $loginUrl));
 });
 
