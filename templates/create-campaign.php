@@ -101,8 +101,10 @@
                     <select name="platform" id="platform" class="form-control">
                         <option value="facebook">Facebook</option>
                     </select>
+                    <div style="font-size: small"><span class="required">* </span>shareitcamp will only report on potential reach of posts to Facebook</div>
                 </div>
             </div>
+
             <!--
               <label>Targeting:</label>
               <SELECT NAME="interests" MULTIPLE SIZE=5>
