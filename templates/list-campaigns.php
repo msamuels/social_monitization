@@ -10,12 +10,12 @@
         if (count($campaigns) > 0) {
             foreach ($campaigns as $campaign) {
                 ?>
-                <li>
+                <li class="list-item">
                     <p><a href="/campaign-detail?id=<?php echo $campaign->campaign_id; ?>">
                             <?php echo $campaign->campaign_name; ?>
                         </a>
                     </p>
-                    <p><i> by <?php echo $campaigns[0]->getProducer()->org_name; ?></i></p>
+                    <p class="by-line"><i> by <?php echo $campaigns[0]->getProducer()->org_name; ?></i></p>
                     <p>
                         <a href="/campaign-detail?id=<?php echo $campaign->campaign_id; ?>">
                             <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" height="100" width="100"/>

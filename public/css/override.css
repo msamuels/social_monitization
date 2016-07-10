@@ -16,6 +16,11 @@ body{
     margin-top: 40px;
 }
 
+.by-line{
+    font-size: 16px;
+    color: grey;
+}
+
 .campaign-icons{
     max-width: 30px;}
 
@@ -102,6 +107,11 @@ H1{
 
 .icon {
     max-width: 62px;
+}
+
+.list-item{
+    border:1px solid gainsboro;
+    padding: 5px;
 }
 
 img {
