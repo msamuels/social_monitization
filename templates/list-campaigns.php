@@ -18,7 +18,7 @@
                     <p class="by-line"><i> by <?php echo $campaigns[0]->getProducer()->org_name; ?></i></p>
                     <p>
                         <a href="/campaign-detail?id=<?php echo $campaign->campaign_id; ?>">
-                            <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" height="100" width="100"/>
+                            <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" height="200"/>
                         </a>
                     </p>
                     <p><?php echo substr($campaign->copy, 0, 50); ?>...</p>
