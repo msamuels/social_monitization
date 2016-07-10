@@ -1,6 +1,6 @@
 <!-- @TODO remove margin-top -->
 
-<H1>Campaigns</H1>
+<H1>Invoices</H1>
 <div class="row" id="supporters-list" style="margin-left:300px">
 
     <!-- @TODO remove width -->
