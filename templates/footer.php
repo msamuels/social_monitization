@@ -22,7 +22,7 @@
 </div>
 </div>
 
-<div class="row">
+<div class="row" style="font-size: small; color: #8c8c8c;">
     Copyright 2016 shareitcamp.com. All rights reserved<br/>
     Terms of Service | Privacy Policy
 </div>
