@@ -17,12 +17,12 @@
             if (count($supported_campaigns) > 0) {
                 foreach ($supported_campaigns as $supported_campaign) {
                     ?>
-                    <li>
+                    <li class="list-item">
                         <p><a href="/supporter/campaign/<?php echo $supported_campaign->campaign->campaign_id; ?>">
                                 <?php echo $supported_campaign->campaign->campaign_name; ?>
                             </a>
                         </p>
-                        <p><i> by <?php echo $supported_campaign->campaign->getProducer()->org_name; ?></i></p>
+                        <p class="by-line"><i> by <?php echo $supported_campaign->campaign->getProducer()->org_name; ?></i></p>
                         <p>
                             <a href="/supporter/campaign/<?php echo $supported_campaign->campaign->campaign_id; ?>">
                                 <img src="/images/screenshots/<?php echo $supported_campaign->campaign->screen_shot; ?>"
