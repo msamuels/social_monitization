@@ -10,14 +10,14 @@
         if (count($campaigns) > 0) {
             foreach ($campaigns as $campaign) {
                 ?>
-                <li>
+                <li class="list-item">
                     <p><strong>
                             <a href="/producer/invoice/<?php echo $campaign->campaign_id; ?>">
                                 <?php echo $campaign->campaign_name; ?>
                             </a>
                         </strong></p>
                     <p>
-                    <p><i> by <?php echo $campaign->getProducer()->org_name; ?></i></p>
+                    <p class="by-line"><i> by <?php echo $campaign->getProducer()->org_name; ?></i></p>
                     <p>
                     <p>
                         <a href="/producer/invoice/<?php echo $campaign->campaign_id; ?>">
