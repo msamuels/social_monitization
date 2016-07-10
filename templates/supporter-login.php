@@ -48,7 +48,7 @@
                         <?php echo $campaigns[0]->campaign_name; ?>
                     </a>
                 </p>
-                <p><i> by <?php echo $campaigns[0]->getProducer()->org_name; ?></i></<p>
+                <p class="by-line"><i> by <?php echo $campaigns[0]->getProducer()->org_name; ?></i></<p>
 
                 <p><a href="supporter/campaign/<?php echo $campaigns[0]->campaign_id; ?>">
                     <img src="images/screenshots/<?php echo $campaigns[0]->screen_shot; ?>"/>
@@ -67,7 +67,7 @@
                     </a>
                 </p>
 
-                <p><i> by <?php echo $campaigns[1]->getProducer()->org_name; ?></i></<p>
+                <p class="by-line"><i> by <?php echo $campaigns[1]->getProducer()->org_name; ?></i></<p>
 
                 <p><a href="supporter/campaign/<?php echo $campaigns[1]->campaign_id; ?>">
                         <img src="images/screenshots/<?php echo $campaigns[1]->screen_shot; ?>"/>
@@ -86,7 +86,7 @@
                     </a>
                 </p>
 
-                <p><i> by <?php echo $campaigns[2]->getProducer()->org_name; ?></i></<p>
+                <p class="by-line"><i> by <?php echo $campaigns[2]->getProducer()->org_name; ?></i></<p>
 
                 <p><a href="supporter/campaign/<?php echo $campaigns[2]->campaign_id; ?>">
                         <img src="images/screenshots/<?php echo $campaigns[2]->screen_shot; ?>"/>
@@ -105,7 +105,7 @@
                     </a>
                 </p>
 
-                <p><i> by <?php echo $campaigns[3]->getProducer()->org_name; ?></i></<p>
+                <p class="by-line"><i> by <?php echo $campaigns[3]->getProducer()->org_name; ?></i></<p>
 
                 <p><a href="supporter/campaign/<?php echo $campaigns[3]->campaign_id; ?>">
                         <img src="images/screenshots/<?php echo $campaigns[3]->screen_shot; ?>"/>
