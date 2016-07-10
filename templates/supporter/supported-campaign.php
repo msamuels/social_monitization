@@ -65,7 +65,7 @@
 
             </div>
             <div class="col-sm-11" style="text-align: left;">
-                <p><strong>Visit:</strong> <a href="http://<?php echo $campaign->url; ?>" class="highlighted-1"
+                <p><strong>Visit:</strong> <a href="<?php echo $campaign->url; ?>" class="highlighted-1"
                                               target="_blank"><?php echo $campaign->url; ?></a></p>
             </div>
         </div>
