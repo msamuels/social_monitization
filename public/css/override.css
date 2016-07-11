@@ -19,6 +19,7 @@ body{
 .by-line{
     font-size: 16px;
     color: grey;
+    text-align: left;
 }
 
 .campaign-icons{
