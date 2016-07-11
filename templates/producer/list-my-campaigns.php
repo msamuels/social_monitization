@@ -24,7 +24,9 @@
                             <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" height="200"/>
                         </a>
                     </p>
-                    <p class="list-campaign-copy"><?php echo substr($campaign->copy, 0, 50); ?>...</p>
+                    <p class="list-campaign-copy"><?php echo substr($campaign->copy, 0, 50); ?>
+                        <a href="/producer/campaign/<?php echo $campaign->campaign_id; ?>"> Learn More...</a>
+                    </p>
 
                 </li>
                 <?php

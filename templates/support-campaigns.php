@@ -25,7 +25,9 @@
                                  width="100"/>
                         </a>
                     </p>
-                    <p class="list-campaign-copy"><?php echo substr($campaign->copy, 0, 50); ?>...</p>
+                    <p class="list-campaign-copy"><?php echo substr($campaign->copy, 0, 50); ?>
+                        <a href="/supporter/campaign/<?php echo $campaign->campaign_id; ?>"> Learn More...</a>
+                    </p>
 
                     <form action="/save-campaign-support" method="POST">
                         <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
