@@ -2,7 +2,7 @@
 
 <H3><?php echo $campaign->campaign_name; ?></H3>
 
-<p><img src="images/screenshots/<?php echo $campaign->screen_shot; ?>" /></p>
+<p><img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" /></p>
 
 <H3>Supporters: </H3>
 
