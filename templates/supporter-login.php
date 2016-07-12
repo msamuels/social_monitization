@@ -1,3 +1,8 @@
+<style>
+    .by-line{
+        text-align: center;
+    }
+</style>
         <div class="row" id="get-started-banner">
             <H1 style="color: white" id="call-out">Lend Your Support</H1>
             <span style="color: white"> a simple investment today<br /> for a greater return <br />tomorrow</span>
