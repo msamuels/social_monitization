@@ -3,7 +3,7 @@
     <!-- Show campaigns supported -->
 
     <H1> <?php echo $campaign->campaign_name; ?> </H1>
-    <h3><i>by <?php echo $campaign->getProducer()->org_name; ?></i></h3>
+    <h3><p class="by-line"><i>by <?php echo $campaign->getProducer()->org_name; ?></i></p></h3>
 
 </div>
 
