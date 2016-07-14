@@ -127,7 +127,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
 
     $body .= "<p>Order Summary<br />
         Order #: ".$campaign->order_number."<br />
-        Date Posted: 07/01/16<br />
+        Date Posted: ".date("m/d/Y")."<br />
         Campaign Name: ".$campaign->campaign_name."<br />
         Start Date:  ".date_format($campaign->start_date, 'Y-m-d ')."<br />
         End Date:  ".date_format($campaign->end_date, 'Y-m-d ')."<br />
