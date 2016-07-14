@@ -87,11 +87,14 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     // @TODO check the result message to see if the upload was successful
     $result = $upload->uploadFile("Upload Succeeded","Upload failed", $rename_to);
 
+    $order_number = $randnum = rand(1111111111,9999999999);
+
     $campaign = Campaign::create(
         array('campaign_name'=>$req['campaign_name'], 'budget' => $req['budget'],
             'start_date' => $req['start_date'], 
             'end_date' => $req['end_date'],'copy' => $req['copy'],
-            'screen_shot' => $rename_to,'url' => $req['url'],'platform' => $req['platform']));
+            'screen_shot' => $rename_to,'url' => $req['url'],'platform' => $req['platform'],
+            'order_number'=>$order_number));
 
     // create a new account with the campaign id
     $user_name = $app->view()->getData('user');
@@ -123,7 +126,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $body .= "<p>Please log-in to shareitacamp in 24hrs to view the approval status of your campaign. </p><br />";
 
     $body .= "<p>Order Summary<br />
-        Order #: 1234567890<br />
+        Order #: ".$campaign->order_number."<br />
         Date Posted: 07/01/16<br />
         Campaign Name: ".$campaign->campaign_name."<br />
         Start Date:  ".date_format($campaign->start_date, 'Y-m-d ')."<br />
