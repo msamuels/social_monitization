@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:url"                content="http://social.wilsonshop.biz/supporter/campaign/<?php echo $campaign->campaign_id; ?>" />
+    <meta property="og:url"                content="http://www.shareitcamp.com/supporter/campaign/<?php echo $campaign->campaign_id; ?>" />
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="<?php echo $campaign->campaign_name; ?>" />
     <meta property="og:description"        content="<?php echo $campaign->copy; ?>" />
-    <meta property="og:image"              content="http://social.wilsonshop.biz/images/screenshots/<?php echo $campaign->screen_shot; ?>" />
+    <meta property="og:image"              content="http://www.shareitcamp.com/images/screenshots/<?php echo $campaign->screen_shot; ?>" />
     <meta property="og:image:width" content="196" />
     <meta property="og:image:height" content="300" />
     <title>shareitcamp</title>

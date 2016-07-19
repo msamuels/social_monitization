@@ -37,7 +37,7 @@ $app->post('/save-supporter', function () use ($app){
         // Auto respond to to supporter
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $headers .= 'From: info@wilsonshop.biz' . "\r\n";
+        $headers .= 'From: info@shareitcamp.com' . "\r\n";
 
         $to = $req['email_address'];
         $subject = 'Welcome to shareitcamp!';
@@ -59,7 +59,7 @@ $app->post('/save-supporter', function () use ($app){
         $body .= "<p>Thanks, <br />
         The shareitcamp team</p>";
 
-        $from = 'From: info@wilsonshop.biz';
+        $from = 'From: info@shareitcamp.com';
 
         mail($to, $subject, $body, $headers);
 
@@ -164,7 +164,7 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
         // Auto respond to to supporter
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $headers .= 'From: info@wilsonshop.biz' . "\r\n";
+        $headers .= 'From: info@shareitcamp.com' . "\r\n";
 
         $baseurl =  $destination = $app->config('configs')['base_url'];
 

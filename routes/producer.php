@@ -26,7 +26,7 @@ $app->post('/save-producer', function () use ($app){
         // Auto respond to to producer
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $headers .= 'From: info@wilsonshop.biz' . "\r\n";
+        $headers .= 'From: info@shareitcamp.com' . "\r\n";
 
         $to = $req['email_address'];
         $subject = 'Welcome to shareitcamp';
@@ -113,7 +113,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
 
     $headers  = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-    $headers .= 'From: info@wilsonshop.biz' . "\r\n";
+    $headers .= 'From: info@shareitcamp.com' . "\r\n";
     
     // Email Producer that campaign has been created
     $to = $producer->email_address;
