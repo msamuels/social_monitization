@@ -48,78 +48,84 @@
         </div>
 
         <div class="row">
-            <div class="col-md-3">
-                <p><a href="supporter/campaign/<?php echo $campaigns[0]->campaign_id; ?>">
-                        <?php echo $campaigns[0]->campaign_name; ?>
+            <?php if(count($campaigns) > 0){ ?>
+                <div class="col-md-3">
+                    <p><a href="supporter/campaign/<?php echo $campaigns[0]->campaign_id; ?>">
+                            <?php echo $campaigns[0]->campaign_name; ?>
+                        </a>
+                    </p>
+                    <p class="by-line"><i> by <?php echo $campaigns[0]->getProducer()->org_name; ?></i></<p>
+
+                    <p><a href="supporter/campaign/<?php echo $campaigns[0]->campaign_id; ?>">
+                        <img src="images/screenshots/<?php echo $campaigns[0]->screen_shot; ?>"/>
+                        </a>
+                    </p>
+
+                    <a href="supporter/campaign/<?php echo $campaigns[0]->campaign_id; ?>" target="_parent">
+                        <button class="btn support-btns">Support</button>
                     </a>
-                </p>
-                <p class="by-line"><i> by <?php echo $campaigns[0]->getProducer()->org_name; ?></i></<p>
+                </div>
+            <?php } ?>
 
-                <p><a href="supporter/campaign/<?php echo $campaigns[0]->campaign_id; ?>">
-                    <img src="images/screenshots/<?php echo $campaigns[0]->screen_shot; ?>"/>
+            <?php if(count($campaigns) > 1){ ?>
+                <div class="col-md-3">
+                    <p><a href="supporter/campaign/<?php echo $campaigns[1]->campaign_id; ?>">
+                            <?php echo $campaigns[1]->campaign_name; ?>
+                        </a>
+                    </p>
+
+                    <p class="by-line"><i> by <?php echo $campaigns[1]->getProducer()->org_name; ?></i></<p>
+
+                    <p><a href="supporter/campaign/<?php echo $campaigns[1]->campaign_id; ?>">
+                            <img src="images/screenshots/<?php echo $campaigns[1]->screen_shot; ?>"/>
+                        </a>
+                    </p>
+
+                    <a href="supporter/campaign/<?php echo $campaigns[1]->campaign_id; ?>" target="_parent">
+                        <button class="btn support-btns">Support</button>
                     </a>
-                </p>
+                </div>
+            <?php } ?>
 
-                <a href="supporter/campaign/<?php echo $campaigns[0]->campaign_id; ?>" target="_parent">
-                    <button class="btn support-btns">Support</button>
-                </a>
-            </div>
+            <?php if(count($campaigns) > 2){ ?>
+                <div class="col-md-3">
+                    <p><a href="supporter/campaign/<?php echo $campaigns[2]->campaign_id; ?>">
+                            <?php echo $campaigns[2]->campaign_name; ?>
+                        </a>
+                    </p>
 
+                    <p class="by-line"><i> by <?php echo $campaigns[2]->getProducer()->org_name; ?></i></<p>
 
-            <div class="col-md-3">
-                <p><a href="supporter/campaign/<?php echo $campaigns[1]->campaign_id; ?>">
-                        <?php echo $campaigns[1]->campaign_name; ?>
+                    <p><a href="supporter/campaign/<?php echo $campaigns[2]->campaign_id; ?>">
+                            <img src="images/screenshots/<?php echo $campaigns[2]->screen_shot; ?>"/>
+                        </a>
+                    </p>
+
+                    <a href="supporter/campaign/<?php echo $campaigns[2]->campaign_id; ?>" target="_parent">
+                        <button class="btn support-btns">Support</button>
                     </a>
-                </p>
+                </div>
+            <?php } ?>
 
-                <p class="by-line"><i> by <?php echo $campaigns[1]->getProducer()->org_name; ?></i></<p>
+            <?php if(count($campaigns) > 3){ ?>
+                <div class="col-md-3">
+                    <p><a href="supporter/campaign/<?php echo $campaigns[3]->campaign_id; ?>">
+                            <?php echo $campaigns[3]->campaign_name; ?>
+                        </a>
+                    </p>
 
-                <p><a href="supporter/campaign/<?php echo $campaigns[1]->campaign_id; ?>">
-                        <img src="images/screenshots/<?php echo $campaigns[1]->screen_shot; ?>"/>
+                    <p class="by-line"><i> by <?php echo $campaigns[3]->getProducer()->org_name; ?></i></<p>
+
+                    <p><a href="supporter/campaign/<?php echo $campaigns[3]->campaign_id; ?>">
+                            <img src="images/screenshots/<?php echo $campaigns[3]->screen_shot; ?>"/>
+                        </a>
+                    </p>
+
+                    <a href="supporter/campaign/<?php echo $campaigns[3]->campaign_id; ?>" target="_parent">
+                        <button class="btn support-btns">Support</button>
                     </a>
-                </p>
+                </div>
+            <?php } ?>
 
-                <a href="supporter/campaign/<?php echo $campaigns[1]->campaign_id; ?>" target="_parent">
-                    <button class="btn support-btns">Support</button>
-                </a>
-            </div>
-
-
-            <div class="col-md-3">
-                <p><a href="supporter/campaign/<?php echo $campaigns[2]->campaign_id; ?>">
-                        <?php echo $campaigns[2]->campaign_name; ?>
-                    </a>
-                </p>
-
-                <p class="by-line"><i> by <?php echo $campaigns[2]->getProducer()->org_name; ?></i></<p>
-
-                <p><a href="supporter/campaign/<?php echo $campaigns[2]->campaign_id; ?>">
-                        <img src="images/screenshots/<?php echo $campaigns[2]->screen_shot; ?>"/>
-                    </a>
-                </p>
-
-                <a href="supporter/campaign/<?php echo $campaigns[2]->campaign_id; ?>" target="_parent">
-                    <button class="btn support-btns">Support</button>
-                </a>
-            </div>
-
-
-            <div class="col-md-3">
-                <p><a href="supporter/campaign/<?php echo $campaigns[3]->campaign_id; ?>">
-                        <?php echo $campaigns[3]->campaign_name; ?>
-                    </a>
-                </p>
-
-                <p class="by-line"><i> by <?php echo $campaigns[3]->getProducer()->org_name; ?></i></<p>
-
-                <p><a href="supporter/campaign/<?php echo $campaigns[3]->campaign_id; ?>">
-                        <img src="images/screenshots/<?php echo $campaigns[3]->screen_shot; ?>"/>
-                    </a>
-                </p>
-
-                <a href="supporter/campaign/<?php echo $campaigns[3]->campaign_id; ?>" target="_parent">
-                    <button class="btn support-btns">Support</button>
-                </a>
-            </div>
         </div>
 
