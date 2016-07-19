@@ -110,6 +110,10 @@ H1{
     max-width: 62px;
 }
 
+.icon-2 {
+    max-width: 40px;
+}
+
 .list-item{
     border:1px solid gainsboro;
     padding: 5px;
