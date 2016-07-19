@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: db591622819.db.1and1.com
--- Generation Time: Jul 09, 2016 at 12:23 PM
+-- Generation Time: Jul 18, 2016 at 07:04 AM
 -- Server version: 5.5.49-0+deb7u1-log
 -- PHP Version: 5.4.45-0+deb7u4
 
@@ -71,6 +71,7 @@ CREATE TABLE IF NOT EXISTS `campaigns` (
   `copy` longtext,
   `url` varchar(255) DEFAULT NULL,
   `platform` varchar(255) DEFAULT NULL,
+  `order_number` int(10) NOT NULL,
   PRIMARY KEY (`campaign_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=big5;
 
@@ -183,7 +184,7 @@ CREATE TABLE IF NOT EXISTS `owner` (
   `username` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
   PRIMARY KEY (`id_owner`)
-) ENGINE=MyISAM  DEFAULT CHARSET=big5;
+) ENGINE=MyISAM DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 
@@ -253,7 +254,7 @@ CREATE TABLE IF NOT EXISTS `rewards` (
   `point_value` int(11) DEFAULT NULL,
   `campaign_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`reward_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=big5;
+) ENGINE=MyISAM DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 
