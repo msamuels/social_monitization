@@ -9,13 +9,13 @@
     <div class="row">
         <H2>SHARING IS CARING</H2>
 
-        <P>Every day we share things with our friends and family on social media: what we are up to; what’s happening
+        <P>Every day we share things with our friends and family on social media: what we are up to; what's happening
             around us; what made us laugh.
         </P> 
 
         <P>Occasionally, we will come across a person or a group that is doing something really impactful and innovative
-            and we’ll share that too. Doing so helps them tremendously because it brings much needed attention to their
-            work. That’s great.
+            and we'll share that too. Doing so helps them tremendously because it brings much needed attention to their
+            work. That's great.
             Well we want to make this as common and easy as sharing a top 10 list.</P>
          
         <H2>SHAREITCAMP MAKES IT SIMPLE</H2>
@@ -35,7 +35,7 @@
         </P> 
 
         <P>While the feeling you get is rewarding in itself we want to go a step further and personally (can we say
-            personally as a company?) reward you. That is why for every ‘campaign’ you support we will credit you with
+            personally as a company?) reward you. That is why for every 'campaign' you support we will credit you with
             reward points. These points can be exchanged for things like gift cards.
         </P> 
 

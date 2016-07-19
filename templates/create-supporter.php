@@ -55,7 +55,7 @@
 
 
 <div class="row alert alert-success ">
-    The importance of your support can’t be overstated. Your support helps shine a light on great projects.
+    The importance of your support can't be overstated. Your support helps shine a light on great projects.
 </div>
 
 <!-- @TODO remove margin-top -->

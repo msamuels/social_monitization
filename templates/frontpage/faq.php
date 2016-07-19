@@ -21,7 +21,7 @@
             <p>Post content promoting initiatives that your organization has coming up such as fundraisers, school
                 supply drives,
                 cultural events, scholarship opportunities, or crowdfunding initiatives. Have an innovation or offerings
-                that’s more
+                that's more
                 product or service focused? Post that as well.</p>
 
 
@@ -49,7 +49,7 @@
 
             <p>shareitecamp is responsible for providing and fulfilling the rewards. We do encourage groups to donate
                 rewards if
-                they choose (their might be some cool incentives you come across that we aren’t aware of). These rewards
+                they choose (their might be some cool incentives you come across that we aren't aware of). These rewards
                 can be
                 made available to the full network of supporters or only to supporters of your campaign.</p>
 
@@ -79,7 +79,7 @@
             <p><strong>How will I know when a new campaign is posted?</strong></p>
 
             <p>There are two ways: 1) we will send you an email about new campaigns, and 2) when you like us on Facebook
-                you’ll
+                you'll
                 receive updates there as well.</p>
 
             <p><strong>Why only Facebook?</strong></p>
@@ -92,11 +92,11 @@
 
             <p><strong>How do I earn points?</strong></p>
 
-            <p>That’s the easy part. You receive points when you support (share campaigns) on Facebook.</p>
+            <p>That's the easy part. You receive points when you support (share campaigns) on Facebook.</p>
 
             <p><strong>What can these points be used for?</strong></p>
 
-            <p>Your points can be redeemed for ‘rewards’ such as gift cards. Once you are logged-in, just click on the
+            <p>Your points can be redeemed for 'rewards' such as gift cards. Once you are logged-in, just click on the
                 rewards
                 section to see what rewards are currently being offered.</p>
 
@@ -113,8 +113,8 @@
 
             <p><strong>How long do I have to post the content?</strong></p>
 
-            On each campaign page you will see a ‘reply by date’, that is the deadline for hitting the support button.
-            You will then need to post the message to Facebook, by clicking the ‘Facebook’ icon on the campaign page within
+            On each campaign page you will see a 'reply by date', that is the deadline for hitting the support button.
+            You will then need to post the message to Facebook, by clicking the 'Facebook' icon on the campaign page within
             the date range of the campaign period.</p>
 
 
