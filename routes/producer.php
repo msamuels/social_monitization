@@ -159,6 +159,9 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
 
     mail(null, $subject_supporter, $body_supporter, $headers);
 
+    // Alert admin that campaign is posted
+    mail('samuelsmarlon@yahoo.com', 'Admin: New campaign posted to shareitcamp', $body, $headers);
+
     $app->flash('success_info', 'Campaign Saved');
     $app->redirect('/campaigns');
 });
