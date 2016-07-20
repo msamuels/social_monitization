@@ -40,7 +40,7 @@
                        value="<?php echo $supported_campaign->campaign->campaign_name; ?>"/>
 
                 <div class="fb-share-button"
-                     data-href="<?php echo $base_url; ?>
+                     data-href="http://<?php echo $base_url; ?>
                 /supporter/campaign/<?php echo $supported_campaign->campaign->campaign_id; ?>"
                      data-layout="button_count" data-mobile-iframe="true">
                 </div>
