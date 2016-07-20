@@ -128,7 +128,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-4">Website</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" name="organization_url" placeholder="Website"/>
+                    <input type="text" class="form-control" name="organization_url" placeholder="Website (ex. wwww.shareitcamp.com)"/>
                 </div>
             </div>
 
