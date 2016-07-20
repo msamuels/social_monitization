@@ -57,7 +57,7 @@
                     <p class="by-line"><i> by <?php echo $campaigns[0]->getProducer()->org_name; ?></i></<p>
 
                     <p><a href="supporter/campaign/<?php echo $campaigns[0]->campaign_id; ?>">
-                        <img src="images/screenshots/<?php echo $campaigns[0]->screen_shot; ?>"/>
+                        <img src="images/screenshots/<?php echo $campaigns[0]->screen_shot; ?>" width="300" height="500"/>
                         </a>
                     </p>
 
@@ -77,7 +77,7 @@
                     <p class="by-line"><i> by <?php echo $campaigns[1]->getProducer()->org_name; ?></i></<p>
 
                     <p><a href="supporter/campaign/<?php echo $campaigns[1]->campaign_id; ?>">
-                            <img src="images/screenshots/<?php echo $campaigns[1]->screen_shot; ?>"/>
+                            <img src="images/screenshots/<?php echo $campaigns[1]->screen_shot; ?>" width="300" height="500"/>
                         </a>
                     </p>
 
@@ -97,7 +97,7 @@
                     <p class="by-line"><i> by <?php echo $campaigns[2]->getProducer()->org_name; ?></i></<p>
 
                     <p><a href="supporter/campaign/<?php echo $campaigns[2]->campaign_id; ?>">
-                            <img src="images/screenshots/<?php echo $campaigns[2]->screen_shot; ?>"/>
+                            <img src="images/screenshots/<?php echo $campaigns[2]->screen_shot; ?>" width="300" height="500"/>
                         </a>
                     </p>
 
@@ -117,7 +117,7 @@
                     <p class="by-line"><i> by <?php echo $campaigns[3]->getProducer()->org_name; ?></i></<p>
 
                     <p><a href="supporter/campaign/<?php echo $campaigns[3]->campaign_id; ?>">
-                            <img src="images/screenshots/<?php echo $campaigns[3]->screen_shot; ?>"/>
+                            <img src="images/screenshots/<?php echo $campaigns[3]->screen_shot; ?>" width="300" height="500"/>
                         </a>
                     </p>
 
