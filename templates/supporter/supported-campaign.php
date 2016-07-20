@@ -40,7 +40,7 @@
                        value="<?php echo $supported_campaign->campaign->campaign_name; ?>"/>
 
                 <div class="fb-share-button"
-                     data-href="http://<?php echo $base_url; ?>
+                     data-href="<?php echo $base_url; ?>
                 /supporter/campaign/<?php echo $supported_campaign->campaign->campaign_id; ?>"
                      data-layout="button_count" data-mobile-iframe="true">
                 </div>
@@ -65,7 +65,7 @@
 
             </div>
             <div class="col-sm-11" style="text-align: left;">
-                <p><strong>Visit:</strong> <a href="<?php echo $campaign->url; ?>" class="highlighted-1"
+                <p><strong>Visit:</strong> <a href="http://<?php echo $campaign->url; ?>" class="highlighted-1"
                                               target="_blank"><?php echo $campaign->url; ?></a></p>
             </div>
         </div>
