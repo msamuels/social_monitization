@@ -2,8 +2,8 @@
 -- version 4.1.14.8
 -- http://www.phpmyadmin.net
 --
--- Host: db591622819.db.1and1.com
--- Generation Time: Jul 18, 2016 at 07:04 AM
+-- Host: db637422923.db.1and1.com
+-- Generation Time: Jul 19, 2016 at 04:02 PM
 -- Server version: 5.5.49-0+deb7u1-log
 -- PHP Version: 5.4.45-0+deb7u4
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `db591622819`
+-- Database: `db637422923`
 --
 
 -- --------------------------------------------------------
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   PRIMARY KEY (`idaccount`),
   KEY `fk_account_1_idx` (`id_producer`),
   KEY `fk_account_2_idx` (`campaign_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=big5;
+) ENGINE=MyISAM DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `campaigns` (
   `platform` varchar(255) DEFAULT NULL,
   `order_number` int(10) NOT NULL,
   PRIMARY KEY (`campaign_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=big5;
+) ENGINE=MyISAM DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `campaign_responses` (
   `campaign_response` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`campaign_response_id`),
   KEY `fk_campaign_response_1_idx` (`campaign_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=big5;
+) ENGINE=MyISAM DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 
@@ -182,9 +182,9 @@ CREATE TABLE IF NOT EXISTS `org class` (
 CREATE TABLE IF NOT EXISTS `owner` (
   `id_owner` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
+  `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id_owner`)
-) ENGINE=MyISAM DEFAULT CHARSET=big5;
+) ENGINE=MyISAM  DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 
@@ -206,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `producers` (
   `orgclass_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_producer`),
   KEY `orgclass_id_idx` (`orgclass_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=big5;
+) ENGINE=MyISAM DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 
@@ -314,7 +314,7 @@ CREATE TABLE IF NOT EXISTS `supporters` (
   `approved` enum('Y','N') DEFAULT NULL,
   `country` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_supporter`)
-) ENGINE=MyISAM  DEFAULT CHARSET=big5;
+) ENGINE=MyISAM DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 
