@@ -92,5 +92,5 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
 
     $app->flash('success_info', 'Campaign Approved');
 
-    $app->redirect('/admin/campaigns', array('campaign' => $campaign));
+    $app->redirect('/admin/campaigns');
 });
