@@ -34,7 +34,7 @@ campaigns<H1>Campaigns</H1>
                     <p>
                         <?php if($campaign->approved =='N'){ ?>
 
-                            <form action="/approve-campaign" method="POST" class="form-horizontal" role="form">
+                            <form action="/admin/approve-campaign" method="POST" class="form-horizontal" role="form">
 
                                 <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
 

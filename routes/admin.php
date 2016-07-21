@@ -81,7 +81,7 @@ $app->get('/admin/campaigns', $authenticate($app), function () use ($app){
 });
 
 # Approve campaign
-$app->post('/approve-campaign', $authenticate($app), function () use ($app){
+$app->post('/admin/approve-campaign', $authenticate($app), function () use ($app){
 
     $req = $app->request->post();
 
