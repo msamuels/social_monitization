@@ -56,3 +56,41 @@ $app->get('/admin-rewards', $authenticate($app), function () use ($app){
 
     $app->render('admin/list-rewards.php', array('rewards' => $rewards, 'success_info' => $success_info));
 });
+
+# List all campaigns
+$app->get('/admin/campaigns', $authenticate($app), function () use ($app){
+
+    $user_name = $app->view()->getData('user');
+    $flash = $app->view()->getData('flash');
+
+    $success_info = '';
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
+    }
+
+    # list campaigns
+    $query = "SELECT  c.*, (SELECT Count(cr.supporter_id) FROM campaign_responses cr
+        WHERE c.campaign_id = cr.campaign_id) as num_supporters
+        FROM campaigns c
+        LEFT JOIN accounts ac ON ac.campaign_id = c.campaign_id
+        ORDER BY campaign_id DESC";
+
+    // @TODO filter by the producer_id
+    $campaigns = Campaign::find_by_sql($query);
+    $app->render('admin/list-my-campaigns.php', array('campaigns' => $campaigns, 'success_info' => $success_info));
+});
+
+# Approve campaign
+$app->post('/approve-campaign', $authenticate($app), function () use ($app){
+
+    $req = $app->request->post();
+
+    $campaign = Campaign::find($req['campaign_id']);
+
+    $campaign->update_attributes(
+        array('approved'=>'Y', 'campaign_id'=>$req['campaign_id']));
+
+    $app->flash('success_info', 'Campaign Approved');
+
+    $app->redirect('/admin/campaigns', array('campaign' => $campaign));
+});

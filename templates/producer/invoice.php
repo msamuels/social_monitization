@@ -63,9 +63,3 @@
 By approving this plan you will be billed the above
 <br />
 
-<form action="/approve-campaign" method="POST" class="form-horizontal" role="form">
-
-    <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
-
-    <button class="btn btn-primary" type="submit" >Approve</button>
-</form>

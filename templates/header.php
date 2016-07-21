@@ -88,6 +88,7 @@
                     <?php if ($_SESSION['user_type'] == "admin") { ?>
                         <li><a href="/create-reward">Create Rewards</a></li>
                         <li><a href="/admin-rewards">List Rewards</a></li>
+                        <li><a href="/admin/campaigns">Approve Campaigns</a></li>
                     <?php } ?>
 
                     <li><a href="/logout">Logout</a></li>

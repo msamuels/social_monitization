@@ -235,23 +235,6 @@ $app->get('/campaign-detail', $authenticate($app), function () use ($app){
     $app->render('campaign-detail.php', array('supporters' => $supporters, 'campaign'=>$campaign));
 });
 
-
-# Approve campaign
-$app->post('/approve-campaign', $authenticate($app), function () use ($app){
-
-    $req = $app->request->post();
-
-    $campaign = Campaign::find($req['campaign_id']);
-
-    $campaign->update_attributes(
-        array('approved'=>'Y', 'campaign_id'=>$req['campaign_id']));
-
-    $app->flash('success_info', 'Campaign Approved');
-
-    $app->redirect('/campaigns-performance', array('campaign' => $campaign));
-});
-
-
 # Show campaign performance of approved campaign
 $app->get('/campaigns-performance', $authenticate($app), function () use ($app){
 
