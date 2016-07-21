@@ -117,7 +117,7 @@ $app->get('/supporter/campaigns', $authenticate($app), function () use($app) {
 # Allow the user to select a campaign to support
 $app->get('/supporter/campaigns/pending', $authenticate($app), function () use ($app){
     
-    // Get suporter. Join on campaign_response and get all the campaign ids already supporter
+    // Get suporter. Join on campaign_response and get all the campaign ids already supported
     // Get all campaigns where the supporter hasn't supported
     $user_name = $app->view()->getData('user');
     $supporter = Supporter::find_by_user_name($user_name);
@@ -142,7 +142,7 @@ $app->get('/supporter/campaigns/pending', $authenticate($app), function () use (
         // if they aren't supporting any campaigns return them all
         $campaigns = Campaign::find('all');
     } else {
-        $campaigns = Campaign::find('all', array('conditions' => array('campaign_id NOT IN (?)', $ar_campaigns)));
+        $campaigns = Campaign::find('all', array('conditions' => array('campaign_id NOT IN (?) AND approved = ?', $ar_campaigns, 'Y')));
     }
     $app->render('support-campaigns.php', array('campaigns' => $campaigns, 'user_id' => $supporter->id,
         'isPEnding' => true));
