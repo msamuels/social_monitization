@@ -97,9 +97,9 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
     $headers .= 'From: info@shareitcamp.com' . "\r\n";
 
-    $subject = $campaign->campaingn_name.' has been approved';
+    $subject = $campaign->campaign_name.' has been approved';
 
-    $body = 'Your campaign '.$campaign->campaingn_name.' has been approved';
+    $body = 'Your campaign '.$campaign->campaign_name.' has been approved';
 
     mail($producer->email_address, $subject, $body, $headers);
 
