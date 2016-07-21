@@ -90,6 +90,19 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
     $campaign->update_attributes(
         array('approved'=>'Y', 'campaign_id'=>$req['campaign_id']));
 
+    // alert producer that campaign is approved
+    $producer = $campaign->getProducer();
+
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    $headers .= 'From: info@shareitcamp.com' . "\r\n";
+
+    $subject = $campaign->campaingn_name.' has been approved';
+
+    $body = 'Your campaign '.$campaign->campaingn_name.' has been approved';
+
+    mail($producer->email_address, $subject, $body, $headers);
+
     $app->flash('success_info', 'Campaign Approved');
 
     $app->redirect('/admin/campaigns');
