@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: db637422923.db.1and1.com
--- Generation Time: Jul 19, 2016 at 04:02 PM
+-- Generation Time: Jul 21, 2016 at 11:27 AM
 -- Server version: 5.5.49-0+deb7u1-log
 -- PHP Version: 5.4.45-0+deb7u4
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   PRIMARY KEY (`idaccount`),
   KEY `fk_account_1_idx` (`id_producer`),
   KEY `fk_account_2_idx` (`campaign_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=big5;
+) ENGINE=MyISAM  DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 
@@ -66,14 +66,14 @@ CREATE TABLE IF NOT EXISTS `campaigns` (
   `estimate` float DEFAULT NULL,
   `start_date` datetime DEFAULT NULL,
   `end_date` datetime DEFAULT NULL,
-  `approved` enum('Y','N') DEFAULT NULL,
+  `approved` enum('Y','N') DEFAULT 'N',
   `screen_shot` varchar(45) DEFAULT NULL,
   `copy` longtext,
   `url` varchar(255) DEFAULT NULL,
   `platform` varchar(255) DEFAULT NULL,
   `order_number` int(10) NOT NULL,
   PRIMARY KEY (`campaign_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=big5;
+) ENGINE=MyISAM  DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 
@@ -206,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `producers` (
   `orgclass_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_producer`),
   KEY `orgclass_id_idx` (`orgclass_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=big5;
+) ENGINE=MyISAM  DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 
