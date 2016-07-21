@@ -3,10 +3,10 @@
 # Supporter Login page
 $app->get('/', function () use ($app){
 
-    $options = array('limit' => 4);
+    $options = array('limit' => 4, 'conditions' => "approved = 'Y'");
     $campaigns = Campaign::all($options);
 
-    $app->render('supporter-login.php', array('campaigns'=>$campaigns));
+    $app->render('frontpage/home-page.php', array('campaigns'=>$campaigns));
 });
 
 # Organizations page

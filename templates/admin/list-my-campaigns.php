@@ -32,12 +32,20 @@ campaigns<H1>Campaigns</H1>
                     </p>
 
                     <p>
-                        <form action="/approve-campaign" method="POST" class="form-horizontal" role="form">
+                        <?php if($campaign->approved =='N'){ ?>
 
-                            <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
+                            <form action="/approve-campaign" method="POST" class="form-horizontal" role="form">
 
-                            <button class="btn btn-primary" type="submit" >Approve</button>
-                        </form>
+                                <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
+
+                                <button class="btn btn-primary" type="submit" >Approve</button>
+                            </form>
+
+                        <?php } else { ?>
+
+                            <button class="btn btn-success" type="submit" >Approved</button>
+
+                        <?php } ?>
                     </p>
 
                 </li>
