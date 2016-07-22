@@ -45,7 +45,7 @@ $app->post('/save-supporter', function () use ($app){
         $baseurl =  $destination = $app->config('configs')['base_url'];
 
         $body = "<p>Thank you for joining this effort. We will notify you of new campaigns via email so please be on the
-            lookout.<.p>";
+            lookout.<p>";
         $body .= "<p>Don't want to wait until then? Great. Here are 2 ways you can get a head start:</p>";
 
         $body .= "<p>1) Go to shareitcamp and support us as your first campaign! Just click here.</p>";
