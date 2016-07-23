@@ -71,7 +71,7 @@
 		<div><img class="icon" src="images/no2.png" /></div>
 		<div class="pull-left">
 			<p><H2>Set a 'reply by date'</H2></p>
-			<p class="desc">Give supporters a deadline that they need to agree to support you campaign by.</p>
+			<p class="desc">Give supporters a deadline that they need to support your campaign by.</p>
 		</div>
 	</div>
 
