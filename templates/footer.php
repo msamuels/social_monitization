@@ -7,7 +7,7 @@
             <li><a class="footer-nav" href="/faqs">faq</a></li>
             <li><a class="footer-nav" href="/">avertisements</a></li>
             <li><a class="footer-nav" href="/">blog</a></li>
-            <li><a class="footer-nav" href="mailto:info@shareitcamp.com">Contact Us: info@shareitcamp.com</a></li>
+            <li><a class="footer-nav" href="mailto:info@shareitcamp.com">contact us: info@shareitcamp.com</a></li>
         </ul>
     </nav>
 </div>
