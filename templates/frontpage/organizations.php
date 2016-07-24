@@ -52,39 +52,43 @@
 
 <br /><br />
 
-<div class="row"><H1>How it works</H1></div>
+<div class="row">
+<div class="col-sm-4"></div>
+<div class="col-sm-4"><H1>How it works</H1></div>
+<div class="col-sm-4"></div>
+</div>
 
 <div class="row" id="how-it-works">
 
-	<div class="col-sm-1 pull-left"></div>
+	<div class="col-sm-1"></div>
 
-	<div class="col-sm-3 pull-left">
+	<div class="col-sm-3">
 		<div><img class="icon" src="images/no1.png" /></div>
-		<div class="pull-left">
+		<div>
 			<p><H2>Complete short form</H2></p>
 			<p class="desc">Give us a few details about the campaign you are promoting,
                             preferably with a picture and a link.</p>
 		</div>
 	</div>
 
-	<div class="col-sm-3 pull-left">
+	<div class="col-sm-3 ">
 		<div><img class="icon" src="images/no2.png" /></div>
-		<div class="pull-left">
+		<div>
 			<p><H2>Set a 'reply by date'</H2></p>
 			<p class="desc">Give supporters a deadline that they need to support your campaign by.</p>
 		</div>
 	</div>
 
 
-	<div class="col-sm-4 pull-left">
+	<div class="col-sm-4">
 		<div><img class="icon" src="images/no3.png" /></div>
-		<div class="pull-left">
+		<div>
 			<p><H2>Supporters share your message</H2></p>
 			<p class="desc">Supporters agree to share your message with their social networks. </p>
 		</div>
 	</div>
 
-	<div class="col-sm-1 pull-left"></div>
+	<div class="col-sm-1"></div>
 </div>
 
 <div class="row">

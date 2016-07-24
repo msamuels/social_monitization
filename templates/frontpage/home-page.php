@@ -11,11 +11,11 @@
 
         <div class="row" id="works"><H1>How it works</H1></div>
 
-        <div class="row" id="how-it-works">
+        <div class="row">
 
-            <div class="col-sm-1 pull-left"></div>
+            <div class="col-sm-1"></div>
 
-            <div class="col-sm-3 pull-left">
+            <div class="col-sm-3">
                 <div><img class="icon" src="images/no1.png"/></div>
                 <div class="pull-left">
                     <H3>Organizations post campaign</H3>
@@ -33,7 +33,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-3 pull-left">
+            <div class="col-sm-3">
                 <div><img class="icon" src="images/no3.png"/></div>
                 <div class="pull-left">
                     <H3>You Receive Points</H3>
