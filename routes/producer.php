@@ -145,7 +145,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
 
     $subject_supporter = 'New campaign posted to shareitcamp! ';
 
-    $body_supporter = "<p>".$producer->org_name. " is asking for your support for their ".$producer->org_name." effort. Click on the link below to find
+    $body_supporter = "<p>".$producer->org_name. " is asking for your support for their ".$campaign->campaign_name." effort. Click on the link below to find
     out more and, if you are interested, hit the support button. Once you've done that just post to Facebook. </p>";
 
     $baseurl =  $destination = $app->config('configs')['base_url'];
