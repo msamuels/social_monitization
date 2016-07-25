@@ -320,6 +320,15 @@ $app->post('/producer/approve-campaign', $authenticate($app), function () use ($
         array('producer_approved'=>'Y', 'campaign_id'=>$req['campaign_id']));
 
 
+    // grab all the supporters to email
+    $supporter_email = array();
+    $supporters = Supporter::find('all');
+
+    foreach ($supporters as $supporter) {
+        array_push($supporter_email, $supporter->email_address);
+    }
+
+
     // Email supporter to let them know campaign has been approved by producer
     $headers .= 'BCC: '. implode(",", $supporter_email) . "\r\n";
 
