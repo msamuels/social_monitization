@@ -337,6 +337,8 @@ $app->post('/producer/approve-campaign', $authenticate($app), function () use ($
 
     $subject_supporter = 'New campaign posted to shareitcamp! ';
 
+    $producer = $campaign->getProducer();
+
     $body_supporter = "<p>".$producer->org_name. " is asking for your support for their ".$campaign->campaign_name." effort. Click on the link below to find
     out more and, if you are interested, hit the support button. Once you've done that just post to Facebook. </p>";
 
