@@ -328,6 +328,9 @@ $app->post('/producer/approve-campaign', $authenticate($app), function () use ($
         array_push($supporter_email, $supporter->email_address);
     }
 
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    $headers .= 'From: info@shareitcamp.com' . "\r\n";
 
     // Email supporter to let them know campaign has been approved by producer
     $headers .= 'BCC: '. implode(",", $supporter_email) . "\r\n";
