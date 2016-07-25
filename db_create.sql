@@ -2,8 +2,8 @@
 -- version 4.1.14.8
 -- http://www.phpmyadmin.net
 --
--- Host: db637422923.db.1and1.com
--- Generation Time: Jul 21, 2016 at 11:27 AM
+-- Host: db591622819.db.1and1.com
+-- Generation Time: Jul 24, 2016 at 09:07 PM
 -- Server version: 5.5.49-0+deb7u1-log
 -- PHP Version: 5.4.45-0+deb7u4
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `db637422923`
+-- Database: `db591622819`
 --
 
 -- --------------------------------------------------------
@@ -72,6 +72,7 @@ CREATE TABLE IF NOT EXISTS `campaigns` (
   `url` varchar(255) DEFAULT NULL,
   `platform` varchar(255) DEFAULT NULL,
   `order_number` int(10) NOT NULL,
+  `producer_approved` enum('Y','N') NOT NULL DEFAULT 'N',
   PRIMARY KEY (`campaign_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=big5;
 
@@ -88,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `campaign_responses` (
   `campaign_response` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`campaign_response_id`),
   KEY `fk_campaign_response_1_idx` (`campaign_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=big5;
+) ENGINE=MyISAM  DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 
@@ -314,7 +315,7 @@ CREATE TABLE IF NOT EXISTS `supporters` (
   `approved` enum('Y','N') DEFAULT NULL,
   `country` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_supporter`)
-) ENGINE=MyISAM DEFAULT CHARSET=big5;
+) ENGINE=MyISAM  DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 

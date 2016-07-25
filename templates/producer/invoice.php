@@ -59,6 +59,14 @@
 <input type="text" name="final_cost" value="100000"/>
 -->
 
+
+    <form action="/producer/approve-campaign" method="POST" class="form-horizontal" role="form">
+
+        <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
+
+        <button class="btn btn-primary" type="submit" >Approve</button>
+    </form>
+
 <br />
 By approving this plan you will be billed the above
 <br />
