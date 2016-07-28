@@ -59,7 +59,7 @@
 <input type="text" name="final_cost" value="100000"/>
 -->
 
-
+<?php if ($campaign->producer_approved == 'N') { ?>
     <form action="/producer/approve-campaign" method="POST" class="form-horizontal" role="form">
 
         <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
@@ -71,3 +71,8 @@
 By approving this plan you will be billed the above
 <br />
 
+<?php } else { ?>
+    <div><br />
+    <button class="btn btn-success">Approved</button>
+    </div>
+<?php } ?>
