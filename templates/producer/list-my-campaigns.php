@@ -1,6 +1,10 @@
-<!-- @TODO remove margin-top -->
-
 <H1>Campaigns</H1>
+
+<?php if (isset($success_info)) { ?>
+    <div class="alert alert-warning"><?php echo $success_info; ?></div>
+<?php } ?>
+
+
 <div class="row" id="supporters-list">
 
 <div class="col-sm-2"></div>
