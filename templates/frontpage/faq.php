@@ -3,7 +3,7 @@
     <div class="col-sm-3"></div>
 
     <div class="col-sm-6">
-        <p> <a href="#producer"> Producer</a> | <a href="#supporter" class = "highlighted"> Supporter</a> </p>
+        <a href="#producer"> Producer</a> | <a href="#supporter" class = "highlighted"> Supporter</a> </p>
 
 <a name="producer">Producer</a>
 
