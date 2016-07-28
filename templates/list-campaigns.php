@@ -4,7 +4,12 @@
     <div class="alert alert-success"><?php echo $success_info; ?></div>
 <?php } ?>
 
-<div class="row" id="supporters-list" style="margin-left:300px">
+<div class="row" id="supporters-list">
+
+    <div class="col-sm-2"></div>
+
+    <div class="col-sm-8">
+
     <ul class="list-things">
         <?php
         if (count($campaigns) > 0) {
@@ -30,3 +35,7 @@
 
     </ul>
 </div>
+
+    <div class="col-sm-2"></div>
+
+    </div>

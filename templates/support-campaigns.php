@@ -1,9 +1,11 @@
 <!-- @TODO remove margin-top -->
 
 <H1>Campaigns</H1>
-<div class="row" id="supporters-list" style="margin-left:300px">
+<div class="row" id="supporters-list">
 
-    <!-- @TODO remove width -->
+    <div class="col-sm-2"></div>
+
+    <div class="col-sm-8">
 
     <ul class="list-things" style="list-style: none">
         <?php
@@ -43,3 +45,7 @@
 
     </ul>
 </div>
+
+    <div class="col-sm-2"></div>
+
+    </div>

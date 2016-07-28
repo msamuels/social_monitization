@@ -1,10 +1,9 @@
 <!-- @TODO remove margin-top -->
 <div class="row" id="supporters-list">
 
-    <div class="col-sm-3">
-    </div>
+    <div class="col-sm-2"></div>
 
-    <div class="col-sm-6">
+    <div class="col-sm-8">
         <!-- Show campaigns supported -->
         <H1>Supported Campaigns</H1>
 
@@ -47,8 +46,7 @@
 
     </div>
 
-    <div class="col-sm-3">
-    </div>
+    <div class="col-sm-2"></div>
 
 
 </div>
