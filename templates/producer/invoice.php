@@ -1,8 +1,8 @@
-<H1>	Invoice: </H1>
+<H1> Invoice: </H1>
 
 <H3><?php echo $campaign->campaign_name; ?></H3>
 
-<p><img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" /></p>
+<p><img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>"/></p>
 
 <H3>Supporters: </H3>
 
@@ -10,11 +10,11 @@
     <ul style="list-style: none">
         <?php
         if (count($supporters) > 0) {
-            foreach($supporters as $supporter){
+            foreach ($supporters as $supporter) {
 
                 ?>
                 <li style="border: 1px solid  #0f0f0f; margin-right: 2px; width:170px; float: left">
-                    <?php echo $supporter->user_name; ?><br />
+                    <?php echo $supporter->user_name; ?><br/>
                     Followers: <?php echo $supporter->id_follower_count; ?>
                 </li>
 
@@ -30,7 +30,7 @@
     <H2>Details</H2>
     <label>Duration:</label> <?php echo date_format($campaign->start_date, 'Y-m-d '); ?> -
     <?php echo date_format($campaign->end_date, 'Y-m-d '); ?>
-    <br />
+    <br/>
     <label>Platforms: Facebook</label>
 
     <H2>Impressions:</H2>
@@ -49,7 +49,6 @@
 <!--<label>Actual:</label> <input type="text" name="actual_impression" value=""/>-->
 
 
-
 <H2>Cost: </H2>
 <label>Estimated:</label> <input type="text" name="estimated_impression" value="<?php echo $campaign->budget; ?>"/>
 <!--<label>Actual:</label> <input type="text" name="actual_impression" value=""/>-->
@@ -64,15 +63,15 @@
 
         <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
 
-        <button class="btn btn-primary" type="submit" >Approve</button>
+        <button class="btn btn-primary" type="submit">Approve</button>
     </form>
 
-<br />
-By approving this plan you will be billed the above
-<br />
+    <br/>
+    By approving this plan you will be billed the above
+    <br/>
 
 <?php } else { ?>
-    <div><br />
-    <button class="btn btn-success">Approved</button>
+    <div><br/>
+        <button class="btn btn-success">Approved</button>
     </div>
 <?php } ?>
