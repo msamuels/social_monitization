@@ -14,6 +14,10 @@
 
 <H1>Reward Setup</H1>
 
+<?php if (isset($success_info)) { ?>
+    <div class="alert alert-success"><?php echo $success_info; ?></div>
+<?php } ?>
+
 <form action="/save-reward"  enctype="multipart/form-data" method="POST" class="form-horizontal" role="form">
     <div class="form-group">
         <label class="control-label col-sm-4">Reward Name</label>
@@ -91,3 +95,4 @@
 </div>
 
 <div class="col-sm-3"></div>
+
