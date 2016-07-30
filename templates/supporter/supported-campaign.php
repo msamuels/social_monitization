@@ -99,7 +99,7 @@
 
                 <?php }
             } else { ?>
-		<a href="/login" class="btn support-btns" style="font-size: 12px; width: 260px;">you must be logged in to receive points</a>
+		<a href="/supporter/campaign/<?php echo $campaign->campaign_id; ?>" class="btn support-btns" style="font-size: 12px; width: 260px;">you must be logged in to receive points</a>
 
 	  <?php } ?>
 
