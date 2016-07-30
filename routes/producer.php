@@ -5,7 +5,12 @@ $app->get('/create-producer', function () use ($app){
 
     $path = explode('/', $app->request->getPath());
 
-    $app->render('create-producers.php', array('path' => $path));
+    $success_info = NULL;
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
+    }
+
+    $app->render('create-producers.php', array('path' => $path, 'success_info' => $success_info));
 });
 
 # Save producers
@@ -13,9 +18,18 @@ $app->post('/save-producer', function () use ($app){
 
     if ($app->request->getMethod() == 'POST') {
 
-       // @TODO check if email address already in system before saving
        $req = $app->request->post();
 
+       // check for duplicate email in system
+       $producer_record = Producer::find_by_email_address($req['email_address']);
+
+       if ($producer_record != NULL) {
+
+           $app->flash('success_info', 'Producer email already exists');
+
+           $app->redirect('/create-producer');
+       }
+ 
        $password = password_hash($req['password'], PASSWORD_DEFAULT);
 
        $producer = Producer::create(

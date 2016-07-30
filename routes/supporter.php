@@ -5,7 +5,11 @@ $app->get('/get-started/supporter/register', function() use($app) {
 
     $path = explode('/', $app->request->getPath());
 
-    //TODO only find one suporter by login
+    $success_info = NULL;
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
+    }
+
     $app->render('create-supporter.php', array('path' => $path));
 });
 
@@ -16,7 +20,6 @@ $app->post('/save-supporter', function () use ($app){
 
         $req = $app->request->post();
 
-       // @TODO check if email address already in system before saving
         $supporter = Supporter::find_by_email_address($req['email_address']);
 
         if (count($supporter) > 0) {
