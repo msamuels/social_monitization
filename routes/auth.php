@@ -118,7 +118,7 @@ $app->get("/login", function () use ($app) {
 
    $app->render('login.php', array('error' => $error, 'username_value' => $username_value,
       'username_error' => $username_error, 'password_error' => $password_error, 'urlRedirect' => $urlRedirect,
-       'fb_login_url' => $loginUrl));
+       'fb_login_url' => $loginUrl, 'configs' => $configs));
 });
 
 // log user out
