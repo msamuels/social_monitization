@@ -104,10 +104,10 @@
     <div class="col-sm-6">
 
         <H1>Login </H1>
-<!--
+
         <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 	</fb:login-button>
--->
+
 	<div id="status">
 	</div>
 
