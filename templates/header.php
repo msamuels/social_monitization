@@ -73,7 +73,7 @@
                         <li><a href="/create-producer">get started</a></li>
                     <?php } ?>
                     <li><a href="/about-us">about us</a></li>
-                    <li><a href="/organizations">organizations</a></li>
+                    <li><a href="/organizations">for organizations</a></li>
 
                 <?php } else { ?>
                     <?php if ($_SESSION['user_type'] == "supporter") { ?>
