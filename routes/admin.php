@@ -28,11 +28,11 @@ $app->post('/save-reward', $authenticate($app), function () use ($app){
     // ensure only allowed filetypes make it in
     $allowed =  array('png' ,'jpg');
     $filename = $upload->uploadFieldName;
-    $ext = pathinfo($filename, PATHINFO_EXTENSION);
+    /*$ext = pathinfo($filename, PATHINFO_EXTENSION);
     if(!in_array($ext,$allowed) ) {
         $app->flash('success_info', 'Error: Invalid file type');
         $app->redirect('/create-reward');
-    }
+    }*/
 
     $rename_to = strtotime("now") .".jpg";
 
