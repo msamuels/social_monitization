@@ -16,8 +16,9 @@ class Upload{
 	 */
 	public function __construct($target_path,$field,$tmp=null)
 	{
-		$this->target_path=$target_path;
-		$this->uploadFieldName=$field;
+		$this->target_path = $target_path;
+		$this->uploadFieldName = $field;
+		$this->file_name = $_FILES[$field]['name'];
 		
 		if($tmp!=null){
 			$this->tmp_name = $tmp;

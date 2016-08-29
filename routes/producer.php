@@ -98,12 +98,12 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
 
     // ensure only allowed filetypes make it in
     $allowed =  array('png' ,'jpg');
-    $filename = $upload->uploadFieldName;
+    $filename = $upload->file_name;
     $ext = pathinfo($filename, PATHINFO_EXTENSION);
-    /*if(!in_array($ext,$allowed) ) {
+    if(!in_array($ext,$allowed) ) {
         $app->flash('success_info', 'Error: Invalid file type');
         $app->redirect('/campaigns');
-    }*/
+    }
 
     $rename_to = strtotime("now") .".jpg";
 
