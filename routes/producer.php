@@ -105,7 +105,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
         $app->redirect('/campaigns');
     }
 
-    $rename_to = strtotime("now") .$ext;
+    $rename_to = strtotime("now") .".".$ext;
 
     // @TODO check the result message to see if the upload was successful
     $result = $upload->uploadFile("Upload Succeeded","Upload failed", $rename_to);
