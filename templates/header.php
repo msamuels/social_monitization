@@ -96,6 +96,7 @@
                         <li><a href="/create-reward">Create Rewards</a></li>
                         <li><a href="/admin-rewards">List Rewards</a></li>
                         <li><a href="/admin/campaigns">Approve Campaigns</a></li>
+                        <li><a href="/admin/supporters">Supporters</a></li>
                     <?php } ?>
 
                     <li><a href="/logout">Logout</a></li>

@@ -116,3 +116,21 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
 
     $app->redirect('/admin/campaigns');
 });
+
+
+# List all supporter
+$app->get('/admin/supporters', $authenticate($app), function () use ($app){
+
+    $user_name = $app->view()->getData('user');
+    $flash = $app->view()->getData('flash');
+
+    $success_info = '';
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
+    }
+
+    # list campaigns
+    $supporters = Supporter::find('all');
+
+    $app->render('admin/list-supporters.php', array('supporters' => $supporters, 'success_info' => $success_info));
+});
