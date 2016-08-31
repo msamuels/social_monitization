@@ -53,7 +53,7 @@ $app->post('/save-supporter', function () use ($app){
 
         $body .= "<p>1) Go to shareitcamp and support us as your first campaign! Just click here.</p>";
 
-        $body .= "<a href='".$baseurl."'>Click here to support</a>";
+        $body .= "<a href='https://www.facebook.com/shareitcamp'>Click here to support</a>";
 
         $body .= "<p>2) Like us on Facebook</p>";
 
