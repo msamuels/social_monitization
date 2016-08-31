@@ -57,7 +57,7 @@ $app->post('/save-supporter', function () use ($app){
 
         $body .= "<p>2) Like us on Facebook</p>";
 
-        $body .= "<button>shareitcamp</button>";
+        $body .= "<a href='https://www.shareitcamp.com/supporter/campaign/1'>shareitcamp</a>";
 
         $body .= "<p>Thanks, <br />
         The shareitcamp team</p>";
