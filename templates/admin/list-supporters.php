@@ -13,7 +13,9 @@
         <ul class="list-things">
             <?php
             if (count($supporters) > 0) {
+                $total_followers = 0;
                 foreach ($supporters as $supporter) {
+                    $total_followers += $supporter->id_follower_count;
                     ?>
                     <li class="list-item">
                         <p>
@@ -28,7 +30,10 @@
 
         </ul>
     </div>
-
     <div class="col-sm-2"></div>
 
+</div>
+
+<div class="row" id="supporters-list">
+    Total followers: <?php echo $total_followers; ?>
 </div>
