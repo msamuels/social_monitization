@@ -27,6 +27,10 @@
     -->
     <script src="//load.sumome.com/" data-sumo-site-id="63d03119b0f57bd789d47afb992766ce5b861812ec577960e3ccde28c598c6fa" async="async"></script>
 
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>
+        tinymce.init({ selector:'textarea' });
+    </script>
 </head>
 
 <body>
