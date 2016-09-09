@@ -112,6 +112,32 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
 
     mail($producer->email_address, $subject, $body, $headers);
 
+    // grab all the supporters to email
+    $supporter_email = array();
+    $supporters = Supporter::find('all');
+
+    foreach ($supporters as $supporter) {
+        array_push($supporter_email, $supporter->email_address);
+    }
+
+    // Email supporter to let them know campaign has been approved by producer
+    $headers .= 'BCC: '. implode(",", $supporter_email) . "\r\n";
+
+    $subject_supporter = 'New campaign posted to shareitcamp! ';
+
+    $body_supporter = "<p>".$producer->org_name. " is asking for your support for their ".$campaign->campaign_name."
+     effort. Click on the link below to find
+    out more and, if you are interested, hit the support button. Once you've done that just post to Facebook. </p>";
+    $baseurl =  $destination = $app->config('configs')['base_url'];
+    $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->campaign_id."'>Click here to support</a>";
+    $body_supporter .= "<p>Oh, and for sharing the link you will earn 5 points.</p>";
+    $body_supporter .= "<p>Thanks, <br />
+        The shareitcamp team</p>";
+
+    mail(null, $subject_supporter, $body_supporter, $headers);
+
+
+
     $app->flash('success_info', 'Campaign Approved');
 
     $app->redirect('/admin/campaigns');
