@@ -1,5 +1,32 @@
 <?php
 
+/**
+ * function, receives string, returns seo friendly version for that strings,
+ *     sample: 'Hotels in Buenos Aires' => 'hotels-in-buenos-aires'
+ *    - converts all alpha chars to lowercase
+ *    - converts any char that is not digit, letter or - into - symbols into "-"
+ *    - not allow two "-" chars continued, convert them into only one syngle "-"
+ */
+function friendly_seo_string($vp_string)
+{
+
+    $vp_string = trim($vp_string);
+
+    $vp_string = html_entity_decode($vp_string);
+
+    $vp_string = strip_tags($vp_string);
+
+    $vp_string = strtolower($vp_string);
+
+    $vp_string = preg_replace('~[^ a-z0-9_.]~', ' ', $vp_string);
+
+    $vp_string = preg_replace('~ ~', '-', $vp_string);
+
+    $vp_string = preg_replace('~-+~', '-', $vp_string);
+
+    return $vp_string;
+}
+
 # Create producers
 $app->get('/create-producer', function () use ($app){
 
@@ -112,12 +139,14 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
 
     $order_number = $randnum = rand(1111111111,9999999999);
 
+    $friendly_url = friendly_seo_string($req['campaign_name']);
+
     $campaign = Campaign::create(
         array('campaign_name'=>$req['campaign_name'], 'budget' => $req['budget'],
             'start_date' => $req['start_date'], 
             'end_date' => $req['end_date'],'copy' => $req['copy'],
             'screen_shot' => $rename_to,'url' => $req['url'],'platform' => $req['platform'],
-            'order_number'=>$order_number));
+            'order_number'=>$order_number, 'friendly_url' => $friendly_url));
 
     // create a new account with the campaign id
     $user_name = $app->view()->getData('user');
