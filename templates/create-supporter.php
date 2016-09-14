@@ -2,12 +2,17 @@
 
     $(document).ready(function () {
 
+        jQuery.validator.addMethod("noSpace", function(value, element) {
+            return value.indexOf(" ") < 0 && value != "";
+        }, "No space please");
+
         $('#create-supporter').validate({ // initialize the plugin
             debug: true,
             rules: {
                 username: {
                     required: true,
-                    minlength: 5
+                    minlength: 5,
+                    noSpace: true
                 },
                 password: {
                     required: true,
