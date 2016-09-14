@@ -194,7 +194,7 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
 
 # show supported campaign individually
 // @TODO add back authentication. Just when user not  logged in store their destination
-$app->get('/supporter/campaign/:id', function ($id) use($app) {
+$app->get('/supporter/campaign/:friendly_url', function ($friendly_url) use($app) {
 
     $base_url = $app->config('configs')['base_url'];
 
@@ -203,7 +203,7 @@ $app->get('/supporter/campaign/:id', function ($id) use($app) {
     $supporter = Supporter::find_by_user_name($user_name);
     $flash = $app->view()->getData('flash');
 
-    $campaign = Campaign::find_by_campaign_id($id);
+    $campaign = Campaign::find_by_campaign_friendly_url($friendly_url);
 
     $reward = Reward::find_by_campaign_id($campaign->campaign_id);
 

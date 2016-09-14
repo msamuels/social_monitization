@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: db591622819.db.1and1.com
--- Generation Time: Jul 24, 2016 at 09:07 PM
--- Server version: 5.5.49-0+deb7u1-log
+-- Generation Time: Sep 14, 2016 at 04:52 PM
+-- Server version: 5.5.50-0+deb7u2-log
 -- PHP Version: 5.4.45-0+deb7u4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -73,6 +73,7 @@ CREATE TABLE IF NOT EXISTS `campaigns` (
   `platform` varchar(255) DEFAULT NULL,
   `order_number` int(10) NOT NULL,
   `producer_approved` enum('Y','N') NOT NULL DEFAULT 'N',
+  `friendly_url` varchar(255) NOT NULL,
   PRIMARY KEY (`campaign_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=big5;
 
