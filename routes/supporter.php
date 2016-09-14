@@ -203,7 +203,7 @@ $app->get('/supporter/campaign/:friendly_url', function ($friendly_url) use($app
     $supporter = Supporter::find_by_user_name($user_name);
     $flash = $app->view()->getData('flash');
 
-    $campaign = Campaign::find_by_campaign_friendly_url($friendly_url);
+    $campaign = Campaign::find_by_friendly_url($friendly_url);
 
     $reward = Reward::find_by_campaign_id($campaign->campaign_id);
 

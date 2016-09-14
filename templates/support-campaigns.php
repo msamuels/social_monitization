@@ -14,7 +14,7 @@
                 ?>
                 <li class="list-item">
                     <p><strong>
-                            <a href="/supporter/campaign/<?php echo $campaign->campaign_id; ?>">
+                            <a href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">
                                 <?php echo $campaign->campaign_name; ?>
                             </a>
                         </strong></p>
@@ -28,7 +28,7 @@
                         </a>
                     </p>
                     <p class="list-campaign-copy"><?php echo substr($campaign->copy, 0, 50); ?>
-                        ...<a style="text-decoration: underline" href="/supporter/campaign/<?php echo $campaign->campaign_id; ?>">Learn More</a>
+                        ...<a style="text-decoration: underline" href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">Learn More</a>
                     </p>
 
                     <form action="/save-campaign-support" method="POST">
