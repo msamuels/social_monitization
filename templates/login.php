@@ -95,7 +95,6 @@
     });
   }
 </script>
-</script>
 
 <div class="row">
 
