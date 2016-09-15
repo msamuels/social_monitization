@@ -141,7 +141,7 @@ $app->post("/reset-password", function () use ($app) {
 
     $email = $app->request()->post('email');
 
-    $client = Supporter::find_by_email_addres($email);
+    $client = Supporter::find_by_email_address($email);
 
     // generate new random password
     $password = random_str(8);
