@@ -130,3 +130,55 @@ $app->get("/logout", function () use ($app) {
    $app->view()->setData('user', null);
    $app->redirect('/');
 });
+
+// forgot password
+$app->get("/forgot-password", function () use ($app) {
+
+    $app->render('auth/forgot-password.php');
+});
+
+$app->post("/reset-password", function () use ($app) {
+
+    $email = $app->request()->post('email');
+
+    $client = Supporter::find_by_email_addres($email);
+
+    // generate new random password
+    $password = random_str(8);
+
+    // update user email in db
+    $client->update_attributes(
+        array('password' => $password));
+
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    $headers .= 'From: info@shareitcamp.com' . "\r\n";
+
+    // email user new password
+    $body = 'You have requested new password. Here it is: '.$password;
+    $body .= 'If you did not request this password please email info@shareitcamp.com';
+
+    mail($client->email_addres, 'Shareitcamp password reset', $body, $headers);
+
+});
+
+/**
+ * Generate a random string, using a cryptographically secure
+ * pseudorandom number generator (random_int)
+ *
+ * For PHP 7, random_int is a PHP core function
+ * For PHP 5.x, depends on https://github.com/paragonie/random_compat
+ *
+ * @param int $length      How many characters do we want?
+ * @param string $keyspace A string of all possible characters to select from
+ * @return string
+ */
+function random_str($length, $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+{
+    $str = '';
+    $max = mb_strlen($keyspace, '8bit') - 1;
+    for ($i = 0; $i < $length; ++$i) {
+        $str .= $keyspace[random_int(0, $max)];
+    }
+    return $str;
+}

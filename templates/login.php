@@ -151,6 +151,7 @@
                 </div>
             </div>
 
+            <div class="row"><a href="/forgot-password"></a><div>
             <button class="btn btn-primary" type="submit">Submit</button>
 
         </form>
