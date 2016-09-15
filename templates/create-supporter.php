@@ -16,11 +16,13 @@
                 },
                 password: {
                     required: true,
-                    minlength: 5
+                    minlength: 5,
+                    noSpace: true
                 },
                 password_confirm : {
                     minlength : 5,
-                    equalTo : "#password"
+                    equalTo : "#password",
+                    noSpace: true
                 },
                 email_address: {
                     required: true,
@@ -384,3 +386,4 @@
     <div class="col-sm-3"></div>
 
 </div>
+
