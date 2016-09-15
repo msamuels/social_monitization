@@ -1,3 +1,27 @@
+<script>
+
+    $(document).ready(function () {
+
+        $('#login').validate({ // initialize the plugin
+            debug: true,
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                email: "Please enter your user name"
+            },
+            submitHandler: function (form) {
+                form.submit();
+            }
+
+        });
+    });
+
+</script>
+
 <div class="row">
 
     <div class="col-sm-3"></div>

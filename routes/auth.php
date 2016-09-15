@@ -160,6 +160,8 @@ $app->post("/reset-password", function () use ($app) {
 
     mail($client->email_addres, 'Shareitcamp password reset', $body, $headers);
 
+    $app->redirect('/login');
+
 });
 
 /**
