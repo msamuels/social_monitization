@@ -45,7 +45,7 @@
             <div class="alert alert-danger"><?php echo $error; ?></div>
         <?php } ?>
 
-        <form action="/auth/reset-password" method="POST" id="login">
+        <form action="/reset-password" method="POST" id="login">
 
             <div class="form-group">
                 <label class="control-label col-sm-4">Email: </label>
