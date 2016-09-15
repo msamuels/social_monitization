@@ -144,7 +144,8 @@ $app->post("/reset-password", function () use ($app) {
     $client = Supporter::find_by_email_address($email);
 
     // generate new random password
-    $password = random_str(8);
+    $rand_str = random_str(8);
+    $password = password_hash($rand_str, PASSWORD_DEFAULT);
 
     // update user email in db
     $client->update_attributes(
@@ -155,7 +156,7 @@ $app->post("/reset-password", function () use ($app) {
     $headers .= 'From: info@shareitcamp.com' . "\r\n";
 
     // email user new password
-    $body = 'You have requested new password. Here it is: <strong>'.$password. '</strong>';
+    $body = 'You have requested new password. Here it is: <strong>'.$rand_str. '</strong>';
     $body .= ' If you did not request this password please email info@shareitcamp.com';
 
     mail($client->email_address, 'Shareitcamp password reset', $body, $headers);
