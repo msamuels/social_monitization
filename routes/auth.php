@@ -158,7 +158,7 @@ $app->post("/reset-password", function () use ($app) {
     $body = 'You have requested new password. Here it is: '.$password;
     $body .= 'If you did not request this password please email info@shareitcamp.com';
 
-    mail($client->email_addres, 'Shareitcamp password reset', $body, $headers);
+    mail($client->email_address, 'Shareitcamp password reset', $body, $headers);
 
     $app->redirect('/login');
 
