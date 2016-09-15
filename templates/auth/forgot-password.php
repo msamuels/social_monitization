@@ -11,7 +11,7 @@
                 }
             },
             messages: {
-                email: "Please enter your user name"
+                email: "Please enter email address"
             },
             submitHandler: function (form) {
                 form.submit();

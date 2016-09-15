@@ -50,18 +50,18 @@
         <div class="row">
             <?php if(count($campaigns) > 0){ ?>
                 <div class="col-md-3">
-                    <p><a href="supporter/campaign/<?php echo $campaigns[0]->campaign_id; ?>">
+                    <p><a href="supporter/campaign/<?php echo $campaigns[0]->friendly_url; ?>">
                             <?php echo $campaigns[0]->campaign_name; ?>
                         </a>
                     </p>
                     <p class="by-line"><i> by <?php echo $campaigns[0]->getProducer()->org_name; ?></i></<p>
 
-                    <p><a href="supporter/campaign/<?php echo $campaigns[0]->campaign_id; ?>">
+                    <p><a href="supporter/campaign/<?php echo $campaigns[0]->friendly_url; ?>">
                         <img src="images/screenshots/<?php echo $campaigns[0]->screen_shot; ?>" width="300" height="500"/>
                         </a>
                     </p>
 
-                    <a href="supporter/campaign/<?php echo $campaigns[0]->campaign_id; ?>" target="_parent">
+                    <a href="supporter/campaign/<?php echo $campaigns[0]->friendly_url; ?>" target="_parent">
                         <button class="btn support-btns">Support</button>
                     </a>
                 </div>
@@ -69,19 +69,19 @@
 
             <?php if(count($campaigns) > 1){ ?>
                 <div class="col-md-3">
-                    <p><a href="supporter/campaign/<?php echo $campaigns[1]->campaign_id; ?>">
+                    <p><a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>">
                             <?php echo $campaigns[1]->campaign_name; ?>
                         </a>
                     </p>
 
                     <p class="by-line"><i> by <?php echo $campaigns[1]->getProducer()->org_name; ?></i></<p>
 
-                    <p><a href="supporter/campaign/<?php echo $campaigns[1]->campaign_id; ?>">
+                    <p><a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>">
                             <img src="images/screenshots/<?php echo $campaigns[1]->screen_shot; ?>" width="300" height="500"/>
                         </a>
                     </p>
 
-                    <a href="supporter/campaign/<?php echo $campaigns[1]->campaign_id; ?>" target="_parent">
+                    <a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>" target="_parent">
                         <button class="btn support-btns">Support</button>
                     </a>
                 </div>
@@ -89,19 +89,19 @@
 
             <?php if(count($campaigns) > 2){ ?>
                 <div class="col-md-3">
-                    <p><a href="supporter/campaign/<?php echo $campaigns[2]->campaign_id; ?>">
+                    <p><a href="supporter/campaign/<?php echo $campaigns[2]->friendly_url; ?>">
                             <?php echo $campaigns[2]->campaign_name; ?>
                         </a>
                     </p>
 
                     <p class="by-line"><i> by <?php echo $campaigns[2]->getProducer()->org_name; ?></i></<p>
 
-                    <p><a href="supporter/campaign/<?php echo $campaigns[2]->campaign_id; ?>">
+                    <p><a href="supporter/campaign/<?php echo $campaigns[2]->friendly_url; ?>">
                             <img src="images/screenshots/<?php echo $campaigns[2]->screen_shot; ?>" width="300" height="500"/>
                         </a>
                     </p>
 
-                    <a href="supporter/campaign/<?php echo $campaigns[2]->campaign_id; ?>" target="_parent">
+                    <a href="supporter/campaign/<?php echo $campaigns[2]->friendly_url; ?>" target="_parent">
                         <button class="btn support-btns">Support</button>
                     </a>
                 </div>
@@ -109,19 +109,19 @@
 
             <?php if(count($campaigns) > 3){ ?>
                 <div class="col-md-3">
-                    <p><a href="supporter/campaign/<?php echo $campaigns[3]->campaign_id; ?>">
+                    <p><a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>">
                             <?php echo $campaigns[3]->campaign_name; ?>
                         </a>
                     </p>
 
                     <p class="by-line"><i> by <?php echo $campaigns[3]->getProducer()->org_name; ?></i></<p>
 
-                    <p><a href="supporter/campaign/<?php echo $campaigns[3]->campaign_id; ?>">
+                    <p><a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>">
                             <img src="images/screenshots/<?php echo $campaigns[3]->screen_shot; ?>" width="300" height="500"/>
                         </a>
                     </p>
 
-                    <a href="supporter/campaign/<?php echo $campaigns[3]->campaign_id; ?>" target="_parent">
+                    <a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>" target="_parent">
                         <button class="btn support-btns">Support</button>
                     </a>
                 </div>
