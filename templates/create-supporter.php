@@ -2,6 +2,8 @@
 
     $(document).ready(function () {
 
+        $('[data-toggle="tooltip"]').tooltip();
+
         jQuery.validator.addMethod("noSpace", function(value, element) {
             return value.indexOf(" ") < 0 && value != "";
         }, "No space please");
@@ -122,8 +124,14 @@
 
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align:right"><span class="required">* </span># of Facebook Friends</label>
-                <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control"
-                                                                     name="followers_fb" placeholder="# of Facebook Friends"/>
+                <div class="col-sm-8" style="text-align:left">
+                    <input type="text" class="form-control"
+                                                             name="followers_fb" placeholder="# of Facebook Friends"
+                                                             data-toggle="tooltip" data-placement="right" title="We want
+                                                             to help the organizations understand how many people they
+                                                             are able to reach with their message; why it's important to
+                                                             collaborate. We do not share your name or any other
+                                                             identifying information about you."/>
                 </div>
             </div>
 
