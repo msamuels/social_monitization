@@ -175,7 +175,7 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
         $subject = 'Shareitcamp: Thanks for your support';
 
         $body = "Thank you for agreeing to support ".$campaign->campaign_name.". Please click on the link below to go
-            the campaign page . Once there, click on the “share on Facebook” link. <p>For sharing the link you will earn 5
+            the campaign page . Once there, click on the <i>share on Facebook</i> link. <p>For sharing the link you will earn 5
             points. </p>";
 
         $body .= "<a href='".$baseurl."/supporter/campaign/".$campaign->campaign_id."'>Click here to support</a>";
