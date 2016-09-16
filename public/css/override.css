@@ -156,6 +156,17 @@ img {
     width: 200px;
 }
 
+.tooltip {
+    background: url('../images/yellow-question-mark-icon.png') no-repeat;
+    padding: 0;
+    color: #fff;
+    text-indent: -9999px;
+    float: left;
+    margin: 0;
+    height: 15px;
+    width: 15px;
+}
+
 ul{
     list-style: none;
 
