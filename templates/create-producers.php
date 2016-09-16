@@ -396,8 +396,7 @@
 
             <div class="form-group">
                 <span class="forminfo">
-                    <a href="#" class="tooltip"  data-toggle="tooltip" data-placement="right" title="Non-profit
-                groups do not pay a fee for using this service">?</a>
+                    <a href="#" class="helptip" title="Non-profit groups do not pay a fee for using this service">?</a>
                 </span>
                 <label class="control-label col-sm-4">Non Profits Click Here</label>
                 <input type="radio" name="non-profit"/>

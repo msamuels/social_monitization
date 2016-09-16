@@ -156,10 +156,10 @@ img {
     width: 200px;
 }
 
-.tooltip {
+.helptip {
     background: url('../images/yellow-question-mark-icon.png') no-repeat;
     padding: 0;
-    color: #fff;
+    color: yellow;
     text-indent: -9999px;
     float: left;
     margin: 0;
