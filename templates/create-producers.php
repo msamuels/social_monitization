@@ -2,6 +2,8 @@
 
     $(document).ready(function () {
 
+        $('[data-toggle="tooltip"]').tooltip();
+        
         $('#create-producer').validate({ // initialize the plugin
             debug: true,
             rules: {
@@ -394,7 +396,8 @@
 
             <div class="form-group">
                 <label class="control-label col-sm-4">Non Profits Click Here</label>
-                <input type="radio" name="non-profit"/>
+                <input type="radio" name="non-profit" data-toggle="tooltip" data-placement="right" title="Non-profit
+                groups do not pay a fee for using this service"/>
             </div>
 
 
