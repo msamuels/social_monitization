@@ -95,6 +95,17 @@ H1{
     margin-bottom:30px;
 }
 
+.helptip {
+    background: url('../images/yellow-question-mark-icon.png') no-repeat;
+    padding: 0;
+    color: yellow;
+    text-indent: -9999px;
+    float: left;
+    margin: 0;
+    height: 15px;
+    width: 15px;
+}
+
 .how-it-works-steps {
     border: 1px solid grey;
     margin: 5px;
@@ -108,6 +119,10 @@ H1{
 
 .icon-2 {
     max-width: 40px;
+}
+
+.icon-3 {
+    max-width: 22px;
 }
 
 .list-item{
@@ -154,17 +169,6 @@ img {
 
 .support-pledged{
     width: 200px;
-}
-
-.helptip {
-    background: url('../images/yellow-question-mark-icon.png') no-repeat;
-    padding: 0;
-    color: yellow;
-    text-indent: -9999px;
-    float: left;
-    margin: 0;
-    height: 15px;
-    width: 15px;
 }
 
 ul{

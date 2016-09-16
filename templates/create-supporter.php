@@ -125,7 +125,9 @@
             <div class="form-group">
                 <label class="control-label col-sm-4" style="text-align:right">
                     <a href="#"
-                       class="helptip" title="We want to help the organizations understand how many people they are able to reach with their message; why it's important to collaborate. We do not share your name or any other identifying information about you.">?</a>
+                       class="helptip" title="We want to help the organizations understand how many people they are able to reach with their message; why it's important to collaborate. We do not share your name or any other identifying information about you.">
+                        <img class="icon-3" src="/images/yellow-question-mark-icon.png">
+                    </a>
                     <span class="required">* </span># of Facebook Friends</label>
                 <div class="col-sm-8" style="text-align:left">
                     <input type="text" class="form-control"
