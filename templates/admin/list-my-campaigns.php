@@ -32,7 +32,7 @@ campaigns<H1>Campaigns</H1>
                     </p>
 
                     <p>
-                        <?php if($campaign->approved =='N'){ ?>
+                        <?php if($campaign->approved !='Y'){ ?>
 
                             <form action="/admin/approve-campaign" method="POST" class="form-horizontal" role="form">
 
