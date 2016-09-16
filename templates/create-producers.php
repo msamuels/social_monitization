@@ -395,12 +395,14 @@
             </div>
 
             <div class="form-group">
-                <span class="forminfo">
+                <label class="control-label col-sm-4">
+                                    <span class="forminfo">
                     <a href="#" class="helptip" title="Non-profit groups do not pay a fee for using this service">
                         <img class="icon-3" src="/images/yellow-question-mark-icon.png">
                     </a>
                 </span>
-                <label class="control-label col-sm-4">Non Profits Click Here</label>
+                    Non Profits Click Here
+                </label>
                 <input type="radio" name="non-profit"/>
             </div>
 
