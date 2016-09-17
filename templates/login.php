@@ -150,7 +150,9 @@
                 </div>
             </div>
 
-            <p><a href="/forgot-password" class="highlighted">Forgot Password</a><p>
+            <p><a href="/forgot-password" class="highlighted" style="font-size: medium">Forgot Password</a>
+                | <a href="/get-started/supporter/register" class="highlighted" style="font-size: medium">Register</a>
+            <p>
 
             <button class="btn btn-primary" type="submit">Submit</button>
 
