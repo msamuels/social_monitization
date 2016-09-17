@@ -15,12 +15,14 @@
 
 <div class="row" style="font-size: small; color: #8c8c8c; margin-top: 5px;">
 
-    <div class="col-sm-11">
+    <div class="col-sm-2"></div>
+
+    <div class="col-sm-8">
         Copyright 2016 shareitcamp.com. All rights reserved<br/>
         Terms of Service | Privacy Policy
     </div>
 
-    <div class="col-sm-1" style="text-align: right">
+    <div class="col-sm-2" style="text-align: right">
         <a href="https://twitter.com/shareitcamp" title="Twitter (Shareitcamp)" target="_blank">
             <img alt="Twitter (Shareitcamp)" src="/images/twitter.png" class="icon-2"></a>
             &nbsp;&nbsp;
