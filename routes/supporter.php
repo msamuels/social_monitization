@@ -223,7 +223,8 @@ $app->get('/supporter/campaign/:id_title', function ($id_title) use($app) {
     }
 
     $app->render('supporter/supported-campaign.php', array('campaign' => $campaign, 'base_url' => $base_url,
-        'reward' => $reward, 'producer' => $producer, 'isPending' => $isPending,  'user_id' => $supporter->id));
+        'reward' => $reward, 'producer' => $producer, 'isPending' => $isPending,  'user_id' => $supporter->id,
+        'supportedCampaigns' => $supportedCampaigns));
 });
 
 $app->post('/save-post-to-fb', $authenticate($app), function () use ($app) {
@@ -309,3 +310,37 @@ $app->get('/supporter/manage-account/payment-options', $authenticate($app), func
     echo "Get Started";
 });
 
+# Save supporter
+$app->post('/save-campaign-post-link', function () use ($app){
+
+    if ($app->request->getMethod() == 'POST') {
+
+        $req = $app->request->post();
+
+        $response = Campaign_response::create(
+            array('campaign_response' => $req['post-link'], 'campaign_id' => $req['campaign_id'],
+                'supporter_id'=>$req['supporter_id']
+            ));
+
+        // Auto respond to to supporter
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $headers .= 'From: info@shareitcamp.com' . "\r\n";
+
+        $to = 'markspeed_718@yahoo.com';
+        $subject = 'Campaign response (post link) added to shareitcamp';
+
+        $body = "<p>A supporter has added the link to their post<p>";
+
+        $body .= "<p>Thanks, <br />
+        The shareitcamp team</p>";
+
+        mail($to, $subject, $body, $headers);
+
+        $app->flash('success_info', 'Supporter Saved');
+
+        $app->redirect('/supporter/campaign/'.$req['campaign_id']);
+
+    }
+
+});
