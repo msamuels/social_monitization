@@ -317,9 +317,12 @@ $app->post('/save-campaign-post-link', function () use ($app){
 
         $req = $app->request->post();
 
-        $response = Campaign_response::create(
-            array('campaign_response' => $req['post-link'], 'campaign_id' => $req['campaign_id'],
-                'supporter_id'=>$req['supporter_id']
+        $campaign_response = Campaign_response::find('all', array('conditions' => array('campaign_id = ? AND 
+        supporter_id = ?', $req['campaign_id'], $req['supporter_id'])));
+
+        // TODO maybe do a loop over the campaign responses. dont just update the first one
+        $response = $campaign_response[0]->update_attributes(
+            array('campaign_response' => $req['post-link']
             ));
 
         // Auto respond to to supporter
