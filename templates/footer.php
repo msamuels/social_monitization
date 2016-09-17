@@ -1,6 +1,6 @@
 <div class="row" id="bottom-nav">
     <div class="col-xs-12">
-    <nav class="navbar-default" id="myNavbar">
+    <nav id="myNavbar">
         <ul class="nav navbar-nav footer-nav">
             <li><a class="footer-nav" href="/">get started</a></li>
             <li><a class="footer-nav" href="/about-us">about Us</a></li>
