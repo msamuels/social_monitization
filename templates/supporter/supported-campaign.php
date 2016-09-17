@@ -96,6 +96,21 @@
                     </form>
                 <?php } else { ?>
                     <button class="btn btn-success support-pledged">Support Pledged</button>
+                    <?php if($supportedCampaigns[0]->campaign_response == null) { ?>
+                    <br /><br /><br />
+                    <p>Link to post: </p>
+                    <form action="/save-campaign-post-link" method="POST">
+                        <input type="text" name="post-link"  id="post-link" class="form-control"
+                               placeholder="Please enter the link to your facebook post"/>
+                        <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
+                        <input type="hidden" name="supporter_id" value="<?php echo $user_id; ?>"/>
+                        <button class="btn support-btns" type="submit">Save post link</button>
+                    </form>
+                        <?php } else { ?>
+                            <br /><br /><br />
+                            <p>Post link:</p>
+                            <p><?php echo $supportedCampaigns[0]->campaign_response; ?></p>
+                        <?php } ?>
                 <?php }
             } else { ?>
 		<a href="/login" class="btn support-btns" style="font-size: 12px; width: 260px;">you must be logged in to receive points</a>
