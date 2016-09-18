@@ -17,6 +17,10 @@
              data-layout="button_count" data-mobile-iframe="true">
         </div>
 
+        <div><a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
         <div><img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" class="campaign_image"/></div>
 
         <div class="fb-share-button"
@@ -86,36 +90,37 @@
             </div>
 
             <div class="col-sm-11" style="text-align: left;">
-            <?php
-            if (isset($_SESSION['user_type'])) {
-                if ($isPending) { ?>
-                    <form action="/save-campaign-support" method="POST">
-                        <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
-                        <input type="hidden" name="supporter_id" value="<?php echo $user_id; ?>"/>
-                        <button class="btn support-btns" type="submit">Support Campaign</button>
-                    </form>
-                <?php } else { ?>
-                    <button class="btn btn-success support-pledged">Support Pledged</button>
-                    <?php if($supportedCampaigns[0]->campaign_response == null) { ?>
-                    <br /><br /><br />
-                    <p>Link to post: </p>
-                    <form action="/save-campaign-post-link" method="POST">
-                        <input type="text" name="post-link"  id="post-link" class="form-control"
-                               placeholder="Please enter the link to your facebook post"/>
-                        <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
-                        <input type="hidden" name="supporter_id" value="<?php echo $user_id; ?>"/>
-                        <button class="btn support-btns" type="submit">Save post link</button>
-                    </form>
+                <?php
+                if (isset($_SESSION['user_type'])) {
+                    if ($isPending) { ?>
+                        <form action="/save-campaign-support" method="POST">
+                            <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
+                            <input type="hidden" name="supporter_id" value="<?php echo $user_id; ?>"/>
+                            <button class="btn support-btns" type="submit">Support Campaign</button>
+                        </form>
+                    <?php } else { ?>
+                        <button class="btn btn-success support-pledged">Support Pledged</button>
+                        <?php if ($supportedCampaigns[0]->campaign_response == null) { ?>
+                            <br/><br/><br/>
+                            <p>Link to post: </p>
+                            <form action="/save-campaign-post-link" method="POST">
+                                <input type="text" name="post-link" id="post-link" class="form-control"
+                                       placeholder="Please enter the link to your facebook post"/>
+                                <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>"/>
+                                <input type="hidden" name="supporter_id" value="<?php echo $user_id; ?>"/>
+                                <button class="btn support-btns" type="submit">Save post link</button>
+                            </form>
                         <?php } else { ?>
-                            <br /><br /><br />
+                            <br/><br/><br/>
                             <p>Post link:</p>
                             <p><?php echo $supportedCampaigns[0]->campaign_response; ?></p>
                         <?php } ?>
-                <?php }
-            } else { ?>
-		<a href="/login" class="btn support-btns" style="font-size: 12px; width: 260px;">you must be logged in to receive points</a>
+                    <?php }
+                } else { ?>
+                    <a href="/login" class="btn support-btns" style="font-size: 12px; width: 260px;">you must be logged
+                        in to receive points</a>
 
-	  <?php } ?>
+                <?php } ?>
 
             </div>
 
