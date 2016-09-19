@@ -22,7 +22,7 @@
                     <p class="by-line"><i> by <?php echo $campaign->getProducer()->org_name; ?></i></p>
                     <p>
                     <p>
-                        <a href="/supporter/campaign/<?php echo $campaign->campaign_id; ?>">
+                        <a href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">
                             <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" height="100"
                                  width="100"/>
                         </a>
