@@ -8,7 +8,11 @@ $app->hook('slim.before.dispatch', function () use ($app) {
 
     if($parts[1] == "supporter" && $parts[2] == "campaign"){
 
-        $campaign = Campaign::find_by_campaign_id($parts[3]);
+        if (is_numeric($parts[3])) {
+            $campaign = Campaign::find_by_campaign_id($parts[3]);
+        } else {
+            $campaign = Campaign::find_by_friendly_url($parts[3]);
+        }
         $app->render('../templates/facebook_header.php', array('campaign'=>$campaign, 'path' => $parts,
             'base_url' => $base_url));
 
