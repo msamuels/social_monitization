@@ -396,7 +396,7 @@ $app->post('/producer/approve-campaign', $authenticate($app), function () use ($
 
     $baseurl =  $destination = $app->config('configs')['base_url'];
 
-    $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->campaign_id."'>Click here to support</a>";
+    $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->friendly_url."'>Click here to support</a>";
 
     $body_supporter .= "<p>Oh, and for sharing the link you will earn 5 points.</p>";
 
