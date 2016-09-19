@@ -12,7 +12,7 @@
     <meta property="og:image"              content="<?php echo $base_url; ?>/images/screenshots/<?php echo $campaign->screen_shot; ?>" />
     <meta property="og:image:width" content="196" />
     <meta property="og:image:height" content="300" />
-    <title>shareitcamp</title>
+    <title><?php echo $campaign->campaign_name; ?></title>
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/override.css" rel="stylesheet">
     <link href="/css/jquery-ui.min.css" rel="stylesheet">
