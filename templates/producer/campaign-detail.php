@@ -13,7 +13,7 @@
 
     <div class="col-sm-4">
         <div class="fb-share-button" style="margin-bottom: 5px;"
-             data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->campaign_id; ?>"
+             data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>"
              data-layout="button_count" data-mobile-iframe="true">
         </div>
 
@@ -46,7 +46,7 @@
 
                 <div class="fb-share-button"
                      data-href="<?php echo $base_url; ?>
-                /supporter/campaign/<?php echo $supported_campaign->campaign->campaign_id; ?>"
+                /supporter/campaign/<?php echo $supported_campaign->campaign->friendly_url; ?>"
                      data-layout="button_count" data-mobile-iframe="true">
                 </div>
             </form>
