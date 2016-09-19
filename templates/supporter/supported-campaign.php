@@ -17,7 +17,8 @@
              data-layout="button_count" data-mobile-iframe="true">
         </div>
 
-        <div><a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a>
+        <div><a href="https://twitter.com/share" class="twitter-share-button" data-via="shareitcamp"
+                data-show-count="false">Tweet</a>
             <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
 

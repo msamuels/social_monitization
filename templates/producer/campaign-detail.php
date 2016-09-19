@@ -16,9 +16,12 @@
              data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->campaign_id; ?>"
              data-layout="button_count" data-mobile-iframe="true">
         </div>
-        <div><a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a>
+
+        <div><a href="https://twitter.com/share" class="twitter-share-button" data-via="shareitcamp"
+                data-show-count="false">Tweet</a>
             <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
+
         <div><img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" class="campaign_image"/></div>
 
         <div class="fb-share-button"
