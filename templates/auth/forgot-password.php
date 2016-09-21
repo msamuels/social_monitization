@@ -29,7 +29,7 @@
     <div class="col-sm-6">
 
         <H1>Forgot Password </H1>
-
+        <p> Please enter your email address and we will reset your password and email you.</p>
         <div id="status">
         </div>
 
