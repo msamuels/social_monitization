@@ -102,16 +102,10 @@
                 <div class="plan-header text-center">
                     <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>">
                             <?php echo $campaigns[1]->campaign_name; ?></h3>
-                    <h2 class="plan-price"><i> by <?php echo $campaigns[1]->getProducer()->org_name; ?></i></h2>
+                    <h2 class="plan-duration"> by <?php echo $campaigns[1]->getProducer()->org_name; ?></h2>
                     <div class="plan-duration">Per Month</div>
                 </div>
-                <ul class="plan-stats list-unstyled text-center">
-                    <li>5 Projects</li>
-                    <li>1 GB Storage</li>
-                    <li>No Domain</li>
-                    <li>1 User</li>
-                    <li>24x7 Support</li>
-                </ul>
+   
 
                 <div class="text-center">
                     <a href="#" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
@@ -127,16 +121,10 @@
                 <div class="plan-header text-center">
                     <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[2]->friendly_url; ?>">
                             <?php echo $campaigns[2]->campaign_name; ?></h3>
-                    <h2 class="plan-price"><i> by <?php echo $campaigns[2]->getProducer()->org_name; ?></i></h2>
+                    <h2 class="plan-duration"> by <?php echo $campaigns[2]->getProducer()->org_name; ?></h2>
                     <div class="plan-duration">Per Month</div>
                 </div>
-                <ul class="plan-stats list-unstyled text-center">
-                    <li>5 Projects</li>
-                    <li>1 GB Storage</li>
-                    <li>No Domain</li>
-                    <li>1 User</li>
-                    <li>24x7 Support</li>
-                </ul>
+   
 
                 <div class="text-center">
                     <a href="#" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
@@ -151,16 +139,10 @@
                 <div class="plan-header text-center">
                     <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>">
                             <?php echo $campaigns[3]->campaign_name; ?></h3>
-                    <h2 class="plan-price"><i> by <?php echo $campaigns[3]->getProducer()->org_name; ?></i></h2>
+                    <h2 class="plan-duration"> by <?php echo $campaigns[3]->getProducer()->org_name; ?></h2>
                     <div class="plan-duration">Per Month</div>
                 </div>
-                <ul class="plan-stats list-unstyled text-center">
-                    <li>5 Projects</li>
-                    <li>1 GB Storage</li>
-                    <li>No Domain</li>
-                    <li>1 User</li>
-                    <li>24x7 Support</li>
-                </ul>
+   
 
                 <div class="text-center">
                     <a href="#" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
