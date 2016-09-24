@@ -9,13 +9,31 @@
     <title>shareitcamp</title>
     <meta name="description" content="There are some great projects being developed and go undiscovered due to lack of exposure. You can be a part of a team that helps change that. Through shareitcamp you are able to lend your support (via social media) to bring attention to some really innovative projects. Follow us on Facebook or visit our website to find out more.">
     <meta name="author" content="shareitcamp.com">
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.min.css?<?php echo date('s')?>" rel="stylesheet">
+    <!-- Animate -->
+    <link href="/css/animate.css" rel="stylesheet">
+
+    <!-- Icon-font -->
+    <link rel="stylesheet" type="text/css" href="/css/material-design-iconic-font.min.css">
+
+    <!--owl carousel css-->
+    <link href="/css/owl.carousel.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/css/owl.theme.css" rel="stylesheet" type="text/css" media="screen">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/style.css" rel="stylesheet">
+
+    <!-- Color css -->
+    <link href="/css/colors/default.css" rel="stylesheet">
+
     <link href="/css/override.css" rel="stylesheet">
+
     <link href="/css/jquery-ui.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="/js/jquery-3.0.0.min.js"></script>
     <script src="/js/jquery.validate.min.js"></script>
     <script src="/js/jquery-ui.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js?<?php echo date('s')?>"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -59,18 +77,31 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<nav class="navbar">
-    <div class="container-fluid">
+<body data-spy="scroll" data-target="#navbar-menu">
+
+  <div class="navbar navbar-custom navbar-fixed-top sticky" role="navigation">
+      <div class="container">
+
+        <!-- Navbar-header -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/"><img src="/images/iliv8-Logo2-PNG.png"/></a>
+          <!-- Responsive menu button -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <i class="zmdi zmdi-menu"></i>
+          </button>
+
+          <!-- LOGO -->
+          <a class="navbar-brand logo" href="/">
+             <span><img src="/images/iliv8-Logo2-PNG.png"/></span>
+          </a>
+
         </div>
-        <div class="navbar-default" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
+        <!-- end navbar-header -->
+
+        <!-- menu -->
+        <div class="navbar-collapse collapse" id="navbar-menu">
+
+          <!-- Navbar left -->
+          <ul class="nav navbar-nav nav-custom-left">
                 <li><a href="/faqs">faq</a></li>
 
                 <?php if (!isset($_SESSION['user_type'])) { ?>
@@ -109,10 +140,28 @@
                 <?php } ?>
 
             </ul>
+
+          <!-- Navbar right -->
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+	<?php if (!isset($_SESSION['user_type'])) { ?>
+              <a href="/login">Login</a>
+	<?php } else { ?>
+	      <a href="/logout">Logout</a>
+	<?php } ?>
+            </li>
+            <li>
+              <a href="/get-started/supporter/register" class="btn btn-inverse btn-bordered navbar-btn">Signup</a>
+            </li>
+          </ul>
+
         </div>
+        <!--/Menu -->
+      </div>
+      <!-- end container -->
+  </div>
+  <!-- End navbar-custom -->
 
-    </div>
 
-</nav>
-
+  <section class="home bg-img-1" id="home">
 <div class="container-fluid text-center bg-grey">

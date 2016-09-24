@@ -1,131 +1,176 @@
-<style>
-    .by-line{
-        text-align: center;
-    }
-</style>
-        <div class="row" id="get-started-banner">
-            <H1 style="color: white" id="call-out">Lend Your Support</H1>
-            <span style="color: white"> a simple investment today<br /> for a greater return <br />tomorrow</span>
-            <p><a href="/get-started/supporter/register" class="btn support-btns">Get Started</a></p>
-        </div>
+  <!-- HOME -->
+  <section class="home bg-img-2" id="home">
+  <div class="bg-overlay"></div>
+    <!-- <div class="bg-overlay"></div> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
 
-        <div class="row" id="works"><H1>How it works</H1></div>
+          <div class="home-wrapper text-center">
+            <h2 class="animated fadeInDown wow text-white" data-wow-delay=".1s">
+              Lend Your Support
+            </h2>
+            <p class="animated fadeInDown wow text-muted" data-wow-delay=".2s">
+               a simple investment today<br /> for a greater return <br />tomorrow
+            </p>
+            <a href="/get-started/supporter/register" class="btn btn-primary btn-shadow btn-rounded w-lg animated fadeInDown wow" data-wow-delay=".4s">Get Started</a>
+            <div class="clearfix"></div>
+          </div><!-- home wrapper -->
 
-        <div class="row">
+        </div> <!-- end col -->
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+  </section>
+  <!-- END HOME -->
 
-            <div class="col-sm-1"></div>
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <div class="container">
 
-            <div class="col-sm-3">
-                <div><img class="icon" src="images/no1.png"/></div>
-                <div class="pull-left">
-                    <H3>Organizations post campaign</H3>
-                    <p class="desc">Producer posts promotional message to shareitcamp and supporters on platform are
-                        notified</p>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <div class="title-box">
+            <h3 class="fadeIn animated wow" data-wow-delay=".1s">How it works</h3>
+            <div class="border"></div>
+          </div>
+        </div> 
+      </div> <!-- end row -->
+
+      <div class="row text-center">
+        <div class="col-sm-4">
+          <div class="service-item animated fadeInLeft wow" data-wow-delay=".1s">
+            <img src="images/no1.png" width="48" alt="img">
+            <div class="service-detail">
+              <h4>Organizations post campaign</h4>
+              <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
+            </div> <!-- /service-detail -->
+          </div> <!-- /service-item -->
+        </div> <!-- /col -->
+
+        <div class="col-sm-4">
+          <div class="service-item animated fadeInDown wow" data-wow-delay=".3s">
+            <img src="images/no2.png" width="48" alt="img">
+            <div class="service-detail">
+              <h4>You Share It</h4>
+              <p>You share the campaigns you like with your social network</p>
+            </div> <!-- /service-detail -->
+          </div> <!-- /service-item -->
+        </div> <!-- /col -->
+
+        <div class="col-sm-4">
+          <div class="service-item animated fadeInRight wow" data-wow-delay=".5s">
+            <img src="images/no3.png" width="48" alt="img">
+            <div class="service-detail">
+              <h4>You Receive Points</h4>
+              <p>You receive points that can be redeemed for rewards</p>
+            </div> <!-- /service-detail -->
+          </div> <!-- /service-item -->
+        </div> <!-- /col -->       
+      </div> <!--end row -->
+
+	    </div> <!-- end container -->
+  </section>
+  <!-- END FEATURES -->
 
 
-            <div class="col-sm-3">
-                <div><img class="icon" src="images/no2.png"/></div>
-                <div class="pull-left">
-                    <H3>You Share It</H3>
-                    <p class="desc">You share the campaigns you like with your social network</p>
-                </div>
-            </div>
-
-            <div class="col-sm-3">
-                <div><img class="icon" src="images/no3.png"/></div>
-                <div class="pull-left">
-                    <H3>You Receive Points</H3>
-                    <p class="desc">You receive points that can be redeemed for rewards</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-                <H1>Campaigns</H1>
-        </div>
-
-        <div class="row">
+     <div class="row">
             <?php if(count($campaigns) > 0){ ?>
-                <div class="col-md-3">
-                    <p><a href="supporter/campaign/<?php echo $campaigns[0]->friendly_url; ?>">
-                            <?php echo $campaigns[0]->campaign_name; ?>
-                        </a>
-                    </p>
-                    <p class="by-line"><i> by <?php echo $campaigns[0]->getProducer()->org_name; ?></i></<p>
+        <!--Pricing Column-->
+        <article class="pricing-column col-lg-3 col-sm-6">
+            <div class="inner-box fadeIn animated wow" data-wow-delay=".1s">
+                <div class="plan-header text-center">
+                    <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[0]->friendly_url; ?>">
+                            <?php echo $campaigns[0]->campaign_name; ?></h3>
+                    <h2 class="plan-duration"> by <?php echo $campaigns[0]->getProducer()->org_name; ?></h2>
+                    <div>
+			<img src="/images/screenshots/<?php echo $campaigns[0]->screen_shot; ?> " />
+		    </div>
 
-                    <p><a href="supporter/campaign/<?php echo $campaigns[0]->friendly_url; ?>">
-                        <img src="images/screenshots/<?php echo $campaigns[0]->screen_shot; ?>" width="300" height="500"/>
-                        </a>
-                    </p>
-
-                    <a href="supporter/campaign/<?php echo $campaigns[0]->friendly_url; ?>" target="_parent">
-                        <button class="btn support-btns">Support</button>
-                    </a>
                 </div>
+
+                <div class="text-center">
+                    <a href="#" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
+                </div>
+            </div>
+        </article>
             <?php } ?>
 
-            <?php if(count($campaigns) > 1){ ?>
-                <div class="col-md-3">
-                    <p><a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>">
-                            <?php echo $campaigns[1]->campaign_name; ?>
-                        </a>
-                    </p>
-
-                    <p class="by-line"><i> by <?php echo $campaigns[1]->getProducer()->org_name; ?></i></<p>
-
-                    <p><a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>">
-                            <img src="images/screenshots/<?php echo $campaigns[1]->screen_shot; ?>" width="300" height="500"/>
-                        </a>
-                    </p>
-
-                    <a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>" target="_parent">
-                        <button class="btn support-btns">Support</button>
-                    </a>
+ <?php if(count($campaigns) > 1){ ?>
+        <!--Pricing Column-->
+        <article class="pricing-column col-lg-3 col-sm-6">
+            <div class="inner-box fadeIn animated wow" data-wow-delay=".2s">
+                <div class="plan-header text-center">
+                    <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>">
+                            <?php echo $campaigns[1]->campaign_name; ?></h3>
+                    <h2 class="plan-price"><i> by <?php echo $campaigns[1]->getProducer()->org_name; ?></i></h2>
+                    <div class="plan-duration">Per Month</div>
                 </div>
-            <?php } ?>
+                <ul class="plan-stats list-unstyled text-center">
+                    <li>5 Projects</li>
+                    <li>1 GB Storage</li>
+                    <li>No Domain</li>
+                    <li>1 User</li>
+                    <li>24x7 Support</li>
+                </ul>
 
-            <?php if(count($campaigns) > 2){ ?>
-                <div class="col-md-3">
-                    <p><a href="supporter/campaign/<?php echo $campaigns[2]->friendly_url; ?>">
-                            <?php echo $campaigns[2]->campaign_name; ?>
-                        </a>
-                    </p>
-
-                    <p class="by-line"><i> by <?php echo $campaigns[2]->getProducer()->org_name; ?></i></<p>
-
-                    <p><a href="supporter/campaign/<?php echo $campaigns[2]->friendly_url; ?>">
-                            <img src="images/screenshots/<?php echo $campaigns[2]->screen_shot; ?>" width="300" height="500"/>
-                        </a>
-                    </p>
-
-                    <a href="supporter/campaign/<?php echo $campaigns[2]->friendly_url; ?>" target="_parent">
-                        <button class="btn support-btns">Support</button>
-                    </a>
+                <div class="text-center">
+                    <a href="#" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
                 </div>
-            <?php } ?>
+            </div>
+        </article>
+<?php } ?>
 
-            <?php if(count($campaigns) > 3){ ?>
-                <div class="col-md-3">
-                    <p><a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>">
-                            <?php echo $campaigns[3]->campaign_name; ?>
-                        </a>
-                    </p>
-
-                    <p class="by-line"><i> by <?php echo $campaigns[3]->getProducer()->org_name; ?></i></<p>
-
-                    <p><a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>">
-                            <img src="images/screenshots/<?php echo $campaigns[3]->screen_shot; ?>" width="300" height="500"/>
-                        </a>
-                    </p>
-
-                    <a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>" target="_parent">
-                        <button class="btn support-btns">Support</button>
-                    </a>
+ <?php if(count($campaigns) > 2){ ?>
+        <!--Pricing Column-->
+        <article class="pricing-column col-lg-3 col-sm-6">
+            <div class="inner-box fadeIn animated wow" data-wow-delay=".3s">
+                <div class="plan-header text-center">
+                    <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[2]->friendly_url; ?>">
+                            <?php echo $campaigns[2]->campaign_name; ?></h3>
+                    <h2 class="plan-price"><i> by <?php echo $campaigns[2]->getProducer()->org_name; ?></i></h2>
+                    <div class="plan-duration">Per Month</div>
                 </div>
-            <?php } ?>
+                <ul class="plan-stats list-unstyled text-center">
+                    <li>5 Projects</li>
+                    <li>1 GB Storage</li>
+                    <li>No Domain</li>
+                    <li>1 User</li>
+                    <li>24x7 Support</li>
+                </ul>
 
-        </div>
+                <div class="text-center">
+                    <a href="#" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
+                </div>
+            </div>
+        </article>
+<?php } ?>
+ <?php if(count($campaigns) > 3){ ?>
+        <!--Pricing Column-->
+        <article class="pricing-column col-lg-3 col-sm-6">
+            <div class="inner-box fadeIn animated wow" data-wow-delay=".4s">
+                <div class="plan-header text-center">
+                    <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>">
+                            <?php echo $campaigns[3]->campaign_name; ?></h3>
+                    <h2 class="plan-price"><i> by <?php echo $campaigns[3]->getProducer()->org_name; ?></i></h2>
+                    <div class="plan-duration">Per Month</div>
+                </div>
+                <ul class="plan-stats list-unstyled text-center">
+                    <li>5 Projects</li>
+                    <li>1 GB Storage</li>
+                    <li>No Domain</li>
+                    <li>1 User</li>
+                    <li>24x7 Support</li>
+                </ul>
+
+                <div class="text-center">
+                    <a href="#" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
+                </div>
+            </div>
+        </article>
+<?php } ?>
+      </div><!-- end row -->
+
+    </div> <!-- end container -->
+  </section>
+  <!-- END PRICING -->
 

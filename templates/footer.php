@@ -1,3 +1,8 @@
+</section>
+
+
+<footer class="section bg-gray footer">
+
 <div class="row" id="bottom-nav">
     <div class="col-xs-12">
     <nav id="myNavbar">
@@ -33,5 +38,6 @@
 </div>
 </div>
 
+</footer>
 
 </body>
