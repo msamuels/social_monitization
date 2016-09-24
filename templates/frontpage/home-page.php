@@ -76,7 +76,7 @@
      <div class="row">
             <?php if(count($campaigns) > 0){ ?>
         <!--Pricing Column-->
-        <article class="pricing-column col-lg-3 col-sm-6">
+        <article class="pricing-column col-sm-4">
             <div class="inner-box fadeIn animated wow" data-wow-delay=".1s">
                 <div class="plan-header text-center">
                     <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[0]->friendly_url; ?>">
@@ -97,7 +97,7 @@
 
  <?php if(count($campaigns) > 1){ ?>
         <!--Pricing Column-->
-        <article class="pricing-column col-lg-3 col-sm-6">
+        <article class="pricing-column col-sm-4">
             <div class="inner-box fadeIn animated wow" data-wow-delay=".2s">
                 <div class="plan-header text-center">
                     <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>">
@@ -119,7 +119,7 @@
 
  <?php if(count($campaigns) > 2){ ?>
         <!--Pricing Column-->
-        <article class="pricing-column col-lg-3 col-sm-6">
+        <article class="pricing-column col-sm-4">
             <div class="inner-box fadeIn animated wow" data-wow-delay=".3s">
                 <div class="plan-header text-center">
                     <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[2]->friendly_url; ?>">
@@ -140,7 +140,7 @@
 <?php } ?>
  <?php if(count($campaigns) > 3){ ?>
         <!--Pricing Column-->
-        <article class="pricing-column col-lg-3 col-sm-6">
+        <article class="pricing-column col-sm-4">
             <div class="inner-box fadeIn animated wow" data-wow-delay=".4s">
                 <div class="plan-header text-center">
                     <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>">
