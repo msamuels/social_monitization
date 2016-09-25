@@ -24,7 +24,7 @@
   <!-- END HOME -->
 
   <!-- FEATURES -->
-  <section class="section" id="features">
+  <section class="section bg-white" id="features">
     <div class="container">
 
       <div class="row">
@@ -72,7 +72,8 @@
   </section>
   <!-- END FEATURES -->
 
-
+  <section class="section" id="features">
+      <div class="container">
      <div class="row">
             <?php if(count($campaigns) > 0){ ?>
         <!--Pricing Column-->

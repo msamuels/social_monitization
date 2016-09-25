@@ -1,5 +1,3 @@
-</section>
-
 
 <footer class="section bg-gray footer">
 
@@ -36,7 +34,7 @@
     </div>
 
 </div>
-</div>
+
 
 </footer>
 

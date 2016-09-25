@@ -1,3 +1,8 @@
+.bg-white {
+    background-color: white;
+    border-bottom: 1px solid #f5f5f5;
+    border-top: 1px solid #f5f5f5;
+}
 .icon {
     max-width: 62px;
 }
@@ -8,4 +13,7 @@
 
 .icon-3 {
     max-width: 22px;
+}
+.pricing-column .inner-box {
+    babackground-color: white;
 }

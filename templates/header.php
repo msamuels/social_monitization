@@ -52,7 +52,7 @@
     </script>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navbar-menu">
 
 <?php $configs = parse_ini_file('../config.ini'); ?>
 
@@ -76,8 +76,6 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 </script>
-
-<body data-spy="scroll" data-target="#navbar-menu">
 
   <div class="navbar navbar-custom navbar-fixed-top sticky" role="navigation">
       <div class="container">
@@ -163,5 +161,4 @@
   <!-- End navbar-custom -->
 
 
-  <section class="home bg-img-1" id="home">
-<div class="container-fluid text-center bg-grey">
+
