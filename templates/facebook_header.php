@@ -33,7 +33,7 @@
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navbar-menu">
 
 <?php $configs = parse_ini_file('../config.ini'); ?>
 
@@ -55,42 +55,60 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<nav class="navbar">
-    <div class="container-fluid">
+<div class="navbar navbar-custom navbar-fixed-top sticky" role="navigation">
+    <div class="container">
+
+        <!-- Navbar-header -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+            <!-- Responsive menu button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <i class="zmdi zmdi-menu"></i>
             </button>
-            <a class="navbar-brand" href="/"><img src="/iliv8-Logo2-PNG.png" /></a>
+
+            <!-- LOGO -->
+            <a class="navbar-brand logo" href="/">
+                <span><img src="/images/iliv8-Logo2-PNG.png"/></span>
+            </a>
+
         </div>
-        <div class="navbar-default" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
+        <!-- end navbar-header -->
+
+        <!-- menu -->
+        <div class="navbar-collapse collapse" id="navbar-menu">
+
+            <!-- Navbar left -->
+            <ul class="nav navbar-nav nav-custom-left">
                 <li><a href="/faqs">faq</a></li>
 
-                <?php if(!isset($_SESSION['user_type'])) { ?>
+                <?php if (!isset($_SESSION['user_type'])) { ?>
                     <li><a href="/login">log-in</a></li>
-                    <li><a href="/">get started</a></li>
-                    <li><a href="/">about us</a></li>
-                    <li><a href="/organizations">organizations</a></li>
+                    <?php if ($path[1] == "") { ?>
+                        <li><a href="get-started/supporter/register">get started</a></li>
+                    <?php } else { ?>
+                        <li><a href="/create-producer">get started</a></li>
+                    <?php } ?>
+                    <li><a href="/about-us">about us</a></li>
+                    <li><a href="/organizations">for organizations</a></li>
 
                 <?php } else { ?>
-                    <?php if($_SESSION['user_type'] == "supporter") { ?>
+                    <?php if ($_SESSION['user_type'] == "supporter") { ?>
                         <li><a href="/supporter/campaigns">My Campaigns</a></li>
                         <li><a href="/supporter/campaigns/pending">Support Campaigns</a></li>
                         <li><a href="/rewards">Rewards</a></li>
                     <?php } ?>
 
-                    <?php if($_SESSION['user_type'] == "producer") { ?>
+                    <?php if ($_SESSION['user_type'] == "producer") { ?>
                         <li><a href="/campaigns">Campaigns</a></li>
-                        <li><a href="create-campaign">Create Campaign</a></li>
+                        <li><a href="/create-campaign">Create Campaign</a></li>
+                        <li><a href="/invoices">Invoices</a></li>
                         <li><a href="#">Manage Account</a></li>
                     <?php } ?>
 
-                    <?php if($_SESSION['user_type'] == "admin") { ?>
+                    <?php if ($_SESSION['user_type'] == "admin") { ?>
                         <li><a href="/create-reward">Create Rewards</a></li>
                         <li><a href="/admin-rewards">List Rewards</a></li>
+                        <li><a href="/admin/campaigns">Approve Campaigns</a></li>
+                        <li><a href="/admin/supporters">Supporters</a></li>
                     <?php } ?>
 
                     <li><a href="/logout">Logout</a></li>
@@ -98,10 +116,24 @@
                 <?php } ?>
 
             </ul>
+
+            <!-- Navbar right -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <?php if (!isset($_SESSION['user_type'])) { ?>
+                        <a href="/login">Login</a>
+                    <?php } else { ?>
+                        <a href="/logout">Logout</a>
+                    <?php } ?>
+                </li>
+                <li>
+                    <a href="/get-started/supporter/register" class="btn btn-inverse btn-bordered navbar-btn">Signup</a>
+                </li>
+            </ul>
+
         </div>
-
+        <!--/Menu -->
     </div>
-
-</nav>
-
-<div class="container-fluid text-center bg-grey">
+    <!-- end container -->
+</div>
+<!-- End navbar-custom -->
