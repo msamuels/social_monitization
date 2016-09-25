@@ -74,6 +74,16 @@
 
   <section class="section" id="features">
       <div class="container">
+
+          <div class="row">
+              <div class="col-sm-12 text-center">
+                  <div class="title-box">
+                      <h3 class="fadeIn animated wow" data-wow-delay=".1s">Campaigns</h3>
+                      <div class="border"></div>
+                  </div>
+              </div>
+          </div> <!-- end row -->
+
      <div class="row">
             <?php if(count($campaigns) > 0){ ?>
         <!--Pricing Column-->
