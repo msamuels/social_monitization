@@ -1,0 +1,44 @@
+<?
+class Upload{
+	var $target_path;
+	var $uploadFieldName;
+	var $tmp_name;
+	var $operationMsg;
+	var $file_name;
+	
+	function Upload($target_path,$field,$tmp=null){
+		$this->target_path=$target_path;
+		$this->uploadFieldName=$field;
+		
+		if($tmp!=null){
+			$this->tmp_name = $tmp;
+		}else{
+			$this->tmp_name = $_FILES[$field]['tmp_name'];
+		}
+		
+	}
+	
+	function uploadFile($successAction="",$failAction="",$renameto=null){
+		
+		if($renameto!=null){
+			$finalFileName = $renameto;
+		}else{
+			$finalFileName=$_FILES[$this->uploadFieldName]['name'];
+		}
+		
+		//echo "target path: ".$this->target_path;
+		//echo "path is: $this->target_path/$finalFileName";
+		if(move_uploaded_file($this->tmp_name,"$this->target_path/$finalFileName")){
+			
+			$this->operationMsg .= $successAction;
+			//print $successAction;
+		}
+		else{
+			$this->operationMsg .= $failAction;
+			//print $successAction;
+		}
+		return $this->operationMsg;
+	}
+}
+?>
+

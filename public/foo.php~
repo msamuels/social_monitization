@@ -1,0 +1,14 @@
+<?php 
+# create Tito
+ $user = User::create(array('name' => 'Tito', 'state' => 'VA'));
+  
+  # read Tito
+  $user = User::find_by_name('Tito');
+  
+  # update Tito
+  $user->name = 'Tito Jr';
+  $user->save();
+ 
+11 # delete Tito
+ $user->delete();
+
