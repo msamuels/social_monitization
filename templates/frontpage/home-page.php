@@ -7,11 +7,11 @@
         <div class="col-sm-12">
 
           <div class="home-wrapper text-center">
-            <h2 class="animated fadeInDown wow text-white" data-wow-delay=".1s">
-              Lend Your Support
-            </h2>
+              <h2 class="animated fadeInDown wow text-white" data-wow-delay=".1s">
+                  Support. This Simple Investment Makes <span class="text-colored">A Big Difference</span>
+              </h2>
             <p class="animated fadeInDown wow text-muted" data-wow-delay=".2s">
-               a simple investment today<br /> for a greater return <br />tomorrow
+                Shareticamp is a community of passionate individuals who lend their support for projects and causes by sharing them with their networks (social and otherwise). Join shareitcamp and see what a difference your support can make.
             </p>
             <a href="/get-started/supporter/register" class="btn btn-primary btn-shadow btn-rounded w-lg animated fadeInDown wow" data-wow-delay=".4s">Get Started</a>
             <div class="clearfix"></div>
@@ -24,53 +24,91 @@
   <!-- END HOME -->
 
   <!-- FEATURES -->
-  <section class="section bg-white" id="features">
-    <div class="container">
+  <section class="section" id="features">
+      <div class="container">
 
-      <div class="row">
-        <div class="col-sm-12 text-center">
-          <div class="title-box">
-            <h3 class="fadeIn animated wow" data-wow-delay=".1s">How it works</h3>
-            <div class="border"></div>
-          </div>
-        </div> 
-      </div> <!-- end row -->
+          <div class="row">
+              <div class="col-sm-12 text-center">
+                  <div class="title-box">
+                      <p class="title-alt">Sharing</p>
+                      <h3 class="fadeIn animated wow" data-wow-delay=".1s">How Shareitcamp Works</h3>
+                      <div class="border"></div>
+                  </div>
+              </div>
+          </div> <!-- end row -->
 
-      <div class="row text-center">
-        <div class="col-sm-4">
-          <div class="service-item animated fadeInLeft wow" data-wow-delay=".1s">
-            <img src="images/no1.png" width="48" alt="img">
-            <div class="service-detail">
-              <h4>Organizations post campaign</h4>
-              <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
-            </div> <!-- /service-detail -->
-          </div> <!-- /service-item -->
-        </div> <!-- /col -->
+          <div class="row text-center">
+              <div class="col-sm-4">
+                  <div class="service-item animated fadeInLeft wow" data-wow-delay=".1s">
+                      <img src="images/icons/cup.svg" width="48" alt="img">
+                      <div class="service-detail">
+                          <h4>Organizations post campaign</h4>
+                          <p>We work with organizations who are focused on making a positive impact on the communities they serve. These organizations join our platform and post information related to the work they are doing (think toy drives, fundraisers, petitions, or products and services).</p>
+                      </div> <!-- /service-detail -->
+                  </div> <!-- /service-item -->
+              </div> <!-- /col -->
 
-        <div class="col-sm-4">
-          <div class="service-item animated fadeInDown wow" data-wow-delay=".3s">
-            <img src="images/no2.png" width="48" alt="img">
-            <div class="service-detail">
-              <h4>You Share It</h4>
-              <p>You share the campaigns you like with your social network</p>
-            </div> <!-- /service-detail -->
-          </div> <!-- /service-item -->
-        </div> <!-- /col -->
+              <div class="col-sm-4">
+                  <div class="service-item animated fadeInDown wow" data-wow-delay=".3s">
+                      <img src="images/icons/diploma.svg" width="48" alt="img">
+                      <div class="service-detail">
+                          <h4>You Share It</h4>
+                          <p>You are alerted by email once a new campaign is posted. Support the campaigns you like (by clicking support) and sharing it with the social network you like. </p>
+                      </div> <!-- /service-detail -->
+                  </div> <!-- /service-item -->
+              </div> <!-- /col -->
 
-        <div class="col-sm-4">
-          <div class="service-item animated fadeInRight wow" data-wow-delay=".5s">
-            <img src="images/no3.png" width="48" alt="img">
-            <div class="service-detail">
-              <h4>You Receive Points</h4>
-              <p>You receive points that can be redeemed for rewards</p>
-            </div> <!-- /service-detail -->
-          </div> <!-- /service-item -->
-        </div> <!-- /col -->       
-      </div> <!--end row -->
+              <div class="col-sm-4">
+                  <div class="service-item animated fadeInRight wow" data-wow-delay=".5s">
+                      <img src="images/icons/combo_chart.svg" width="48" alt="img">
+                      <div class="service-detail">
+                          <h4>You Receive Points</h4>
+                          <p>For each campaign you support, you will receive points. It’s like a regular rewards program, but instead of shopping and getting points, you get point for supporting an initiative.  </p>
+                      </div> <!-- /service-detail -->
+                  </div> <!-- /service-item -->
+              </div> <!-- /col -->
+          </div> <!--end row -->
 
 	    </div> <!-- end container -->
   </section>
   <!-- END FEATURES -->
+
+  <!-- FEATURES-ALT -->
+  <section class="section bg-gray" id="features">
+      <div class="container">
+
+          <div class="row">
+              <div class="col-sm-6">
+                  <div class="feature-detail">
+
+                      <div class="title-box">
+                          <p class="title-alt">Rewards</p>
+                          <h3 class="fadeIn animated wow" data-wow-delay=".1s">Our Way of Saying Thanks</h3>
+                          <div class="border"></div>
+                      </div>
+
+                      <ul class="zmdi-hc-ul">
+                          <li class="fadeIn animated wow" data-wow-delay=".1s"><i class="zmdi-hc-li zmdi zmdi-caret-right-circle text-colored"></i><span class="text-muted">Receive points for each campaign you support.</span></li>
+
+                          <li class="fadeIn animated wow" data-wow-delay=".2s"><i class="zmdi-hc-li zmdi zmdi-caret-right-circle text-colored"></i><span class="text-muted">Redeem those points for an Amazon gift card </span></li>
+
+                          <li class="fadeIn animated wow" data-wow-delay=".3s"><i class="zmdi-hc-li zmdi zmdi-caret-right-circle text-colored"></i><span class="text-muted">Feel Good!</span></li>
+
+
+                      </ul>
+
+                      <a href="" class="btn btn-primary btn-shadow btn-rounded w-lg animated fadeInDown wow" data-wow-delay=".4s">Get Started</a>
+                  </div>
+              </div>
+
+              <div class="col-sm-6">
+                  <img src="images/amazongiftcard.png" class="img-responsive fadeIn animated wow" data-wow-delay=".2s">
+              </div>
+
+          </div>
+      </div>
+  </section>
+  <!-- END FEATURES-ALT -->
 
   <section class="section" id="features">
       <div class="container">
@@ -78,7 +116,8 @@
           <div class="row">
               <div class="col-sm-12 text-center">
                   <div class="title-box">
-                      <h3 class="fadeIn animated wow" data-wow-delay=".1s">Campaigns</h3>
+                      <p class="title-alt">Projects</p>
+                      <h3 class="fadeIn animated wow" data-wow-delay=".1s">Work Worth Sharing</h3>
                       <div class="border"></div>
                   </div>
               </div>

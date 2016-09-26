@@ -18,7 +18,6 @@
                         <li><a href="/">get started</a></li>
                         <li><a href="/about-us">about Us</a></li>
                         <li><a href="/faqs">faq</a></li>
-                        <li><a href="/">advertisements</a></li>
                         <li><a href="/">blog</a></li>
                         <li><a href="mailto:info@shareitcamp.com">contact us: info@shareitcamp.com</a></li>
                     </ul>

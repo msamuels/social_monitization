@@ -89,7 +89,7 @@
 
           <!-- LOGO -->
           <a class="navbar-brand logo" href="/">
-             <span><img src="/images/iliv8-Logo2-PNG.png"/></span>
+             <span><img src="/images/shareitcamp-logo.svg"/></span>
           </a>
 
         </div>
