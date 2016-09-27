@@ -40,9 +40,9 @@
           <div class="row text-center">
               <div class="col-sm-4">
                   <div class="service-item animated fadeInLeft wow" data-wow-delay=".1s">
-                      <img src="images/icons/cup.svg" width="48" alt="img">
+                      <img src="images/icons/idea.svg" width="48" alt="img">
                       <div class="service-detail">
-                          <h4>Organizations post campaign</h4>
+                          <h4>Organizations Post Projects</h4>
                           <p>We work with organizations who are focused on making a positive impact on the communities they serve. These organizations join our platform and post information related to the work they are doing (think toy drives, fundraisers, petitions, or products and services).</p>
                       </div> <!-- /service-detail -->
                   </div> <!-- /service-item -->
@@ -50,7 +50,7 @@
 
               <div class="col-sm-4">
                   <div class="service-item animated fadeInDown wow" data-wow-delay=".3s">
-                      <img src="images/icons/diploma.svg" width="48" alt="img">
+                      <img src="images/icons/share.svg" width="48" alt="img">
                       <div class="service-detail">
                           <h4>You Share It</h4>
                           <p>You are alerted by email once a new campaign is posted. Support the campaigns you like (by clicking support) and sharing it with the social network you like. </p>
@@ -60,7 +60,7 @@
 
               <div class="col-sm-4">
                   <div class="service-item animated fadeInRight wow" data-wow-delay=".5s">
-                      <img src="images/icons/combo_chart.svg" width="48" alt="img">
+                      <img src="images/icons/rating.svg" width="48" alt="img">
                       <div class="service-detail">
                           <h4>You Receive Points</h4>
                           <p>For each campaign you support, you will receive points. It’s like a regular rewards program, but instead of shopping and getting points, you get point for supporting an initiative.  </p>
