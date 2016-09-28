@@ -1,5 +1,4 @@
 <section class="home bg-img-2" id="home">
-    <!-- <div class="bg-overlay"></div> -->
     <div class="container">
 
         <div class="row" style="text-align: left;  background-color: #d9edf7; padding-left: 49px">
@@ -10,7 +9,12 @@
 
         </div>
 
-        <br/><br/>
+    </div> <!-- end container -->
+</section>
+<!-- END FEATURES -->
+
+<section class="section" id="features">
+    <div class="container">
 
         <div class="row">
 
@@ -135,26 +139,23 @@
 
             </div>
 
-            <br/>
+        </div> <!-- end container -->
+</section>
+<!-- END HOME -->
 
+<!-- FEATURES -->
+<section class="section" id="features">
+    <div class="container">
 
-            <br/>
-
-
-            <br/>
-
-
-            <div class="row">
-                <div class="col-sm-12" style="border-top:1px solid #ccc; margin-top:10px;">
-                    <div class="row"><h2>About <?php echo $producer->org_name; ?></h2></div>
-                    <div class="row">
-                        <?php echo $producer->description; ?>
-                    </div>
+        <div class="row">
+            <div class="col-sm-12" style="border-top:1px solid #ccc; margin-top:10px;">
+                <div class="row"><h2>About <?php echo $producer->org_name; ?></h2></div>
+                <div class="row">
+                    <?php echo $producer->description; ?>
                 </div>
             </div>
-
-
-        </div> <!-- end container -->
-
+        </div>
+        
+    </div> <!-- end container -->
 </section>
-<!-- END FEATURES -->
+<!-- END HOME -->
