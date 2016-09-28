@@ -13,12 +13,31 @@
     <meta property="og:image:width" content="196" />
     <meta property="og:image:height" content="300" />
     <title><?php echo $campaign->campaign_name; ?></title>
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.min.css?<?php echo date('s')?>" rel="stylesheet">
+    <!-- Animate -->
+    <link href="/css/animate.css" rel="stylesheet">
+
+    <!-- Icon-font -->
+    <link rel="stylesheet" type="text/css" href="/css/material-design-iconic-font.min.css">
+
+    <!--owl carousel css-->
+    <link href="/css/owl.carousel.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="/css/owl.theme.css" rel="stylesheet" type="text/css" media="screen">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/style.css" rel="stylesheet">
+
+    <!-- Color css -->
+    <link href="/css/colors/default.css" rel="stylesheet">
+
     <link href="/css/override.css" rel="stylesheet">
+
     <link href="/css/jquery-ui.min.css" rel="stylesheet">
+
     <script src="/js/jquery-3.0.0.min.js"></script>
     <script src="/js/jquery.validate.min.js"></script>
     <script src="/js/jquery-ui.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js?<?php echo date('s')?>"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
