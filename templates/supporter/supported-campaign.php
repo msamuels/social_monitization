@@ -1,7 +1,7 @@
 <section class="section" id="features">
     <div class="container">
 
-        <div class="row" style="text-align: left;  background-color: #d9edf7; padding-left: 49px">
+        <div class="row" style="text-align: left;  background-color: #d9edf7; padding-left: 49px; margin-bottom:20px">
             <!-- Show campaigns supported -->
 
             <H1> <?php echo $campaign->campaign_name; ?> </H1>
@@ -12,15 +12,15 @@
         <div class="row">
 
             <div class="col-sm-4">
-                <div class="fb-share-button" style="margin-bottom: 5px;"
+                <span class="fb-share-button" style="margin-bottom: 5px;"
                      data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>"
                      data-layout="button_count" data-mobile-iframe="true">
-                </div>
+                </span>
 
-                <div><a href="https://twitter.com/share" class="twitter-share-button" data-via="shareitcamp"
+                <span><a href="https://twitter.com/share" class="twitter-share-button" data-via="shareitcamp"
                         data-show-count="false">Tweet</a>
                     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
+                </span>
 
                 <div><img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" class="campaign_image"/></div>
 
@@ -120,9 +120,8 @@
                                 <?php } ?>
                             <?php }
                         } else { ?>
-                            <a href="/login" class="btn support-btns" style="font-size: 12px; width: 260px;">you must be
-                                logged
-                                in to receive points</a>
+                            <a href="/login" class="btn btn-primary btn-shadow btn-rounded w-lg animated fadeInDown wow"
+                               data-wow-delay=".4s" style="font-size: 12px; width: 260px;">you must be logged in to receive points</a>
 
                         <?php } ?>
 
