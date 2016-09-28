@@ -1,4 +1,4 @@
-<section class="home bg-img-2" id="home">
+<section class="section" id="features">
     <div class="container">
 
         <div class="row" style="text-align: left;  background-color: #d9edf7; padding-left: 49px">
@@ -8,13 +8,6 @@
             <h3><p class="by-line"><i>by <?php echo $campaign->getProducer()->org_name; ?></i></p></h3>
 
         </div>
-
-    </div> <!-- end container -->
-</section>
-<!-- END FEATURES -->
-
-<section class="section" id="features">
-    <div class="container">
 
         <div class="row">
 
@@ -139,7 +132,9 @@
 
             </div>
 
-        </div> <!-- end container -->
+        </div>
+
+    </div> <!-- end container -->
 </section>
 <!-- END HOME -->
 
@@ -155,7 +150,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div> <!-- end container -->
 </section>
 <!-- END HOME -->
