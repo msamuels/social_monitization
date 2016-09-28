@@ -142,7 +142,7 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-sm-12" style="border-top:1px solid #ccc; margin-top:10px;">
+            <div class="col-sm-12" style="border-top:1px solid #ccc; margin-top:10px; text-align:center;    ">
                 <div class="row"><h2>About <?php echo $producer->org_name; ?></h2></div>
                 <div class="row">
                     <?php echo $producer->description; ?>
