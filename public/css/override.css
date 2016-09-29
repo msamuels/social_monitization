@@ -17,3 +17,17 @@
 .pricing-column .inner-box {
     babackground-color: white;
 }
+
+ul{
+    list-style: none;
+
+}
+
+ul.list-things li {
+    display:inline;
+    float: left;
+    margin-right: 35px;
+    width:220px;
+    height:455px;
+    margin-bottom: 40px;
+}
