@@ -63,8 +63,10 @@
             }
             ?>
 
-            <a href="/get-started/supporter/register" <?php echo $class[1]; ?>>Supporter</a> |
-            <a href="/create-producer" <?php echo $class[0]; ?>>Producer</a>
+            <p style="text-align:center">
+                <a href="/get-started/supporter/register" <?php echo $class[1]; ?>>Supporter</a> |
+                <a href="/create-producer" <?php echo $class[0]; ?>>Producer</a>
+           </p>
 
         </div>
 
