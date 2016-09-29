@@ -64,18 +64,12 @@
 
         </div>
 
-    </div>
-</section>
-
-<section class="section" id="features">
-    <div class="container">
-
         <div class="row alert alert-success ">
             The importance of your support can't be overstated. Your support helps shine a light on great projects.
         </div>
 
-    </div><!--end container -->
-</section><!--end section -->
+    </div>
+</section>
 
 
 <section class="section" id="features">
