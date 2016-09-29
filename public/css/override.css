@@ -3,6 +3,11 @@
     border-bottom: 1px solid #f5f5f5;
     border-top: 1px solid #f5f5f5;
 }
+
+.error {
+    display: block;=
+}
+
 .icon {
     max-width: 62px;
 }
