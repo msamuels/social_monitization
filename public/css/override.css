@@ -14,8 +14,19 @@
 .icon-3 {
     max-width: 22px;
 }
+
+/*
 .pricing-column .inner-box {
-    babackground-color: white;
+    background-color: white;
+}
+*/
+
+.support-btns{
+    background-color: orange;
+    color: white;
+    font-size:13pt;
+    margin-top: 20px;
+    width: 200px;
 }
 
 ul{
