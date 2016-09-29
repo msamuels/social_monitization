@@ -6,7 +6,7 @@
             <div class="col-sm-12">
                 <div class="text-center">
                     <a class="navbar-brand logo" href="/">
-                        <i class="zmdi zmdi-navigation"></i> <span class="text-uppercase">shareitcamp</span>
+                        <span class="text-uppercase">shareitcamp</span>
                     </a>
 
                     <ul class="list-inline social-circle">
