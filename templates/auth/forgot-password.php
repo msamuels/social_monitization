@@ -58,7 +58,9 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <p style="text-align:center">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </p>
 
                 </form>
             </div>

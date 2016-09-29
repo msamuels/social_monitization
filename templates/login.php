@@ -155,11 +155,14 @@
                         </div>
                     </div>
 
-                    <p><a href="/forgot-password" class="highlighted" style="font-size: medium">Forgot Password</a>
+                    <p style="text-align:center">
+                        <a href="/forgot-password" class="highlighted" style="font-size: medium">Forgot Password</a>
                         | <a href="/get-started/supporter/register" class="highlighted" style="font-size: medium">Register</a>
                     <p>
 
+                    <p style="text-align:center">
                         <button class="btn btn-primary" type="submit">Submit</button>
+                    </p>
 
                 </form>
             </div>
