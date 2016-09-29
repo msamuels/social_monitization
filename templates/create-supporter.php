@@ -68,13 +68,6 @@
             The importance of your support can't be overstated. Your support helps shine a light on great projects.
         </div>
 
-    </div>
-</section>
-
-
-<section class="section" id="features">
-    <div class="container">
-
         <div class="row">
 
             <div class="col-sm-3"></div>
