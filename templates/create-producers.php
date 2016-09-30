@@ -1,6 +1,6 @@
 <style>
     .form-group {
-        padding-bottom: 25px;
+        padding-bottom: 35px;
     }
 </style>
 
