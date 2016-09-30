@@ -130,8 +130,6 @@
                         <li><a href="/admin/supporters">Supporters</a></li>
                     <?php } ?>
 
-                    <li><a href="/logout">Logout</a></li>
-
                 <?php } ?>
 
             </ul>

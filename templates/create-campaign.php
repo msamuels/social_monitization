@@ -126,7 +126,10 @@
                       </SELECT>
                       <br />
                     -->
-                    Non-profits: please consider donating one of the following
+                    <p style="text-align: center">
+                        Non-profits: please consider donating one of the following
+                    </p>
+
                     <ul id="donation-types" style="text-align: center;">
 
                         <li>- <a href="/create-reward" class="highlighted">Reward</a></li>
