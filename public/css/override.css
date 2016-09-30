@@ -35,6 +35,10 @@
 }
 */
 
+.required{
+    color: orange;
+}
+
 .support-btns{
     background-color: orange;
     color: white;
