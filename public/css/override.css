@@ -5,7 +5,16 @@
 }
 
 .error {
-    display: block;=
+    display: block;
+}
+
+.highlighted{
+    color: blue;
+    font-size: 30px;
+}
+
+.highlighted-1{
+    color: blue;
 }
 
 .icon {

@@ -10,8 +10,8 @@
                     </a>
 
                     <ul class="list-inline social-circle">
-                        <li><a href="https://www.facebook.com/shareitcamp"> <i class="zmdi zmdi-facebook"></i> </a></li>
-                        <li><a href="https://twitter.com/shareitcamp"> <i class="zmdi zmdi-twitter"></i> </a></li>
+                        <li><a href="https://www.facebook.com/shareitcamp" target="_blank"> <i class="zmdi zmdi-facebook"></i> </a></li>
+                        <li><a href="https://twitter.com/shareitcamp" target="_blank"> <i class="zmdi zmdi-twitter"></i> </a></li>
                     </ul>
 
                     <ul class="list-inline menu-list m-t-30">

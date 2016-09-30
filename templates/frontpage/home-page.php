@@ -139,7 +139,7 @@
                 </div>
 
                 <div class="text-center">
-                    <a href="#" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
+                    <a href="supporter/campaign/<?php echo $campaigns[0]->friendly_url; ?>" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
                 </div>
             </div>
         </article>
@@ -161,7 +161,7 @@
    
 
                 <div class="text-center">
-                    <a href="#" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
+                    <a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
                 </div>
             </div>
         </article>
@@ -183,7 +183,7 @@
    
 
                 <div class="text-center">
-                    <a href="#" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
+                    <a href="supporter/campaign/<?php echo $campaigns[2]->friendly_url; ?>" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
                 </div>
             </div>
         </article>
@@ -204,7 +204,7 @@
    
 
                 <div class="text-center">
-                    <a href="#" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
+                    <a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
                 </div>
             </div>
         </article>
