@@ -1,3 +1,9 @@
+<style>
+    .form-group {
+        padding-bottom: 25px;
+    }
+</style>
+
 <script>
 
     $(document).ready(function () {
