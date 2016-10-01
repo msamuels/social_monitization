@@ -84,9 +84,9 @@
 
             <div class="col-sm-2"></div>
 
-            <div class="col-sm-9">
+            <div class="col-sm-9 intro-form">
 
-                <H1>Create Producer Account</H1>
+                <H3>CREATE PRODUCER ACCOUNT</H3>
 
                 <?php if (isset($success_info)) { ?>
                     <div class="alert alert-success"><?php echo $success_info; ?></div>
@@ -99,21 +99,21 @@
                         <label class="control-label col-sm-4"><span class="required">* </span>First Name</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" name="first_name" id="first_name"
-                                   placeholder="First Name"/>
+                                  />
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-sm-4"><span class="required">* </span>Last Name</label>
                         <div class="col-sm-8"><input type="text" class="form-control" name="last_name"
-                                                     placeholder="Last Name"/>
+                                                     />
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-sm-4"><span class="required">* </span>Username</label>
                         <div class="col-sm-8"><input type="text" class="form-control" name="user_name"
-                                                     placeholder="Username"/>
+                                                     />
                         </div>
                     </div>
 
@@ -121,7 +121,7 @@
                         <label class="control-label col-sm-4"><span class="required">* </span>Password</label>
                         <div class="col-sm-8">
                             <input type="password" class="form-control" name="password" id="password"
-                                   placeholder="Password"/>
+                                   />
                         </div>
                     </div>
 
@@ -129,21 +129,21 @@
                         <label class="control-label col-sm-4"><span class="required">* </span>Confirm Password</label>
                         <div class="col-sm-8">
                             <input type="password" class="form-control" name="password_confirm"
-                                   placeholder="Confirm Password"/>
+                                   />
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-sm-4"><span class="required">* </span>Email Address</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="email_address" placeholder="Email Address"/>
+                            <input type="text" class="form-control" name="email_address" />
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-sm-4">Organization Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="org_name" placeholder="Organization Name"/>
+                            <input type="text" class="form-control" name="org_name" />
                         </div>
                     </div>
 
@@ -159,7 +159,7 @@
                         <label class="control-label col-sm-4">Org Description</label>
                         <div class="col-sm-8">
                     <textarea name="description" class="form-control" rows="4" cols="50"
-                              placeholder="Organization Description"></textarea>
+                              placeholder="What does your organization do"></textarea>
                         </div>
                     </div>
 

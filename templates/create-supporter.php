@@ -74,9 +74,9 @@
 
             <div class="col-sm-3"></div>
 
-            <div class="col-sm-6">
+            <div class="col-sm-6 intro-form">
 
-                <H1>Create Supporter Account</H1>
+                <H3>CREATE SUPPORTER ACCOUNT</H3>
 
                 <span class="required">* </span> = Required fields
 
@@ -89,21 +89,21 @@
                     <div class="form-group">
                         <label class="control-label col-sm-4"><span class="required">* </span>Username</label>
                         <div class="col-sm-8">
-                            <input class="form-control" type="text" name="username" placeholder="username"/>
+                            <input class="form-control" type="text" name="username" />
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-sm-4" style="text-align:right"><span class="required">* </span>Password</label>
                         <div class="col-sm-8"><input type="password" class="form-control" name="password" id="password"
-                                                     placeholder="password"/>
+                                                     />
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-sm-4"><span class="required">* </span>Confirm Password</label>
                         <div class="col-sm-8"><input type="password" class="form-control"
-                                                     name="password_confirm" placeholder="confirm password"/>
+                                                     name="password_confirm" />
                         </div>
                     </div>
 
@@ -112,7 +112,7 @@
                             Address</label>
                         <div class="col-sm-8" style="text-align:left"><input type="text" class="form-control"
                                                                              name="email_address"
-                                                                             placeholder="email address"/>
+                                                                             />
                         </div>
                     </div>
 
@@ -138,7 +138,7 @@
                         </label>
                         <div class="col-sm-8" style="text-align:left">
                             <input type="text" class="form-control"
-                                   name="followers_fb" placeholder="# of Facebook Friends"/>
+                                   name="followers_fb" />
                         </div>
                     </div>
 
