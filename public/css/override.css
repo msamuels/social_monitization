@@ -4,6 +4,10 @@
     border-top: 1px solid #f5f5f5;
 }
 
+.campaign_image{
+    max-width: 300px;
+}
+
 .error {
     display: block;
 }
