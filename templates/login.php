@@ -111,9 +111,9 @@
 
             <div class="col-sm-3"></div>
 
-            <div class="col-sm-6">
+            <div class="col-sm-6 intro-form">
 
-                <H1>Login </H1>
+                <H3>LOGIN </H3>
                 <!--
                         <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
                     </fb:login-button>
@@ -160,7 +160,7 @@
                             <input type="password" class="form-control" name="password" placeholder="Enter Password"/>
                         </div>
                     </div>
-
+                    <br/>
                     <p style="text-align:center">
                         <a href="/forgot-password" class="highlighted" style="font-size: medium">Forgot Password</a>
                         | <a href="/get-started/supporter/register" class="highlighted" style="font-size: medium">Register</a>

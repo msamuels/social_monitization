@@ -100,9 +100,9 @@
         <div class="row text-center">
             <div class="col-sm-4">
                 <div class="service-item animated fadeInLeft wow" data-wow-delay=".1s">
-                    <img src="images/no1.png" width="48" alt="img">
+                    <h2><i class="zmdi zmdi-collection-item-1 text-colored"></i></h2>
                     <div class="service-detail">
-                        <h4>Complete short form<</h4>
+                        <h4>Complete short form</h4>
                         <p>Give us a few details about the campaign you are promoting,
                             preferably with a picture and a link.</p>
                     </div> <!-- /service-detail -->
@@ -113,7 +113,7 @@
             <div class="row text-center">
                 <div class="col-sm-4">
                     <div class="service-item animated fadeInLeft wow" data-wow-delay=".1s">
-                        <img src="images/no2.png" width="48" alt="img">
+                        <h2><i class="zmdi zmdi-collection-item-2 text-colored"></i></h2>
                         <div class="service-detail">
                             <h4>Set a 'reply by date'</h4>
                             <p>Give supporters a deadline by which they need to support your campaign.</p>
@@ -124,9 +124,9 @@
                 <div class="row text-center">
                     <div class="col-sm-4">
                         <div class="service-item animated fadeInLeft wow" data-wow-delay=".1s">
-                            <img src="images/no2.png" width="48" alt="img">
+                            <h2><i class="zmdi zmdi-collection-item-3 text-colored"></i></h2>
                             <div class="service-detail">
-                                <h4>Supporters share your message<</h4>
+                                <h4>Supporters share your message</h4>
                                 <p>Supporters agree to share your message with their social networks. </p>
                             </div> <!-- /service-detail -->
                         </div> <!-- /service-item -->
