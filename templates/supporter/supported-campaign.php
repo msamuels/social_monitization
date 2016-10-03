@@ -23,7 +23,7 @@
                 </span>
 
                 <div>
-                    <a id="single_image" href="/images/screenshots/<?php echo $campaigns->screen_shot; ?>">
+                    <a id="single_image" href="/images/screenshots/<?php echo $campaign->screen_shot; ?>">
                         <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" class="campaign_image"/>
                     </a>
                 </div>
