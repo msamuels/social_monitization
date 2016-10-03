@@ -105,15 +105,8 @@
           <!-- Navbar left -->
           <ul class="nav navbar-nav nav-custom-left">
                 <li><a href="/faqs">faq</a></li>
-              <!--
+
                 <?php if (!isset($_SESSION['user_type'])) { ?>
-                    <li><a href="/login">log-in</a></li>
-                    <?php if ($path[1] == "") { ?>
-                        <li><a href="get-started/supporter/register">get started</a></li>
-                    <?php } else { ?>
-                        <li><a href="/create-producer">get started</a></li>
-                    <?php } ?>
-                -->
                     <li><a href="/about-us">about us</a></li>
                     <li><a href="/organizations">for organizations</a></li>
 
