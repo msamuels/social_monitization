@@ -22,7 +22,11 @@
                     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </span>
 
-                <div><img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" class="campaign_image"/></div>
+                <div>
+                    <a id="single_image" href="/images/screenshots/<?php echo $campaigns->screen_shot; ?>">
+                        <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" class="campaign_image"/>
+                    </a>
+                </div>
 
                 <div class="fb-share-button"
                      data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>"
