@@ -34,6 +34,8 @@
 
     <link href="/css/jquery-ui.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+
     <script src="/js/jquery-3.0.0.min.js"></script>
     <script src="/js/jquery.validate.min.js"></script>
     <script src="/js/jquery-ui.min.js"></script>
@@ -43,7 +45,10 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
     <![endif]-->
+
+    <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 
     <!-- Test Site code
    <script src="//load.sumome.com/" data-sumo-site-id="903902e8ecca928b627578f56a2123411545d219f683743e0293c3f22d4dbfd5" async="async"></script>
@@ -100,12 +105,6 @@
                 <li><a href="/faqs">faq</a></li>
 
                 <?php if (!isset($_SESSION['user_type'])) { ?>
-                    <li><a href="/login">log-in</a></li>
-                    <?php if ($path[1] == "") { ?>
-                        <li><a href="get-started/supporter/register">get started</a></li>
-                    <?php } else { ?>
-                        <li><a href="/create-producer">get started</a></li>
-                    <?php } ?>
                     <li><a href="/about-us">about us</a></li>
                     <li><a href="/organizations">for organizations</a></li>
 

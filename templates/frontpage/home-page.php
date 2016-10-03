@@ -129,11 +129,16 @@
         <article class="pricing-column col-sm-4">
             <div class="inner-box fadeIn animated wow" data-wow-delay=".1s">
                 <div class="plan-header text-center">
-                    <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[0]->friendly_url; ?>">
-                            <?php echo $campaigns[0]->campaign_name; ?></h3>
+                    <h3 class="plan-title">
+                        <a href="supporter/campaign/<?php echo $campaigns[0]->friendly_url; ?>">
+                            <?php echo $campaigns[0]->campaign_name; ?>
+                        </a>
+                    </h3>
                     <h2 class="plan-duration"> by <?php echo $campaigns[0]->getProducer()->org_name; ?></h2>
                     <div class="thumbnail thumbnail-box">
-			            <img src="/images/screenshots/<?php echo $campaigns[0]->screen_shot; ?> "  width="300" height="500" />
+                        <a id="single_image" href="/images/screenshots/<?php echo $campaigns[0]->screen_shot; ?>">
+			                <img src="/images/screenshots/<?php echo $campaigns[0]->screen_shot; ?> "  width="300" height="500" />
+                        </a>
 		             </div>
 
                 </div>
@@ -150,11 +155,16 @@
         <article class="pricing-column col-sm-4">
             <div class="inner-box fadeIn animated wow" data-wow-delay=".2s">
                 <div class="plan-header text-center">
-                    <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>">
-                            <?php echo $campaigns[1]->campaign_name; ?></h3>
+                    <h3 class="plan-title">
+                        <a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>">
+                            <?php echo $campaigns[1]->campaign_name; ?>
+                        </a>
+                    </h3>
                     <h2 class="plan-duration"> by <?php echo $campaigns[1]->getProducer()->org_name; ?></h2>
                     <div class="thumbnail thumbnail-box">
-			            <img src="/images/screenshots/<?php echo $campaigns[1]->screen_shot; ?> "  width="300" height="500" />
+                        <a id="single_image" href="/images/screenshots/<?php echo $campaigns[1]->screen_shot; ?>">
+			                <img src="/images/screenshots/<?php echo $campaigns[1]->screen_shot; ?> "  width="300" height="500" />
+                        </a>
 		            </div>
 
                 </div>
@@ -172,11 +182,16 @@
         <article class="pricing-column col-sm-4">
             <div class="inner-box fadeIn animated wow" data-wow-delay=".3s">
                 <div class="plan-header text-center">
-                    <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[2]->friendly_url; ?>">
-                            <?php echo $campaigns[2]->campaign_name; ?></h3>
+                    <h3 class="plan-title">
+                        <a href="supporter/campaign/<?php echo $campaigns[2]->friendly_url; ?>">
+                            <?php echo $campaigns[2]->campaign_name; ?>
+                        </a>
+                    </h3>
                     <h2 class="plan-duration"> by <?php echo $campaigns[2]->getProducer()->org_name; ?></h2>
                     <div class="thumbnail thumbnail-box">
+                        <a id="single_image" href="/images/screenshots/<?php echo $campaigns[2]->screen_shot; ?>">
 			                <img src="/images/screenshots/<?php echo $campaigns[2]->screen_shot; ?> "  width="300" height="500" />
+                        </a>
 		             </div>
 
                 </div>
@@ -193,11 +208,16 @@
         <article class="pricing-column col-sm-4">
             <div class="inner-box fadeIn animated wow" data-wow-delay=".4s">
                 <div class="plan-header text-center">
-                    <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>">
-                            <?php echo $campaigns[3]->campaign_name; ?></h3>
+                    <h3 class="plan-title">
+                        <a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>">
+                            <?php echo $campaigns[3]->campaign_name; ?>
+                        </a>
+                    </h3>
                     <h2 class="plan-duration"> by <?php echo $campaigns[3]->getProducer()->org_name; ?></h2>
                     <div class=""thumbnail thumbnail-box">
+                    <a id="single_image" href="/images/screenshots/<?php echo $campaigns[3]->screen_shot; ?>">
 			            <img src="/images/screenshots/<?php echo $campaigns[3]->screen_shot; ?> "  width="300" height="500" />
+                    </a>
 		    </div>
 
                 </div>
