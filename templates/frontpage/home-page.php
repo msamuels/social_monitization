@@ -132,9 +132,9 @@
                     <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[0]->friendly_url; ?>">
                             <?php echo $campaigns[0]->campaign_name; ?></h3>
                     <h2 class="plan-duration"> by <?php echo $campaigns[0]->getProducer()->org_name; ?></h2>
-                    <div>
-			<img src="/images/screenshots/<?php echo $campaigns[0]->screen_shot; ?> "  width="300" height="500" />
-		    </div>
+                    <div class="thumbnail thumbnail-box">
+			            <img src="/images/screenshots/<?php echo $campaigns[0]->screen_shot; ?> "  width="300" height="500" />
+		             </div>
 
                 </div>
 
@@ -153,9 +153,9 @@
                     <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>">
                             <?php echo $campaigns[1]->campaign_name; ?></h3>
                     <h2 class="plan-duration"> by <?php echo $campaigns[1]->getProducer()->org_name; ?></h2>
-                    <div>
-			<img src="/images/screenshots/<?php echo $campaigns[1]->screen_shot; ?> "  width="300" height="500" />
-		    </div>
+                    <div class="thumbnail thumbnail-box">
+			            <img src="/images/screenshots/<?php echo $campaigns[1]->screen_shot; ?> "  width="300" height="500" />
+		            </div>
 
                 </div>
    
@@ -175,9 +175,9 @@
                     <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[2]->friendly_url; ?>">
                             <?php echo $campaigns[2]->campaign_name; ?></h3>
                     <h2 class="plan-duration"> by <?php echo $campaigns[2]->getProducer()->org_name; ?></h2>
-                    <div>
-			<img src="/images/screenshots/<?php echo $campaigns[2]->screen_shot; ?> "  width="300" height="500" />
-		    </div>
+                    <div class="thumbnail thumbnail-box">
+			                <img src="/images/screenshots/<?php echo $campaigns[2]->screen_shot; ?> "  width="300" height="500" />
+		             </div>
 
                 </div>
    
@@ -196,8 +196,8 @@
                     <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>">
                             <?php echo $campaigns[3]->campaign_name; ?></h3>
                     <h2 class="plan-duration"> by <?php echo $campaigns[3]->getProducer()->org_name; ?></h2>
-                    <div>
-			<img src="/images/screenshots/<?php echo $campaigns[3]->screen_shot; ?> "  width="300" height="500" />
+                    <div class=""thumbnail thumbnail-box">
+			            <img src="/images/screenshots/<?php echo $campaigns[3]->screen_shot; ?> "  width="300" height="500" />
 		    </div>
 
                 </div>

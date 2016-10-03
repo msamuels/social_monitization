@@ -7,7 +7,9 @@
 .campaign_image{
     max-width: 300px;
 }
-
+.thumbnail-box{
+    height:460px;
+}
 .error {
     display: block;
 }
