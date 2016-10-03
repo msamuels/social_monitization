@@ -34,7 +34,7 @@
 
     <link href="/css/jquery-ui.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
 
     <script src="/js/jquery-3.0.0.min.js"></script>
     <script src="/js/jquery.validate.min.js"></script>
@@ -48,7 +48,7 @@
 
     <![endif]-->
 
-    <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+    <script type="text/javascript" src="/fancybox/jquery.fancybox.pack.js"></script>
 
     <!-- Test Site code
    <script src="//load.sumome.com/" data-sumo-site-id="903902e8ecca928b627578f56a2123411545d219f683743e0293c3f22d4dbfd5" async="async"></script>
