@@ -41,6 +41,14 @@
 }
 */
 
+.plan-duration {
+    margin-bottom: 20px;
+}
+
+.plan-title {
+    height: 20px;
+}
+
 .required{
     color: orange;
 }
