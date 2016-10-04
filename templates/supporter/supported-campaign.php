@@ -11,7 +11,7 @@
 
         <div class="row">
 
-            <div class="col-sm-4">
+            <div class="col-sm-8">
                 <span class="fb-share-button" style="margin-bottom: 5px;"
                      data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>"
                      data-layout="button_count" data-mobile-iframe="true">
@@ -33,28 +33,6 @@
                      data-layout="button_count" data-mobile-iframe="true">
                 </div>
 
-            </div>
-
-
-            <div class="col-sm-4">
-                <h2>Description</h2>
-                <?php echo $campaign->copy; ?>
-
-                <?php if ($reward) { ?>
-                    <H2>Rewards: </H2>
-                    <p><?php echo $reward->reward_name; ?></p>
-                    <p><img src="/images/rewards/<?php echo $reward->image; ?>" height="100" width="100"/></p>
-                    <form method="POST" action="/save-post-to-fb">
-                        <input type="hidden" name="message" id="messgae"
-                               value="<?php echo $supported_campaign->campaign->campaign_name; ?>"/>
-
-                        <div class="fb-share-button"
-                             data-href="<?php echo $base_url; ?>
-                /supporter/campaign/<?php echo $supported_campaign->campaign->friendly_url; ?>"
-                             data-layout="button_count" data-mobile-iframe="true">
-                        </div>
-                    </form>
-                <?php } ?>
             </div>
 
             <div class="col-sm-4">
@@ -137,6 +115,29 @@
 
         </div>
 
+        <div class="row">
+            <div class="col-sm-12"  style="border-top:1px solid #ccc; margin-top:10px; text-align:center;">
+            <h2>Description</h2>
+            <?php echo $campaign->copy; ?>
+
+            <?php if ($reward) { ?>
+                <H2>Rewards: </H2>
+                <p><?php echo $reward->reward_name; ?></p>
+                <p><img src="/images/rewards/<?php echo $reward->image; ?>" height="100" width="100"/></p>
+                <form method="POST" action="/save-post-to-fb">
+                    <input type="hidden" name="message" id="messgae"
+                           value="<?php echo $supported_campaign->campaign->campaign_name; ?>"/>
+
+                    <div class="fb-share-button"
+                         data-href="<?php echo $base_url; ?>
+                /supporter/campaign/<?php echo $supported_campaign->campaign->friendly_url; ?>"
+                         data-layout="button_count" data-mobile-iframe="true">
+                    </div>
+                </form>
+            <?php } ?>
+        </div>
+        </div>
+
     </div> <!-- end container -->
 </section>
 <!-- END HOME -->
@@ -146,7 +147,7 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-sm-12" style="border-top:1px solid #ccc; margin-top:10px; text-align:center;    ">
+            <div class="col-sm-12" style="border-top:1px solid #ccc; margin-top:10px; text-align:center;">
                 <div class="row"><h2>About <?php echo $producer->org_name; ?></h2></div>
                 <div class="row">
                     <?php echo $producer->description; ?>
