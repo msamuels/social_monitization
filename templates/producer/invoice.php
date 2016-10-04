@@ -31,8 +31,8 @@
         <div class="row">
 
             <H2>Details</H2>
-            <label>Duration:</label> <?php echo date_format($campaign->start_date, 'Y-m-d '); ?> -
-            <?php echo date_format($campaign->end_date, 'Y-m-d '); ?>
+            <label>Duration:</label> <?php echo date_format($campaign->start_date, 'F d, Y '); ?> -
+            <?php echo date_format($campaign->end_date, 'F d, Y '); ?>
             <br/>
             <label>Platforms: Facebook</label>
 

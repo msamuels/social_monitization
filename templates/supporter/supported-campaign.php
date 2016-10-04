@@ -41,9 +41,9 @@
 
                     </div>
                     <div class="col-sm-11" style="text-align: left;">
-                        <p><strong>Start Date:</strong> <?php echo date_format($campaign->start_date, 'Y-m-d '); ?></p>
-                        <p><strong>End Date:</strong> <?php echo date_format($campaign->end_date, 'Y-m-d '); ?></p>
-                        <p><strong>Respond By:</strong> <?php echo date_format($campaign->end_date, 'Y-m-d '); ?></p>
+                        <p><strong>Start Date:</strong> <?php echo date_format($campaign->start_date, 'F d, Y '); ?></p>
+                        <p><strong>End Date:</strong> <?php echo date_format($campaign->start_date, 'F d, Y '); ?></p>
+                        <p><strong>Respond By:</strong> <?php echo date_format($campaign->start_date, 'F d, Y '); ?></p>
                     </div>
                 </div>
 
