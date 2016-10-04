@@ -133,7 +133,7 @@
                             <?php echo $campaigns[0]->campaign_name; ?></h3>
                     <h2 class="plan-duration"> by <?php echo $campaigns[0]->getProducer()->org_name; ?></h2>
                     <div class="thumbnail thumbnail-box">
-			            <img src="/images/screenshots/<?php echo $campaigns[0]->screen_shot; ?> "  style="max-height: 500px;" width="300" height="500" />
+			            <img src="/images/screenshots/<?php echo $campaigns[0]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
 		             </div>
 
                 </div>
@@ -154,7 +154,7 @@
                             <?php echo $campaigns[1]->campaign_name; ?></h3>
                     <h2 class="plan-duration"> by <?php echo $campaigns[1]->getProducer()->org_name; ?></h2>
                     <div class="thumbnail thumbnail-box">
-			            <img src="/images/screenshots/<?php echo $campaigns[1]->screen_shot; ?> "  width="300" height="500" />
+			            <img src="/images/screenshots/<?php echo $campaigns[1]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
 		            </div>
 
                 </div>
@@ -176,7 +176,7 @@
                             <?php echo $campaigns[2]->campaign_name; ?></h3>
                     <h2 class="plan-duration"> by <?php echo $campaigns[2]->getProducer()->org_name; ?></h2>
                     <div class="thumbnail thumbnail-box">
-			                <img src="/images/screenshots/<?php echo $campaigns[2]->screen_shot; ?> "  width="300" height="500" />
+			                <img src="/images/screenshots/<?php echo $campaigns[2]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
 		             </div>
 
                 </div>
@@ -197,7 +197,7 @@
                             <?php echo $campaigns[3]->campaign_name; ?></h3>
                     <h2 class="plan-duration"> by <?php echo $campaigns[3]->getProducer()->org_name; ?></h2>
                     <div class=""thumbnail thumbnail-box">
-			            <img src="/images/screenshots/<?php echo $campaigns[3]->screen_shot; ?> "  width="300" height="500" />
+			            <img src="/images/screenshots/<?php echo $campaigns[3]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
 		    </div>
 
                 </div>
