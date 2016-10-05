@@ -291,12 +291,33 @@ $app->get('/producer/campaign/:id', function ($id) use($app) {
 
     $campaign = Campaign::find_by_campaign_id($id);
 
+    // @TODO move this to a central function
+    $campaign_supporters = Campaign_response::find('all',
+        array('conditions' => array('campaign_id in (?)', array($id))));
+
+    $supporter_ids = array();
+
+    foreach ($campaign_supporters as $cs) {
+        $supporter_ids[] = $cs->supporter_id;
+    }
+
+    if (count($supporter_ids) == 0) {
+        $supporters = array();
+    }else{
+        $supporters = Supporter::find($supporter_ids);
+    }
+
+    if (count($supporters) == 1) {
+        $supporters = array($supporters);
+    }
+
+
     $reward = Reward::find_by_campaign_id($campaign->campaign_id);
 
     $producer = $campaign->getProducer();
 
     $app->render('producer/campaign-detail.php', array('campaign' => $campaign, 'base_url' => $base_url,
-        'reward' => $reward, 'producer' => $producer,));
+        'reward' => $reward, 'producer' => $producer, 'supporters' => $supporters));
 });
 
 $app->get('/invoices', function () use($app) {

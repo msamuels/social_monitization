@@ -83,6 +83,25 @@
                     </div>
                     <div class="col-sm-11" style="text-align: left;">
                         <p><strong>5 Points</strong></p>
+                        <p><strong><?php echo count($supporters); ?></strong> Supporter(s)</p>
+                        <p>
+                        <ul style="list-style: none">
+                            <?php
+                            if (count($supporters) > 0) {
+                                foreach ($supporters as $supporter) {
+
+                                    ?>
+                                    <li style="border-bottom: 1px solid  #0f0f0f;">
+                                        <i><?php echo $supporter->user_name; ?></i><br/>
+                                        Followers: <?php echo $supporter->id_follower_count; ?>
+                                    </li>
+
+                                    <?php
+                                }
+                            }
+                            ?>
+                        </ul>
+                        </p>
                     </div>
                 </div>
 
