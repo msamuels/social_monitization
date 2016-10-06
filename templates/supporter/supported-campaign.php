@@ -16,7 +16,7 @@
                      data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>"
                      data-layout="button_count" data-mobile-iframe="true">
                 </span>
-
+                <br />
                 <span><a href="https://twitter.com/share" class="twitter-share-button" data-via="shareitcamp"
                         data-show-count="false">Tweet</a>
                     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
