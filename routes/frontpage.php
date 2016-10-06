@@ -3,7 +3,7 @@
 # Supporter Login page
 $app->get('/', function () use ($app){
 
-    $options = array('limit' => 4, 'conditions' => array("approved = 'Y'"));
+    $options = array('limit' => 4,  'order' => 'campaign_id desc', 'conditions' => array("approved = 'Y'"));
     $campaigns = Campaign::all($options);
 
     $app->render('frontpage/home-page.php', array('campaigns'=>$campaigns));
