@@ -347,3 +347,51 @@ $app->post('/save-campaign-post-link', function () use ($app){
     }
 
 });
+
+// Edit account info
+$app->get("/account", function () use ($app) {
+
+    $user_name = $app->view()->getData('user');
+    $supporter = Supporter::find_by_user_name($user_name);
+
+    $app->render('auth/account.php', array('supporter' => $supporter));
+});
+
+
+# Update account
+$app->post('/update-account', function () use ($app){
+
+    if ($app->request->getMethod() == 'POST') {
+
+        $req = $app->request->post();
+
+        $campaign_response = Campaign_response::find('all', array('conditions' => array('campaign_id = ? AND
+        supporter_id = ?', $req['campaign_id'], $req['supporter_id'])));
+
+        // TODO maybe do a loop over the campaign responses. dont just update the first one
+        $response = $campaign_response[0]->update_attributes(
+            array('campaign_response' => $req['post-link']
+            ));
+
+        // Auto respond to to supporter
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $headers .= 'From: info@shareitcamp.com' . "\r\n";
+
+        $to = 'markspeed_718@yahoo.com';
+        $subject = 'Campaign response (post link) added to shareitcamp';
+
+        $body = "<p>A supporter has added the link to their post<p>";
+
+        $body .= "<p>Thanks, <br />
+        The shareitcamp team</p>";
+
+        mail($to, $subject, $body, $headers);
+
+        $app->flash('success_info', 'Supporter Saved');
+
+        $app->redirect('/supporter/campaign/'.$req['campaign_id']);
+
+    }
+
+});
