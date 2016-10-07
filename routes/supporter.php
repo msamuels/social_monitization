@@ -353,8 +353,14 @@ $app->get("/account", function () use ($app) {
 
     $user_name = $app->view()->getData('user');
     $supporter = Supporter::find_by_user_name($user_name);
+    $flash = $app->view()->getData('flash');
 
-    $app->render('supporter/account.php', array('supporter' => $supporter));
+    $success_info = '';
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
+    }
+
+    $app->render('supporter/account.php', array('supporter' => $supporter, 'success_info' => $success_info));
 });
 
 

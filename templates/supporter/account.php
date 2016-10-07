@@ -9,11 +9,10 @@
 
                 <H1>Account</H1>
                 <p> Update your account information.</p>
-                
-                <?php if (isset($success_info)) { ?>
+
+                <?php if (isset($success_info) && $success_info != "") { ?>
                     <div class="alert alert-success"><?php echo $success_info; ?></div>
                 <?php } ?>
-
 
                 <?php if (!empty($email_error)) { ?>
                     <div class="alert alert-danger"><?php echo $email_error; ?></div>
