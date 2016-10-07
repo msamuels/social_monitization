@@ -1,9 +1,3 @@
-<style>
-    .form-group {
-        padding-bottom: 35px;
-    }
-</style>
-
 <script>
 
     $(document).ready(function () {
@@ -95,7 +89,7 @@
 
                 <span class="required">* </span> = Required fields
 
-                <form action="/save-producer" method="POST" id="create-producer">
+                <form action="/save-producer" method="POST" id="create-producer" class="form-horizontal">
                     <div class="form-group">
                         <label class="control-label col-sm-4"><span class="required">* </span>First Name</label>
                         <div class="col-sm-8">

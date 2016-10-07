@@ -1,9 +1,3 @@
-<style>
-    .form-group {
-        padding-bottom: 35px;
-    }
-</style>
-
 <script>
 
     $(document).ready(function () {
@@ -133,7 +127,7 @@
                     <div class="alert alert-danger"><?php echo $error; ?></div>
                 <?php } ?>
 
-                <form action="/login" method="POST" id="login">
+                <form action="/login" method="POST" id="login" class="form-horizontal">
 
                     <div class="form-group">
                         <label class="control-label col-sm-4">Account Type</label>
