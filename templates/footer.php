@@ -23,7 +23,7 @@
                     </ul>
 
                     <p class="text-muted m-b-0">  Copyright 2016 shareitcamp.com. All rights reserved<br/>
-                        <a href="/terms-and-conditions">Terms of Service</a> | Privacy Policy</p>
+                       Terms of Service |  <a href="/privacy-policy">Privacy Policy</a></p>
 
                 </div>
             </div>

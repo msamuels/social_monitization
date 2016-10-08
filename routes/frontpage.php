@@ -28,7 +28,7 @@ $app->get('/faqs', function () use ($app){
 });
 
 # FAQ page
-$app->get('/terms-and-conditions', function () use ($app){
+$app->get('/privacy-policy', function () use ($app){
 
-    $app->render('frontpage/tc.php');
+    $app->render('frontpage/privacy-policy.php');
 });
