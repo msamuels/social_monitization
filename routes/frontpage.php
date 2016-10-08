@@ -26,3 +26,9 @@ $app->get('/faqs', function () use ($app){
 
     $app->render('frontpage/faq.php');
 });
+
+# FAQ page
+$app->get('/terms-and-conditions', function () use ($app){
+
+    $app->render('frontpage/tc.php');
+});
