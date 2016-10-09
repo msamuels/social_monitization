@@ -294,7 +294,7 @@ $app->get('/rewards', $authenticate($app), function () use ($app){
 
     $pointsEarned = count($supportedCampaigns) * 5;
 
-    $app->render('list-rewards.php', array('rewards' => $rewards, 'success_info' => $success_info,
+    $app->render('supporter/list-rewards.php', array('rewards' => $rewards, 'success_info' => $success_info,
         'points_earned' => $pointsEarned));
 });
 
@@ -387,6 +387,51 @@ $app->post('/update-account', function () use ($app){
         $app->flash('success_info', 'Account updated');
 
         $app->redirect('/account');
+
+    }
+
+});
+
+$app->get('/claim-rewards', function () use ($app){
+
+    $user_name = $app->view()->getData('user');
+    $supporter = Supporter::find_by_user_name($user_name);
+
+    $app->render('supporter/claim-rewards.php', array('supporter' => $supporter));
+});
+
+# Update account
+$app->post('/do-claim-reward', function () use ($app){
+
+    if ($app->request->getMethod() == 'POST') {
+
+        $req = $app->request->post();
+
+        // Auto respond to to supporter
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $headers .= 'From: service@shareitcamp.com' . "\r\n";
+
+        $user_name = $app->view()->getData('user');
+        $supporter = Supporter::find_by_user_name($user_name);
+
+
+        $to = $supporter->email_address;
+        $subject = 'Reward claim';
+
+        $body = "<p>A supporter has added the link to their post<p>";
+
+        $body .= "<p>Thanks, <br />
+        The shareitcamp team</p>";
+
+        mail('service@shareitcamp.com', $subject, $body, $headers);
+
+
+        mail($to, $subject, $body, $headers);
+
+        $app->flash('success_info', 'Account updated');
+
+        $app->redirect('/claim-rewards');
 
     }
 
