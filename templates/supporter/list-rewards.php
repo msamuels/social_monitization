@@ -18,11 +18,13 @@
                     foreach ($rewards as $reward) {
                         ?>
                         <li>
-                            <p><a href="/claim-rewards"> <img src="images/rewards/<?php echo $reward->image; ?>"
-                                                                 height="100" width="100"/></a></p>
+                            <p><a href="/claim-rewards/<?php echo $reward->reward_id; ?>">
+                                    <img src="images/rewards/<?php echo $reward->image; ?>"
+                                         height="100" width="100"/></a></p>
                             <p><?php echo $reward->reward_name ?></p>
                             <p><?php echo $reward->point_value; ?> Pts</p>
-                            <a href="claim-rewards" class="btn btn-primary" type="submit">Redeem</a>
+                            <a href="/claim-rewards/<?php echo $reward->reward_id; ?>" class="btn btn-primary"
+                               type="submit">Redeem</a>
                         </li>
                         <?php
                     }

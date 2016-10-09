@@ -392,12 +392,21 @@ $app->post('/update-account', function () use ($app){
 
 });
 
-$app->get('/claim-rewards', function () use ($app){
+$app->get('/claim-rewards/:reward_id', function ($reward_id) use ($app){
 
     $user_name = $app->view()->getData('user');
     $supporter = Supporter::find_by_user_name($user_name);
 
-    $app->render('supporter/claim-rewards.php', array('supporter' => $supporter));
+    $reward = Reward::find_by_reward_id($reward_id);
+
+    $supportedCampaigns = Campaign_response::find('all',
+        array('conditions' => array('supporter_id in (?)', array($supporter->id_supporter))));
+
+    // @TODO move hard-coded multiplier to central place
+    $pointsEarned = count($supportedCampaigns) * 5;
+
+    $app->render('supporter/claim-rewards.php', array('supporter' => $supporter, 'reward' => $reward,
+        'pointsEarned' => $pointsEarned));
 });
 
 # Update account
@@ -406,6 +415,10 @@ $app->post('/do-claim-reward', function () use ($app){
     if ($app->request->getMethod() == 'POST') {
 
         $req = $app->request->post();
+
+        // @TODO Update supporter rewards count
+
+        $reward = Reward::get_by_reward_id($req['reward_id']);
 
         // Auto respond to to supporter
         $headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -417,16 +430,20 @@ $app->post('/do-claim-reward', function () use ($app){
 
 
         $to = $supporter->email_address;
-        $subject = 'Reward claim';
+        $subject = 'Reward claim'. $reward->reward_name;
 
-        $body = "<p>A supporter has added the link to their post<p>";
+        $body = "<p>You are about to claim this reward: ".$reward->reward_name.".</p>.";
+        $body = "<p> Our admin has been notified and will be emailing you your gift card. </p>";
+
+        $service_body = "<p>".$supporter->email_address." wants to claim this reward: ".$reward->reward_name.".</p>.";
 
         $body .= "<p>Thanks, <br />
         The shareitcamp team</p>";
 
-        mail('service@shareitcamp.com', $subject, $body, $headers);
+        // email service to let them know new reward was claimed
+        mail('service@shareitcamp.com', $subject, $service_body, $headers);
 
-
+        // email supporter that they have claimed their reward
         mail($to, $subject, $body, $headers);
 
         $app->flash('success_info', 'Account updated');
