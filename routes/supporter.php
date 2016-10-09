@@ -292,7 +292,12 @@ $app->get('/rewards', $authenticate($app), function () use ($app){
     $supportedCampaigns = Campaign_response::find('all',
         array('conditions' => array('supporter_id in (?)', array($supporter->id_supporter))));
 
-    $pointsEarned = count($supportedCampaigns) * 5;
+    // rewards claimed
+    $rewards_claimed = Reward_claimed::find_by_id_supporter($supporter->id_supporter);
+
+    $difference = count($rewards_claimed) - count($supportedCampaigns);
+
+    $pointsEarned = $difference * 5;
 
     $app->render('supporter/list-rewards.php', array('rewards' => $rewards, 'success_info' => $success_info,
         'points_earned' => $pointsEarned));
@@ -302,6 +307,7 @@ $app->get('/supporter/manage-account', $authenticate($app), function () {
     echo "Get Started";
 });
 
+// profile
 $app->get('/supporter/manage-account/profile', $authenticate($app), function () {
     echo "Get Started";
 });
@@ -399,6 +405,8 @@ $app->get('/claim-rewards/:reward_id', function ($reward_id) use ($app){
 
     $reward = Reward::find_by_reward_id($reward_id);
 
+    $rewards_claimed = Reward_claimed::find_by_id_supporter($supporter->id_supporter);
+
     // TODO check reward_claimed table to see if supporter claimed already
     $supportedCampaigns = Campaign_response::find('all',
         array('conditions' => array('supporter_id in (?)', array($supporter->id_supporter))));
@@ -407,7 +415,7 @@ $app->get('/claim-rewards/:reward_id', function ($reward_id) use ($app){
     $pointsEarned = count($supportedCampaigns) * 5;
 
     $app->render('supporter/claim-rewards.php', array('supporter' => $supporter, 'reward' => $reward,
-        'pointsEarned' => $pointsEarned));
+        'pointsEarned' => $pointsEarned, 'rewards_claimed' => $rewards_claimed));
 });
 
 # Update account

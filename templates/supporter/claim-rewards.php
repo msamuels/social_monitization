@@ -50,8 +50,10 @@
                     <p style="text-align:center">
                         <?php if($reward->point_value > $pointsEarned) { ?>
                            <button class="btn btn-primary" type="submit">Not enough points to redeem</button>
-                        <?php } else { ?>
+                        <?php } elseif(count($rewards_claimed) == 0 ) { ?>
                             <button class="btn btn-primary" type="submit">Redeem</button>
+                        <?php } else { ?>
+                            <span class="btn btn-success">Redeemed</span>
                         <?php } ?>
                     </p>
 
