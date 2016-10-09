@@ -399,6 +399,7 @@ $app->get('/claim-rewards/:reward_id', function ($reward_id) use ($app){
 
     $reward = Reward::find_by_reward_id($reward_id);
 
+    // TODO check reward_claimed table to see if supporter claimed already
     $supportedCampaigns = Campaign_response::find('all',
         array('conditions' => array('supporter_id in (?)', array($supporter->id_supporter))));
 
@@ -416,18 +417,20 @@ $app->post('/do-claim-reward', function () use ($app){
 
         $req = $app->request->post();
 
-        // @TODO Update supporter rewards count
+        $reward = Reward::find_by_reward_id($req['reward_id']);
 
-        $reward = Reward::get_by_reward_id($req['reward_id']);
+        $user_name = $app->view()->getData('user');
+        $supporter = Supporter::find_by_user_name($user_name);
+
+        // @TODO Add entry to reward_claimed table and judge points remainder from that
+        $reward_claimed = Reward_claimed::create(
+            array('id_supporter' => $supporter->id_supporter, 'reward_id' => $reward->reward_id, 
+                'date_claimed' => date("Y-m-d h:i:sa")));
 
         // Auto respond to to supporter
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
         $headers .= 'From: service@shareitcamp.com' . "\r\n";
-
-        $user_name = $app->view()->getData('user');
-        $supporter = Supporter::find_by_user_name($user_name);
-
 
         $to = $supporter->email_address;
         $subject = 'Reward claim'. $reward->reward_name;
@@ -448,7 +451,7 @@ $app->post('/do-claim-reward', function () use ($app){
 
         $app->flash('success_info', 'Account updated');
 
-        $app->redirect('/claim-rewards');
+        $app->redirect('/rewards');
 
     }
 
