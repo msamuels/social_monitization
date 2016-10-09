@@ -192,7 +192,7 @@ $app->post('/save-campaign-support', $authenticate($app), function () use ($app)
     }
 });
 
-# show supported campaign individually
+// supporter/campaign
 // @TODO add back authentication. Just when user not  logged in store their destination
 $app->get('/supporter/campaign/:id_title', function ($id_title) use($app) {
 
@@ -411,8 +411,20 @@ $app->get('/claim-rewards/:reward_id', function ($reward_id) use ($app){
     $supportedCampaigns = Campaign_response::find('all',
         array('conditions' => array('supporter_id in (?)', array($supporter->id_supporter))));
 
-    // @TODO move hard-coded multiplier to central place
-    $pointsEarned = count($supportedCampaigns) * 5;
+    // find all those campaigns points;
+    $campaign_ids = array();
+    foreach($supportedCampaigns as $sc) {
+        $campaign_ids[] = $sc->campaign_id;
+    }
+
+    $campaigns = Campaign::find($campaign_ids);
+    $points = 0;
+
+    foreach($campaigns   as $sc) {
+        $points += $sc->points;
+    }
+
+    $pointsEarned = $points - $reward->point_value;
 
     $app->render('supporter/claim-rewards.php', array('supporter' => $supporter, 'reward' => $reward,
         'pointsEarned' => $pointsEarned, 'rewards_claimed' => $rewards_claimed));

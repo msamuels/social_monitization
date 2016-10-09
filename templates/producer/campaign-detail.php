@@ -82,7 +82,7 @@
 
                     </div>
                     <div class="col-sm-11" style="text-align: left;">
-                        <p><strong>5 Points</strong></p>
+                        <p><strong><?php echo $campaign->points; ?> Points</strong></p>
                         <p><strong><?php echo count($supporters); ?></strong> Supporter(s)</p>
                         <p>
                         <ul style="list-style: none">

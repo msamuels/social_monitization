@@ -62,7 +62,7 @@
 
                     </div>
                     <div class="col-sm-11" style="text-align: left;">
-                        <p><strong>5 Points</strong></p>
+                        <p><strong><?php echo $campaign->points; ?></strong>Points</p>
                     </div>
                 </div>
 
