@@ -34,8 +34,12 @@
                     <p>Reward Points: <?php echo $reward->point_value; ?> </p>
                     <p><a href="/claim-rewards"> <img src="/images/rewards/<?php echo $reward->image; ?>"
                                                       height="100" width="100"/></a>
-                    </p><strong>Description:</strong> <br />
+                    </p><strong>How will this  be provided:</strong> <br />
                     <?php echo $reward->details; ?>
+                    </p>
+
+                    </p><strong>Description:</strong> <br />
+                    <?php echo $reward->description; ?>
                     </p>
 
                     <p><strong>Expiration Date:</strong>

@@ -46,9 +46,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-4">Details</label>
+                        <label class="control-label col-sm-4">Description</label>
                         <div class=" col-sm-8">
-                            <textarea rows="4" cols="50" name="details" class="form-control"></textarea>
+                            <textarea rows="4" cols="50" name="description" class="form-control"></textarea>
                         </div>
                     </div>
 
