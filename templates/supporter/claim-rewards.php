@@ -10,13 +10,30 @@
 
                 <H3>Claim Rewards </H3>
 
+                <div class="row">
+
+                    <div class="col-sm-4">
+                        <p>Points Earned:</p>
+                        <H1><?php echo $rewards_track['points_earned']; ?></H1>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <p>Points Claimed:</p>
+                        <H1><?php echo $rewards_track['points_claimed']; ?></H1>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <p>Points Remaining:</p>
+                        <H1><?php echo $rewards_track['points_remaining']; ?></H1>
+                    </div>
+
+                </div>
+                
                 <div id="status">
-                    <p><?php echo $reward->reward_name ?></p>
+                    <H2><?php echo $reward->reward_name ?></H2>
                     <p><a href="/claim-rewards"> <img src="/images/rewards/<?php echo $reward->image; ?>"
                                                       height="100" width="100"/></a>
                     </p>
-                    <p>Points: <?php echo $reward->point_value; ?></p>
-                    <p>Your Points: <?php echo  $pointsEarned; ?></p>
                 </div>
 
                 <?php if (!empty($email_error)) { ?>
@@ -48,13 +65,11 @@
                     <br />
                     
                     <p style="text-align:center">
-                        <?php if($reward->point_value > $pointsEarned) { ?>
+                        <?php if($reward->point_value > ($rewards_track['points_earned'] - $rewards_track['points_claimed'])) { ?>
                            <button class="btn btn-primary" type="submit">Not enough points to redeem</button>
-                        <?php } elseif(count($rewards_claimed) == 0 ) { ?>
-                            <button class="btn btn-primary" type="submit">Redeem</button>
                         <?php } else { ?>
-                            <span class="btn btn-success">Redeemed</span>
-                        <?php } ?>
+                            <button class="btn btn-primary" type="submit">Redeem</button>
+                        <?php }  ?>
                     </p>
 
                 </form>

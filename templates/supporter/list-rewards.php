@@ -7,8 +7,24 @@
 
             <div class="col-sm-6">
 
-                My Points:
-                <H1><?php echo $points_earned; ?></H1>
+                <div class="row">
+
+                    <div class="col-sm-4">
+                        <p>Points Earned:</p>
+                        <H1><?php echo $rewards_track['points_earned']; ?></H1>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <p>Points Claimed:</p>
+                        <H1><?php echo $rewards_track['points_claimed']; ?></H1>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <p>Points Remaining:</p>
+                        <H1><?php echo $rewards_track['points_remaining']; ?></H1>
+                    </div>
+
+                </div>
 
                 <H1>Redeem Rewards</H1>
 

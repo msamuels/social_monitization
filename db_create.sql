@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: db591622819.db.1and1.com
--- Generation Time: Oct 09, 2016 at 06:52 PM
+-- Generation Time: Oct 10, 2016 at 11:29 AM
 -- Server version: 5.5.50-0+deb7u2-log
 -- PHP Version: 5.4.45-0+deb7u5
 
@@ -268,6 +268,7 @@ CREATE TABLE IF NOT EXISTS `rewards` (
 CREATE TABLE IF NOT EXISTS `reward_claimed` (
   `id_supporter` int(11) NOT NULL,
   `reward_id` int(11) NOT NULL,
+  `point_value` int(11) NOT NULL,
   `date_claimed` datetime DEFAULT NULL,
   PRIMARY KEY (`id_supporter`,`reward_id`),
   KEY `fk_reward_claimed_reward1_idx` (`reward_id`)

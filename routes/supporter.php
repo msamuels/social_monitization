@@ -292,15 +292,50 @@ $app->get('/rewards', $authenticate($app), function () use ($app){
     $supportedCampaigns = Campaign_response::find('all',
         array('conditions' => array('supporter_id in (?)', array($supporter->id_supporter))));
 
+    // get assoicated ccampaigns
+    $campaign_ids = array();
+
+    foreach ($supportedCampaigns as $campaign) {
+        $campaign_ids[] = $campaign->campaign_id;
+    }
+
+    $campaigns = Campaign::find('all',
+        array('conditions' => array('campaign_id in (?)', $campaign_ids)));
+
     // rewards claimed
     $rewards_claimed = Reward_claimed::find_by_id_supporter($supporter->id_supporter);
 
-    $difference = count($rewards_claimed) - count($supportedCampaigns);
+    $reward_claimed_value = 0;
 
-    $pointsEarned = $difference * 5;
+    // find value of rewards that were claimed
+    if(count($rewards_claimed) > 0 ) {
+
+        if(count($rewards_claimed) == 1) {
+            $rewards_claimed = array($rewards_claimed);
+        }
+
+        foreach($rewards_claimed as $rc) {
+            $reward_claimed_value += $rc->point_value;
+        }
+    }
+
+    // total points of supported campaigns
+    $total_campaign_points_earned = 0;
+
+    if(count($campaigns) > 0 ) {
+        foreach($campaigns as $c) {
+            $total_campaign_points_earned += $c->points;
+        }
+    }
+
+    // subtract total pts from campaigns supported from claimed points
+    $points_remaining = $total_campaign_points_earned - $reward_claimed_value;
+
+    $rewards_track = array('points_earned' => $total_campaign_points_earned,
+        'points_claimed' => $reward_claimed_value, 'points_remaining' => $points_remaining);
 
     $app->render('supporter/list-rewards.php', array('rewards' => $rewards, 'success_info' => $success_info,
-        'points_earned' => $pointsEarned));
+        'rewards_track' => $rewards_track));
 });
 
 $app->get('/supporter/manage-account', $authenticate($app), function () {
@@ -405,29 +440,54 @@ $app->get('/claim-rewards/:reward_id', function ($reward_id) use ($app){
 
     $reward = Reward::find_by_reward_id($reward_id);
 
-    $rewards_claimed = Reward_claimed::find_by_id_supporter($supporter->id_supporter);
-
-    // TODO check reward_claimed table to see if supporter claimed already
     $supportedCampaigns = Campaign_response::find('all',
         array('conditions' => array('supporter_id in (?)', array($supporter->id_supporter))));
 
-    // find all those campaigns points;
+    // get assoicated ccampaigns
     $campaign_ids = array();
-    foreach($supportedCampaigns as $sc) {
-        $campaign_ids[] = $sc->campaign_id;
+
+    foreach ($supportedCampaigns as $campaign) {
+        $campaign_ids[] = $campaign->campaign_id;
     }
 
-    $campaigns = Campaign::find($campaign_ids);
-    $points = 0;
+    $campaigns = Campaign::find('all',
+        array('conditions' => array('campaign_id in (?)', $campaign_ids)));
 
-    foreach($campaigns   as $sc) {
-        $points += $sc->points;
+    // rewards claimed
+    $rewards_claimed = Reward_claimed::find_by_id_supporter($supporter->id_supporter);
+
+    $reward_claimed_value = 0;
+
+    // find value of rewards that were claimed
+    if(count($rewards_claimed) > 0 ) {
+
+        if(count($rewards_claimed) == 1) {
+            $rewards_claimed = array($rewards_claimed);
+        }
+
+        foreach($rewards_claimed as $rc) {
+            $reward_claimed_value += $rc->point_value;
+        }
     }
 
-    $pointsEarned = $points - $reward->point_value;
+    // total points of supported campaigns
+    $total_campaign_points_earned = 0;
+
+    if(count($campaigns) > 0 ) {
+
+        foreach($campaigns as $c) {
+            $total_campaign_points_earned += $c->points;
+        }
+    }
+
+    // subtract total pts from campaigns supported from claimed points
+    $points_remaining = $total_campaign_points_earned - $reward_claimed_value;
+
+    $rewards_track = array('points_earned' => $total_campaign_points_earned,
+        'points_claimed' => $reward_claimed_value, 'points_remaining' => $points_remaining);
 
     $app->render('supporter/claim-rewards.php', array('supporter' => $supporter, 'reward' => $reward,
-        'pointsEarned' => $pointsEarned, 'rewards_claimed' => $rewards_claimed));
+        'rewards_track' => $rewards_track));
 });
 
 # Update account
@@ -444,8 +504,8 @@ $app->post('/do-claim-reward', function () use ($app){
 
         // @TODO Add entry to reward_claimed table and judge points remainder from that
         $reward_claimed = Reward_claimed::create(
-            array('id_supporter' => $supporter->id_supporter, 'reward_id' => $reward->reward_id, 
-                'date_claimed' => date("Y-m-d h:i:sa")));
+            array('id_supporter' => $supporter->id_supporter, 'reward_id' => $reward->reward_id,
+                'point_value' => $reward->point_value, 'date_claimed' => date("Y-m-d h:i:sa")));
 
         // Auto respond to to supporter
         $headers  = 'MIME-Version: 1.0' . "\r\n";
