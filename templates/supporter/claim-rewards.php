@@ -34,7 +34,14 @@
                     <p>Reward Points: <?php echo $reward->point_value; ?> </p>
                     <p><a href="/claim-rewards"> <img src="/images/rewards/<?php echo $reward->image; ?>"
                                                       height="100" width="100"/></a>
+                    </p><strong>Description:</strong> <br />
+                    <?php echo $reward->details; ?>
                     </p>
+
+                    <p><strong>Expiration Date:</strong>
+                    <?php echo date_format($reward->expiration_date, 'F d, Y '); ?>
+                    </p>
+
                 </div>
 
                 <?php if (!empty($email_error)) { ?>
