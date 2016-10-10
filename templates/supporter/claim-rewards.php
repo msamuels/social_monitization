@@ -58,7 +58,8 @@
                         <label class="control-label col-sm-4">Claim reward</label>
 
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="email" value="<?php echo $supporter->email_address; ?>"/>
+                            <input type="text" class="form-control" name="email" disabled="disabled"
+                                   value="<?php echo $supporter->email_address; ?>"/>
                         </div>
                     </div>
 
@@ -67,9 +68,11 @@
                     <p style="text-align:center">
                         <?php if($reward->point_value > ($rewards_track['points_earned'] - $rewards_track['points_claimed'])) { ?>
                            <button class="btn btn-primary" type="submit">Not enough points to redeem</button>
+                        <?php } elseif($is_reward_claimed) { ?>
+                            <span class="btn btn-success" type="submit">Redeemed</span>
                         <?php } else { ?>
                             <button class="btn btn-primary" type="submit">Redeem</button>
-                        <?php }  ?>
+                        <?php } ?>
                     </p>
 
                 </form>

@@ -458,6 +458,9 @@ $app->get('/claim-rewards/:reward_id', function ($reward_id) use ($app){
 
     $reward_claimed_value = 0;
 
+    // check if this reward is among the ones claimed
+    $reward_ids = array();
+
     // find value of rewards that were claimed
     if(count($rewards_claimed) > 0 ) {
 
@@ -467,8 +470,11 @@ $app->get('/claim-rewards/:reward_id', function ($reward_id) use ($app){
 
         foreach($rewards_claimed as $rc) {
             $reward_claimed_value += $rc->point_value;
+            $reward_ids[] = $rc->reward_id;
         }
     }
+
+    $is_reward_claimed = in_array($reward_id, $reward_ids);
 
     // total points of supported campaigns
     $total_campaign_points_earned = 0;
@@ -487,7 +493,7 @@ $app->get('/claim-rewards/:reward_id', function ($reward_id) use ($app){
         'points_claimed' => $reward_claimed_value, 'points_remaining' => $points_remaining);
 
     $app->render('supporter/claim-rewards.php', array('supporter' => $supporter, 'reward' => $reward,
-        'rewards_track' => $rewards_track));
+        'rewards_track' => $rewards_track, 'is_reward_claimed' => $is_reward_claimed));
 });
 
 # Update account
