@@ -66,12 +66,13 @@
                     <br />
                     
                     <p style="text-align:center">
-                        <?php if($reward->point_value > ($rewards_track['points_earned'] - $rewards_track['points_claimed'])) { ?>
-                           <button class="btn btn-primary" type="submit">Not enough points to redeem</button>
-                        <?php } elseif($is_reward_claimed) { ?>
+
+                        <?php if($is_reward_claimed) { ?>
                             <span class="btn btn-success" type="submit">Redeemed</span>
+                        <?php } elseif($reward->point_value > ($rewards_track['points_earned'] - $rewards_track['points_claimed'])) { ?>
+                        <button class="btn btn-primary" type="submit">Not enough points to redeem</button>
                         <?php } else { ?>
-                            <button class="btn btn-primary" type="submit">Redeem</button>
+                        <button class="btn btn-primary" type="submit">Redeem</button>
                         <?php } ?>
                     </p>
 
