@@ -31,6 +31,7 @@
                 
                 <div id="status">
                     <H2><?php echo $reward->reward_name ?></H2>
+                    <p>Reward Points: <?php echo $reward->point_value; ?> </p>
                     <p><a href="/claim-rewards"> <img src="/images/rewards/<?php echo $reward->image; ?>"
                                                       height="100" width="100"/></a>
                     </p>
@@ -70,7 +71,7 @@
                         <?php if($is_reward_claimed) { ?>
                             <span class="btn btn-success" type="submit">Redeemed</span>
                         <?php } elseif($reward->point_value > ($rewards_track['points_earned'] - $rewards_track['points_claimed'])) { ?>
-                        <button class="btn btn-primary" type="submit">Not enough points to redeem</button>
+                        <span class="btn btn-primary" type="submit">Not enough points to redeem</span>
                         <?php } else { ?>
                         <button class="btn btn-primary" type="submit">Redeem</button>
                         <?php } ?>
