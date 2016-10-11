@@ -82,6 +82,20 @@
 
                     </div>
                     <div class="col-sm-11" style="text-align: left;">
+                        <form action="/update-campaign" enctype="multipart/form-data" method="POST" class="form-horizontal"
+                              role="form" id="create-campaign">
+                            <div class="form-group">
+                                <label class="control-label col-sm-4"><span class="required">* </span>Points: </label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="points" class="form-control" value="<?php echo $campaign->points; ?>"/>
+                                    <input type="hidden" value="<?php echo $campaign->campaign_id; ?>" name="campaign_id" />
+                                    <p style="text-align: center">
+                                        <button class="btn btn-primary" type="submit">Submit</button>
+                                    </p>
+
+                                </div>
+                            </div>
+                        </form>
                         <p><strong><?php echo $campaign->points; ?> Points</strong></p>
                         <p><strong><?php echo count($supporters); ?></strong> Supporter(s)</p>
                         <p>

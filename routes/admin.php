@@ -160,3 +160,18 @@ $app->get('/admin/supporters', $authenticate($app), function () use ($app){
 
     $app->render('admin/list-supporters.php', array('supporters' => $supporters, 'success_info' => $success_info));
 });
+
+# Approve campaign
+$app->post('/update-campaign', $authenticate($app), function () use ($app){
+
+    $req = $app->request->post();
+
+    $campaign = Campaign::find($req['campaign_id']);
+
+    $campaign->update_attributes(
+        array('points'=>$req['points']));
+
+    $app->flash('success_info', 'Points Updated');
+
+    $app->redirect('/admin/campaigns');
+});
