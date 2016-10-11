@@ -294,13 +294,17 @@ $app->get('/rewards', $authenticate($app), function () use ($app){
 
     // get assoicated ccampaigns
     $campaign_ids = array();
+    $campaigns = array();
 
-    foreach ($supportedCampaigns as $campaign) {
-        $campaign_ids[] = $campaign->campaign_id;
+    if(count($supportedCampaigns) > 0 ) {
+
+        foreach ($supportedCampaigns as $campaign) {
+            $campaign_ids[] = $campaign->campaign_id;
+        }
+
+        $campaigns = Campaign::find('all',
+            array('conditions' => array('campaign_id in (?)', $campaign_ids)));
     }
-
-    $campaigns = Campaign::find('all',
-        array('conditions' => array('campaign_id in (?)', $campaign_ids)));
 
     // rewards claimed
     $rewards_claimed = Reward_claimed::find_by_id_supporter($supporter->id_supporter);
@@ -445,14 +449,16 @@ $app->get('/claim-rewards/:reward_id', function ($reward_id) use ($app){
 
     // get assoicated ccampaigns
     $campaign_ids = array();
-
+    $campaigns = array();
+    
     foreach ($supportedCampaigns as $campaign) {
         $campaign_ids[] = $campaign->campaign_id;
     }
 
-    $campaigns = Campaign::find('all',
-        array('conditions' => array('campaign_id in (?)', $campaign_ids)));
-
+    if(count($supportedCampaigns) > 0 ) {
+        $campaigns = Campaign::find('all',
+            array('conditions' => array('campaign_id in (?)', $campaign_ids)));
+    }
     // rewards claimed
     $rewards_claimed = Reward_claimed::find_by_id_supporter($supporter->id_supporter);
 
