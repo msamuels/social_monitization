@@ -82,6 +82,8 @@
 
                     </div>
                     <div class="col-sm-11" style="text-align: left;">
+
+                        <?php if($campaign->approved != 'Y') { ?>
                         <form action="/update-campaign" enctype="multipart/form-data" method="POST" class="form-horizontal"
                               role="form" id="create-campaign">
                             <div class="form-group">
@@ -96,6 +98,8 @@
                                 </div>
                             </div>
                         </form>
+                        <?php } ?>
+
                         <p><strong><?php echo $campaign->points; ?> Points</strong></p>
                         <p><strong><?php echo count($supporters); ?></strong> Supporter(s)</p>
                         <p>
