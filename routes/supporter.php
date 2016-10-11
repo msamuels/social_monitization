@@ -307,7 +307,7 @@ $app->get('/rewards', $authenticate($app), function () use ($app){
     }
 
     // rewards claimed
-    $rewards_claimed = Reward_claimed::find_by_id_supporter($supporter->id_supporter);
+    $rewards_claimed = Reward_claimed::find_all_by_id_supporter($supporter->id_supporter);
 
     $reward_claimed_value = 0;
 
@@ -347,7 +347,7 @@ $app->get('/supporter/manage-account', $authenticate($app), function () {
 });
 
 // profile
-$app->get('/supporter/manage-account/profile', $authenticate($app), function () {
+$app->get('/supporter/manage-account/profile', $authenticate($app), function () {   
     echo "Get Started";
 });
 
@@ -437,7 +437,7 @@ $app->post('/update-account', function () use ($app){
 
 });
 
-$app->get('/claim-rewards/:reward_id', function ($reward_id) use ($app){
+$app->get('/claim-rewards/:reward_id',  $authenticate($app), function ($reward_id) use ($app){
 
     $user_name = $app->view()->getData('user');
     $supporter = Supporter::find_by_user_name($user_name);
@@ -460,7 +460,7 @@ $app->get('/claim-rewards/:reward_id', function ($reward_id) use ($app){
             array('conditions' => array('campaign_id in (?)', $campaign_ids)));
     }
     // rewards claimed
-    $rewards_claimed = Reward_claimed::find_by_id_supporter($supporter->id_supporter);
+    $rewards_claimed = Reward_claimed::find_all_by_id_supporter($supporter->id_supporter);
 
     $reward_claimed_value = 0;
 

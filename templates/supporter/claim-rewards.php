@@ -31,7 +31,7 @@
                 
                 <div id="status">
                     <H2><?php echo $reward->reward_name ?></H2>
-                    <p>Reward Points: <?php echo $reward->point_value; ?> </p>
+                    <p><strong>Reward Points:</strong> <?php echo $reward->point_value; ?> </p>
                     <p><a href="/claim-rewards"> <img src="/images/rewards/<?php echo $reward->image; ?>"
                                                       height="100" width="100"/></a>
                     </p><strong>How will this  be provided:</strong> <br />
