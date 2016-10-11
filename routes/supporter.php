@@ -450,7 +450,7 @@ $app->get('/claim-rewards/:reward_id', function ($reward_id) use ($app){
     // get assoicated ccampaigns
     $campaign_ids = array();
     $campaigns = array();
-    
+
     foreach ($supportedCampaigns as $campaign) {
         $campaign_ids[] = $campaign->campaign_id;
     }
@@ -522,7 +522,7 @@ $app->post('/do-claim-reward', function () use ($app){
         // Auto respond to to supporter
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $headers .= 'From: service@shareitcamp.com' . "\r\n";
+        $headers .= 'From: info@shareitcamp.com ' . "\r\n";
 
         $to = $supporter->email_address;
         $subject = 'Reward claim'. $reward->reward_name;
@@ -536,15 +536,30 @@ $app->post('/do-claim-reward', function () use ($app){
         The shareitcamp team</p>";
 
         // email service to let them know new reward was claimed
-        mail('service@shareitcamp.com', $subject, $service_body, $headers);
+        mail('info@shareitcamp.com', $subject, $service_body, $headers);
 
         // email supporter that they have claimed their reward
         mail($to, $subject, $body, $headers);
 
         $app->flash('success_info', 'Account updated');
 
-        $app->redirect('/rewards');
+        $app->redirect('/reward-thank-you');
 
     }
 
+});
+
+// Edit account info
+$app->get("/reward-thank-you", function () use ($app) {
+
+    $user_name = $app->view()->getData('user');
+    $supporter = Supporter::find_by_user_name($user_name);
+    $flash = $app->view()->getData('flash');
+
+    $success_info = '';
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
+    }
+
+    $app->render('supporter/reward-thank-you.php', array('supporter' => $supporter, 'success_info' => $success_info));
 });
