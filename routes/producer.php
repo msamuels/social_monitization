@@ -285,7 +285,7 @@ $app->get('/campaigns-performance', $authenticate($app), function () use ($app){
 
 # show  campaign individually
 
-$app->get('/producer/campaign/:id', function ($id) use($app) {
+$app->get('/producer/campaign/:id', $authenticate($app), function ($id) use($app) {
 
     $base_url = $app->config('configs')['base_url'];
 
@@ -320,7 +320,7 @@ $app->get('/producer/campaign/:id', function ($id) use($app) {
         'reward' => $reward, 'producer' => $producer, 'supporters' => $supporters));
 });
 
-$app->get('/invoices', function () use($app) {
+$app->get('/invoices', $authenticate($app), function () use($app) {
 
     $base_url = $app->config('configs')['base_url'];
 
@@ -344,7 +344,7 @@ $app->get('/invoices', function () use($app) {
         'producer' => $producer,));
 });
 
-$app->get('/producer/invoice/:id', function ($id) use($app) {
+$app->get('/producer/invoice/:id', $authenticate($app), function ($id) use($app) {
 
     $base_url = $app->config('configs')['base_url'];
 
