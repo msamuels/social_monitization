@@ -29,7 +29,7 @@
                 <form action="/update-account" method="POST" id="account" class="form-horizontal">
 
                     <div class="form-group">
-                        <label class="control-label col-sm-4"># of Facebook followers: </label>
+                        <label class="control-label col-sm-4"># of Friends: </label>
                         <div class="col-sm-8">
                             <input type="number" class="form-control" name="num_followers"
                                    value="<?php echo $supporter->id_follower_count; ?>"/>
@@ -68,3 +68,4 @@
     </div> <!-- end container -->
 </section>
 <!-- END HOME -->
+
