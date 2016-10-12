@@ -276,7 +276,7 @@ $app->post('/save-post-to-fb', $authenticate($app), function () use ($app) {
 # List rewards
 $app->get('/rewards', $authenticate($app), function () use ($app){
 
-    $rewards = Reward::find('all');
+    $rewards = Reward::find('all',array('order' => 'reward_id desc'));
 
     $flash = $app->view()->getData('flash');
 
