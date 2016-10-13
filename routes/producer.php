@@ -433,8 +433,9 @@ $app->post('/producer/approve-campaign', $authenticate($app), function () use ($
     $app->redirect('/campaigns');
 });
 
+
 // producer page
-$app->get('/:name', function ($name) use ($app){
+$app->get('/producer/:name', function ($name) use ($app){
 
     //find the prducer by name
     $producer = Producer::find_by_friendly_url($name);

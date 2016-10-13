@@ -131,7 +131,7 @@
                 <div class="plan-header text-center">
                     <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[0]->friendly_url; ?>">
                             <?php echo $campaigns[0]->campaign_name; ?></a></h3>
-                    <h2 class="plan-duration"> by <a href="/<?php echo $campaigns[0]->getProducer()->friendly_url; ?>">
+                    <h2 class="plan-duration"> by <a href="/producer/<?php echo $campaigns[0]->getProducer()->friendly_url; ?>">
                             <?php echo $campaigns[0]->getProducer()->org_name; ?></a></h2>
                     <div class="thumbnail thumbnail-box">
 			            <img src="/images/screenshots/<?php echo $campaigns[0]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
@@ -153,7 +153,7 @@
                 <div class="plan-header text-center">
                     <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>">
                             <?php echo $campaigns[1]->campaign_name; ?></a></h3>
-                    <h2 class="plan-duration"> by <a href="/<?php echo $campaigns[1]->getProducer()->friendly_url; ?>">
+                    <h2 class="plan-duration"> by <a href="/producer/<?php echo $campaigns[1]->getProducer()->friendly_url; ?>">
                         <?php echo $campaigns[1]->getProducer()->org_name; ?></a></h2>
                     <div class="thumbnail thumbnail-box">
 			            <img src="/images/screenshots/<?php echo $campaigns[1]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
@@ -176,7 +176,7 @@
                 <div class="plan-header text-center">
                     <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[2]->friendly_url; ?>">
                             <?php echo $campaigns[2]->campaign_name; ?></a></h3>
-                    <h2 class="plan-duration"> by <a href="/<?php echo $campaigns[2]->getProducer()->friendly_url; ?>">
+                    <h2 class="plan-duration"> by <a href="/producer/<?php echo $campaigns[2]->getProducer()->friendly_url; ?>">
                         <?php echo $campaigns[2]->getProducer()->org_name; ?></a></h2>
                     <div class="thumbnail thumbnail-box">
 			                <img src="/images/screenshots/<?php echo $campaigns[2]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
@@ -198,7 +198,7 @@
                 <div class="plan-header text-center">
                     <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>">
                             <?php echo $campaigns[3]->campaign_name; ?></a></h3>
-                    <h2 class="plan-duration"> by <a href="/<?php echo $campaigns[3]->getProducer()->friendly_url; ?>">
+                    <h2 class="plan-duration"> by <a href="/producer/<?php echo $campaigns[3]->getProducer()->friendly_url; ?>">
                         <?php echo $campaigns[3]->getProducer()->org_name; ?></a></h2>
                     <div class=""thumbnail thumbnail-box">
 			            <img src="/images/screenshots/<?php echo $campaigns[3]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
