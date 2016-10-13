@@ -58,7 +58,7 @@
 
             $class = array();
 
-            if ($path[1] == "create-producer") {
+            if ($path[2] == "create-producer") {
                 $class[0] = "";
                 $class[1] = "class = 'highlighted'";
             }
@@ -66,7 +66,7 @@
 
             <p style="text-align:center">
                 <a href="/get-started/supporter/register" <?php echo $class[1]; ?>>Supporter</a> |
-                <a href="/create-producer" <?php echo $class[0]; ?>>Producer</a>
+                <a href="/producer/create-producer" <?php echo $class[0]; ?>>Producer</a>
            </p>
 
         </div>

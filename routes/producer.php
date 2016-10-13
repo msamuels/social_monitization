@@ -28,7 +28,7 @@ function friendly_seo_string($vp_string)
 }
 
 # Create producers
-$app->get('/create-producer', function () use ($app){
+$app->get('/producer/create-producer', function () use ($app){
 
     $path = explode('/', $app->request->getPath());
 
@@ -62,7 +62,8 @@ $app->post('/save-producer', function () use ($app){
        $producer = Producer::create(
            array('first_name' => $req['first_name'], 'last_name' => $req['last_name'], 'user_name' => $req['user_name'],
 		'password' => $password, 'org_name'=>$req['org_name'],'organization_url'=>$req['organization_url'],
-               'email_address'=>$req['email_address'], 'description'=>$req['description'], 'country'=>$req['country']));
+               'email_address'=>$req['email_address'], 'description'=>$req['description'], 'country'=>$req['country'],
+               'friendly_url'=>friendly_seo_string($req['org_name'])));
 
         // Auto respond to to producer
         $headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -430,4 +431,32 @@ $app->post('/producer/approve-campaign', $authenticate($app), function () use ($
     $app->flash('success_info', 'Campaign Approved');
 
     $app->redirect('/campaigns');
+});
+
+// producer page
+$app->get('/:name', function ($name) use ($app){
+
+    //find the prducer by name
+    $producer = Producer::find_by_friendly_url($name);
+
+    // if no producer found then route might just actual page
+    if(is_null($producer)){
+        $app->redirect('/'.$name);
+    }
+
+    // get the campaigns for this producer
+    $options = array('conditions' => array("id_producer = $producer->id_producer"));
+    $producer_campaigns = Account::all($options);
+
+    // loop
+    $campaign_ids = array();
+    foreach ($producer_campaigns as $pc) {
+        $campaign_ids[] = $pc->campaign_id;
+    }
+
+    // find campaigns for that producet
+    $options_2 = array('order' => 'campaign_id desc', 'conditions' => array('campaign_id in (?)', $campaign_ids));
+    $campaigns = Campaign::all($options_2);
+
+    $app->render('frontpage/producer-campaigns.php', array('campaigns'=>$campaigns, 'producer'=>$producer));
 });

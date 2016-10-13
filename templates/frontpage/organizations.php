@@ -10,7 +10,7 @@
                     <h2 class="animated fadeInDown wow text-white" data-wow-delay=".1s">
                         Partner with your supporters to <br/>Promote your Campaigns
                     </h2>
-                    <a href="/create-producer" class="btn btn-primary btn-shadow btn-rounded w-lg animated fadeInDown wow"
+                    <a href="/producer/create-producer" class="btn btn-primary btn-shadow btn-rounded w-lg animated fadeInDown wow"
                        data-wow-delay=".4s">Get Started</a>
                     <div class="clearfix"></div>
                 </div><!-- home wrapper -->
