@@ -2,9 +2,9 @@
 -- version 4.1.14.8
 -- http://www.phpmyadmin.net
 --
--- Host: db637422923.db.1and1.com
--- Generation Time: Oct 13, 2016 at 12:30 PM
--- Server version: 5.5.52-0+deb7u1-log
+-- Host: db591622819.db.1and1.com
+-- Generation Time: Oct 13, 2016 at 01:32 PM
+-- Server version: 5.5.50-0+deb7u2-log
 -- PHP Version: 5.4.45-0+deb7u5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `db637422923`
+-- Database: `db591622819`
 --
 
 -- --------------------------------------------------------
@@ -207,6 +207,7 @@ CREATE TABLE IF NOT EXISTS `producers` (
   `description` longtext,
   `country` varchar(255) DEFAULT NULL,
   `orgclass_id` int(11) DEFAULT NULL,
+  `friendly_url` varchar(255) NOT NULL,
   PRIMARY KEY (`id_producer`),
   KEY `orgclass_id_idx` (`orgclass_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=big5;
@@ -238,10 +239,8 @@ CREATE TABLE IF NOT EXISTS `reward` (
   `quantity_remaining` int(11) DEFAULT NULL,
   `point_value` int(11) DEFAULT NULL,
   `campaign_id` int(11) DEFAULT NULL,
-  `description` longtext NOT NULL,
-  `reward_name` varchar(255) NOT NULL,
   PRIMARY KEY (`reward_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=big5;
+) ENGINE=MyISAM DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 
@@ -258,8 +257,9 @@ CREATE TABLE IF NOT EXISTS `rewards` (
   `quantity_remaining` int(11) DEFAULT NULL,
   `point_value` int(11) DEFAULT NULL,
   `campaign_id` int(11) DEFAULT NULL,
+  `description` longtext NOT NULL,
   PRIMARY KEY (`reward_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=big5;
+) ENGINE=MyISAM  DEFAULT CHARSET=big5;
 
 -- --------------------------------------------------------
 
@@ -270,6 +270,7 @@ CREATE TABLE IF NOT EXISTS `rewards` (
 CREATE TABLE IF NOT EXISTS `reward_claimed` (
   `id_supporter` int(11) NOT NULL,
   `reward_id` int(11) NOT NULL,
+  `point_value` int(11) NOT NULL,
   `date_claimed` datetime DEFAULT NULL,
   PRIMARY KEY (`id_supporter`,`reward_id`),
   KEY `fk_reward_claimed_reward1_idx` (`reward_id`)
