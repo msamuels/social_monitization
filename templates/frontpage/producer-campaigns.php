@@ -29,14 +29,14 @@
                                 <p class="by-line"><i> by <?php echo $campaign->getProducer()->org_name; ?></i></p>
                                 <p>
                                 <p>
-                                    <a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>">
+                                    <a href="/supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>">
                                         <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>"
                                              height="200" width="200"/>
                                     </a>
                                 </p>
                                 <p class="list-campaign-copy"><?php echo substr($campaign->copy, 0, 50); ?>
                                     ...<a style="text-decoration: underline"
-                                          href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>">Learn More</a>
+                                          href="/supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>">Learn More</a>
                                 </p>
 
                             </li>
