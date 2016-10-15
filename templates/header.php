@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>shareitcamp</title>
-    <meta name="description" content="There are some great projects being developed and go undiscovered due to lack of exposure. You can be a part of a team that helps change that. Through shareitcamp you are able to lend your support (via social media) to bring attention to some really innovative projects. Follow us on Facebook or visit our website to find out more.">
+    <meta name="description" content=" Support. This Simple Investment Makes A Big Difference. Shareticamp is a community of passionate individuals who lend their support for projects and causes by sharing them with their networks (social and otherwise). Join shareitcamp and see what a difference your support can make. ">
     <meta name="author" content="shareitcamp.com">
 
     <!-- Google fonts -->

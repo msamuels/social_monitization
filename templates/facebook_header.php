@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=" Support. This Simple Investment Makes A Big Difference. Shareticamp is a community of passionate individuals who lend their support for projects and causes by sharing them with their networks (social and otherwise). Join shareitcamp and see what a difference your support can make. ">
     <meta property="og:url"                content="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>" />
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="<?php echo $campaign->campaign_name; ?>" />
