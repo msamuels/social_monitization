@@ -128,7 +128,7 @@ $app->get('/supporter/campaigns/pending', $authenticate($app), function () use (
     $query = "SELECT cr.* FROM supporters s
 	INNER JOIN campaign_responses cr 
 	ON s.id_supporter=cr.supporter_id
-	WHERE cr.supporter_id = ".$supporter->id_supporter . " ORDER BY campaign_id DESC";
+	WHERE cr.supporter_id = ".$supporter->id_supporter;
 
     $ar_campaigns = array();
 
@@ -145,7 +145,8 @@ $app->get('/supporter/campaigns/pending', $authenticate($app), function () use (
         // if they aren't supporting any campaigns return them all
         $campaigns = Campaign::find('all');
     } else {
-        $campaigns = Campaign::find('all', array('conditions' => array('campaign_id NOT IN (?) AND approved = ?', $ar_campaigns, 'Y')));
+        $campaigns = Campaign::find('all', array('conditions' => array('campaign_id NOT IN (?) AND approved = ?
+        ORDER BY campaign_id DESC', $ar_campaigns, 'Y')));
     }
     $app->render('support-campaigns.php', array('campaigns' => $campaigns, 'user_id' => $supporter->id,
         'isPEnding' => true));
