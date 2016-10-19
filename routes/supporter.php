@@ -376,10 +376,10 @@ $app->post('/save-campaign-post-link', function () use ($app){
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
         $headers .= 'From: info@shareitcamp.com' . "\r\n";
 
-        $to = 'markspeed_718@yahoo.com';
+        $to = 'info@shareitcamp.com';
         $subject = 'Campaign response (post link) added to shareitcamp';
 
-        $body = "<p>A supporter has added the link to their post<p>";
+        $body = "<p>A supporter has added the link to their post<p>".$req['post-link'];
 
         $body .= "<p>Thanks, <br />
         The shareitcamp team</p>";
