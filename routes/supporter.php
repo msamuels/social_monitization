@@ -143,7 +143,7 @@ $app->get('/supporter/campaigns/pending', $authenticate($app), function () use (
     # list campaigns
     if (count($ar_campaigns) == 0) {
         // if they aren't supporting any campaigns return them all
-        $campaigns = Campaign::find('all');
+        $campaigns = Campaign::find('all',array('order' => 'campaign_id DESC'));
     } else {
         $campaigns = Campaign::find('all', array('conditions' => array('campaign_id NOT IN (?) AND approved = ?
         ORDER BY campaign_id DESC', $ar_campaigns, 'Y')));
