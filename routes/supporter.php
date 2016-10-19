@@ -128,7 +128,7 @@ $app->get('/supporter/campaigns/pending', $authenticate($app), function () use (
     $query = "SELECT cr.* FROM supporters s
 	INNER JOIN campaign_responses cr 
 	ON s.id_supporter=cr.supporter_id
-	WHERE cr.supporter_id = ".$supporter->id_supporter;
+	WHERE cr.supporter_id = ".$supporter->id_supporter . " ORDER BY campaign_id DESC";
 
     $ar_campaigns = array();
 
