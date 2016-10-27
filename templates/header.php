@@ -19,7 +19,7 @@
 
     <!-- Icon-font -->
     <link rel="stylesheet" type="text/css" href="/css/material-design-iconic-font.min.css">
-    <link rel="icon" type="image/png" href="images/favicon.ico" />
+    <link rel="icon" type="image/png" href="/images/favicon.ico" />
 
     <!--owl carousel css-->
     <link href="/css/owl.carousel.css" rel="stylesheet" type="text/css" media="screen">
