@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
     <meta property="og:url"                content="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>" />
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="<?php echo $campaign->campaign_name; ?>" />
