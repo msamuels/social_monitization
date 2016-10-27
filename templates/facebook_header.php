@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="en">
-<head>
+<head profile="http://www.w3.org/2005/10/profile">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,7 @@
 
     <!-- Icon-font -->
     <link rel="stylesheet" type="text/css" href="/css/material-design-iconic-font.min.css">
-
+    <link rel="icon" type="image/png" href="images/favicon.ico" />
     <!--owl carousel css-->
     <link href="/css/owl.carousel.css" rel="stylesheet" type="text/css" media="screen">
     <link href="/css/owl.theme.css" rel="stylesheet" type="text/css" media="screen">
