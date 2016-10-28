@@ -83,7 +83,7 @@
                     </div>
                     <div class="col-sm-11" style="text-align: left;">
 
-                        <?php if($campaign->approved != 'Y') { ?>
+                        <?php if($campaign->approved != 'Y' && $_SESSION['user_type'] == "admin") { ?>
                         <form action="/update-campaign" enctype="multipart/form-data" method="POST" class="form-horizontal"
                               role="form" id="create-campaign">
                             <div class="form-group">
