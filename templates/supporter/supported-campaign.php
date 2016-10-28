@@ -143,11 +143,11 @@
 <!-- END HOME -->
 
 <!-- FEATURES -->
-<section class="section" id="features">
+<section class="org-description-section" id="features">
     <div class="container">
 
         <div class="row">
-            <div class="col-sm-12" style="border-top:1px solid #ccc; margin-top:10px; text-align:left; padding-left: 47px;">
+            <div class="col-sm-12 org-description">
                 <div class="row"><h2>About <?php echo $producer->org_name; ?></h2></div>
                 <div class="row">
                     <?php echo $producer->description; ?>
