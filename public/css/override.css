@@ -43,10 +43,11 @@
 
 .plan-duration {
     margin-bottom: 20px;
+    height: 2em;
 }
 
 .plan-title {
-    height: 20px;
+    height: 2em;
 }
 
 .required{

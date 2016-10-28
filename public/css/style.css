@@ -309,8 +309,9 @@ iframe {
 }
 
 .btn-rounded {
-  border-radius: 2em;
-  padding: 8px 22px;
+  border-radius: .625rem;
+  padding: 8px 28px;
+  font-size: 2rem;
 }
 
 .button-list .btn {
