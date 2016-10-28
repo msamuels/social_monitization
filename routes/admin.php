@@ -123,7 +123,7 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
     // Email supporter to let them know campaign has been approved by producer
     $headers .= 'BCC: '. implode(",", $supporter_email) . "\r\n";
 
-    $subject_supporter = 'New campaign posted to shareitcamp! ';
+    $subject_supporter = $campaign->campaign_name;
 
     $body_supporter = "<p>".$producer->org_name. " is asking for your support for their ".$campaign->campaign_name."
      effort. Click on the link below to find
