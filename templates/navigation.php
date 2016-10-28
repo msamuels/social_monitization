@@ -26,6 +26,7 @@
                 <?php if (!isset($_SESSION['user_type'])) { ?>
                     <li><a href="/about-us">about us</a></li>
                     <li><a href="/organizations">for organizations</a></li>
+                    <li><a href="/#projects">for organizations</a></li>
 
                 <?php } else { ?>
                     <!-- Supporter Links -->
