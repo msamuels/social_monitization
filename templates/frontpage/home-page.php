@@ -206,7 +206,7 @@
                             <?php echo $campaigns[3]->campaign_name; ?></a></h3>
                     <h2 class="plan-duration"> by <a href="/producer/<?php echo $campaigns[3]->getProducer()->friendly_url; ?>">
                         <?php echo $campaigns[3]->getProducer()->org_name; ?></a></h2>
-                    <div class=""thumbnail thumbnail-box">
+                    <div class="thumbnail thumbnail-box">
                     <a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>">
 			            <img src="/images/screenshots/<?php echo $campaigns[3]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
                     </a>

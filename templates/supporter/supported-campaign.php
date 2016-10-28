@@ -1,11 +1,11 @@
 <section class="section" id="features">
     <div class="container">
 
-        <div class="row" style="text-align: left;  background-color: #d9edf7; padding-left: 49px; margin-bottom:20px">
+        <div class="row" style="text-align: left; margin-bottom:20px">
             <!-- Show campaigns supported -->
 
             <H1> <?php echo $campaign->campaign_name; ?> </H1>
-            <h3><p class="by-line"><i>by <?php echo $campaign->getProducer()->org_name; ?></i></p></h3>
+            <h4><p class="by-line"><i>by <?php echo $campaign->getProducer()->org_name; ?></i></p></h4>
 
         </div>
 
@@ -35,7 +35,7 @@
 
             </div>
 
-            <div class="col-sm-4">
+            <div class="col-sm-4" style= "margin-top: 44px; padding-left: 20px;">
                 <div class="row">
                     <div class="col-sm-1">
 
@@ -62,7 +62,7 @@
 
                     </div>
                     <div class="col-sm-11" style="text-align: left;">
-                        <p><strong><?php echo $campaign->points; ?></strong>Points</p>
+                        <p><strong><?php echo $campaign->points; ?></strong> Points</p>
                     </div>
                 </div>
 
@@ -116,7 +116,7 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-12"  style="border-top:1px solid #ccc; margin-top:10px; text-align:center;">
+            <div class="col-sm-12"  style="border-top:1px solid #ccc; margin-top:60px; text-align:left;">
             <h2>Description</h2>
             <?php echo $campaign->copy; ?>
 
@@ -147,7 +147,7 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-sm-12" style="border-top:1px solid #ccc; margin-top:10px; text-align:center;">
+            <div class="col-sm-12" style="border-top:1px solid #ccc; margin-top:10px; text-align:left;">
                 <div class="row"><h2>About <?php echo $producer->org_name; ?></h2></div>
                 <div class="row">
                     <?php echo $producer->description; ?>
