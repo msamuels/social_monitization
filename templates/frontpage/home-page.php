@@ -116,8 +116,8 @@
           <div class="row">
               <div class="col-sm-12 text-center">
                   <div class="title-box">
-                      <p class="title-alt">Projects</p>
-                      <h3 class="fadeIn animated wow" data-wow-delay=".1s"><a name="projects">Work Worth Sharing</a></h3>
+                      <p class="title-alt"><a name="projects">Projects</a></p>
+                      <h3 class="fadeIn animated wow" data-wow-delay=".1s">Work Worth Sharing</h3>
                       <div class="border"></div>
                   </div>
               </div>
