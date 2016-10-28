@@ -1,7 +1,7 @@
 <section class="section" id="features">
     <div class="container">
 
-        <div class="row" style="text-align: left; margin-bottom:20px">
+        <div class="row" style="text-align: left; margin-bottom:20px; padding-left: 15px;">
             <!-- Show campaigns supported -->
 
             <H1> <?php echo $campaign->campaign_name; ?> </H1>
@@ -147,7 +147,7 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-sm-12" style="border-top:1px solid #ccc; margin-top:10px; text-align:left;">
+            <div class="col-sm-12" style="border-top:1px solid #ccc; margin-top:10px; text-align:left; padding-left: 47px;">
                 <div class="row"><h2>About <?php echo $producer->org_name; ?></h2></div>
                 <div class="row">
                     <?php echo $producer->description; ?>
