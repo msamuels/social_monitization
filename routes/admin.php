@@ -104,7 +104,7 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
 
     $headers  = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-    $headers .= 'From: shareitcamp' . "\r\n";
+    $headers .= 'From: shareitcamp <info@shareitcamp.com>' . "\r\n";
 
     $subject = $campaign->campaign_name.' has been approved';
 
