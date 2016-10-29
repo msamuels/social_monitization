@@ -143,7 +143,7 @@
 <!-- END HOME -->
 
 <!-- FEATURES -->
-<section class="org-description-section" id="features">
+<section class="organiztion-description-section" id="features">
     <div class="container">
 
         <div class="row">
