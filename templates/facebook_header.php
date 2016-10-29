@@ -8,7 +8,7 @@
     <meta property="og:url"                content="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>" />
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="<?php echo $campaign->campaign_name; ?>" />
-    <meta property="og:description"        content="<?php echo substr($campaign->copy, 0,  160); ?>" />
+    <meta property="og:description"        content="<?php echo $campaign->copy; ?>" />
     <meta property="og:image"              content="<?php echo $base_url; ?>/images/screenshots/<?php echo $campaign->screen_shot; ?>" />
     <meta property="og:image:width" content="196" />
     <meta property="og:image:height" content="300" />
