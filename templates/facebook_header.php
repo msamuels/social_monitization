@@ -13,7 +13,13 @@
     <meta property="og:image:width" content="196" />
     <meta property="og:image:height" content="300" />
     <title><?php echo $campaign->campaign_name; ?></title>
+
+
+     <!-- Google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href="/bootstrap/css/bootstrap.min.css?<?php echo date('s')?>" rel="stylesheet">
+
     <!-- Animate -->
     <link href="/css/animate.css" rel="stylesheet">
 
