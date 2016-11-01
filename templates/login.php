@@ -108,10 +108,10 @@
             <div class="col-sm-6 intro-form">
 
                 <H3>LOGIN </H3>
-                <!--
+
                         <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
                     </fb:login-button>
-                -->
+
                 <div id="status">
                 </div>
 
