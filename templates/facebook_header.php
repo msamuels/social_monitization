@@ -8,12 +8,18 @@
     <meta property="og:url"                content="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>" />
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="<?php echo $campaign->campaign_name; ?>" />
-    <meta property="og:description"        content="<?php echo substr($campaign->copy, 0,  160); ?>" />
+    <meta property="og:description"        content="<?php echo $campaign->copy; ?>" />
     <meta property="og:image"              content="<?php echo $base_url; ?>/images/screenshots/<?php echo $campaign->screen_shot; ?>" />
     <meta property="og:image:width" content="196" />
     <meta property="og:image:height" content="300" />
     <title><?php echo $campaign->campaign_name; ?></title>
+
+
+     <!-- Google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href="/bootstrap/css/bootstrap.min.css?<?php echo date('s')?>" rel="stylesheet">
+
     <!-- Animate -->
     <link href="/css/animate.css" rel="stylesheet">
 
