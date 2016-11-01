@@ -86,7 +86,8 @@ var_dump($user);exit;
 
 echo 'Name: ' . $user['name'];
 
-$_SESSION['user'] = 'guest';
+$_SESSION['email'] = $user['email'];
+$_SESSION['user'] = $user['name'];
 $_SESSION['user_type'] = 'supporter';
 exit;
 // User is logged in with a long-lived access token.
