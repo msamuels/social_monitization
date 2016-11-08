@@ -37,11 +37,11 @@
             <div class="col-sm-6 intro-form">
 
                 <H3>LOGIN </H3>
-<--
+
                 <?php
-                    echo '<a href="' . htmlspecialchars($fb_login_url) . '">Log in with Facebook!</a>';
+                    echo '<!--<a href="' . htmlspecialchars($fb_login_url) . '">Log in with Facebook!</a>-->';
                 ?>
--->
+
                 <div id="status">
                 </div>
 
