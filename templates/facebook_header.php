@@ -1,3 +1,4 @@
+<?php $configs = parse_ini_file('../config.ini'); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="en">
 <head profile="http://www.w3.org/2005/10/profile">
@@ -65,8 +66,6 @@
 </head>
 
 <body data-spy="scroll" data-target="#navbar-menu">
-
-<?php $configs = parse_ini_file('../config.ini'); ?>
 
 <script>
     window.fbAsyncInit = function() {
