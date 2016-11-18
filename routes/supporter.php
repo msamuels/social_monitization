@@ -578,7 +578,7 @@ $app->post("/supporter/email-claim-points", function () use ($app) {
 
     $supporter = Supporter::find_by_email_address($email_username);
 
-    if (!$supporter) {
+    if (!$supporter || is_null($supporter->id_supporter)) {
             $supporter = Supporter::find_by_user_name($email_username);
         } else {
             // The user doesn't exist
