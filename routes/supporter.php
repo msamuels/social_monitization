@@ -613,18 +613,17 @@ $app->post("/supporter/email-claim-points", function () use ($app) {
     $to = $supporter->email_address;
     $subject = 'Shareitcamp: Thanks for your support';
 
-    $body = "Thank you for agreeing to support ".$campaign->campaign_name.". Please click on the link below to go
-            the campaign page . Once there, click on the <i>share on Facebook</i> link. <p>For sharing the link you will earn 5
-            points. </p>";
+    $body = "Thank you for agreeing to support ".$campaign->campaign_name.". You have earned 5
+            points! Login in to see how many reward points you have earned</p>";
 
-    $body .= "<a href='".$baseurl."/supporter/campaign/".$campaign->friendly_url."'>Click here to support</a>";
+    $body .= "<a href='".$baseurl."/rewards'>Click here to support</a>";
 
     $body .= "<p>Thanks, <br />
         The shareitcamp team</p>";
 
     mail($to, $subject, $body, $headers);
 
-    $app->flash('success_info', 'Click on the Facebook share icon to share the campaign. Thank you.');
+    $app->flash('success_info', 'Thank you for you support. You have earned 5 points.');
 
     $app->redirect('/supporter/campaign/'.$campaign->friendly_url);
 
