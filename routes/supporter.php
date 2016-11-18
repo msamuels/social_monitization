@@ -204,6 +204,10 @@ $app->get('/supporter/campaign/:id_title', function ($id_title) use($app) {
     $supporter = Supporter::find_by_user_name($user_name);
     $flash = $app->view()->getData('flash');
 
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
+    }
+
     if(is_numeric($id_title)) {
             $campaign = Campaign::find_by_campaign_id($id_title);
     } else {
@@ -225,7 +229,7 @@ $app->get('/supporter/campaign/:id_title', function ($id_title) use($app) {
 
     $app->render('supporter/supported-campaign.php', array('campaign' => $campaign, 'base_url' => $base_url,
         'reward' => $reward, 'producer' => $producer, 'isPending' => $isPending,  'user_id' => $supporter->id,
-        'supportedCampaigns' => $supportedCampaigns));
+        'supportedCampaigns' => $supportedCampaigns, 'success_info' => $success_info));
 });
 
 $app->post('/save-post-to-fb', $authenticate($app), function () use ($app) {
@@ -570,13 +574,28 @@ $app->post("/supporter/email-claim-points", function () use ($app) {
     $email_username = $app->request()->post('email-username');
     $req = $app->request->post();
 
+    $campaign = Campaign::find_by_campaign_id($req['campaign_id']);
+
     $supporter = Supporter::find_by_email_address($email_username);
 
-        if(!$supporter){
+    if (!$supporter) {
             $supporter = Supporter::find_by_user_name($email_username);
+        } else {
+            // The user doesn't exist
+            $app->flash('success_info', 'Thank you for your support.');
+            $app->redirect('/supporter/campaign/'.$campaign->friendly_url);
         }
 
-    $campaign = Campaign::find_by_campaign_id($req['campaign_id']);
+
+    // Check if the user has already supported the campaign
+    $is_supported = Campaign_response::find('all',
+        array('conditions' => array('supporter_id in (?) AND campaign_id in (?)',
+            $supporter->id_supporter, $campaign->campaign_id)));
+
+        if ($is_supported) {
+            $app->flash('success_info', 'Thank you for your support.');
+            $app->redirect('/supporter/campaign/'.$campaign->friendly_url);
+        }
 
     //@TODO move this logic to a central place
     $campaignSupport = Campaign_response::create(
