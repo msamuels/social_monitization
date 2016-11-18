@@ -29,13 +29,14 @@
             </div>
 
             <div class="col-sm-6">
-                <p> 2. Registered Supporter? Enter your email address to receive reward points</p>
+                <?php  if ($isPending) { ?>
+                <p> 2. Registered Supporter? Enter your email address or username to receive reward points</p>
 
                 <form action="/supporter/email-claim-points" method="POST" id="claim">
                     
                     <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>" />
                     <div class="form-group">
-                        <label class="control-label col-sm-1">Email: </label>
+                        <label class="control-label col-sm-3">Email/Username: </label>
                         <div class="col-sm-6">
                             <input type="text" class="form-control" name="email-username"
                                    placeholder="Enter email or username"/>
@@ -49,6 +50,7 @@
                     </div>
 
                 </form>
+                <?php } ?>
             </div>
         </div>
 

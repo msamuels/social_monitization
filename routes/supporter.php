@@ -607,4 +607,6 @@ $app->post("/supporter/email-claim-points", function () use ($app) {
 
     $app->flash('success_info', 'Click on the Facebook share icon to share the campaign. Thank you.');
 
+    $app->redirect('/supporter/campaign/'.$req['campaign_id']);
+
 });
