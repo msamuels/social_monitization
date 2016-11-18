@@ -578,13 +578,15 @@ $app->post("/supporter/email-claim-points", function () use ($app) {
 
     $supporter = Supporter::find_by_email_address($email_username);
 
-    if (!$supporter || is_null($supporter->id_supporter)) {
+    if ($supporter == NULL) {
             $supporter = Supporter::find_by_user_name($email_username);
-        } else {
+    } 
+
+    if($supporter == NULL) {
             // The user doesn't exist
             $app->flash('success_info', 'Thank you for your support.');
             $app->redirect('/supporter/campaign/'.$campaign->friendly_url);
-        }
+    }
 
 
     // Check if the user has already supported the campaign
