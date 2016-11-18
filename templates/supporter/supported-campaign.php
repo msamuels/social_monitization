@@ -1,6 +1,8 @@
 <section class="section" id="features">
     <div class="container">
-
+        <?php if (isset($success_info)) { ?>
+            <div class="row alert alert-success"><?php echo $success_info; ?></div>
+        <?php } ?>
         <div class="row">
             <div class="col-sm-6">
                 <p> 1. Share</p>
