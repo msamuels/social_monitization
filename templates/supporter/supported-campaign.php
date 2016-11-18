@@ -1,6 +1,57 @@
 <section class="section" id="features">
     <div class="container">
 
+        <div class="row">
+            <div class="col-sm-6">
+                <p> 1. Share</p>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <span class="fb-share-button" style="margin-bottom: 5px;"
+                              data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>"
+                              data-layout="button_count" data-mobile-iframe="true">
+                        </span>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <span><a href="https://twitter.com/share" class="twitter-share-button"
+                                 data-via="shareitcamp"
+                                 data-show-count="false">Tweet</a>
+                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </span>
+                    </div>
+
+                    <div class="col-sm-6">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-6">
+                <p> 2. Registered Supporter? Enter your email address to receive reward points</p>
+
+                <form action="/supporter/email-claim-points" method="POST" id="claim">
+                    
+                    <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>" />
+                    <div class="form-group">
+                        <label class="control-label col-sm-1">Email: </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="email-username"
+                                   placeholder="Enter email or username"/>
+
+                            Don’t have an account?
+                            <a href="/get-started/supporter/register" class="highlighted" style="font-size: medium">Register</a>
+                        </div>
+                        <div class="col-sm-3">
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
         <div class="row" style="text-align: left; margin-bottom:20px; padding-left: 15px;">
             <!-- Show campaigns supported -->
 
@@ -12,15 +63,7 @@
         <div class="row">
 
             <div class="col-sm-8">
-                <span class="fb-share-button" style="margin-bottom: 5px;"
-                     data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>"
-                     data-layout="button_count" data-mobile-iframe="true">
-                </span>
-                <br />
-                <span><a href="https://twitter.com/share" class="twitter-share-button" data-via="shareitcamp"
-                        data-show-count="false">Tweet</a>
-                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </span>
+
 
                 <div>
                     <a id="single_image" href="/images/screenshots/<?php echo $campaign->screen_shot; ?>">
@@ -35,7 +78,7 @@
 
             </div>
 
-            <div class="col-sm-4" style= "margin-top: 44px; padding-left: 20px;">
+            <div class="col-sm-4" style="margin-top: 44px; padding-left: 20px;">
                 <div class="row">
                     <div class="col-sm-1">
 
@@ -103,7 +146,8 @@
                             <?php }
                         } else { ?>
                             <a href="/login" class="btn btn-primary btn-shadow btn-rounded w-lg animated fadeInDown wow"
-                               data-wow-delay=".4s" style="font-size: 12px; width: 260px;">you must be logged in to receive points</a>
+                               data-wow-delay=".4s" style="font-size: 12px; width: 260px;">you must be logged in to
+                                receive points</a>
 
                         <?php } ?>
 
@@ -116,26 +160,26 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-12"  style="border-top:1px solid #ccc; margin-top:60px; text-align:left;">
-            <h2>Description</h2>
-            <?php echo $campaign->copy; ?>
+            <div class="col-sm-12" style="border-top:1px solid #ccc; margin-top:60px; text-align:left;">
+                <h2>Description</h2>
+                <?php echo $campaign->copy; ?>
 
-            <?php if ($reward) { ?>
-                <H2>Rewards: </H2>
-                <p><?php echo $reward->reward_name; ?></p>
-                <p><img src="/images/rewards/<?php echo $reward->image; ?>" height="100" width="100"/></p>
-                <form method="POST" action="/save-post-to-fb">
-                    <input type="hidden" name="message" id="messgae"
-                           value="<?php echo $supported_campaign->campaign->campaign_name; ?>"/>
+                <?php if ($reward) { ?>
+                    <H2>Rewards: </H2>
+                    <p><?php echo $reward->reward_name; ?></p>
+                    <p><img src="/images/rewards/<?php echo $reward->image; ?>" height="100" width="100"/></p>
+                    <form method="POST" action="/save-post-to-fb">
+                        <input type="hidden" name="message" id="messgae"
+                               value="<?php echo $supported_campaign->campaign->campaign_name; ?>"/>
 
-                    <div class="fb-share-button"
-                         data-href="<?php echo $base_url; ?>
+                        <div class="fb-share-button"
+                             data-href="<?php echo $base_url; ?>
                 /supporter/campaign/<?php echo $supported_campaign->campaign->friendly_url; ?>"
-                         data-layout="button_count" data-mobile-iframe="true">
-                    </div>
-                </form>
-            <?php } ?>
-        </div>
+                             data-layout="button_count" data-mobile-iframe="true">
+                        </div>
+                    </form>
+                <?php } ?>
+            </div>
         </div>
 
     </div> <!-- end container -->

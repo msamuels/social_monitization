@@ -564,3 +564,47 @@ $app->get("/reward-thank-you", function () use ($app) {
 
     $app->render('supporter/reward-thank-you.php', array('supporter' => $supporter, 'success_info' => $success_info));
 });
+
+$app->post("/supporter/email-claim-points", function () use ($app) {
+
+    $email_username = $app->request()->post('email-username');
+    $req = $app->request->post();
+
+    $supporter = Supporter::find_by_email_address($email_username);
+
+        if(!$supporter){
+            $supporter = Supporter::find_by_user_name($email_username);
+        }
+
+    $campaign = Campaign::find_by_campaign_id($req['campaign_id']);
+
+    //@TODO move this logic to a central place
+    $campaignSupport = Campaign_response::create(
+        array('campaign_id' => $req['campaign_id'], 'supporter_id' => $supporter->id_supporter));
+
+
+
+    // Auto respond to to supporter
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    $headers .= 'From: info@shareitcamp.com' . "\r\n";
+
+    $baseurl =  $destination = $app->config('configs')['base_url'];
+
+    $to = $supporter->email_address;
+    $subject = 'Shareitcamp: Thanks for your support';
+
+    $body = "Thank you for agreeing to support ".$campaign->campaign_name.". Please click on the link below to go
+            the campaign page . Once there, click on the <i>share on Facebook</i> link. <p>For sharing the link you will earn 5
+            points. </p>";
+
+    $body .= "<a href='".$baseurl."/supporter/campaign/".$campaign->friendly_url."'>Click here to support</a>";
+
+    $body .= "<p>Thanks, <br />
+        The shareitcamp team</p>";
+
+    mail($to, $subject, $body, $headers);
+
+    $app->flash('success_info', 'Click on the Facebook share icon to share the campaign. Thank you.');
+
+});
