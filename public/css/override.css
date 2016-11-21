@@ -75,6 +75,35 @@
     width: 200px;
 }
 
+.sharebuttongap {
+    width: auto;
+}
+
+.sharepoints {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-left: 48px;
+    padding-right: 48px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+}
+
+.sharepoints-p {
+    font-size: 11px;
+}
+
+.sharepoints-form {
+    height: 28px;
+}
+
+
+.sharepoints-btn {
+    padding: 2px 8px;
+    margin-left: -27px;
+}
+
+
 ul{
     list-style: none;
 
