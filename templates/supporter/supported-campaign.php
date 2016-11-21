@@ -3,18 +3,18 @@
         <?php if (isset($success_info)) { ?>
             <div class="row alert alert-success"><?php echo $success_info; ?></div>
         <?php } ?>
-        <div class="row">
+        <div class="row sharepoints">
             <div class="col-sm-6">
-                <p> 1. Share</p>
+                <p class="sharepoints-p"> 1. Share This</p>
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 sharebuttongap">
                         <span class="fb-share-button" style="margin-bottom: 5px;"
                               data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>"
                               data-layout="button_count" data-mobile-iframe="true">
                         </span>
                     </div>
 
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 sharebuttongap">
                         <span><a href="https://twitter.com/share" class="twitter-share-button"
                                  data-via="shareitcamp"
                                  data-show-count="false">Tweet</a>
@@ -22,9 +22,7 @@
                         </span>
                     </div>
 
-                    <div class="col-sm-6">
-
-                    </div>
+                 
 
                 </div>
 
@@ -32,22 +30,22 @@
 
             <div class="col-sm-6">
                 <?php  if ($isPending) { ?>
-                <p> 2. Registered Supporter? Enter your email address or username to receive reward points</p>
+                <p class="sharepoints-p"> 2. Registered Supporter? Enter your email address or username to receive reward points</p>
 
                 <form action="/supporter/email-claim-points" method="POST" id="claim">
                     
                     <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>" />
                     <div class="form-group">
-                        <label class="control-label col-sm-3">Email/Username: </label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" name="email-username"
+                            <div class="col-sm-6">
+                            <input type="text" class="form-control sharepoints-p sharepoints-form" name="email-username"
                                    placeholder="Enter email or username"/>
 
-                            Don’t have an account?
-                            <a href="/get-started/supporter/register" class="highlighted" style="font-size: medium">Register</a>
+                            <p class="sharepoints-p">Don’t have an account?
+                                <a href="/get-started/supporter/register" class="highlighted" style="font-size: small;">Register</a>
+                            </p>
                         </div>
                         <div class="col-sm-3">
-                            <button class="btn btn-primary" type="submit">Submit</button>
+                            <button class="btn btn-primary sharepoints-btn" type="submit">Submit</button>
                         </div>
                     </div>
 
@@ -149,9 +147,9 @@
                                 <?php } ?>
                             <?php }
                         } else { ?>
-                            <a href="/login" class="btn btn-primary btn-shadow btn-rounded w-lg animated fadeInDown wow"
-                               data-wow-delay=".4s" style="font-size: 12px; width: 260px;">you must be logged in to
-                                receive points</a>
+                            <p>
+                                  <a href="/login"> you must be logged in to receive points</a>
+                                </p>
 
                         <?php } ?>
 
