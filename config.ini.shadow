@@ -16,3 +16,5 @@ campaign_creative_upload_dir = REPLACE_ME
 rewards_creative_upload_dir = REPLACE_ME
 
 base_url = REPLACE_ME
+
+excluded_from_home = REPLACE_ME
