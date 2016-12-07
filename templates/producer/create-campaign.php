@@ -97,6 +97,14 @@
                     </div>
 
                     <div class="form-group">
+                        <label class="control-label col-sm-4">Youtube embed link (optional): </label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="youtube_embed"  id="youtube_embed"
+                                      placeholder="Paste the embed youtube EMBED code" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label class="control-label col-sm-4">URL</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" name="url"

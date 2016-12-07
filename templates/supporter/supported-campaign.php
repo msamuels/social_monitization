@@ -67,6 +67,18 @@
             <div class="col-sm-8">
 
 
+                <?php if(!isset($campaign->youtube_embed)){ ?>
+                    <div>
+                        <a id="single_image" href="/images/screenshots/<?php echo $campaign->screen_shot; ?>">
+                            <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" class="campaign_image"/>
+                        </a>
+                    </div>
+                <? } else { ?>
+                    <div>
+                        <?php echo $campaign->youtube_embed; ?>
+                    </div>
+                <? } ?>
+
                 <div>
                     <a id="single_image" href="/images/screenshots/<?php echo $campaign->screen_shot; ?>">
                         <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" class="campaign_image"/>
