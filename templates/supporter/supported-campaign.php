@@ -65,15 +65,8 @@
         <div class="row">
 
             <div class="col-sm-8">
-
-
-                <?php if(!isset($campaign->youtube_embed)){ ?>
-                    <div>
-                        <a id="single_image" href="/images/screenshots/<?php echo $campaign->screen_shot; ?>">
-                            <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" class="campaign_image"/>
-                        </a>
-                    </div>
-                <? } else { ?>
+                
+                <?php if(isset($campaign->youtube_embed)){ ?>
                     <div>
                         <?php echo $campaign->youtube_embed; ?>
                     </div>
@@ -84,7 +77,7 @@
                         <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" class="campaign_image"/>
                     </a>
                 </div>
-
+                
                 <div class="fb-share-button"
                      data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>"
                      data-layout="button_count" data-mobile-iframe="true">

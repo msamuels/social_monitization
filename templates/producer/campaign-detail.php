@@ -24,6 +24,12 @@
                     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
 
+                <?php if(isset($campaign->youtube_embed)) { ?>
+                    <div>
+                        <?php echo $campaign->youtube_embed; ?>
+                    </div>
+                <?php } ?>
+
                 <div><img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>" class="campaign_image"/></div>
 
                 <div class="fb-share-button"
