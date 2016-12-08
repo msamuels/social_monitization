@@ -65,12 +65,12 @@
         <div class="row">
 
             <div class="col-sm-8">
-                
+
                 <?php if(isset($campaign->youtube_embed)){ ?>
                     <div>
                         <?php echo $campaign->youtube_embed; ?>
                     </div>
-                <? } ?>
+                <?php } ?>
 
                 <div>
                     <a id="single_image" href="/images/screenshots/<?php echo $campaign->screen_shot; ?>">
