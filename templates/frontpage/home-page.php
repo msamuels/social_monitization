@@ -221,6 +221,31 @@
             </div>
         </article>
 <?php } ?>
+         <?php if(count($campaigns) > 4){ ?>
+             <!--Pricing Column-->
+             <article class="pricing-column col-sm-4">
+                 <div class="inner-box fadeIn animated wow" data-wow-delay=".4s">
+                     <div class="plan-header text-center">
+                         <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[4]->friendly_url; ?>">
+                                 <?php echo $campaigns[4]->campaign_name; ?></a></h3>
+                         <h2 class="plan-duration"> by <a href="/producer/<?php echo $campaigns[4]->getProducer()->friendly_url; ?>">
+                                 <?php echo $campaigns[4]->getProducer()->org_name; ?></a></h2>
+                         <div class="thumbnail thumbnail-box">
+                             <a href="supporter/campaign/<?php echo $campaigns[4]->friendly_url; ?>">
+                                 <img src="/images/screenshots/<?php echo $campaigns[4]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
+                             </a>
+                         </div>
+
+                     </div>
+
+
+                     <div class="text-center">
+                         <a href="supporter/campaign/<?php echo $campaigns[4]->friendly_url; ?>" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
+                     </div>
+                 </div>
+             </article>
+         <?php } ?>
+
       </div><!-- end row -->
 
     </div> <!-- end container -->
