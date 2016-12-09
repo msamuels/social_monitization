@@ -3,13 +3,13 @@
 # Supporter Login page
 $app->get('/', function () use ($app){
 
-    $options = array('limit' => 4,  'order' => 'campaign_id desc', 'conditions' => array("approved = 'Y'"));
+    $options = array('limit' => 5,  'order' => 'campaign_id desc', 'conditions' => array("approved = 'Y'"));
 
     if(isset($app->config('configs')['excluded_from_home'])) {
 
         $excluded_from_home = $app->config('configs')['excluded_from_home'];
 
-        $options = array('limit' => 4,  'order' => 'campaign_id desc', 'conditions' => array("approved = 'Y'
+        $options = array('limit' => 5,  'order' => 'campaign_id desc', 'conditions' => array("approved = 'Y'
         AND campaign_id NOT IN (?) ", $excluded_from_home ));
     }
 
