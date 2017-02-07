@@ -455,8 +455,8 @@ $app->get('/producer/:name', function ($name) use ($app){
         $campaign_ids[] = $pc->campaign_id;
     }
 
-    // find campaigns for that producet
-    $options_2 = array('order' => 'campaign_id desc', 'conditions' => array('campaign_id in (?)', $campaign_ids));
+    // find campaigns for that producer
+    $options_2 = array('order' => 'campaign_id desc', 'conditions' => array("approved = 'Y' AND campaign_id in (?)", $campaign_ids));
     $campaigns = Campaign::all($options_2);
 
     $app->render('frontpage/producer-campaigns.php', array('campaigns'=>$campaigns, 'producer'=>$producer));
