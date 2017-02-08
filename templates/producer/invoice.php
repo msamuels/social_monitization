@@ -5,7 +5,7 @@
 
         <H3><?php echo $campaign->campaign_name; ?></H3>
 
-        <p><img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>"/></p>
+        <p><img width="300" height="500" style="max-height: 450px;" src="/images/screenshots/<?php echo $campaign->screen_shot; ?>"/></p>
 
         <H3>Supporters: </H3>
 
