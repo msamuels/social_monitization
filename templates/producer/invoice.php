@@ -10,14 +10,14 @@
 
         <H3>Supporters: </H3>
 
-        <div class="row" id="supporters-list" style="margin-left:300px">
+        <div class="row" id="supporters-list" style="padding:10px">
             <ul style="list-style: none">
                 <?php
                 if (count($supporters) > 0) {
                     foreach ($supporters as $supporter) {
 
                         ?>
-                        <li style="border: 1px solid  #0f0f0f; margin-right: 2px; width:170px; float: left">
+                        <li style="border: 1px solid  #0f0f0f; margin-right: 2px; width:170px; float: left; padding: 10px; ">
                             <?php echo $supporter->user_name; ?><br/>
                             Followers: <?php echo $supporter->id_follower_count; ?>
                         </li>
