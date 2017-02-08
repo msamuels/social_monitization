@@ -28,30 +28,6 @@
 
             </div>
 
-            <div class="col-sm-6">
-                <?php  if ($isPending) { ?>
-                <p class="sharepoints-p"> 2. Registered Supporter? Enter your email address or username to receive reward points</p>
-
-                <form action="/supporter/email-claim-points" method="POST" id="claim">
-                    
-                    <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>" />
-                    <div class="form-group">
-                            <div class="col-sm-6">
-                            <input type="text" class="form-control sharepoints-p sharepoints-form" name="email-username"
-                                   placeholder="Enter email or username"/>
-
-                            <p class="sharepoints-p">Don’t have an account?
-                                <a href="/get-started/supporter/register" class="highlighted" style="font-size: small;">Register</a>
-                            </p>
-                        </div>
-                        <div class="col-sm-3">
-                            <button class="btn btn-primary sharepoints-btn" type="submit">Submit</button>
-                        </div>
-                    </div>
-
-                </form>
-                <?php } ?>
-            </div>
         </div>
 
         <div class="row" style="text-align: left; margin-bottom:20px; padding-left: 15px;">
