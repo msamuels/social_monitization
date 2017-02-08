@@ -3,38 +3,39 @@
         <?php if (isset($success_info)) { ?>
             <div class="row alert alert-success"><?php echo $success_info; ?></div>
         <?php } ?>
-        <div class="row sharepoints">
-            <div class="col-sm-6">
-                <p class="sharepoints-p"> 1. Share This</p>
-                <div class="row">
-                    <div class="col-sm-3 sharebuttongap">
-                        <span class="fb-share-button" style="margin-bottom: 5px;"
-                              data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>"
-                              data-layout="button_count" data-mobile-iframe="true">
-                        </span>
-                    </div>
-
-                    <div class="col-sm-3 sharebuttongap">
-                        <span><a href="https://twitter.com/share" class="twitter-share-button"
-                                 data-via="shareitcamp"
-                                 data-show-count="false">Tweet</a>
-                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        </span>
-                    </div>
-
-                 
-
-                </div>
-
-            </div>
-
-        </div>
 
         <div class="row" style="text-align: left; margin-bottom:20px; padding-left: 15px;">
             <!-- Show campaigns supported -->
 
             <H1> <?php echo $campaign->campaign_name; ?> </H1>
             <h4><p class="by-line"><i>by <?php echo $campaign->getProducer()->org_name; ?></i></p></h4>
+
+            <div class="row sharepoints">
+                <div class="col-sm-6">
+                    <p class="sharepoints-p"> 1. Share This</p>
+                    <div class="row">
+                        <div class="col-sm-3 sharebuttongap">
+                        <span class="fb-share-button" style="margin-bottom: 5px;"
+                              data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>"
+                              data-layout="button_count" data-mobile-iframe="true">
+                        </span>
+                        </div>
+
+                        <div class="col-sm-3 sharebuttongap">
+                        <span><a href="https://twitter.com/share" class="twitter-share-button"
+                                 data-via="shareitcamp"
+                                 data-show-count="false">Tweet</a>
+                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </span>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
