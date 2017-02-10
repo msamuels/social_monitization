@@ -37,6 +37,23 @@ $app->post('/save-supporter', function () use ($app){
                'id_follower_count'=>$req['followers_fb'] ,'country'=>$req['country']
           ));
 
+
+        // Save organization affiliation information
+        if(is_int($req['organization_affiliation'])) {
+
+            $supporter_org = Organization_affiliation::create(
+                array('supporter_id' => $supporter->id_supporter, 'organization_id' => $req['organization_affiliation']
+                ));
+
+        }
+
+        // Save school affiliation information
+        if(is_int($req['school_affiliation'])) {
+            $supporter_school = Organization_affiliation::create(
+                array('supporter_id' => $supporter->id_supporter, 'organization_id' => $req['school_affiliation ']
+                ));
+        }
+
         // Auto respond to to supporter
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";

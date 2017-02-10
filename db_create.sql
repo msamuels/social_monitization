@@ -361,6 +361,30 @@ CREATE TABLE IF NOT EXISTS `targeting` (
   KEY `fk_targeting_1_idx` (`campaign_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=big5;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `organization`
+--
+CREATE TABLE `organization` (
+  `organization_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `type` enum('school','non-profit') DEFAULT NULL,
+  PRIMARY KEY (`organization_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `organization`
+--
+CREATE TABLE `organization_affiliation` (
+  `organization_affiliation_id` int(11) NOT NULL AUTO_INCREMENT,
+  `supporter_id` varchar(45) DEFAULT NULL,
+  `organization_id` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`organization_affiliation_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

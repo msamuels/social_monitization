@@ -390,6 +390,24 @@
                             <option value="Zimbabwe">Zimbabwe</option>
                         </select>
                     </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" style="text-align:right">Organization affiliation (optional):</label>
+                        <SELECT NAME="organization_affiliation">
+                            <option VALUE="--">--</option>
+                            <option VALUE="1">UJAA</option>
+                        </SELECT>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" style="text-align:right">School (optional):</label>
+                        <SELECT NAME="school_affiliation">
+                            <option VALUE="--">--</option>
+                            <option VALUE="1">Kingston College</option>
+                        </SELECT>
+                    </div>
+
                     <br/>
 
                     <p style="text-align: center">
