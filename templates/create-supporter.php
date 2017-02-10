@@ -404,7 +404,7 @@
                         <label class="control-label col-sm-4" style="text-align:right">School (optional):</label>
                         <SELECT NAME="school_affiliation">
                             <option VALUE="--">--</option>
-                            <option VALUE="1">Kingston College</option>
+                            <option VALUE="2">Kingston College</option>
                         </SELECT>
                     </div>
 

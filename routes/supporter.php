@@ -39,7 +39,7 @@ $app->post('/save-supporter', function () use ($app){
 
 
         // Save organization affiliation information
-        if(is_int($req['organization_affiliation'])) {
+        if(($req['organization_affiliation'] != '--')) {
 
             $supporter_org = Organization_affiliation::create(
                 array('supporter_id' => $supporter->id_supporter, 'organization_id' => $req['organization_affiliation']
@@ -48,9 +48,9 @@ $app->post('/save-supporter', function () use ($app){
         }
 
         // Save school affiliation information
-        if(is_int($req['school_affiliation'])) {
+        if($req['school_affiliation'] != '--') {
             $supporter_school = Organization_affiliation::create(
-                array('supporter_id' => $supporter->id_supporter, 'organization_id' => $req['school_affiliation ']
+                array('supporter_id' => $supporter->id_supporter, 'organization_id' => $req['school_affiliation']
                 ));
         }
 
