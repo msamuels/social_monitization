@@ -403,8 +403,31 @@
                     <div class="form-group">
                         <label class="control-label col-sm-4" style="text-align:right">School (optional):</label>
                         <SELECT NAME="school_affiliation">
-                            <option VALUE="--">--</option>
-                            <option VALUE="2">Kingston College</option>
+                            <option VALUE="--">--</option>	
+                            <option VALUE="2">Alpha Tri-State New York Alumnae Association</option>
+<option VALUE="3">Ardenne Alumni Association (NY Chapter)</option>
+<option VALUE="4">Bethany Past Students Association</option>
+<option VALUE="5">Bethlehem Teachers College Alumni Association, NY</option>
+<option VALUE="6">Camperdown Past Students Association</option>
+<option VALUE="7">Charlemont High School Foundation</option>
+<option VALUE="8">Clarendon College Alumni Association of NY</option>
+<option VALUE="9">Cornwall College Old Boys' Association, NY</option>
+<option VALUE="10">Denham Town High School Alumni Association</option>
+<option VALUE="11">Dinthill Technical High School Alumni Association</option>
+<option VALUE="12">Eastern Hanover Alumni Association</option>
+<option VALUE="13">Edwin Allen High School Alumni Association Mid-Atl</option>
+<option VALUE="14">Excelsior Alumni Association</option>
+<option VALUE="15">Friends of Port Maria</option>
+<option VALUE="16">Garvey Maceo Past Students' Association</option>
+<option VALUE="17">Glenmuir Alumni Association - NY Chapter</option>
+<option VALUE="18">Godfrey Stewart HS Alumni Association Internationa</option>
+<option VALUE="19">Grantham College Alumni Association</option>
+<option VALUE="20">Holmwood Technical HS PSA New York Chapter</option>
+<option VALUE="21">Immaculate Conception H S Alumnae Assn, NY</option>
+<option VALUE="22">Jamaican Civic & Cultural Association of Rockland</option>
+<option VALUE="23">Jamaica College Old Boys' Association</option>
+<option VALUE="24">Kingston College Old Boys' Association USA Inc.</option>
+<option VALUE="25">Kingston Technical High School Alumni Association</option>
                         </SELECT>
                     </div>
 

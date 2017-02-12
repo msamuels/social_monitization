@@ -83,9 +83,9 @@ $app->post('/save-supporter', function () use ($app){
 
         mail($to, $subject, $body, $headers);
 
-        $app->flash('success_info', 'Supporter Saved');
+        $app->flash('success_info', 'Thank you for signing up to support. Please check your email for a welcome notification.');
 
-        $app->redirect('/supporter/campaigns/pending');
+        $app->redirect('/login');
 
     }
 
@@ -165,8 +165,14 @@ $app->get('/supporter/campaigns/pending', $authenticate($app), function () use (
         $campaigns = Campaign::find('all', array('conditions' => array('campaign_id NOT IN (?) AND approved = ?
         ORDER BY campaign_id DESC', $ar_campaigns, 'Y')));
     }
+
+    $success_info = '';
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
+    }
+
     $app->render('support-campaigns.php', array('campaigns' => $campaigns, 'user_id' => $supporter->id,
-        'isPEnding' => true));
+        'isPEnding' => true, 'success_info' => $success_info));
 });
 
 

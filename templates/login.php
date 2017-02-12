@@ -38,9 +38,9 @@
 
                 <H3>LOGIN </H3>
 
-                <?php
-                    echo '<!--<a href="' . htmlspecialchars($fb_login_url) . '">Log in with Facebook!</a>-->';
-                ?>
+				<?php if (isset($success_info)) { ?>
+				    <div class="alert alert-success"><?php echo $success_info; ?></div>
+				<?php } ?>
 
                 <div id="status">
                 </div>

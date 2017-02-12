@@ -101,6 +101,10 @@ $app->get("/login", function () use ($app) {
    if (isset($flash['errors']['username'])) {
       $username_error = $flash['errors']['username'];
    }
+   if (isset($flash['success_info'])) {
+      $success_info = $flash['success_info'];
+   }
+
    if (isset($flash['errors']['password'])) {
       $password_error = $flash['errors']['password'];
    }
@@ -118,7 +122,7 @@ $app->get("/login", function () use ($app) {
 
    $app->render('login.php', array('error' => $error, 'username_value' => $username_value,
       'username_error' => $username_error, 'password_error' => $password_error, 'urlRedirect' => $urlRedirect,
-       'fb_login_url' => $loginUrl, 'configs' => $configs));
+       'fb_login_url' => $loginUrl, 'configs' => $configs, 'success_info' => $success_info));
 });
 
 // log user out
