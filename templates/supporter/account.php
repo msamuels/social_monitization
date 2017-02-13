@@ -54,7 +54,35 @@
                         </div>
                     </div>
 
-                    <p style="text-align:center">
+                    <div class="form-group">
+                        <div class="col-sm-8"><strong>My Organization:</strong> <?php echo $my_nonprofit; ?></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" style="text-align:right">Organization affiliation (optional):</label>
+                        <SELECT NAME="organization_affiliation">
+                            <option VALUE="--">--</option>
+                            <?php foreach($nonprofits as $nonprofit){ ?>
+                                <option VALUE="<?php echo $nonprofit->organization_id; ?>"><?php echo $nonprofit->name; ?></option>
+                            <?php } ?>
+                        </SELECT>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-8"><strong>My School Assoc:</strong> <?php echo $my_school; ?></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" style="text-align:right">School (optional):</label>
+                        <SELECT NAME="school_affiliation">
+                            <option VALUE="--">--</option>
+                            <?php foreach($schools as $school){ ?>
+                                <option VALUE="<?php echo $school->organization_id; ?>"><?php echo $school->name; ?></option>
+                            <?php } ?>
+                        </SELECT>
+                    </div>
+
+                    <p style="text-align: center">
                         <button class="btn btn-primary" type="submit">Update</button>
                     </p>
 

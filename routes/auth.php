@@ -101,6 +101,9 @@ $app->get("/login", function () use ($app) {
    if (isset($flash['errors']['username'])) {
       $username_error = $flash['errors']['username'];
    }
+
+    $success_info =  NULL;
+
    if (isset($flash['success_info'])) {
       $success_info = $flash['success_info'];
    }

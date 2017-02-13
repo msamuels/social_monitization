@@ -428,12 +428,55 @@ $app->get("/account", $authenticate($app), function () use ($app) {
     $supporter = Supporter::find_by_user_name($user_name);
     $flash = $app->view()->getData('flash');
 
+    // get all the organizations for displays
+    $orgs = Organization::find('all');
+
+    $schools = array();
+    $nonprofits = array();
+
+    foreach($orgs as $org) {
+        if($org->type == 'non-profit') {
+            $nonprofits[] = $org;
+        } else {
+            $schools[] = $org;
+        }
+    }
+
+    // get the organization affiliation
+    $affiliations = Organization_affiliation::find_all_by_supporter_id($supporter->id_supporter);
+
+    // get the ids and query the Org table by them.
+    $vals = array();
+    foreach($affiliations as $af) {
+        $vals[] = $af->organization_id;
+    }
+
+
+    $my_nonprofit = '';
+    $my_school = '';
+
+    if(count($vals) > 0) {
+        $my_affiliations = Organization::find('all', array('conditions' => array('organization_id in (?)', $vals)));
+
+        if(count($my_affiliations) > 0) {
+            foreach($my_affiliations as $my_affiliation) {
+                if($my_affiliation->type == 'non-profit') {
+                    $my_nonprofit = $my_affiliation->name;
+                } else {
+                    $my_school = $my_affiliation->name;
+                }
+            }
+        }
+    }
+
     $success_info = '';
     if (isset($flash['success_info'])) {
         $success_info = $flash['success_info'];
     }
 
-    $app->render('supporter/account.php', array('supporter' => $supporter, 'success_info' => $success_info));
+    $app->render('supporter/account.php', array('supporter' => $supporter,
+        'nonprofits' => $nonprofits, 'schools' => $schools, 'affiliations' => $affiliations,
+        'my_nonprofit'=> $my_nonprofit, 'my_school'=> $my_school, 'success_info' => $success_info));
 });
 
 
