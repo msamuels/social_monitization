@@ -127,9 +127,9 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
 
     $body_supporter = "<p>".$producer->org_name. " is asking for your support for their ".$campaign->campaign_name."
      effort. Click on the link below to find
-    out more and, if you are interested, hit the support button. Once you've done that just post to Facebook. </p>";
+    out more and, if you are interested, log in to your account and hit the support button. Once you've done that just post to Facebook. </p>";
     $baseurl =  $destination = $app->config('configs')['base_url'];
-    $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->campaign_id."'>Click here to support</a>";
+    $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->friendly_url."'>Click here to support</a>";
     $body_supporter .= "<p>Oh, and for sharing the link you will earn 5 points.</p>";
     $body_supporter .= "<p>Thanks, <br />
         The shareitcamp team</p>";
