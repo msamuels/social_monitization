@@ -144,7 +144,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
 
     $campaign = Campaign::create(
         array('campaign_name'=>$req['campaign_name'], 'budget' => $req['budget'],
-            'start_date' => $req['start_date'], 
+            'start_date' => $req['start_date'],
             'end_date' => $req['end_date'],'copy' => $req['copy'],
             'screen_shot' => $rename_to,'url' => $req['url'],'platform' => $req['platform'],
             'order_number'=>$order_number, 'friendly_url' => $friendly_url, 'youtube_embed' => $req['youtube_embed']));

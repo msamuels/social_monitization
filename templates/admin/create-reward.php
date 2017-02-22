@@ -31,6 +31,16 @@
                     </div>
 
                     <div class="form-group">
+                        <label class="control-label col-sm-4">Type</label>
+                        <div class="col-sm-8">
+                            <select name="type">
+                                <option value="Reward" selected>Reward</option>
+                                <option value="Raffle">Raffle</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label class="control-label col-sm-4">Quantity</label>
                         <div class=" col-sm-8">
                             <input type="text" class="form-control" name="quantity_remaining"/>

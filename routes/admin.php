@@ -44,7 +44,8 @@ $app->post('/save-reward', $authenticate($app), function () use ($app){
     $reward = Reward::create(
         array('reward_name'=>$req['reward_name'], 'image'=>$rename_to, 'details' => $req['details'],
             'expiration_date' => $req['expiration_date'], 'quantity_remaining' => $req['quantity_remaining'],
-            'point_value' => $req['point_value'], 'campaign_id' => $reward,  'description' => $req['description']));
+            'point_value' => $req['point_value'], 'campaign_id' => $reward,  'description' => $req['description'],
+            'type' => $req['type']));
 
     $msg = 'Reward Saved: '. $req['reward_name'];
     $app->flash('success_info', $msg);
@@ -161,7 +162,7 @@ $app->get('/admin/supporters', $authenticate($app), function () use ($app){
     $app->render('admin/list-supporters.php', array('supporters' => $supporters, 'success_info' => $success_info));
 });
 
-# Approve campaign
+# Update campaign points
 $app->post('/update-campaign', $authenticate($app), function () use ($app){
 
     $req = $app->request->post();
@@ -174,4 +175,52 @@ $app->post('/update-campaign', $authenticate($app), function () use ($app){
     $app->flash('success_info', 'Points Updated');
 
     $app->redirect('/admin/campaigns');
+});
+
+
+# Producer Resend Approved campaign
+$app->post('/resend-campaign-notification', $authenticate($app), function () use ($app){
+
+    $req = $app->request->post();
+
+    $campaign = Campaign::find($req['campaign_id']);
+
+    // grab all the supporters to email
+    $supporter_email = array();
+    $supporters = Supporter::find('all');
+
+    foreach ($supporters as $supporter) {
+        array_push($supporter_email, $supporter->email_address);
+    }
+
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    $headers .= 'From: info@shareitcamp.com' . "\r\n";
+
+    // Email supporter to let them know campaign has been approved by producer
+    $headers .= 'BCC: '. implode(",", $supporter_email) . "\r\n";
+
+    $subject_supporter = 'New campaign posted to shareitcamp! ';
+
+    $producer = $campaign->getProducer();
+
+    $body_supporter = "<p>".$producer->org_name. " is asking for your support for their ".$campaign->campaign_name." effort.
+    If you haven't done so Click on the link below to find out more and, if you are interested, hit the support button.
+    Once you've done that just post to Facebook. </p>";
+
+    $baseurl =  $destination = $app->config('configs')['base_url'];
+
+    $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->friendly_url."'>Click here to support</a>";
+
+    $body_supporter .= "<p>Oh, and for sharing the link you will earn 5 points.</p>";
+
+    $body_supporter .= "<p>Thanks, <br />
+        The shareitcamp team</p>";
+
+    mail(null, $subject_supporter, $body_supporter, $headers);
+
+
+    $app->flash('success_info', 'Campaign has been resent to supporters');
+
+    $app->redirect('/campaigns');
 });

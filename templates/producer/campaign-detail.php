@@ -126,6 +126,22 @@
                             ?>
                         </ul>
                         </p>
+
+                        <?php if($campaign->approved != 'Y' && $_SESSION['user_type'] == "admin") { ?>
+                            <form action="/resend-campaign-notification" method="POST" class="form-horizontal"
+                                  role="form" id="resend-campaign">
+                                <div class="form-group">
+                                    <div class="col-sm-8">
+                                        <input type="hidden" value="<?php echo $campaign->campaign_id; ?>" name="campaign_id" />
+                                        <p style="text-align: center">
+                                            <button class="btn btn-primary" type="submit">Resend</button>
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </form>
+                        <?php } ?>
+
                     </div>
                 </div>
 
