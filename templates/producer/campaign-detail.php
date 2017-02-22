@@ -47,16 +47,14 @@
                 <?php if ($reward) { ?>
                     <H2>Rewards: </H2>
                     <p><?php echo $reward->reward_name; ?></p>
+                    <H3>Description</H3>
+                    <p><?php echo $reward->description; ?></p>
+                    <H3>Details</H3>
+                    <p><?php echo $reward->details; ?></p>
                     <p><img src="/images/rewards/<?php echo $reward->image; ?>" height="100" width="100"/></p>
                     <form method="POST" action="/save-post-to-fb">
                         <input type="hidden" name="message" id="messgae"
                                value="<?php echo $supported_campaign->campaign->campaign_name; ?>"/>
-
-                        <div class="fb-share-button"
-                             data-href="<?php echo $base_url; ?>
-                /supporter/campaign/<?php echo $supported_campaign->campaign->friendly_url; ?>"
-                             data-layout="button_count" data-mobile-iframe="true">
-                        </div>
                     </form>
                 <?php } ?>
             </div>
