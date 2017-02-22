@@ -585,10 +585,12 @@ $app->post('/do-claim-reward', function () use ($app){
         $user_name = $app->view()->getData('user');
         $supporter = Supporter::find_by_user_name($user_name);
 
+        $offer_code = rand(1111111111,9999999999);
+
         // @TODO Add entry to reward_claimed table and judge points remainder from that
         $reward_claimed = Reward_claimed::create(
             array('id_supporter' => $supporter->id_supporter, 'reward_id' => $reward->reward_id,
-                'point_value' => $reward->point_value, 'date_claimed' => date("Y-m-d h:i:sa")));
+                'point_value' => $reward->point_value, 'date_claimed' => date("Y-m-d h:i:sa"), 'offer_code' => $offer_code));
 
         // Auto respond to to supporter
         $headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -598,8 +600,15 @@ $app->post('/do-claim-reward', function () use ($app){
         $to = $supporter->email_address;
         $subject = 'Reward claim'. $reward->reward_name;
 
-        $body = "<p>You are about to claim this reward: ".$reward->reward_name.".</p>.";
-        $body = "<p> Our admin has been notified and will be emailing you your gift card. </p>";
+        // Send supporter a different message if its a reward or a raffle.
+        if($reward->type == "reward") {
+            $body = "<p>You are about to claim this reward: ".$reward->reward_name.".</p>.";
+            $body = "<p> Our admin has been notified and will be emailing you your gift card. </p>";
+        } else {
+            $body = "<p>You are about to enter this raffle: ".$reward->reward_name.".</p>.";
+            $body = "<p> One supporter will be selected at random as the winner. </p>";
+            $body = "<p> Here is your raffle ticket number: ".$reward->offer_code."</p>";
+        }
 
         $service_body = "<p>".$supporter->email_address." wants to claim this reward: ".$reward->reward_name.".</p>.";
 
