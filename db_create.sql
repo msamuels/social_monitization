@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: db591622819.db.1and1.com
--- Generation Time: Oct 13, 2016 at 01:32 PM
--- Server version: 5.5.50-0+deb7u2-log
--- PHP Version: 5.4.45-0+deb7u5
+-- Generation Time: Feb 22, 2017 at 02:27 PM
+-- Server version: 5.5.54-0+deb7u2-log
+-- PHP Version: 5.4.45-0+deb7u7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `campaigns` (
   `start_date` datetime DEFAULT NULL,
   `end_date` datetime DEFAULT NULL,
   `approved` enum('Y','N') DEFAULT 'N',
-  `screen_shot` varchar(45) DEFAULT NULL,
+  `screen_shot` varchar(255) DEFAULT NULL,
   `copy` longtext,
   `url` varchar(255) DEFAULT NULL,
   `platform` varchar(255) DEFAULT NULL,
@@ -75,6 +75,8 @@ CREATE TABLE IF NOT EXISTS `campaigns` (
   `producer_approved` enum('Y','N') NOT NULL DEFAULT 'N',
   `friendly_url` varchar(255) NOT NULL,
   `points` int(11) NOT NULL DEFAULT '5',
+  `youtube_embed` varchar(255) NOT NULL,
+  `summary` varchar(255) NOT NULL,
   PRIMARY KEY (`campaign_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=big5;
 
@@ -167,6 +169,32 @@ CREATE TABLE IF NOT EXISTS `links` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `organization`
+--
+
+CREATE TABLE IF NOT EXISTS `organization` (
+  `organization_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `type` enum('school','non-profit') DEFAULT NULL,
+  PRIMARY KEY (`organization_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `organization_affiliation`
+--
+
+CREATE TABLE IF NOT EXISTS `organization_affiliation` (
+  `organization_affiliation_id` int(11) NOT NULL AUTO_INCREMENT,
+  `supporter_id` varchar(45) DEFAULT NULL,
+  `organization_id` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`organization_affiliation_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `org class`
 --
 
@@ -233,23 +261,6 @@ CREATE TABLE IF NOT EXISTS `producer_account` (
 
 CREATE TABLE IF NOT EXISTS `reward` (
   `reward_id` int(11) NOT NULL AUTO_INCREMENT,
-  `image` varchar(255) DEFAULT NULL,
-  `details` varchar(255) DEFAULT NULL,
-  `expiration_date` datetime DEFAULT NULL,
-  `quantity_remaining` int(11) DEFAULT NULL,
-  `point_value` int(11) DEFAULT NULL,
-  `campaign_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`reward_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=big5;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `rewards`
---
-
-CREATE TABLE IF NOT EXISTS `rewards` (
-  `reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `reward_name` varchar(255) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `details` varchar(255) DEFAULT NULL,
@@ -258,6 +269,7 @@ CREATE TABLE IF NOT EXISTS `rewards` (
   `point_value` int(11) DEFAULT NULL,
   `campaign_id` int(11) DEFAULT NULL,
   `description` longtext NOT NULL,
+  `type` enum('reward','raffle') NOT NULL,
   PRIMARY KEY (`reward_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=big5;
 
@@ -360,30 +372,6 @@ CREATE TABLE IF NOT EXISTS `targeting` (
   PRIMARY KEY (`tag_id`),
   KEY `fk_targeting_1_idx` (`campaign_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=big5;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `organization`
---
-CREATE TABLE `organization` (
-  `organization_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `type` enum('school','non-profit') DEFAULT NULL,
-  PRIMARY KEY (`organization_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `organization`
---
-CREATE TABLE `organization_affiliation` (
-  `organization_affiliation_id` int(11) NOT NULL AUTO_INCREMENT,
-  `supporter_id` varchar(45) DEFAULT NULL,
-  `organization_id` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`organization_affiliation_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
