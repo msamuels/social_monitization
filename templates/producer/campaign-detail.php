@@ -125,7 +125,7 @@
                         </ul>
                         </p>
 
-                        <?php if($campaign->approved != 'Y' && $_SESSION['user_type'] == "admin") { ?>
+                        <?php if($campaign->approved == 'Y' && $_SESSION['user_type'] == "admin") { ?>
                             <form action="/resend-campaign-notification" method="POST" class="form-horizontal"
                                   role="form" id="resend-campaign">
                                 <div class="form-group">
