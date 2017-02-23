@@ -85,11 +85,11 @@
 
                         <?php if($is_reward_claimed) { ?>
                             <span class="btn btn-success" type="submit">Redeemed</span>
-                        <?php } elseif(($reward->point_value < ($rewards_track['points_earned'] - $rewards_track['points_claimed']) && $reward->type == "reward") { ?>
+                        <?php } elseif(($reward->point_value < ($rewards_track['points_earned'] - $rewards_track['points_claimed'])) && $reward->type == "reward") { ?>
 							<span class="btn btn-primary" type="submit">Not enough points to redeem</span>
-						<?php } elseif(($reward->point_value > ($rewards_track['points_earned'] - $rewards_track['points_claimed']) && $reward->type == "reward") { ?>
+						<?php } elseif(($reward->point_value > ($rewards_track['points_earned'] - $rewards_track['points_claimed'])) && $reward->type == "reward") { ?>
 						<button class="btn btn-primary" type="submit">Redeem</button>
-						<?php } elseif(($reward->point_value > ($rewards_track['points_earned'] - $rewards_track['points_claimed']) && $reward->type == "raffle") { ?>
+						<?php } elseif(($reward->point_value > ($rewards_track['points_earned'] - $rewards_track['points_claimed'])) && $reward->type == "raffle") { ?>
 						<button class="btn btn-primary" type="submit">Enter Raffle</button>
 					<?php } ?>
                     </p>
