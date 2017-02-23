@@ -40,6 +40,7 @@
                     <?php if ($_SESSION['user_type'] == "producer") { ?>
                         <li><a href="/campaigns">Campaigns</a></li>
                         <li><a href="/create-campaign">Create Campaign</a></li>
+                        <li><a href="/create-reward">Create Rewards</a></li>
                         <li><a href="/invoices">Invoices</a></li>
                         <li><a href="#">Manage Account</a></li>
                     <?php } ?>

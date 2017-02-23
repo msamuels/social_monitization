@@ -141,7 +141,7 @@
 
                     <ul id="donation-types" style="text-align: center;">
 
-                        <li>- <a href="/create-reward" class="highlighted">Reward</a></li>
+                        <li>- Reward</li>
                         <li>- Facebook Post</li>
                         <li>- Newsletter Ad</li>
                         <li>- Booth at Event</li>
