@@ -1,3 +1,10 @@
+<script>
+    $( "#share-it" ).click(function() {
+        $( "#share-buttons" ).toggle( "slow", function() {
+            // Animation complete.
+        });
+    });
+</script>
 <section class="section" id="features">
     <div class="container">
         <?php if (isset($success_info)) { ?>
@@ -10,7 +17,10 @@
             <H1> <?php echo $campaign->campaign_name; ?> </H1>
             <h4><p class="by-line"><i>by <?php echo $campaign->getProducer()->org_name; ?></i></p></h4>
 
-            <div class="row sharepoints">
+            <div>
+                <button class="btn support-btns" id="share-it">Share</button>
+            </div>
+            <div class="row sharepoints" id="share-buttons">
                 <div class="col-sm-6">
                     <p class="sharepoints-p"> 1. Share This</p>
                     <div class="row">
