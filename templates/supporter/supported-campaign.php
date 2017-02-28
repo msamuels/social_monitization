@@ -1,10 +1,12 @@
 <script>
-    $( "#share-it" ).click(function() {
-        $( "#share-buttons" ).toggle( "slow", function() {
-            // Animation complete.
+    $(document).ready(function(){
+        $("#share-buttons").hide();
+        $("#share-it").click(function(){
+            $("#share-buttons").toggle();
         });
     });
 </script>
+
 <section class="section" id="features">
     <div class="container">
         <?php if (isset($success_info)) { ?>
