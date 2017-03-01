@@ -1,9 +1,7 @@
 <script>
-    $(document).ready(function(){
-        $("#share-buttons").hide();
-        $("#share-it").click(function(){
-            $("#share-buttons").toggle();
-        });
+    // show the sharing lnks when user clicks share
+    $(document).ready(function() {
+        $("#share-it").fancybox();
     });
 </script>
 
@@ -20,9 +18,9 @@
             <h4><p class="by-line"><i>by <?php echo $campaign->getProducer()->org_name; ?></i></p></h4>
 
             <div>
-                <button class="btn support-btns" id="share-it">Share</button>
+                <button class="btn support-btns" id="share-it" href="#share-buttons">Share</button>
             </div>
-            <div class="row sharepoints" id="share-buttons">
+            <div class="row sharepoints" id="share-buttons" style="display:none">
                 <div class="col-sm-6">
                     <p class="sharepoints-p"> 1. Share This</p>
                     <div class="row">
