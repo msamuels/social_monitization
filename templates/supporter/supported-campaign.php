@@ -2,7 +2,7 @@
     // show the sharing lnks when user clicks share
     $(document).ready(function() {
         $("#share-it").fancybox({
-            "onComplete": function(){
+            afterShow: function(){
                 $.ajax({url: "/save-campaign-support", success: function(result){
                     // $("#div1").html(result);
                 }});
