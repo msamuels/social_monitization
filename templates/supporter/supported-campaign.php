@@ -3,9 +3,12 @@
     $(document).ready(function() {
         $("#share-it").fancybox({
             afterShow: function(){
-                $.ajax({url: "/save-campaign-support", success: function(result){
-                    // $("#div1").html(result);
-                }});
+                $.post({"/save-campaign-support",
+                    {
+                        campaign_id: <?php echo $campaign->campaign_id; ?>,
+                        supporter_id: <?php echo $user_id; ?>
+                    }
+                });
             }
         });
     });
