@@ -206,7 +206,7 @@ $app->post('/resend-campaign-notification', $authenticate($app), function () use
 
     $body_supporter = "<p>Just a friendly reminder that ".$producer->org_name. " would like your support in spreading
     the word about their ".$campaign->campaign_name." initiative.
-    If you haven't done so Click on the link below to find out more and, if you are interested, hit the support button.
+    If you haven't done so Click on the link below to find out more and, if you are interested, log in and click the SHARE button.
     Once you've done that just post to Facebook. </p>";
 
     $baseurl =  $destination = $app->config('configs')['base_url'];
