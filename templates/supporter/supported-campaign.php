@@ -9,12 +9,9 @@
     });
 
 function save_campaign(){
-    $.post({"/save-campaign-support",
-        {
-            campaign_id: <?php echo $campaign->campaign_id; ?>,
-            supporter_id: <?php echo $user_id; ?>
-        }
-    });
+    $.post("/save-campaign-support", 
+        {campaign_id: <?php echo $campaign->campaign_id; ?>, supporter_id: <?php echo $user_id; ?>}
+    );
 }
 </script>
 
