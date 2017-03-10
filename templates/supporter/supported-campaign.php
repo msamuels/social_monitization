@@ -3,15 +3,19 @@
     $(document).ready(function() {
         $("#share-it").fancybox({
             afterShow: function(){
-                $.post({"/save-campaign-support",
-                    {
-                        campaign_id: <?php echo $campaign->campaign_id; ?>,
-                        supporter_id: <?php echo $user_id; ?>
-                    }
-                });
+                save_campaign();
             }
         });
     });
+
+function save_campaign(){
+    $.post({"/save-campaign-support",
+        {
+            campaign_id: <?php echo $campaign->campaign_id; ?>,
+            supporter_id: <?php echo $user_id; ?>
+        }
+    });
+}
 </script>
 
 <section class="section" id="features">
