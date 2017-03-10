@@ -200,11 +200,12 @@ $app->post('/resend-campaign-notification', $authenticate($app), function () use
     // Email supporter to let them know campaign has been approved by producer
     $headers .= 'BCC: '. implode(",", $supporter_email) . "\r\n";
 
-    $subject_supporter = 'New campaign posted to shareitcamp! ';
+    $subject_supporter = 'Reminder: Please support '.$campaign->campaign_name;
 
     $producer = $campaign->getProducer();
 
-    $body_supporter = "<p>".$producer->org_name. " is asking for your support for their ".$campaign->campaign_name." effort.
+    $body_supporter = "<p>Just a friendly reminder that ".$producer->org_name. " would like your support in spreading
+    the word about their ".$campaign->campaign_name." initiative.
     If you haven't done so Click on the link below to find out more and, if you are interested, hit the support button.
     Once you've done that just post to Facebook. </p>";
 
@@ -212,7 +213,8 @@ $app->post('/resend-campaign-notification', $authenticate($app), function () use
 
     $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->friendly_url."'>Click here to support</a>";
 
-    $body_supporter .= "<p>Oh, and for sharing the link you will earn 5 points.</p>";
+    $body_supporter .= "<p>If you have shared this initiative once before please share again. Your friends may have
+    missed it the first time.</p>";
 
     $body_supporter .= "<p>Thanks, <br />
         The shareitcamp team</p>";
