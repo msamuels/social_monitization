@@ -224,5 +224,5 @@ $app->post('/resend-campaign-notification', $authenticate($app), function () use
 
     $app->flash('success_info', 'Campaign has been resent to supporters');
 
-    $app->redirect('/campaigns');
+    $app->redirect('/admin/campaigns');
 });
