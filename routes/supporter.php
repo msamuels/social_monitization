@@ -603,11 +603,11 @@ $app->post('/do-claim-reward', function () use ($app){
         // Send supporter a different message if its a reward or a raffle.
         if($reward->type == "reward") {
             $body = "<p>You are about to claim this reward: ".$reward->reward_name.".</p>.";
-            $body = "<p> Our admin has been notified and will be emailing you your gift card. </p>";
+            $body .= "<p> Our admin has been notified and will be emailing you your gift card. </p>";
         } else {
             $body = "<p>You are about to enter this raffle: ".$reward->reward_name.".</p>.";
-            $body = "<p> One supporter will be selected at random as the winner. </p>";
-            $body = "<p> Here is your raffle ticket number: ".$reward->offer_code."</p>";
+            $body .= "<p> One supporter will be selected at random as the winner. </p>";
+            $body .= "<p> Here is your raffle ticket number: ".$reward->offer_code."</p>";
         }
 
         $service_body = "<p>".$supporter->email_address." wants to claim this reward: ".$reward->reward_name.".</p>.";
