@@ -396,6 +396,7 @@
                         <SELECT NAME="organization_affiliation">
                             <option VALUE="--">--</option>
                             <option VALUE="1">UJAA</option>
+                            <option VALUE="2">Mystical Speed</option>
                         </SELECT>
                     </div>
 
