@@ -67,6 +67,10 @@
     color: orange;
 }
 
+.small-note {
+    font-size: 9pt;
+}
+
 .support-btns{
     background-color: orange;
     color: white;

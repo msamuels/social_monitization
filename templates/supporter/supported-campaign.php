@@ -31,7 +31,7 @@ function save_campaign(){
                 <button class="btn support-btns" id="share-it" href="#share-buttons">
 					Share 
 						<?php if($user_id == '') { ?>
-							<br />must be logged in.
+							<span class="small-note">must be logged in.</span>
 						<?php } ?>
 
 				</button>
