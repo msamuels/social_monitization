@@ -38,7 +38,7 @@
     <!-- Color css -->
     <link href="/css/colors/default.css" rel="stylesheet">
 
-    <link href="/css/override.css" rel="stylesheet">
+    <link href="/css/override.css?<?php echo date('s')?>" rel="stylesheet">
 
     <link href="/css/jquery-ui.min.css" rel="stylesheet">
 
