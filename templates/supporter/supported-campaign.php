@@ -28,7 +28,13 @@ function save_campaign(){
             <h4><p class="by-line"><i>by <?php echo $campaign->getProducer()->org_name; ?></i></p></h4>
 
             <div>
-                <button class="btn support-btns" id="share-it" href="#share-buttons">Share</button>
+                <button class="btn support-btns" id="share-it" href="#share-buttons">
+					Share 
+						<?php if($user_id == '') { ?>
+							<br />must be logged in.
+						<?php } ?>
+
+				</button>
             </div>
             <div class="row sharepoints" id="share-buttons" style="display:none">
                 <div class="col-sm-6">
