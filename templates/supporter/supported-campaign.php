@@ -1,19 +1,34 @@
-<script>
-    // show the sharing lnks when user clicks share
-    $(document).ready(function() {
-        $("#share-it").fancybox({
-            afterShow: function(){
-                save_campaign();
-            }
-        });
-    });
+<?php if($user_id == '') { ?>
 
-function save_campaign(){
-    $.post("/save-campaign-support", 
-        {campaign_id: <?php echo $campaign->campaign_id; ?>, supporter_id: <?php echo $user_id; ?>}
-    );
-}
-</script>
+	<script>
+		// show the sharing lnks when user clicks share
+		$(document).ready(function() {
+		    $("#share-it").fancybox();
+		});
+	</script>
+
+
+<?php } else { ?>
+
+	<script>
+		// show the sharing lnks when user clicks share
+		$(document).ready(function() {
+		    $("#share-it").fancybox({
+		        afterShow: function(){
+		            save_campaign();
+		        }
+		    });
+		});
+
+	function save_campaign(){
+		$.post("/save-campaign-support", 
+		    {campaign_id: <?php echo $campaign->campaign_id; ?>, supporter_id: <?php echo $user_id; ?>}
+		);
+	}
+	</script>
+
+<?php  } ?>
+
 
 <section class="section" id="features">
     <div class="container">
