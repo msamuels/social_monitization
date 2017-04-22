@@ -49,7 +49,13 @@
             </div>
             <div class="row sharepoints" id="share-buttons" style="display:none">
                 <div class="col-sm-6">
-                    <p class="sharepoints-p"> 1. Share This</p>
+                    <p class="sharepoints-p"> 
+						<?php if($user_id == '') { ?>
+							1. Share This (you must be logged in to get points.)
+						<?php } else { ?>
+							1. Share This
+						<?php } ?>
+					</p>
                     <div class="row">
                         <div class="col-sm-3 sharebuttongap">
                         <span class="fb-share-button" style="margin-bottom: 5px;"
