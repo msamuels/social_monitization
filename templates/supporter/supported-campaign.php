@@ -45,10 +45,6 @@
             <div>
                 <button class="btn support-btns" id="share-it" href="#share-buttons">
 					Share 
-						<?php if($user_id == '') { ?>
-							<span class="small-note">(must be logged in.)</span>
-						<?php } ?>
-
 				</button>
             </div>
             <div class="row sharepoints" id="share-buttons" style="display:none">
