@@ -7,7 +7,7 @@
 
             <div class="col-sm-6">
 
-                <div class="row"><H1>Privacy Policy for shareitcamp (by One Works)</H1></div>
+                <div class="row"><H1>ShareItCamp Terms of Service</H1></div>
 
                 <div class="row">
 
