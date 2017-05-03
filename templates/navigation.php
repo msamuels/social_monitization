@@ -42,7 +42,7 @@
                         <li><a href="/create-campaign">Create Campaign</a></li>
                         <li><a href="/create-reward">Create Rewards</a></li>
                         <li><a href="/invoices">Invoices</a></li>
-                        <li><a href="#">Account</a></li>
+                        <li><a href="/account">Account</a></li>
                     <?php } ?>
 
                     <?php if ($_SESSION['user_type'] == "admin") { ?>
