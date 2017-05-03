@@ -469,5 +469,5 @@ $app->get('/producer/account', function () use ($app){
         if (isset($flash['success_info'])) {        
             $success_info = $flash['success_info'];    
             }    
-            $app->render('account.php', array('path' => $path, 'success_info' => $success_info)); 
+            $app->render('producer/account.php', array('path' => $path, 'success_info' => $success_info)); 
 });
