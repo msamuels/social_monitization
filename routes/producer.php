@@ -461,3 +461,13 @@ $app->get('/producer/:name', function ($name) use ($app){
 
     $app->render('frontpage/producer-campaigns.php', array('campaigns'=>$campaigns, 'producer'=>$producer));
 });
+
+// invite supporters
+$app->get('/producer/account', function () use ($app){    
+    $path = explode('/', $app->request->getPath());    
+    $success_info = NULL;    
+        if (isset($flash['success_info'])) {        
+            $success_info = $flash['success_info'];    
+            }    
+            $app->render('account.php', array('path' => $path, 'success_info' => $success_info)); 
+});
