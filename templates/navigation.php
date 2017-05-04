@@ -34,7 +34,7 @@
                         <li><a href="/supporter/campaigns">My Campaigns</a></li>
                         <li><a href="/supporter/campaigns/pending">Support Campaigns</a></li>
                         <li><a href="/rewards">Rewards</a></li>
-                        <li><a href="/account">Account</a></li>
+                        <li><a href="/my-account">Account</a></li>
                     <?php } ?>
 
                     <?php if ($_SESSION['user_type'] == "producer") { ?>
@@ -42,7 +42,7 @@
                         <li><a href="/create-campaign">Create Campaign</a></li>
                         <li><a href="/create-reward">Create Rewards</a></li>
                         <li><a href="/invoices">Invoices</a></li>
-                        <li><a href="/producer/account">Account</a></li>
+                        <li><a href="/account">Account</a></li>
                     <?php } ?>
 
                     <?php if ($_SESSION['user_type'] == "admin") { ?>

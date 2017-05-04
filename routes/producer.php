@@ -463,7 +463,7 @@ $app->get('/producer/:name', function ($name) use ($app){
 });
 
 // invite supporters
-$app->get('/producer/account', function () use ($app){    
+$app->get('/account', $authenticate($app), function () use ($app){    
     $path = explode('/', $app->request->getPath());    
     $success_info = NULL;    
         if (isset($flash['success_info'])) {        

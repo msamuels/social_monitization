@@ -422,7 +422,7 @@ $app->post('/save-campaign-post-link', function () use ($app){
 });
 
 // Edit account info
-$app->get("/account", $authenticate($app), function () use ($app) {
+$app->get("/my-account", $authenticate($app), function () use ($app) {
 
     $user_name = $app->view()->getData('user');
     $supporter = Supporter::find_by_user_name($user_name);
