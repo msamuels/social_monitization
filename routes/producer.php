@@ -480,7 +480,7 @@ $app->get('/account', $authenticate($app), function () use ($app){
 	
 	$email_1 = $req['email_1'];    
 
-	$supporter_email = array('markspeed_718@yahoo.com');
+	$supporter_email = array($email_1);
 
 	$headers  = 'MIME-Version: 1.0' . "\r\n";    
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";    
@@ -488,7 +488,7 @@ $app->get('/account', $authenticate($app), function () use ($app){
 	$headers .= 'From: info@shareitcamp.com' . "\r\n";    
 	// Email supporter to let them know campaign has been approved by producer    
 		$headers .= 'BCC: '. implode(",", $supporter_email) . "\r\n";    
-		$subject_supporter = 'Help ".$producer->org_name. " achieve our goals! ';    
+		$subject_supporter = "Help ".$producer->org_name. " achieve our goals! ";    
 		
 		$user_name = $app->view()->getData('user');
         $producer = Producer::find_by_user_name($user_name);
