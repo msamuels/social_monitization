@@ -476,12 +476,23 @@ $app->get('/account', $authenticate($app), function () use ($app){
 
 	$app->post('/invite-supporters', $authenticate($app), function () use ($app){    
 
-	$req = $app->request->post();    
-	
-	$email_1 = $req['email_1'];
-    $email_2 = $req['email_2'];    
+	$req = $app->request->post();      
 
-	$supporter_email = array($email_1, $email_2);
+	$email_addresses = array();
+
+	// loop through the 10 email fields to see which ones have a value (!= '')
+	for($i=1 ; $i < 10; $i++) {
+		if($req['email_'.$i] != '') {
+			array_push($email_addresses, $req['email_'.$i]);
+		}
+    }  
+
+	// if no email addresses entered just break out
+	if(count($email_addresses) == 0){
+		return;
+	}
+
+	$supporter_email = $email_addresses;
 
 	$user_name = $app->view()->getData('user');
     $producer = Producer::find_by_user_name($user_name);
