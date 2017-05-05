@@ -482,7 +482,8 @@ $app->get('/account', $authenticate($app), function () use ($app){
 
 	$campaign->update_attributes(array('producer_approved'=>'Y', 'campaign_id'=>$req['campaign_id']));    
 
-	// grab all the supporters to email    $supporter_email = array();    
+	// grab all the supporters to email    
+	$supporter_email = array();    
 	$supporters = Supporter::find('all');    
 	foreach ($supporters as $supporter) {        
 		array_push($supporter_email, $supporter->email_address);    
