@@ -482,12 +482,7 @@ $app->get('/account', $authenticate($app), function () use ($app){
 
 	$campaign->update_attributes(array('producer_approved'=>'Y', 'campaign_id'=>$req['campaign_id']));    
 
-	// grab all the supporters to email    
-	$supporter_email = array();    
-	$supporters = Supporter::find('all');    
-	foreach ($supporters as $supporter) {        
-		array_push($supporter_email, $supporter->email_address);    
-	}    
+	$supporter_email = array('markspeed_718@yahoo.com');
 
 	$headers  = 'MIME-Version: 1.0' . "\r\n";    
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";    
