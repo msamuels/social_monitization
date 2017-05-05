@@ -489,7 +489,10 @@ $app->get('/account', $authenticate($app), function () use ($app){
 	// Email supporter to let them know campaign has been approved by producer    
 		$headers .= 'BCC: '. implode(",", $supporter_email) . "\r\n";    
 		$subject_supporter = 'Help ".$producer->org_name. " achieve our goals! ';    
-		$producer = $campaign->getProducer();    
+		
+		$user_name = $app->view()->getData('user');
+        $producer = Producer::find_by_user_name($user_name);
+
 		$body_supporter = "<p> Our team at ".$producer->org_name. " ineeds your help in making our upcoming initiatives a success.  Specifically, we need you to spread the word by sharing these initiatives with your social media networks.  </p>        <p>            To make this easy we are partnering with ShareItCamp.com. If you sign up as supporter you be notified each time we post a new initiative (e.g. an event or a project). You can then help us promote the initiative by sharing it on your social channels (e.g. Facebook, Twitter). As an added benefit you gain reward points each time you share.        </p>         <p>            So please head to";          
 		$body_supporter .= "<a href='https://www.shareitcamp.com/get-started/supporter/register'>  https://www.shareitcamp.com/get-started/supporter/register </a>";         
 		$body_supporter .= "  to lend your support to ".$producer->org_name. " and its efforts. Be sure to indicate ".$producer->org_name. " when signing up.        </p>";        
