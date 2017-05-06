@@ -32,81 +32,81 @@
                 <form action="/invite-supporters" enctype="multipart/form-data" method="POST" class="form-horizontal"
                       role="form">
                     <div class="form-group">
-                        <label class="control-label col-sm-4">Email Address</label>
+                        <label class="control-label col-sm-4">Email</label>
                         <div class=" col-sm-8">
-                            <input type="text" class="form-control" name="email_1"/>
+                            <input type="text" class="form-control" name="email_1" placeholder="enter email address"/>
                         </div>
                     </div>
 
                      <div class="form-group">
-                        <label class="control-label col-sm-4">Email Address</label>
+                        <label class="control-label col-sm-4">Email</label>
                         <div class=" col-sm-8">
-                            <input type="text" class="form-control" name="email_2"/>
-                        </div>
-                    </div>
-
-
-                     <div class="form-group">
-                        <label class="control-label col-sm-4">Email Address</label>
-                        <div class=" col-sm-8">
-                            <input type="text" class="form-control" name="email_3"/>
-                        </div>
-                    </div>
-
-
-
-                     <div class="form-group">
-                        <label class="control-label col-sm-4">Email Address</label>
-                        <div class=" col-sm-8">
-                            <input type="text" class="form-control" name="email_4"/>
+                            <input type="text" class="form-control" name="email_2" placeholder="enter email address"/>
                         </div>
                     </div>
 
 
                      <div class="form-group">
-                        <label class="control-label col-sm-4">Email Address</label>
+                        <label class="control-label col-sm-4">Email</label>
                         <div class=" col-sm-8">
-                            <input type="text" class="form-control" name="email_5"/>
+                            <input type="text" class="form-control" name="email_3" placeholder="enter email address"/>
+                        </div>
+                    </div>
+
+
+
+                     <div class="form-group">
+                        <label class="control-label col-sm-4">Email</label>
+                        <div class=" col-sm-8">
+                            <input type="text" class="form-control" name="email_4" placeholder="enter email address"/>
                         </div>
                     </div>
 
 
                      <div class="form-group">
-                        <label class="control-label col-sm-4">Email Address</label>
+                        <label class="control-label col-sm-4">Email</label>
                         <div class=" col-sm-8">
-                            <input type="text" class="form-control" name="email_6"/>
+                            <input type="text" class="form-control" name="email_5" placeholder="enter email address"/>
                         </div>
                     </div>
 
 
                      <div class="form-group">
-                        <label class="control-label col-sm-4">Email Address</label>
+                        <label class="control-label col-sm-4">Email</label>
                         <div class=" col-sm-8">
-                            <input type="text" class="form-control" name="email_7"/>
+                            <input type="text" class="form-control" name="email_6" placeholder="enter email address"/>
                         </div>
                     </div>
 
 
                      <div class="form-group">
-                        <label class="control-label col-sm-4">Email Address</label>
+                        <label class="control-label col-sm-4">Email</label>
                         <div class=" col-sm-8">
-                            <input type="text" class="form-control" name="email_8"/>
+                            <input type="text" class="form-control" name="email_7" placeholder="enter email address"/>
                         </div>
                     </div>
 
 
                      <div class="form-group">
-                        <label class="control-label col-sm-4">Email Address</label>
+                        <label class="control-label col-sm-4">Email</label>
                         <div class=" col-sm-8">
-                            <input type="text" class="form-control" name="email_9"/>
+                            <input type="text" class="form-control" name="email_8" placeholder="enter email address"/>
                         </div>
                     </div>
 
 
                      <div class="form-group">
-                        <label class="control-label col-sm-4">Email Address</label>
+                        <label class="control-label col-sm-4">Email</label>
                         <div class=" col-sm-8">
-                            <input type="text" class="form-control" name="email_10"/>
+                            <input type="text" class="form-control" name="email_9" placeholder="enter email address"/>
+                        </div>
+                    </div>
+
+
+                     <div class="form-group">
+                        <label class="control-label col-sm-4">Email</label>
+                        <div class=" col-sm-8">
+                            <input type="text" class="form-control" name="email_10" placeholder="enter email address"/>
                         </div>
                     </div>
 
