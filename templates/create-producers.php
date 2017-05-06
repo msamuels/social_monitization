@@ -59,8 +59,8 @@
             $class = array();
 
             if ($path[2] == "create-producer") {
-                $class[0] = "";
-                $class[1] = "class = 'highlighted'";
+                $class[1] = "class = 'non-highlighted'";
+                $class[0] = "class = 'highlighted'";
             }
             ?>
 

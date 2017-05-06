@@ -14,9 +14,15 @@
     display: block;
 }
 
-.highlighted{
-    color: blue;
-    font-size: 30px;
+.highlighted {
+    padding: 9px 20px;
+    background-color: #ffff66;
+    color: #4c5667;
+}
+
+.non-highlighted{
+    border: 1px solid #ccc;
+    padding: 8px 20px;
 }
 
 .highlighted-1{

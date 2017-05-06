@@ -56,8 +56,8 @@
             $class = array();
 
             if ($path[1] == "get-started") {
-                $class[0] = "class = 'highlighted'";
-                $class[1] = "";
+                $class[1] = "class = 'highlighted'";
+                $class[0] = "class = 'non-highlighted'";
             }
             ?>
 
@@ -78,7 +78,7 @@
 
             <div class="col-sm-6 intro-form">
 
-                <H3>CREATE SUPPORTER ACCOUNT</H3>
+                <H3>CREATE A SUPPORTER ACCOUNT</H3>
 
                 <span class="required">* </span> = Required fields
 
