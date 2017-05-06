@@ -508,9 +508,13 @@ $app->get('/account', $authenticate($app), function () use ($app){
 		
 		$body_supporter = "<p> The team at ".$producer->org_name. " needs your help to make their upcoming initiatives a success. One way you can help is by spreading the word about these initiatives to your social networks.  </p><br />        
 
-            <p>    To make doing this easy ".$producer->org_name. " is partnering with ShareItCamp.com. Here is how it works: 
+            <p>    To make doing this easy ".$producer->org_name. " is partnering with "; 
+
+            $body_supporter .= "  <a href='https://www.shareitcamp.com/'> ShareItCamp.com </a> ";
+
+            $body_supporter .= ". Here is how it works: 
                 <ul>
-                    <li>When you sign up as supporter on ShareItCamp you will be notified when ".$producer->org_name. " announces a new project or event. Visit shareitcamp.com to sign up.
+                    <li>When you sign up as supporter on ShareItCamp.com you will be notified when ".$producer->org_name. " announces a new project or event. 
                     </li>
 
                       <li>You can then easily share it on your social networks (e.g. Facebook, Twitter) from ShareItCamp
@@ -521,7 +525,7 @@ $app->get('/account', $authenticate($app), function () use ($app){
 
             <p>            So head over to ";          
 		$body_supporter .= "<a href='https://www.shareitcamp.com/get-started/supporter/register'>  https://www.shareitcamp.com/get-started/supporter/register </a>";       
-		$body_supporter .= "  to create a Supporter account in a few simple stes. Lend your support to ".$producer->org_name. "  and its efforts. </p><br />"; 
+		$body_supporter .= "  to create a Supporter account in a few short steps. Lend your support to ".$producer->org_name. "  and its efforts. </p><br />"; 
             
             $body_supporter .= "<a href='https://www.shareitcamp.com/get-started/supporter/register' 
 
@@ -537,7 +541,7 @@ $app->get('/account', $authenticate($app), function () use ($app){
                 margin: 4px 2px;
                 cursor: pointer;
 
-            '>  Become a Supporter </a>";  
+            '>  Become a Supporter </a><br />";  
 
 		$body_supporter .= "<p>Thanks in advance, <br /> ".$producer->org_name. " and ShareItCamp.com</p>";              
 	$baseurl =  $destination = $app->config('configs')['base_url'];    
