@@ -504,12 +504,42 @@ $app->get('/account', $authenticate($app), function () use ($app){
 	$headers .= 'From: info@shareitcamp.com' . "\r\n";    
 	// Email supporter to let them know campaign has been approved by producer    
 		$headers .= 'BCC: '. implode(",", $supporter_email) . "\r\n";    
-		$subject_supporter = "Help ".$producer->org_name. " achieve our goals! ";    
+		$subject_supporter = "Help ".$producer->org_name. " achieve their goals! ";    
 		
-		$body_supporter = "<p> Our team at ".$producer->org_name. " ineeds your help in making our upcoming initiatives a success.  Specifically, we need you to spread the word by sharing these initiatives with your social media networks.  </p>        <p>            To make this easy we are partnering with ShareItCamp.com. If you sign up as supporter you be notified each time we post a new initiative (e.g. an event or a project). You can then help us promote the initiative by sharing it on your social channels (e.g. Facebook, Twitter). As an added benefit you gain reward points each time you share.        </p>         <p>            So please head to";          
-		$body_supporter .= "<a href='https://www.shareitcamp.com/get-started/supporter/register'>  https://www.shareitcamp.com/get-started/supporter/register </a>";         
-		$body_supporter .= "  to lend your support to ".$producer->org_name. " and its efforts. Be sure to indicate ".$producer->org_name. " when signing up.        </p>";        
-		$body_supporter .= "<p>Thanks in advance for your continued support, <br /> ".$producer->org_name. " and ShareItCamp</p>";              
+		$body_supporter = "<p> The team at ".$producer->org_name. " needs your help to make their upcoming initiatives a success. One way you can help is by spreading the word about these initiatives to your social networks.  </p><br />        
+
+            <p>    To make doing this easy ".$producer->org_name. " is partnering with ShareItCamp.com. Here’s how it works: 
+                <ul>
+                    <li>When you sign up as supporter on ShareItCamp you will be notified when [org name] announces a new project or event. Visit shareitcamp.com to sign up.
+                    </li>
+
+                      <li>You can then easily share it on your social networks (e.g. Facebook, Twitter) from the site
+                    </li>
+
+                </ul>      
+            </p>         
+
+            <p>            So head over to ";          
+		$body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->friendly_url."'>  https://www.shareitcamp.com/get-started/supporter/register </a>";       
+		$body_supporter .= "  to create a ‘Supporter’ account and lend your support to ".$producer->org_name. "  and its efforts. </p><br />"; 
+            
+            $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->friendly_url."
+
+                    style='
+                background-color:   #FFAC00;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+
+            '>  Become a Supporter </a>";  
+
+		$body_supporter .= "<p>Thanks in advance for your continued support, <br /> ".$producer->org_name. " and ShareItCamp.com</p>";              
 	$baseurl =  $destination = $app->config('configs')['base_url'];    
 	mail(null, $subject_supporter, $body_supporter, $headers);    
 	$app->flash('success_info', 'Email sent');    
