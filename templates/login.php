@@ -86,8 +86,8 @@
                     </div>
                     <br/>
                     <p style="text-align:center">
-                        <a href="/forgot-password" class="highlighted" style="font-size: medium">Forgot Password</a>
-                        | <a href="/get-started/supporter/register" class="highlighted" style="font-size: medium">Register</a>
+                        <a href="/forgot-password" style="font-size: medium">Forgot Password</a>
+                        | <a href="/get-started/supporter/register" style="font-size: medium">Register</a>
                     <p>
 
                     <p style="text-align:center">
