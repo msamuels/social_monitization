@@ -18,11 +18,14 @@
     padding: 9px 20px;
     background-color: #ffff66;
     color: #4c5667;
+    margin: 8px;
+    border-radius: 4px;
 }
 
 .non-highlighted{
     border: 1px solid #ccc;
     padding: 8px 20px;
+    border-radius: 4px;
 }
 
 .highlighted-1{

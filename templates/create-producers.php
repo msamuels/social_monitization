@@ -65,7 +65,7 @@
             ?>
 
             <p style="text-align:center">
-                <a href="/get-started/supporter/register" <?php echo $class[1]; ?>>Supporter</a> |
+                <a href="/get-started/supporter/register" <?php echo $class[1]; ?>>Supporter</a> 
                 <a href="/producer/create-producer" <?php echo $class[0]; ?>>Producer</a>
            </p>
 
