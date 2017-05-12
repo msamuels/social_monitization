@@ -48,7 +48,7 @@
 				</button>
             </div>
             <div class="row sharepoints" id="share-buttons" style="display:none">
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <p class="sharepoints-p"> 
 						<?php if($user_id == '') { ?>
 							Share This (you must be logged in to get points.)
@@ -77,7 +77,7 @@
                             <span>
                                 <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
                                 <script type="IN/Share" data-counter="right"></script>
-                                  
+
                             </span>
                         </div>
 
