@@ -131,8 +131,14 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
 		    $supporter_ids[] = $af->supporter_id;
 		}
 
-		// TODO check if $supporter_ids is empty
-		$supporters = Supporter::find($supporter_ids);
+		// check if $supporter_ids is empty
+        if(count($supporters) == 0) {
+			$app->flash('success_info', 'No supporters affiliated with organization.');
+
+			$app->redirect('/admin/campaigns');
+        } else {
+		    $supporters = Supporter::find($supporter_ids);
+        }
 
 	} else {
         $supporters = Supporter::find('all');
