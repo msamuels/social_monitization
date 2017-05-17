@@ -97,22 +97,6 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
 
     $campaign = Campaign::find($req['campaign_id']);
 
-    $campaign->update_attributes(
-        array('approved'=>'Y', 'campaign_id'=>$req['campaign_id']));
-
-    // alert producer that campaign is approved
-    $producer = $campaign->getProducer();
-
-    $headers  = 'MIME-Version: 1.0' . "\r\n";
-    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-    $headers .= 'From: shareitcamp <info@shareitcamp.com>' . "\r\n";
-
-    $subject = $campaign->campaign_name.' has been approved';
-
-    $body = 'Your campaign '.$campaign->campaign_name.' has been approved';
-
-    mail($producer->email_address, $subject, $body, $headers);
-
     // grab all the supporters to email
     $supporter_email = array();
 
@@ -148,6 +132,25 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
     foreach ($supporters as $supporter) {
         array_push($supporter_email, $supporter->email_address);
     }
+
+
+	// Update db to reflect campaign approved
+    $campaign->update_attributes(
+        array('approved'=>'Y', 'campaign_id'=>$req['campaign_id']));
+
+    // alert producer that campaign is approved
+    $producer = $campaign->getProducer();
+
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    $headers .= 'From: shareitcamp <info@shareitcamp.com>' . "\r\n";
+
+    $subject = $campaign->campaign_name.' has been approved';
+
+    $body = 'Your campaign '.$campaign->campaign_name.' has been approved';
+
+    mail($producer->email_address, $subject, $body, $headers);
+
 
     // Email supporter to let them know campaign has been approved by producer
     $headers .= 'BCC: '. implode(",", $supporter_email) . "\r\n";
