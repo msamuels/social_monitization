@@ -116,7 +116,7 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
 		}
 
 		// check if $supporter_ids is empty
-        if(count($supporters) == 0) {
+        if(count($supporter_ids) == 0) {
 			$app->flash('success_info', 'No supporters affiliated with organization.');
 
 			$app->redirect('/admin/campaigns');
