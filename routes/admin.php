@@ -115,7 +115,29 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
 
     // grab all the supporters to email
     $supporter_email = array();
-    $supporters = Supporter::find('all');
+
+	// if the campaign is exclusive just find supporters affiliated
+	// with the organization the producer is assoicated with.
+
+    if ($campaign->exclusive == 'Y') {
+		$org_name = $campaign->getProducer()->org_name;
+
+		$organization = Organization::find_by_name($org_name);
+		$affiliation = Organization_affiliation::find_all_by_organization_id($organization->organization_id);
+
+		// extract the ids from the affiliation info we get back.
+		$supporter_ids = array();
+		foreach ($affiliation as $af) {
+		    $supporter_ids[] = $af->supporter_id;
+		}
+
+		// TODO check if $supporter_ids is empty
+		$supporters = Supporter::find($supporter_ids);
+
+	} else {
+        $supporters = Supporter::find('all');
+	}
+
 
     foreach ($supporters as $supporter) {
         array_push($supporter_email, $supporter->email_address);

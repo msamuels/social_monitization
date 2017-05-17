@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: db591622819.db.1and1.com
--- Generation Time: Feb 22, 2017 at 02:27 PM
--- Server version: 5.5.54-0+deb7u2-log
--- PHP Version: 5.4.45-0+deb7u7
+-- Generation Time: May 17, 2017 at 11:26 AM
+-- Server version: 5.5.55-0+deb7u1-log
+-- PHP Version: 5.4.45-0+deb7u8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `accounts`
 --
 
+DROP TABLE IF EXISTS `accounts`;
 CREATE TABLE IF NOT EXISTS `accounts` (
   `idaccount` int(11) NOT NULL AUTO_INCREMENT,
   `id_producer` int(11) NOT NULL,
@@ -42,6 +43,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
 -- Table structure for table `calculation`
 --
 
+DROP TABLE IF EXISTS `calculation`;
 CREATE TABLE IF NOT EXISTS `calculation` (
   `calculation_id` int(11) NOT NULL AUTO_INCREMENT,
   `tag_id` int(11) DEFAULT NULL,
@@ -58,6 +60,7 @@ CREATE TABLE IF NOT EXISTS `calculation` (
 -- Table structure for table `campaigns`
 --
 
+DROP TABLE IF EXISTS `campaigns`;
 CREATE TABLE IF NOT EXISTS `campaigns` (
   `campaign_id` int(11) NOT NULL AUTO_INCREMENT,
   `campaign_name` varchar(255) DEFAULT NULL,
@@ -77,6 +80,7 @@ CREATE TABLE IF NOT EXISTS `campaigns` (
   `points` int(11) NOT NULL DEFAULT '5',
   `youtube_embed` varchar(255) NOT NULL,
   `summary` varchar(255) NOT NULL,
+  `exclusive` enum('Y','N') NOT NULL DEFAULT 'N',
   PRIMARY KEY (`campaign_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=big5;
 
@@ -86,6 +90,7 @@ CREATE TABLE IF NOT EXISTS `campaigns` (
 -- Table structure for table `campaign_responses`
 --
 
+DROP TABLE IF EXISTS `campaign_responses`;
 CREATE TABLE IF NOT EXISTS `campaign_responses` (
   `campaign_response_id` int(11) NOT NULL AUTO_INCREMENT,
   `campaign_id` int(11) NOT NULL,
@@ -101,6 +106,7 @@ CREATE TABLE IF NOT EXISTS `campaign_responses` (
 -- Table structure for table `donations`
 --
 
+DROP TABLE IF EXISTS `donations`;
 CREATE TABLE IF NOT EXISTS `donations` (
   `donation_id` int(11) NOT NULL AUTO_INCREMENT,
   `campaign_id` int(11) DEFAULT NULL,
@@ -116,6 +122,7 @@ CREATE TABLE IF NOT EXISTS `donations` (
 -- Table structure for table `donation_type`
 --
 
+DROP TABLE IF EXISTS `donation_type`;
 CREATE TABLE IF NOT EXISTS `donation_type` (
   `donationtype_id` int(11) NOT NULL AUTO_INCREMENT,
   `donation_name` varchar(45) NOT NULL,
@@ -128,6 +135,7 @@ CREATE TABLE IF NOT EXISTS `donation_type` (
 -- Table structure for table `escrow`
 --
 
+DROP TABLE IF EXISTS `escrow`;
 CREATE TABLE IF NOT EXISTS `escrow` (
   `escrow_id` int(11) NOT NULL AUTO_INCREMENT,
   `estimate` double DEFAULT NULL,
@@ -143,6 +151,7 @@ CREATE TABLE IF NOT EXISTS `escrow` (
 -- Table structure for table `follower_count`
 --
 
+DROP TABLE IF EXISTS `follower_count`;
 CREATE TABLE IF NOT EXISTS `follower_count` (
   `follower_count_id` int(11) NOT NULL AUTO_INCREMENT,
   `source_id` int(11) DEFAULT NULL,
@@ -158,6 +167,7 @@ CREATE TABLE IF NOT EXISTS `follower_count` (
 -- Table structure for table `links`
 --
 
+DROP TABLE IF EXISTS `links`;
 CREATE TABLE IF NOT EXISTS `links` (
   `links_id` int(11) NOT NULL AUTO_INCREMENT,
   `campaign_id` int(11) DEFAULT NULL,
@@ -172,12 +182,13 @@ CREATE TABLE IF NOT EXISTS `links` (
 -- Table structure for table `organization`
 --
 
+DROP TABLE IF EXISTS `organization`;
 CREATE TABLE IF NOT EXISTS `organization` (
   `organization_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `type` enum('school','non-profit') DEFAULT NULL,
   PRIMARY KEY (`organization_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -185,12 +196,13 @@ CREATE TABLE IF NOT EXISTS `organization` (
 -- Table structure for table `organization_affiliation`
 --
 
+DROP TABLE IF EXISTS `organization_affiliation`;
 CREATE TABLE IF NOT EXISTS `organization_affiliation` (
   `organization_affiliation_id` int(11) NOT NULL AUTO_INCREMENT,
   `supporter_id` varchar(45) DEFAULT NULL,
   `organization_id` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`organization_affiliation_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -198,6 +210,7 @@ CREATE TABLE IF NOT EXISTS `organization_affiliation` (
 -- Table structure for table `org class`
 --
 
+DROP TABLE IF EXISTS `org class`;
 CREATE TABLE IF NOT EXISTS `org class` (
   `orgclass_id` int(11) NOT NULL AUTO_INCREMENT,
   `classname` varchar(45) NOT NULL,
@@ -210,6 +223,7 @@ CREATE TABLE IF NOT EXISTS `org class` (
 -- Table structure for table `owner`
 --
 
+DROP TABLE IF EXISTS `owner`;
 CREATE TABLE IF NOT EXISTS `owner` (
   `id_owner` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(45) NOT NULL,
@@ -223,6 +237,7 @@ CREATE TABLE IF NOT EXISTS `owner` (
 -- Table structure for table `producers`
 --
 
+DROP TABLE IF EXISTS `producers`;
 CREATE TABLE IF NOT EXISTS `producers` (
   `id_producer` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(255) DEFAULT NULL,
@@ -246,6 +261,7 @@ CREATE TABLE IF NOT EXISTS `producers` (
 -- Table structure for table `producer_account`
 --
 
+DROP TABLE IF EXISTS `producer_account`;
 CREATE TABLE IF NOT EXISTS `producer_account` (
   `producer_id` int(11) NOT NULL,
   `campaign_id` int(11) DEFAULT NULL,
@@ -259,6 +275,7 @@ CREATE TABLE IF NOT EXISTS `producer_account` (
 -- Table structure for table `reward`
 --
 
+DROP TABLE IF EXISTS `reward`;
 CREATE TABLE IF NOT EXISTS `reward` (
   `reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `reward_name` varchar(255) DEFAULT NULL,
@@ -270,6 +287,7 @@ CREATE TABLE IF NOT EXISTS `reward` (
   `campaign_id` int(11) DEFAULT NULL,
   `description` longtext NOT NULL,
   `type` enum('reward','raffle') NOT NULL,
+  `offer_code` int(11) NOT NULL,
   PRIMARY KEY (`reward_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=big5;
 
@@ -279,11 +297,13 @@ CREATE TABLE IF NOT EXISTS `reward` (
 -- Table structure for table `reward_claimed`
 --
 
+DROP TABLE IF EXISTS `reward_claimed`;
 CREATE TABLE IF NOT EXISTS `reward_claimed` (
   `id_supporter` int(11) NOT NULL,
   `reward_id` int(11) NOT NULL,
   `point_value` int(11) NOT NULL,
   `date_claimed` datetime DEFAULT NULL,
+  `offer_code` int(11) NOT NULL,
   PRIMARY KEY (`id_supporter`,`reward_id`),
   KEY `fk_reward_claimed_reward1_idx` (`reward_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=big5;
@@ -294,6 +314,7 @@ CREATE TABLE IF NOT EXISTS `reward_claimed` (
 -- Table structure for table `screen_shots`
 --
 
+DROP TABLE IF EXISTS `screen_shots`;
 CREATE TABLE IF NOT EXISTS `screen_shots` (
   `screen_shots_id` int(11) NOT NULL AUTO_INCREMENT,
   `campaign_id` int(11) DEFAULT NULL,
@@ -310,6 +331,7 @@ CREATE TABLE IF NOT EXISTS `screen_shots` (
 -- Table structure for table `source`
 --
 
+DROP TABLE IF EXISTS `source`;
 CREATE TABLE IF NOT EXISTS `source` (
   `source_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -322,6 +344,7 @@ CREATE TABLE IF NOT EXISTS `source` (
 -- Table structure for table `supporters`
 --
 
+DROP TABLE IF EXISTS `supporters`;
 CREATE TABLE IF NOT EXISTS `supporters` (
   `id_supporter` int(11) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(255) DEFAULT NULL,
@@ -340,6 +363,7 @@ CREATE TABLE IF NOT EXISTS `supporters` (
 -- Table structure for table `supporter_interest`
 --
 
+DROP TABLE IF EXISTS `supporter_interest`;
 CREATE TABLE IF NOT EXISTS `supporter_interest` (
   `supporter_interest_if` int(11) NOT NULL AUTO_INCREMENT,
   `supporter_id` int(11) DEFAULT NULL,
@@ -354,6 +378,7 @@ CREATE TABLE IF NOT EXISTS `supporter_interest` (
 -- Table structure for table `tags`
 --
 
+DROP TABLE IF EXISTS `tags`;
 CREATE TABLE IF NOT EXISTS `tags` (
   `id_tag` int(11) NOT NULL,
   `tag_name` int(11) DEFAULT NULL,
@@ -366,6 +391,7 @@ CREATE TABLE IF NOT EXISTS `tags` (
 -- Table structure for table `targeting`
 --
 
+DROP TABLE IF EXISTS `targeting`;
 CREATE TABLE IF NOT EXISTS `targeting` (
   `tag_id` int(11) NOT NULL AUTO_INCREMENT,
   `campaign_id` int(11) DEFAULT NULL,
