@@ -5,12 +5,16 @@ $app->get('/get-started/supporter/register', function() use($app) {
 
     $path = explode('/', $app->request->getPath());
 
+
+    // get all the organizations for displays
+    $orgs = Organization::find('all');
+
     $success_info = NULL;
     if (isset($flash['success_info'])) {
         $success_info = $flash['success_info'];
     }
 
-    $app->render('create-supporter.php', array('path' => $path));
+    $app->render('create-supporter.php', array('path' => $path, 'orgs' => $orgs));
 });
 
 # Save supporter

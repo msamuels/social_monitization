@@ -395,8 +395,9 @@
                         <label class="control-label col-sm-4" style="text-align:right">Organization affiliation (optional):</label>
                         <SELECT NAME="organization_affiliation">
                             <option VALUE="--">--</option>
-                            <option VALUE="1">UJAA</option>
-                            <option VALUE="2">Mystical Speed</option>
+                            <?php foreach($orgs as $org) { ?>
+                                <option VALUE="<?php echo $org->organization_id; ?>"><?php echo $org->name; ?></option>
+                            <?php } ?>
                         </SELECT>
                     </div>
 
