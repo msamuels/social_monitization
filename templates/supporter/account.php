@@ -62,9 +62,9 @@
                         <label class="control-label col-sm-4" style="text-align:right">Organization affiliation (optional):</label>
                         <SELECT NAME="organization_affiliation">
                             <option VALUE="--">--</option>
-                            <?php foreach($nonprofits as $nonprofit){ ?>
-                                <option VALUE="<?php echo $nonprofit->organization_id; ?>"><?php echo $nonprofit->name; ?></option>
-                            <?php } ?>
+				                <?php foreach($orgs as $org) { ?>
+				                    <option VALUE="<?php echo $org->organization_id; ?>"><?php echo $org->name; ?></option>
+				                <?php } ?>
                         </SELECT>
                     </div>
 

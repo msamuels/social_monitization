@@ -473,6 +473,9 @@ $app->get("/my-account", $authenticate($app), function () use ($app) {
         }
     }
 
+    // get all the organizations for displays
+    $orgs = Organization::find('all');
+
     $success_info = '';
     if (isset($flash['success_info'])) {
         $success_info = $flash['success_info'];
@@ -480,7 +483,7 @@ $app->get("/my-account", $authenticate($app), function () use ($app) {
 
     $app->render('supporter/account.php', array('supporter' => $supporter,
         'nonprofits' => $nonprofits, 'schools' => $schools, 'affiliations' => $affiliations,
-        'my_nonprofit'=> $my_nonprofit, 'my_school'=> $my_school, 'success_info' => $success_info));
+        'my_nonprofit'=> $my_nonprofit, 'my_school'=> $my_school, 'success_info' => $success_info, 'orgs' => $orgs));
 });
 
 
