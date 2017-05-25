@@ -6,15 +6,17 @@ $app->get('/get-started/supporter/register', function() use($app) {
     $path = explode('/', $app->request->getPath());
 
 
-    // get all the organizations for displays
-    $orgs = Organization::find('all');
+    $my_nonprofit = '';
+    $my_school = '';
+
+    $non_profits = Organization::find('all', array('conditions' => array('type in (?)', 'non-profit')));
 
     $success_info = NULL;
     if (isset($flash['success_info'])) {
         $success_info = $flash['success_info'];
     }
 
-    $app->render('create-supporter.php', array('path' => $path, 'orgs' => $orgs));
+    $app->render('create-supporter.php', array('path' => $path, 'non_profits' => $non_profits));
 });
 
 # Save supporter
