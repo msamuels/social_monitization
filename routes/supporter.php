@@ -510,6 +510,20 @@ $app->post('/update-account', function () use ($app){
             $fields_to_update
         );
 
+        // update organization afflition as well
+        $org_fields = array('organization_id' => $req['organization_affiliation']);
+        $organization = Organization_affiliation::find_by_supporter_id($supporter->id_supporter);
+
+		$create_org_fields = array('organization_id' => $req['organization_affiliation'],
+            'supporter_id' => $supporter->id_supporter);
+
+        if(count($organization) == 0) {
+            Organization_affiliation::create($create_org_fields);
+        } else {
+            $organization->update_attributes($org_fields);
+        }
+
+
         $app->flash('success_info', 'Account updated');
 
         $app->redirect('/my-account');
