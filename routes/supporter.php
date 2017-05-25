@@ -457,6 +457,7 @@ $app->get("/my-account", $authenticate($app), function () use ($app) {
         $vals[] = $af->organization_id;
     }
 
+    // find out what organization they are affiliated with.
 
     $my_nonprofit = '';
     $my_school = '';
