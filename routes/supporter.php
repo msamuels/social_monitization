@@ -511,7 +511,7 @@ $app->post('/update-account', function () use ($app){
 
         $app->flash('success_info', 'Account updated');
 
-        $app->redirect('/account');
+        $app->redirect('/my-account');
 
     }
 
