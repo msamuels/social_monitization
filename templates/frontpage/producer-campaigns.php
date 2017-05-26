@@ -43,7 +43,7 @@
                                        
                                         <p class="by-line"><i> by <?php echo $campaign->getProducer()->org_name; ?></i></p>
                                        
-                                        <div class="thumbnail thumbnail-box">
+                                        <div class="thumbnail thumbnail-box-prod">
                                             <a href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">
                                                 <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>"
                                                      style="max-height: 450px;margin-bottom: 15px;" height="300" width="500"/>

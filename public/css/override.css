@@ -10,6 +10,10 @@
 .thumbnail-box{
     height:460px;
 }
+
+.thumbnail-box-prod{
+    height:auto;
+}
 .error {
     display: block;
 }
