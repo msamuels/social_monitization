@@ -1,7 +1,7 @@
 <section class="section" id="features">
     <div class="container">
 
-        <H1>Campaigns</H1>
+        <H1><?php echo $producer->org_name; ?></H1>
 
         <?php if (isset($success_info)) { ?>
             <div class="alert alert-warning"><?php echo $success_info; ?></div>
@@ -10,9 +10,22 @@
 
         <div class="row" id="supporters-list">
 
-            <div class="col-sm-2"></div>
+          
 
-            <div class="col-sm-8">
+             <div class="col-sm-6">
+                    <div class="col-sm-12" style="text-align:left;">
+                        <div class="row"><h3>About <?php echo $producer->org_name; ?></h3>
+                        </div>
+                        <div class="row">
+                            <?php echo $producer->description; ?>
+                        </div>
+                    </div>
+             </div>
+
+
+
+
+            <div class="col-sm-6">
 
                 <ul class="list-things" style="list-style: none">
                     <?php
@@ -20,20 +33,21 @@
                         foreach ($campaigns as $campaign) {
                             ?>
                             <li class="list-item">
-                                <p><strong>
+                                <p>
+                                    <strong>
                                         <a href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">
                                             <?php echo $campaign->campaign_name; ?>
                                         </a>
                                     </strong></p>
-                                <p>
+                               
                                 <p class="by-line"><i> by <?php echo $campaign->getProducer()->org_name; ?></i></p>
-                                <p>
-                                <p>
+                               
+                                <div class="thumbnail thumbnail-box">
                                     <a href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">
                                         <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>"
-                                             height="200" width="200"/>
+                                             style="max-height: 450px;margin-bottom: 15px;" height="200" width="200"/>
                                     </a>
-                                </p>
+                                </div>
                                 <p class="list-campaign-copy"><?php echo substr($campaign->copy, 0, 50); ?>
                                     ...<a style="text-decoration: underline"
                                           href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">Learn More</a>
@@ -48,19 +62,12 @@
                 </ul>
             </div>
 
-            <div class="col-sm-2"></div>
+        
 
         </div>
 
 
-        <div class="row">
-            <div class="col-sm-12" style="border-top:1px solid #ccc; margin-top:10px; text-align:center;">
-                <div class="row"><h2>About <?php echo $producer->org_name; ?></h2></div>
-                <div class="row">
-                    <?php echo $producer->description; ?>
-                </div>
-            </div>
-        </div>
+
 
 
 
