@@ -124,7 +124,7 @@ ul.list-things li {
     display:inline;
     float: left;
     margin-right: 35px;
-    width:220px;
+    width:auto;
     height:455px;
     margin-bottom: 40px;
 }
