@@ -50,7 +50,7 @@
                                             </a>
 
                                               <div style="display: block;width: auto;margin: 0px 25px;"><?php echo substr($campaign->copy, 0, 50); ?>
-                                            ... <a style="text-decoration: underline"
+                                            ...  <a style="text-decoration: underline"
                                                   href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">Learn More
                                                   </a>
                                                 </div>
