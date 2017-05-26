@@ -32,28 +32,34 @@
                     if (count($campaigns) > 0) {
                         foreach ($campaigns as $campaign) {
                             ?>
-                            <li class="list-item">
-                                <p>
-                                    <strong>
-                                        <a href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">
-                                            <?php echo $campaign->campaign_name; ?>
-                                        </a>
-                                    </strong></p>
-                               
-                                <p class="by-line"><i> by <?php echo $campaign->getProducer()->org_name; ?></i></p>
-                               
-                                <div class="thumbnail thumbnail-box">
-                                    <a href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">
-                                        <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>"
-                                             style="max-height: 450px;margin-bottom: 15px;" height="200" width="200"/>
-                                    </a>
-                                </div>
-                                <p class="list-campaign-copy"><?php echo substr($campaign->copy, 0, 50); ?>
-                                    ...<a style="text-decoration: underline"
-                                          href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">Learn More</a>
-                                </p>
+                                <div>
+                                    <li class="list-item">
+                                        <p>
+                                            <strong>
+                                                <a href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">
+                                                    <?php echo $campaign->campaign_name; ?>
+                                                </a>
+                                            </strong></p>
+                                       
+                                        <p class="by-line"><i> by <?php echo $campaign->getProducer()->org_name; ?></i></p>
+                                       
+                                        <div class="thumbnail thumbnail-box">
+                                            <a href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">
+                                                <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>"
+                                                     style="max-height: 450px;margin-bottom: 15px;" height="300" width="500"/>
+                                            </a>
 
-                            </li>
+                                              <div style="display: block;width: auto;margin: 0px 25px;"><?php echo substr($campaign->copy, 0, 50); ?>
+                                            ... <a style="text-decoration: underline"
+                                                  href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">Learn More
+                                                  </a>
+                                                </div>
+
+                                        </div>
+                                      
+
+                                    </li>
+                                </div>
                             <?php
                         }
                     }
