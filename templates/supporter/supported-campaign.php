@@ -51,35 +51,53 @@
                 <div class="col-sm-12">
                     <p class="sharepoints-p"> 
 						<?php if($user_id == '') { ?>
-							Share This (you must be logged in to get points.)
+							Share This
 						<?php } else { ?>
 							Share This
 						<?php } ?>
 					</p>
                     <div class="row">
-                        <div class="col-sm-3 sharebuttongap">
-                            <span class="fb-share-button" style="margin-bottom: 5px;"
-                                  data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>"
-                                  data-layout="button_count" data-mobile-iframe="true">
-                            </span>
-                        </div>
+                            <div class="col-sm-3 sharebuttongap">
+                                <span class="fb-share-button" style="margin-bottom: 5px;"
+                                      data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>"
+                                      data-layout="button_count" data-mobile-iframe="true">
+                                </span>
+                            </div>
 
-                        <div class="col-sm-3 sharebuttongap">
-                            <span><a href="https://twitter.com/share" class="twitter-share-button"
-                                     data-via="shareitcamp"
-                                     data-show-count="false">Tweet</a>
-                            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                            </span>
-                        </div>
+                            <div class="col-sm-3 sharebuttongap">
+                                <span><a href="https://twitter.com/share" class="twitter-share-button"
+                                         data-via="shareitcamp"
+                                         data-show-count="false">Tweet</a>
+                                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                </span>
+                            </div>
 
 
-                          <div class="col-sm-3 sharebuttongap">
-                            <span>
-                                <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-                                <script type="IN/Share" data-counter="right"></script>
+                              <div class="col-sm-3 sharebuttongap">
+                                <span>
+                                    <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+                                    <script type="IN/Share" data-counter="right"></script>
 
-                            </span>
-                        </div>
+                                </span>
+                            </div>
+
+
+                            <hr>
+
+
+
+                            <div class="col-sm-12">
+
+                                <p> You must be logged in to receive points </p>
+
+                            </div>
+                            <div class="col-sm-12">
+
+                                <a href="/login">Log In</a> 
+                                | 
+                                <a href="/get-started/supporter/register">Sign Up</a> 
+
+                            </div>
 
 
 
