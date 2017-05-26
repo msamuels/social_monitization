@@ -89,6 +89,7 @@
                             <div class="col-sm-12">
 
                               <hr>
+                              
 
                                 <p style="text-align: center;"> You must be logged in to receive points </p>
 
