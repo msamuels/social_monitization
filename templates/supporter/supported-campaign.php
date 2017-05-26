@@ -51,7 +51,7 @@
                 <div class="col-sm-12">
                     <p class="sharepoints-p"> 
 						<?php if($user_id == '') { ?>
-							Share This
+							Share
 						<?php } else { ?>
 							Share This
 						<?php } ?>
@@ -82,21 +82,23 @@
                             </div>
 
 
-                            <hr>
+                          
 
 
 
                             <div class="col-sm-12">
 
-                                <p> You must be logged in to receive points </p>
+                              <hr>
+
+                                <p style="text-align: center;"> You must be logged in to receive points </p>
 
                             </div>
                             <div class="col-sm-12">
-
-                                <a href="/login">Log In</a> 
-                                | 
-                                <a href="/get-started/supporter/register">Sign Up</a> 
-
+                                 <p style="text-align: center;">
+                                        <a href="/login">Log In</a> 
+                                        | 
+                                        <a href="/get-started/supporter/register">Sign Up</a> 
+                                </p>
                             </div>
 
 
