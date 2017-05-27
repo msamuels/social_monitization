@@ -83,7 +83,7 @@
                         <label class="control-label col-sm-4">Copy</label>
                         <div class="col-sm-8">
                             <textarea name="copy" class="form-control" rows="4" cols="50"
-                                      placeholder="describe your campaign and what you hope to achieve "><?php echo $campaign->budget ?></textarea>
+                                      placeholder="describe your campaign and what you hope to achieve "><?php echo $campaign->copy ?></textarea>
                         </div>
                     </div>
 
