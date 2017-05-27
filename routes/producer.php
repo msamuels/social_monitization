@@ -113,11 +113,29 @@ $app->get('/create-campaign', $authenticate($app), function () use ($app){
     $app->render('/producer/create-campaign.php');
 });
 
+# edit campaign
+$app->get('/edit-campaign/:id', $authenticate($app), function ($id) use ($app){
+
+    # list campaigns
+    if ($id != null) {
+        $campaign = Campaign::find($id);
+    }
+
+    $app->render('/producer/edit-campaign.php', array('campaign' => $campaign));
+});
+
 
 # Producer save campaign
 $app->post('/save-campaign', $authenticate($app), function () use ($app){
 
     $req = $app->request->post();
+
+    // if they are saving for later make note in db
+    if(isset($req['save'])) {
+        $producer_approved = 'N';
+    } else {
+        $producer_approved = 'Y';
+    }
 
     // handle uploaded file
     $destination = $app->config('configs')['campaign_creative_upload_dir'];
@@ -147,7 +165,8 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
             'start_date' => $req['start_date'],
             'end_date' => $req['end_date'],'copy' => $req['copy'],
             'screen_shot' => $rename_to,'url' => $req['url'],'platform' => $req['platform'],
-            'order_number'=>$order_number, 'friendly_url' => $friendly_url, 'youtube_embed' => $req['youtube_embed']));
+            'order_number'=>$order_number, 'friendly_url' => $friendly_url,
+            'youtube_embed' => $req['youtube_embed'], 'producer_approved' => $producer_approved));
 
     // create a new account with the campaign id
     $user_name = $app->view()->getData('user');
@@ -197,6 +216,56 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $app->flash('success_info', 'Campaign Saved');
     $app->redirect('/campaigns');
 });
+
+
+# Producer save campaign
+$app->post('/edit-campaign', $authenticate($app), function () use ($app){
+
+    $req = $app->request->post();
+
+    // if they are saving for later make note in db
+    if(isset($req['save'])) {
+        $producer_approved = 'N';
+    } else {
+        $producer_approved = 'Y';
+    }
+
+    // handle uploaded file
+    $destination = $app->config('configs')['campaign_creative_upload_dir'];
+
+    $upload = new \Wilsonshop\Utils\Upload($destination, 'screen_shot');
+
+    // ensure only allowed filetypes make it in
+    /*$allowed =  array('png', 'PNG' ,'jpg', 'JPG');
+    $filename = $upload->file_name;
+    $ext = pathinfo($filename, PATHINFO_EXTENSION);
+    if(!in_array($ext,$allowed) ) {
+        $app->flash('success_info', 'Error: Invalid file type');
+        $app->redirect('/campaigns');
+    }
+
+    $rename_to = strtotime("now") .".".$ext;
+
+    // @TODO check the result message to see if the upload was successful
+    $result = $upload->uploadFile("Upload Succeeded","Upload failed", $rename_to);*/
+
+    $order_number = $randnum = rand(1111111111,9999999999);
+
+    $friendly_url = friendly_seo_string($req['campaign_name']);
+
+    $campaign = Campaign::find_by_campaign_id($req['campaign_id']);
+    $campaign->update_attributes(
+        array('campaign_name'=>$req['campaign_name'], 'budget' => $req['budget'],
+            'start_date' => $req['start_date'],
+            'end_date' => $req['end_date'],'copy' => $req['copy'],
+            'url' => $req['url'],'platform' => $req['platform'],
+            'order_number'=>$order_number, 'friendly_url' => $friendly_url,
+            'youtube_embed' => $req['youtube_embed'], 'producer_approved' => $producer_approved));
+
+    $app->flash('success_info', 'Campaign Saved');
+    $app->redirect('/campaigns');
+});
+
 
 # List campaign by id
 $app->get('/campaigns/:id', $authenticate($app), function ($id) use ($app){

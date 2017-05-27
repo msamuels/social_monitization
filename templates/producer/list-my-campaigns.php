@@ -39,6 +39,10 @@
                                           href="/producer/campaign/<?php echo $campaign->campaign_id; ?>">Learn More</a>
                                 </p>
 
+                                <?php if($campaign->approved == 'N') { ?>
+                                    <a class="btn support-btns" href="/edit-campaign/<?php echo $campaign->campaign_id; ?>">Edit Campaign</a>
+                                <?php } ?>
+
                             </li>
                             <?php
                         }
