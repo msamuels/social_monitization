@@ -260,7 +260,7 @@ $app->post('/edit-campaign', $authenticate($app), function () use ($app){
             'end_date' => $req['end_date'],'copy' => $req['copy'],
             'url' => $req['url'],'platform' => $req['platform'],
             'order_number'=>$order_number, 'friendly_url' => $friendly_url,
-            'youtube_embed' => $req['youtube_embed'], 'producer_approved' => $producer_approved));
+            'producer_approved' => $producer_approved));
 
     $app->flash('success_info', 'Campaign Saved');
     $app->redirect('/campaigns');
