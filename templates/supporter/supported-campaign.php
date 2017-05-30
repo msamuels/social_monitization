@@ -180,7 +180,7 @@
                                     <input type="hidden" name="campaign_id"
                                            value="<?php echo $campaign->campaign_id; ?>"/>
                                     <input type="hidden" name="supporter_id" value="<?php echo $user_id; ?>"/>
-                                    <button class="btn support-btns" type="submit">Support Campaign</button>
+                                 
                                 </form>
                             <?php } else { ?>
                                 <button class="btn btn-success support-pledged">Support Pledged</button>
