@@ -159,12 +159,12 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
 
     $body_supporter = "<p>".$producer->org_name. " is asking for your support for their ".$campaign->campaign_name."
      effort. Click on the link below to find
-    out more and, if you are interested, log in to your account and hit the support button. Once you've done that just post to Facebook. </p>";
+    out more. If you would like to support, please log-in and share this initiative with your network. </p>";
     $baseurl =  $destination = $app->config('configs')['base_url'];
     $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->friendly_url."'>Click here to support</a>";
-    $body_supporter .= "<p>Oh, and for sharing the link you will earn 5 points.</p>";
+    $body_supporter .= "<p>For sharing the initiave you will earn 5 points.</p>";
     $body_supporter .= "<p>Thanks, <br />
-        The shareitcamp team</p>";
+        The ShareItCamp team</p>";
 
     mail(null, $subject_supporter, $body_supporter, $headers);
 
@@ -237,8 +237,7 @@ $app->post('/resend-campaign-notification', $authenticate($app), function () use
 
     $body_supporter = "<p>Just a friendly reminder that ".$producer->org_name. " would like your support in spreading
     the word about their ".$campaign->campaign_name." initiative.
-    If you haven't done so Click on the link below to find out more and, if you are interested, log in and click the SHARE button.
-    Once you've done that just post to Facebook. </p>";
+    If you haven't done so already, click on the link below to find out more. If you would like to support, log-in, hit the SHARE button, and share with your network. </p>";
 
     $baseurl =  $destination = $app->config('configs')['base_url'];
 
@@ -248,7 +247,7 @@ $app->post('/resend-campaign-notification', $authenticate($app), function () use
     missed it the first time.</p>";
 
     $body_supporter .= "<p>Thanks, <br />
-        The shareitcamp team</p>";
+        The ShareItCamp team</p>";
 
     mail(null, $subject_supporter, $body_supporter, $headers);
 
