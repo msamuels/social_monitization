@@ -374,7 +374,7 @@ $app->get('/producer/campaign/:id', $authenticate($app), function ($id) use($app
     if (count($supporter_ids) == 0) {
         $supporters = array();
     }else{
-        $supporters = Supporter::find($supporter_ids);
+        $supporters = Supporter::find(array_unique($supporter_ids));
     }
 
     if (count($supporters) == 1) {
