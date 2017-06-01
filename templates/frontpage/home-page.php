@@ -140,7 +140,8 @@
 		             </div>
 
                 </div>
-<?php } ?>
+        </article>
+    <?php } ?>
       </div><!-- end row -->
 
     </div> <!-- end container -->
