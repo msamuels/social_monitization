@@ -124,205 +124,23 @@
           </div> <!-- end row -->
 
      <div class="row">
-            <?php if(count($campaigns) > 0){ ?>
+            <?php foreach ($campaigns as $campaign){ ?>
         <!--Pricing Column-->
         <article class="pricing-column col-sm-4">
             <div class="inner-box fadeIn animated wow" data-wow-delay=".1s">
                 <div class="plan-header text-center">
-                    <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[0]->friendly_url; ?>">
-                            <?php echo $campaigns[0]->campaign_name; ?></a></h3>
-                    <h2 class="plan-duration"> by <a href="/producer/<?php echo $campaigns[0]->getProducer()->friendly_url; ?>">
-                            <?php echo $campaigns[0]->getProducer()->org_name; ?></a></h2>
+                    <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaign->friendly_url; ?>">
+                            <?php echo $campaign->campaign_name; ?></a></h3>
+                    <h2 class="plan-duration"> by <a href="/producer/<?php echo $campaign->getProducer()->friendly_url; ?>">
+                            <?php echo $campaign->getProducer()->org_name; ?></a></h2>
                     <div class="thumbnail thumbnail-box">
-                        <a href="supporter/campaign/<?php echo $campaigns[0]->friendly_url; ?>">
-			                <img src="/images/screenshots/<?php echo $campaigns[0]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
+                        <a href="supporter/campaign/<?php echo $campaign->friendly_url; ?>">
+			                <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
                         </a>
 		             </div>
 
                 </div>
-
-                <div class="text-center">
-                    <a href="supporter/campaign/<?php echo $campaigns[0]->friendly_url; ?>" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
-                </div>
-            </div>
-        </article>
-            <?php } ?>
-
- <?php if(count($campaigns) > 1){ ?>
-        <!--Pricing Column-->
-        <article class="pricing-column col-sm-4">
-            <div class="inner-box fadeIn animated wow" data-wow-delay=".2s">
-                <div class="plan-header text-center">
-                    <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>">
-                            <?php echo $campaigns[1]->campaign_name; ?></a></h3>
-                    <h2 class="plan-duration"> by <a href="/producer/<?php echo $campaigns[1]->getProducer()->friendly_url; ?>">
-                        <?php echo $campaigns[1]->getProducer()->org_name; ?></a></h2>
-                    <div class="thumbnail thumbnail-box">
-                        <a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>">
-			                <img src="/images/screenshots/<?php echo $campaigns[1]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
-                        </a>
-		            </div>
-
-                </div>
-   
-
-                <div class="text-center">
-                    <a href="supporter/campaign/<?php echo $campaigns[1]->friendly_url; ?>" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
-                </div>
-            </div>
-        </article>
 <?php } ?>
-
- <?php if(count($campaigns) > 2){ ?>
-        <!--Pricing Column-->
-        <article class="pricing-column col-sm-4">
-            <div class="inner-box fadeIn animated wow" data-wow-delay=".3s">
-                <div class="plan-header text-center">
-                    <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[2]->friendly_url; ?>">
-                            <?php echo $campaigns[2]->campaign_name; ?></a></h3>
-                    <h2 class="plan-duration"> by <a href="/producer/<?php echo $campaigns[2]->getProducer()->friendly_url; ?>">
-                        <?php echo $campaigns[2]->getProducer()->org_name; ?></a></h2>
-                    <div class="thumbnail thumbnail-box">
-                        <a href="supporter/campaign/<?php echo $campaigns[2]->friendly_url; ?>">
-			                <img src="/images/screenshots/<?php echo $campaigns[2]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
-                        </a>
-		             </div>
-
-                </div>
-   
-
-                <div class="text-center">
-                    <a href="supporter/campaign/<?php echo $campaigns[2]->friendly_url; ?>" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
-                </div>
-            </div>
-        </article>
-<?php } ?>
- <?php if(count($campaigns) > 3){ ?>
-        <!--Pricing Column-->
-        <article class="pricing-column col-sm-4">
-            <div class="inner-box fadeIn animated wow" data-wow-delay=".4s">
-                <div class="plan-header text-center">
-                    <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>">
-                            <?php echo $campaigns[3]->campaign_name; ?></a></h3>
-                    <h2 class="plan-duration"> by <a href="/producer/<?php echo $campaigns[3]->getProducer()->friendly_url; ?>">
-                        <?php echo $campaigns[3]->getProducer()->org_name; ?></a></h2>
-                    <div class="thumbnail thumbnail-box">
-                    <a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>">
-			            <img src="/images/screenshots/<?php echo $campaigns[3]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
-                    </a>
-		    </div>
-
-                </div>
-   
-
-                <div class="text-center">
-                    <a href="supporter/campaign/<?php echo $campaigns[3]->friendly_url; ?>" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
-                </div>
-            </div>
-        </article>
-<?php } ?>
-         <?php if(count($campaigns) > 4){ ?>
-             <!--Pricing Column-->
-             <article class="pricing-column col-sm-4">
-                 <div class="inner-box fadeIn animated wow" data-wow-delay=".4s">
-                     <div class="plan-header text-center">
-                         <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[4]->friendly_url; ?>">
-                                 <?php echo $campaigns[4]->campaign_name; ?></a></h3>
-                         <h2 class="plan-duration"> by <a href="/producer/<?php echo $campaigns[4]->getProducer()->friendly_url; ?>">
-                                 <?php echo $campaigns[4]->getProducer()->org_name; ?></a></h2>
-                         <div class="thumbnail thumbnail-box">
-                             <a href="supporter/campaign/<?php echo $campaigns[4]->friendly_url; ?>">
-                                 <img src="/images/screenshots/<?php echo $campaigns[4]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
-                             </a>
-                         </div>
-
-                     </div>
-
-
-                     <div class="text-center">
-                         <a href="supporter/campaign/<?php echo $campaigns[4]->friendly_url; ?>" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
-                     </div>
-                 </div>
-             </article>
-         <?php } ?>
-
-         <?php if(count($campaigns) > 5){ ?>
-             <!--Pricing Column-->
-             <article class="pricing-column col-sm-4">
-                 <div class="inner-box fadeIn animated wow" data-wow-delay=".4s">
-                     <div class="plan-header text-center">
-                         <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[5]->friendly_url; ?>">
-                                 <?php echo $campaigns[5]->campaign_name; ?></a></h3>
-                         <h2 class="plan-duration"> by <a href="/producer/<?php echo $campaigns[5]->getProducer()->friendly_url; ?>">
-                                 <?php echo $campaigns[5]->getProducer()->org_name; ?></a></h2>
-                         <div class="thumbnail thumbnail-box">
-                             <a href="supporter/campaign/<?php echo $campaigns[5]->friendly_url; ?>">
-                                 <img src="/images/screenshots/<?php echo $campaigns[5]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
-                             </a>
-                         </div>
-
-                     </div>
-
-
-                     <div class="text-center">
-                         <a href="supporter/campaign/<?php echo $campaigns[5]->friendly_url; ?>" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
-                     </div>
-                 </div>
-             </article>
-         <?php } ?>
-
-
-         <?php if(count($campaigns) > 6){ ?>
-             <!--Pricing Column-->
-             <article class="pricing-column col-sm-4">
-                 <div class="inner-box fadeIn animated wow" data-wow-delay=".4s">
-                     <div class="plan-header text-center">
-                         <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[6]->friendly_url; ?>">
-                                 <?php echo $campaigns[6]->campaign_name; ?></a></h3>
-                         <h2 class="plan-duration"> by <a href="/producer/<?php echo $campaigns[6]->getProducer()->friendly_url; ?>">
-                                 <?php echo $campaigns[6]->getProducer()->org_name; ?></a></h2>
-                         <div class="thumbnail thumbnail-box">
-                             <a href="supporter/campaign/<?php echo $campaigns[6]->friendly_url; ?>">
-                                 <img src="/images/screenshots/<?php echo $campaigns[6]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
-                             </a>
-                         </div>
-
-                     </div>
-
-
-                     <div class="text-center">
-                         <a href="supporter/campaign/<?php echo $campaigns[6]->friendly_url; ?>" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
-                     </div>
-                 </div>
-             </article>
-         <?php } ?>
-
-
-         <?php if(count($campaigns) > 7){ ?>
-             <!--Pricing Column-->
-             <article class="pricing-column col-sm-4">
-                 <div class="inner-box fadeIn animated wow" data-wow-delay=".4s">
-                     <div class="plan-header text-center">
-                         <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaigns[7]->friendly_url; ?>">
-                                 <?php echo $campaigns[7]->campaign_name; ?></a></h3>
-                         <h2 class="plan-duration"> by <a href="/producer/<?php echo $campaigns[7]->getProducer()->friendly_url; ?>">
-                                 <?php echo $campaigns[7]->getProducer()->org_name; ?></a></h2>
-                         <div class="thumbnail thumbnail-box">
-                             <a href="supporter/campaign/<?php echo $campaigns[7]->friendly_url; ?>">
-                                 <img src="/images/screenshots/<?php echo $campaigns[7]->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
-                             </a>
-                         </div>
-
-                     </div>
-
-
-                     <div class="text-center">
-                         <a href="supporter/campaign/<?php echo $campaigns[7]->friendly_url; ?>" class="btn btn-primary btn-shadow w-md btn-rounded">Support</a>
-                     </div>
-                 </div>
-             </article>
-         <?php } ?>
-
       </div><!-- end row -->
 
     </div> <!-- end container -->
