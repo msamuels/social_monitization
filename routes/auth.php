@@ -164,7 +164,7 @@ $app->post("/reset-password", function () use ($app) {
 
     // email user new password
     $body = 'You have requested a new password. Here it is: <strong>'.$rand_str. '</strong>';
-    $body .= 'Please login with your username: '.$client->user_name . ' and your new password <br />';
+    $body .= 'Please login with your username and your new password <br />';
     $body .= "<a href='https://www.shareitcamp.com/login'>Login</a> <br />";
     $body .= ' If you did not request this password please email info@shareitcamp.com';
 
