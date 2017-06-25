@@ -524,11 +524,14 @@ $app->get('/producer/:name', function ($name) use ($app){
         $campaign_ids[] = $pc->campaign_id;
     }
 
+
+    $options_1 = array('order' => 'campaign_id desc', 'conditions' => array("approved = 'Y'"));
+
     // find campaigns for that producer
     $options_2 = array('order' => 'campaign_id desc', 'conditions' => array("approved = 'Y' AND campaign_id in (?)", $campaign_ids));
    
     if(count($campaign_ids) == 0){
-        $campaigns = Campaign::all();
+        $campaigns = Campaign::all($options_1);
     } else {
         $campaigns = Campaign::all($options_2);
     }
