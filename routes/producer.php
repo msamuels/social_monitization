@@ -524,8 +524,9 @@ $app->get('/producer/:name', function ($name) use ($app){
         $campaign_ids[] = $pc->campaign_id;
     }
 
+    $excluded_from_home = $app->config('configs')['excluded_from_home'];
 
-    $options_1 = array('order' => 'campaign_id desc', 'conditions' => array("approved = 'Y'"));
+    $options_1 = array('order' => 'campaign_id desc', 'conditions' => array("approved = 'Y' AND campaign_id NOT IN (?) ", $excluded_from_home ));
 
     // find campaigns for that producer
     $options_2 = array('order' => 'campaign_id desc', 'conditions' => array("approved = 'Y' AND campaign_id in (?)", $campaign_ids));
