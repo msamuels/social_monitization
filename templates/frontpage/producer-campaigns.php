@@ -26,7 +26,7 @@
 
 
             <div class="col-sm-6">
-                <div class="row" style="text-align: center;"><h3><i>Initiatives</i></h3>
+                <div class="row" style="text-align: left;"><h3><i>Initiatives</i></h3>
                         </div>
 
                 <ul class="list-things" style="list-style: none">
