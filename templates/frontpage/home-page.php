@@ -1,3 +1,42 @@
+  <!-- FEATURED CAMPAIGN -->
+  <section class="section bg-gray" id="features">
+      <div class="container">
+
+          <div class="row">
+              <div class="col-sm-6">
+                  <div class="feature-detail">
+
+                      <div class="title-box">
+                          <p class="title-alt">Featured Initiative</p>
+                          <h3 class="fadeIn animated wow" data-wow-delay=".1s">LET'S GET TO WORK</h3>
+                          <div class="border"></div>
+                      </div>
+
+                          <form class="form-inline">
+                                <div class="form-group">
+                                  <label for="exampleInputName2">Name</label>
+                                  <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                                </div>
+                                <div class="form-group">
+                                  <label for="exampleInputEmail2">Email</label>
+                                  <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+                                </div>
+                                <button type="submit" class="btn btn-default">Send invitation</button>
+                          </form>
+
+                      
+                  </div>
+              </div>
+
+              <div class="col-sm-6">
+                  <img src="images/amazongiftcard.png" class="img-responsive fadeIn animated wow" data-wow-delay=".2s">
+              </div>
+
+          </div>
+      </div>
+  </section>
+  <!-- FEATURED CAMPAIGN-->
+
   <!-- HOME -->
   <section class="home bg-img-2" id="home">
   <div class="bg-overlay"></div>
