@@ -3,34 +3,39 @@
       <div class="container">
 
           <div class="row">
-              <div class="col-sm-6">
+
+
+
+              <div class="col-sm-5">
+                  <img src="images/amazongiftcard.png" class="img-responsive fadeIn animated wow" data-wow-delay=".2s">
+              </div>
+
+
+              <div class="col-sm-7">
                   <div class="feature-detail">
 
                       <div class="title-box">
                           <p class="title-alt">Featured Initiative</p>
-                          <h3 class="fadeIn animated wow" data-wow-delay=".1s">LET'S GET TO WORK</h3>
+                          <h3 class="fadeIn animated wow" data-wow-delay=".1s">RSVP NOW FOR WORKSHOP!</h3>
                           <div class="border"></div>
                       </div>
 
                           <form class="form-inline">
                                 <div class="form-group">
-                                  <label for="exampleInputName2">Name</label>
-                                  <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                                  <label for="exampleInputName2"></label>
+                                  <input type="text" class="form-field-large form-control" id="exampleInputName2" placeholder="Name">
                                 </div>
                                 <div class="form-group">
-                                  <label for="exampleInputEmail2">Email</label>
-                                  <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+                                  <label for="exampleInputEmail2"></label>
+                                  <input type="email" class="form-field-large form-control" id="exampleInputEmail2" placeholder="Email Address">
                                 </div>
-                                <button type="submit" class="btn btn-default">Send invitation</button>
+                                <button type="submit" class="form-field-large-btn btn btn-default">Send invitation</button>
                           </form>
 
                       
                   </div>
               </div>
 
-              <div class="col-sm-6">
-                  <img src="images/amazongiftcard.png" class="img-responsive fadeIn animated wow" data-wow-delay=".2s">
-              </div>
 
           </div>
       </div>
