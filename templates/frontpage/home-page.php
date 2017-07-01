@@ -6,15 +6,6 @@
 
 
 
-              <div class="col-sm-5">
-                  <img src="images/aplbanner.jpg" class="img-responsive fadeIn animated wow" data-wow-delay=".2s">
-
-                      <div class="row" style="text-align: center;">
-                          <br>
-                          <a href="">Learn More</a> | <a href="">Sign-Up to Earn Rewards</a> 
-                    </div>
-
-              </div>
 
 
               <div class="col-sm-7">
@@ -40,6 +31,22 @@
 
                       
                   </div>
+              </div>
+
+
+
+              <div class="col-sm-5">
+                  <img src="images/aplbanner.jpg" class="img-responsive fadeIn animated wow" data-wow-delay=".2s">
+
+                      <div class="row" style="text-align: center;">
+                          <br>
+                        <a href="#" class="btn btn-primary w-lg" data-wow-delay=".4s">Learn More/a>
+
+                         | 
+
+                          <a href="/get-started/supporter/register" class="btn btn-secondary w-lg" data-wow-delay=".4s">Earn Reward Points</a> 
+                    </div>
+
               </div>
 
 
