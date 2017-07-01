@@ -22,7 +22,7 @@
 
                       <div class="title-box">
                           <p class="title-alt">RSVP TODAY!</p>
-                          <h3 class="fadeIn animated wow" data-wow-delay=".1s">Advocacy, Policy, and Leadership Workshop</h3>
+                          <h3 class="fadeIn animated wow" data-wow-delay=".1s">Advocacy, Policy and Leadership Workshop</h3>
                           <div class="border"></div>
                       </div>
 
