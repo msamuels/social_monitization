@@ -7,7 +7,7 @@
 
 
               <div class="col-sm-5">
-                  <img src="images/aplbanner.PNG" class="img-responsive fadeIn animated wow" data-wow-delay=".2s">
+                  <img src="images/aplbanner.jpg" class="img-responsive fadeIn animated wow" data-wow-delay=".2s">
 
                       <div class="row" style="text-align: center;">
                           <br>
