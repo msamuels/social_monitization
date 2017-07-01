@@ -40,7 +40,7 @@
 
                       <div class="row" style="text-align: center;">
                           <br>
-                        <a href="#" class="btn btn-primary w-lg" data-wow-delay=".4s">Learn More/a>
+                        <a href="#" class="btn btn-primary w-lg" data-wow-delay=".4s">Learn More</a>
 
                          | 
 
