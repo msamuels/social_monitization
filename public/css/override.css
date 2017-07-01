@@ -17,6 +17,9 @@
 .error {
     display: block;
 }
+.featured-campaign-section {
+    margin-top: 50px;
+}
 
 .form-field-large {
     height: 60px;

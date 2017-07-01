@@ -1,5 +1,5 @@
   <!-- FEATURED CAMPAIGN -->
-  <section class="section bg-gray" id="features">
+  <section class="section bg-gray featured-campaign-section" id="features">
       <div class="container">
 
           <div class="row">
@@ -7,7 +7,13 @@
 
 
               <div class="col-sm-5">
-                  <img src="images/amazongiftcard.png" class="img-responsive fadeIn animated wow" data-wow-delay=".2s">
+                  <img src="images/aplbanner.png" class="img-responsive fadeIn animated wow" data-wow-delay=".2s">
+
+                      <div class="row" style="text-align: center;">
+                          <br>
+                          <a href="">Learn More</a> | <a href="">Sign-Up to Earn Rewards</a> 
+                    </div>
+
               </div>
 
 
@@ -15,8 +21,8 @@
                   <div class="feature-detail">
 
                       <div class="title-box">
-                          <p class="title-alt">Featured Initiative</p>
-                          <h3 class="fadeIn animated wow" data-wow-delay=".1s">RSVP NOW FOR WORKSHOP!</h3>
+                          <p class="title-alt">RSVP TODAY!</p>
+                          <h3 class="fadeIn animated wow" data-wow-delay=".1s">Advocacy, Policy, and Leadership Worshop</h3>
                           <div class="border"></div>
                       </div>
 
@@ -29,7 +35,7 @@
                                   <label for="exampleInputEmail2"></label>
                                   <input type="email" class="form-field-large form-control" id="exampleInputEmail2" placeholder="Email Address">
                                 </div>
-                                <button type="submit" class="form-field-large-btn btn btn-default">Send invitation</button>
+                                <button type="submit" class="form-field-large-btn btn btn-default" style="margin-top: 0px;">RSVP</button>
                           </form>
 
                       
