@@ -17,14 +17,14 @@
                           <div class="border"></div>
                       </div>
 
-                          <form class="form-inline">
+                          <form class="form-inline" action="/ja55-rsvp" enctype="multipart/form-data" method="POST" role="form">
                                 <div class="form-group">
-                                  <label for="exampleInputName2"></label>
-                                  <input type="text" class="form-field-large form-control" id="exampleInputName2" placeholder="Name">
+                                  <label for="Name"></label>
+                                  <input type="text" class="form-field-large form-control" name="rsvpName" id="exampleInputName2" placeholder="Name">
                                 </div>
                                 <div class="form-group">
-                                  <label for="exampleInputEmail2"></label>
-                                  <input type="email" class="form-field-large form-control" id="exampleInputEmail2" placeholder="Email Address">
+                                  <label for="EmailAddress"></label>
+                                  <input type="email" class="form-field-large form-control" name="rsvpEmail" id="exampleInputEmail2" placeholder="Email Address">
                                 </div>
                                 <button type="submit" class="form-field-large-btn btn btn-default" style="margin-top: 0px;">RSVP</button>
                           </form>
