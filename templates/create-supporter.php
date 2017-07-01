@@ -69,7 +69,7 @@
         </div>
 
         <div class="row alert alert-success ">
-            The importance of your support can't be overstated. Your support helps shine a light on great projects.
+            By signing up as a supporter you can earn points that can be exchanged for rewards. After this, each time you log into ShareItCamp.com and share an initiative with to your social networks you earn reward points. 
         </div>
 
         <div class="row">
