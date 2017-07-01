@@ -7,7 +7,7 @@
 
 
               <div class="col-sm-5">
-                  <img src="images/aplbanner.png" class="img-responsive fadeIn animated wow" data-wow-delay=".2s">
+                  <img src="images/aplbanner.PNG" class="img-responsive fadeIn animated wow" data-wow-delay=".2s">
 
                       <div class="row" style="text-align: center;">
                           <br>
@@ -22,7 +22,7 @@
 
                       <div class="title-box">
                           <p class="title-alt">RSVP TODAY!</p>
-                          <h3 class="fadeIn animated wow" data-wow-delay=".1s">Advocacy, Policy, and Leadership Worshop</h3>
+                          <h3 class="fadeIn animated wow" data-wow-delay=".1s">Advocacy, Policy, and Leadership Workshop</h3>
                           <div class="border"></div>
                       </div>
 
