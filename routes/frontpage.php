@@ -51,13 +51,13 @@ $app->get('/termsandconditions', function () use ($app){
 
 
 // JA55 - RSVP
-$app->get('/account', function () use ($app){    
+    $app->get('/account', function () use ($app){    
     $path = explode('/', $app->request->getPath());    
     $success_info = NULL;    
         if (isset($flash['success_info'])) {        
             $success_info = $flash['success_info'];    
             }    
-            $app->render('producer/home-page.php', array('path' => $path, 'success_info' => $success_info)); 
+            $app->render('frontpage/home-page.php', array('path' => $path, 'success_info' => $success_info)); 
 });
 
 
