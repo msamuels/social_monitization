@@ -74,8 +74,8 @@ $app->get('/account', function () use ($app){
     $headers .= 'From: JA55APL@shareitcamp.com' . "\r\n";   
 
 // Email JA55APL@shareitcamp.com to let them know we received their RSVP    
-        $headers .= 'BCC: ja55apl@shareitcamp.com "\r\n"'   
-        $subject_supporter = "You have a new RSVP .$req['rsvpName']. ";   
+        $headers .= 'BCC: ja55apl@shareitcamp.com "\r\n"';   
+        $subject_supporter = "You have a new RSVP" . $req['rsvpName'];   
         $body_supporter = "<p> RSVP from<br> Name: " . $req['rsvpName'] ." Email: " . $req['rsvpEmail'] ." </p><br />  ";  
             
             
