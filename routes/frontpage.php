@@ -73,29 +73,29 @@ $app->get('/termsandconditions', function () use ($app){
     $headers .= 'From: JA55APL@shareitcamp.com' . "\r\n";   
 
     // Email JA55APL@shareitcamp.com to let them know we received their RSVP      
-        $subject_supporter = "You have a new RSVP" . $req['rsvpName'];   
-        $body_supporter = "<p> RSVP from<br> Name: " . $req['rsvpName'] ." Email: " . $req['rsvpEmail'] ." </p><br />  ";  
+        $subject_supporter = "You have a new RSVP " . $req['rsvpName'];   
+        $body_supporter = "<p> RSVP from<br> Name: " . $req['rsvpName'] ." <br>Email: " . $req['rsvpEmail'] ." </p><br />  ";  
             
             
                     
     $baseurl =  $destination = $app->config('configs')['base_url'];    
     mail('ja55apl@shareitcamp.com', $subject_supporter, $body_supporter, $headers);
     $app->flash('success_info', 'Email sent');    
-   // $app->redirect('/campaigns'); 
+   $app->redirect('/producer/shareitcamp'); 
 
 
 
     // Email RSVPer to let them know we received their RSVP
-        $subject_supporter = "RSVP Received for Workshop!";    
+        $subject_supporter = "WorkShop RSVP Received!";    
         
         $body_supporter = "<p> Looking forward to seeing you on 27 July 2017  </p><br />        
-            <p>    Please help us promote this workshop by sharing the link with your social media networks "; 
-            $body_supporter .= "  <a href='https://www.shareitcamp.com/'> ShareItCamp.com </a> ";
-             $body_supporter .= ". Here is how it works: 
+            <p>    Please help us promote this workshop and earn reward points. Here's how:"; 
+    
+             $body_supporter .= " 
                 <ul>
-                    <li>When you sign up as supporter on ShareItCamp.com you will be notified when Advocacy, Policy and Leadership Workshop announces an update. 
+                    <li>When you register as supporter on ShareItCamp.com you will be notified when Advocacy, Policy and Leadership Workshop announces an update. 
                     </li>
-                      <li>You can then easily share it on your social networks (e.g. Facebook, Twitter, LinkedIn) from ShareItCamp or saved the image and share to Instagram.
+                      <li>You can then easily share it on your social networks (e.g. Facebook, Twitter, LinkedIn) from ShareItCamp or saved the image and share to Instagram. Your earn points for each project you share.
                     </li>
                 </ul>      
             </p>         
@@ -120,5 +120,6 @@ $app->get('/termsandconditions', function () use ($app){
     $baseurl =  $destination = $app->config('configs')['base_url'];    
     mail($req['rsvpEmail'], $subject_supporter, $body_supporter, $headers);
     $app->flash('success_info', 'Email sent');    
-    //$app->redirect('/campaigns'); 
+    $app->redirect('/producer/shareitcamp'); 
+ 
 });
