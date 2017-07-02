@@ -66,29 +66,26 @@ $app->get('/termsandconditions', function () use ($app){
     $req = $app->request->post();      
     
     $rsvpEmail = $rsvpEmail;
-    //$user_name = $app->view()->getData('user');
-    //$producer = Producer::find_by_user_name($user_name);
+
     $headers  = 'MIME-Version: 1.0' . "\r\n";    
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";    
     
     $headers .= 'From: JA55APL@shareitcamp.com' . "\r\n";   
 
-// Email JA55APL@shareitcamp.com to let them know we received their RSVP    
-        $headers .= 'BCC: ja55apl@shareitcamp.com "\r\n"';   
+    // Email JA55APL@shareitcamp.com to let them know we received their RSVP      
         $subject_supporter = "You have a new RSVP" . $req['rsvpName'];   
         $body_supporter = "<p> RSVP from<br> Name: " . $req['rsvpName'] ." Email: " . $req['rsvpEmail'] ." </p><br />  ";  
             
             
                     
     $baseurl =  $destination = $app->config('configs')['base_url'];    
-    mail(null, $subject_supporter, $body_supporter, $headers);    
+    mail('ja55apl@shareitcamp.com', $subject_supporter, $body_supporter, $headers);
     $app->flash('success_info', 'Email sent');    
    // $app->redirect('/campaigns'); 
 
 
 
-    // Email RSVPer to let them know we received their RSVP    
-        $headers .= 'BCC: '. $req['rsvpEmail'] . "\r\n";   
+    // Email RSVPer to let them know we received their RSVP
         $subject_supporter = "RSVP Received for Workshop!";    
         
         $body_supporter = "<p> Looking forward to seeing you on 27 July 2017  </p><br />        
@@ -121,7 +118,7 @@ $app->get('/termsandconditions', function () use ($app){
             '>  Become a Supporter </a><br />";  
         $body_supporter .= "<p>Thanks in advance, <br /> ShareItCamp.com</p>";              
     $baseurl =  $destination = $app->config('configs')['base_url'];    
-    mail(null, $subject_supporter, $body_supporter, $headers);    
+    mail($req['rsvpEmail'], $subject_supporter, $body_supporter, $headers);
     $app->flash('success_info', 'Email sent');    
     //$app->redirect('/campaigns'); 
 });
