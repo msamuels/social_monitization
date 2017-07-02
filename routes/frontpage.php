@@ -83,7 +83,7 @@ $app->get('/account', function () use ($app){
     $baseurl =  $destination = $app->config('configs')['base_url'];    
     mail(null, $subject_supporter, $body_supporter, $headers);    
     $app->flash('success_info', 'Email sent');    
-    $app->redirect('/campaigns'); 
+   // $app->redirect('/campaigns'); 
 
 
 
@@ -123,5 +123,5 @@ $app->get('/account', function () use ($app){
     $baseurl =  $destination = $app->config('configs')['base_url'];    
     mail(null, $subject_supporter, $body_supporter, $headers);    
     $app->flash('success_info', 'Email sent');    
-    $app->redirect('/campaigns'); 
+    //$app->redirect('/campaigns'); 
 });
