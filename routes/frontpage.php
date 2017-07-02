@@ -84,7 +84,7 @@ $app->get('/account', function () use ($app){
     mail(null, $subject_supporter, $body_supporter, $headers);    
     $app->flash('success_info', 'Email sent');    
     $app->redirect('/campaigns'); 
-});
+
 
 
     // Email RSVPer to let them know we received their RSVP    
