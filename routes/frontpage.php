@@ -74,19 +74,19 @@ $app->get('/termsandconditions', function () use ($app){
 
     // Email JA55APL@shareitcamp.com to let them know we received their RSVP      
         $subject_supporter = "You have a new RSVP " . $req['rsvpName'];   
-        $body_supporter = "<p> RSVP from<br> Name: " . $req['rsvpName'] ." <br>Email: " . $req['rsvpEmail'] ." </p><br />  ";  
+        $body_supporter = "<p> RSVP from<br/> Name: " . $req['rsvpName'] ." <br/>Email: " . $req['rsvpEmail'] ." </p><br />  ";  
             
             
                     
     $baseurl =  $destination = $app->config('configs')['base_url'];    
     mail('ja55apl@shareitcamp.com', $subject_supporter, $body_supporter, $headers);
-    $app->flash('success_info', 'Email sent');    
    $app->redirect('/producer/shareitcamp'); 
+     $app->flash('success_info', 'Email sent'); 
 
 
 
     // Email RSVPer to let them know we received their RSVP
-        $subject_supporter = "WorkShop RSVP Received!";    
+        $subject_supporter = "workshop RSVP Received!";    
         
         $body_supporter = "<p> Looking forward to seeing you on 27 July 2017  </p><br />        
             <p>    Please help us promote this workshop and earn reward points. Here's how:"; 
@@ -119,7 +119,7 @@ $app->get('/termsandconditions', function () use ($app){
         $body_supporter .= "<p>Thanks in advance, <br /> ShareItCamp.com</p>";              
     $baseurl =  $destination = $app->config('configs')['base_url'];    
     mail($req['rsvpEmail'], $subject_supporter, $body_supporter, $headers);
-    $app->flash('success_info', 'Email sent');    
+        
     $app->redirect('/producer/shareitcamp'); 
- 
+    $app->flash('success_info', 'Email sent');  
 });
