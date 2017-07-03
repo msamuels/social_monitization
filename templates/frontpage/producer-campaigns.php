@@ -4,7 +4,7 @@
         <H1><?php echo $producer->org_name; ?></H1>
 
         <?php if (isset($success_info)) { ?>
-            <div class="alert alert-warning"><?php echo $success_info; ?></div>
+            <div class="alert alert-success"><?php echo $success_info; ?></div>
         <?php } ?>
 
 

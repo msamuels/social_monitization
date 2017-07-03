@@ -506,6 +506,8 @@ $app->post('/producer/approve-campaign', $authenticate($app), function () use ($
 // producer page
 $app->get('/producer/:name', function ($name) use ($app){
 
+    $flash = $app->view()->getData('flash');
+
     //find the prducer by name
     $producer = Producer::find_by_friendly_url($name);
 
@@ -537,7 +539,13 @@ $app->get('/producer/:name', function ($name) use ($app){
         $campaigns = Campaign::all($options_2);
     }
 
-    $app->render('frontpage/producer-campaigns.php', array('campaigns'=>$campaigns, 'producer'=>$producer));
+    $success_info = NULL;
+
+        if (isset($flash['success_info'])) {        
+            $success_info = $flash['success_info'];    
+            }  
+
+    $app->render('frontpage/producer-campaigns.php', array('campaigns'=>$campaigns, 'producer'=>$producer, 'success_info' => $success_info));
 });
 
 // invite supporters

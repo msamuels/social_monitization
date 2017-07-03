@@ -80,10 +80,6 @@ $app->get('/termsandconditions', function () use ($app){
                     
     $baseurl =  $destination = $app->config('configs')['base_url'];    
     mail('ja55apl@shareitcamp.com', $subject_supporter, $body_supporter, $headers);
-   $app->redirect('/producer/shareitcamp'); 
-     $app->flash('success_info', 'Email sent'); 
-
-
 
     // Email RSVPer to let them know we received their RSVP
         $subject_supporter = "workshop RSVP Received!";    
@@ -119,7 +115,7 @@ $app->get('/termsandconditions', function () use ($app){
         $body_supporter .= "<p>Thanks in advance, <br /> ShareItCamp.com</p>";              
     $baseurl =  $destination = $app->config('configs')['base_url'];    
     mail($req['rsvpEmail'], $subject_supporter, $body_supporter, $headers);
-        
+
+    $app->flash('success_info', 'Email sent');
     $app->redirect('/producer/shareitcamp'); 
-    $app->flash('success_info', 'Email sent');  
 });
