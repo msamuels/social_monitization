@@ -84,18 +84,18 @@ $app->get('/termsandconditions', function () use ($app){
     // Email RSVPer to let them know we received their RSVP
         $subject_supporter = "Your RSVP was received!";    
         
-        $body_supporter = "<p> We have received your RSVP for the Advocacy, Policy and Leadership Workshop. If you have any questions please email JA55APL@shareitcamp.com.See you on July 27th.  </p><br />        
+        $body_supporter = "<p> We have received your RSVP for the Advocacy, Policy and Leadership Workshop. If you have any questions please email JA55APL@shareitcamp.com. See you on July 27th.  </p><br />        
             <p>    Help spread the word about this workshop. Here's how:"; 
     
              $body_supporter .= " 
                 <ul>
                     <li>Register as a supporter on ShareItCamp.com and you will be notified when Advocacy, Policy and Leadership Workshop announces an update. 
                     </li>
-                      <li>You can then easily share workshop info on your social networks (e.g. Facebook, Instragram, Twitter, LinkedIn, etc) from ShareItCamp or saved the image and share to Instagram. <br/>Please use hashtag #JA55APL when you share.
+                      <li>You can then easily share workshop info on your social networks (e.g. Facebook, Twitter, LinkedIn, etc) from ShareItCamp. <br/>Please use hashtag #JA55APL when you share.
                     </li>
                 </ul>      
             </p>         
-            <p>            So head over to ";          
+            <p>            Head over to ";          
         $body_supporter .= "<a href='https://www.shareitcamp.com/get-started/supporter/register'>  https://www.shareitcamp.com/get-started/supporter/register </a>";       
         $body_supporter .= "  to create a Supporter account in a few short steps. Lend your support to Advocacy, Policy and Leadership Workshop and its efforts. </p><br />"; 
             
@@ -112,10 +112,10 @@ $app->get('/termsandconditions', function () use ($app){
                 margin: 4px 2px;
                 cursor: pointer;
             '>  Become a Supporter </a><br />";  
-        $body_supporter .= "<p>Thanks in advance, <br /> APL Team</p>";              
+        $body_supporter .= "<p><br /> Thanks in advance, <br /> APL Team</p>";              
     $baseurl =  $destination = $app->config('configs')['base_url'];    
     mail($req['rsvpEmail'], $subject_supporter, $body_supporter, $headers);
 
     $app->flash('success_info', 'Thank You. Please check your email for confirmation.');
-    $app->redirect('/producer/shareitcamp'); 
+    $app->redirect('/producer/Jamaica-55-Advocacy-Policy-and-Leadership-Workshop'); 
 });
