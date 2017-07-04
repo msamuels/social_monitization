@@ -44,7 +44,7 @@
 
                          | 
 
-                          <a href="/get-started/supporter/register" class="btn btn-default w-lg" data-wow-delay=".4s">Earn Reward Points</a> 
+                          <a href="/get-started/supporter/register" class="btn btn-default w-lg" data-wow-delay=".4s">Join ShareItCamp</a> 
                     </div>
 
               </div>

@@ -73,7 +73,7 @@ $app->get('/termsandconditions', function () use ($app){
     $headers .= 'From: JA55APL@shareitcamp.com' . "\r\n";   
 
     // Email JA55APL@shareitcamp.com to let them know we received their RSVP      
-        $subject_supporter = "You have a new RSVP " . $req['rsvpName'];   
+        $subject_supporter = "New RSVP from " . $req['rsvpName'];   
         $body_supporter = "<p> RSVP from<br/> Name: " . $req['rsvpName'] ." <br/>Email: " . $req['rsvpEmail'] ." </p><br />  ";  
             
             
@@ -82,16 +82,16 @@ $app->get('/termsandconditions', function () use ($app){
     mail('ja55apl@shareitcamp.com', $subject_supporter, $body_supporter, $headers);
 
     // Email RSVPer to let them know we received their RSVP
-        $subject_supporter = "workshop RSVP Received!";    
+        $subject_supporter = "Your RSVP was received!";    
         
-        $body_supporter = "<p> Looking forward to seeing you on 27 July 2017  </p><br />        
-            <p>    Please help us promote this workshop and earn reward points. Here's how:"; 
+        $body_supporter = "<p> We have received your RSVP for the Advocacy, Policy and Leadership Workshop. If you have any question please email JA55APL@shareitcamp.com.See you on July 27th.  </p><br />        
+            <p>    Help spread the word about this workshop. Here's how:"; 
     
              $body_supporter .= " 
                 <ul>
-                    <li>When you register as supporter on ShareItCamp.com you will be notified when Advocacy, Policy and Leadership Workshop announces an update. 
+                    <li>Register as a supporter on ShareItCamp.com and you will be notified when Advocacy, Policy and Leadership Workshop announces an update. 
                     </li>
-                      <li>You can then easily share it on your social networks (e.g. Facebook, Twitter, LinkedIn) from ShareItCamp or saved the image and share to Instagram. Your earn points for each project you share.
+                      <li>You can then easily share workshop info on your social networks (e.g. Facebook, Instragram, Twitter, LinkedIn, etc) from ShareItCamp or saved the image and share to Instagram. <br/>Please use hashtag #JA55APL when you share.
                     </li>
                 </ul>      
             </p>         
@@ -117,5 +117,5 @@ $app->get('/termsandconditions', function () use ($app){
     mail($req['rsvpEmail'], $subject_supporter, $body_supporter, $headers);
 
     $app->flash('success_info', 'Email sent');
-    $app->redirect('/producer/shareitcamp'); 
+    $app->redirect('/producer/Jamaica-55-Advocacy-Policy-and-Leadership-Workshop'); 
 });
