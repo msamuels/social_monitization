@@ -155,14 +155,17 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
     // Email supporter to let them know campaign has been approved by producer
     $headers .= 'BCC: '. implode(",", $supporter_email) . "\r\n";
 
-    $subject_supporter = $campaign->campaign_name;
+    $subject_supporter = 'Please Support '.$campaign->campaign_name;
+
+        $body_supporter = "<p>Good Day, </p><br/>";
+
 
     $body_supporter = "<p>".$producer->org_name. " is asking for your support for their ".$campaign->campaign_name."
      effort. Click on the link below to find
     out more. If you would like to support, please log-in and share this initiative with your network. </p>";
     $baseurl =  $destination = $app->config('configs')['base_url'];
-    $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->friendly_url."'>Click here to support</a>";
-    $body_supporter .= "<p>For sharing the initiative you will earn 5 points.</p>";
+    $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->friendly_url."'>Click here to support</a><br/>";
+    $body_supporter .= "<p>For sharing the initiative you will earn 5 points.</p><br/>";
     $body_supporter .= "<p>Thanks, <br />
         The ShareItCamp team</p>";
 
@@ -180,7 +183,7 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
 $app->get('/admin/supporters', $authenticate($app), function () use ($app){
 
     $user_name = $app->view()->getData('user');
-    $flash = $app->view()->getData('flash');
+  ti  $flash = $app->view()->getData('flash');
 
     $success_info = '';
     if (isset($flash['success_info'])) {
@@ -235,16 +238,18 @@ $app->post('/resend-campaign-notification', $authenticate($app), function () use
 
     $producer = $campaign->getProducer();
 
+     $body_supporter = "<p>Good Day, </p><br/>";
+
     $body_supporter = "<p>Just a friendly reminder that ".$producer->org_name. " would like your support in spreading
     the word about their ".$campaign->campaign_name." initiative.
-    If you haven't done so already, click on the link below to find out more. If you would like to support, log-in, hit the SHARE button, and share with your network. </p>";
+    If you haven't done so already, click on the link below to find out more. If you would like to support, log-in, hit the SHARE button, and share with your network. </p><br />";
 
     $baseurl =  $destination = $app->config('configs')['base_url'];
 
-    $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->friendly_url."'>Click here to support</a>";
+    $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->friendly_url."'>Click here to support</a><br />";
 
     $body_supporter .= "<p>If you have shared this initiative once before please share again. Your friends may have
-    missed it the first time.</p>";
+    missed it the first time.</p><br />";
 
     $body_supporter .= "<p>Thanks, <br />
         The ShareItCamp team</p>";
