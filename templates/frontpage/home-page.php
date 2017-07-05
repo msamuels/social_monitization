@@ -68,7 +68,7 @@
                   Support. This Simple Investment Makes <span class="text-colored">A Big Difference</span>
               </h2>
               <p class="animated fadeInDown wow text-light animated" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
-                Shareticamp is a community supporting projects and causes by sharing them across their networks.
+                Shareticamp is a platform where individuals get together to help promote intiatives that matter to them.
             </p>
             <a href="/get-started/supporter/register" class="btn btn-primary btn-shadow btn-rounded w-lg animated fadeInDown wow" data-wow-delay=".4s">Get Started</a>
             <div class="clearfix"></div>

@@ -183,7 +183,7 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
 $app->get('/admin/supporters', $authenticate($app), function () use ($app){
 
     $user_name = $app->view()->getData('user');
-  ti  $flash = $app->view()->getData('flash');
+    $flash = $app->view()->getData('flash');
 
     $success_info = '';
     if (isset($flash['success_info'])) {
