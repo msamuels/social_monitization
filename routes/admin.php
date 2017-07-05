@@ -162,7 +162,7 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
     out more. If you would like to support, please log-in and share this initiative with your network. </p>";
     $baseurl =  $destination = $app->config('configs')['base_url'];
     $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->friendly_url."'>Click here to support</a>";
-    $body_supporter .= "<p>For sharing the initiave you will earn 5 points.</p>";
+    $body_supporter .= "<p>For sharing the initiative you will earn 5 points.</p>";
     $body_supporter .= "<p>Thanks, <br />
         The ShareItCamp team</p>";
 
