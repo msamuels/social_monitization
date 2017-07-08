@@ -51,7 +51,7 @@ $app->get('/termsandconditions', function () use ($app){
 
 
 // JA55 - RSVP
-    $app->get('/account', function () use ($app){    
+    $app->get('/home-page', function () use ($app){    
     $path = explode('/', $app->request->getPath());    
     $success_info = NULL;    
         if (isset($flash['success_info'])) {        
