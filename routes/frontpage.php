@@ -84,13 +84,13 @@ $app->get('/termsandconditions', function () use ($app){
     // Email RSVPer to let them know we received their RSVP
         $subject_supporter = "Your RSVP was received!";    
         
-        $body_supporter = "<p> We have received your RSVP for the Advocacy, Policy and Leadership Workshop. If you have any questions please email JA55APL@shareitcamp.com. See you on July 27th.  </p><br /> 
+        $body_supporter = "<p> We have received your RSVP for the Advocacy, Policy and Leadership Workshop. If you have any questions please email JA55APL@shareitcamp.com. </p>
 
-            <p>    <b>Details:</b>
+            <p>    <b>Details:</b></br>
             Date: July 27, 2017</br>
             Time: 2p - 5pm</br>
             Location: Mona School of Business and Management. Kingston, Jamaica. </br>
-            </p></br>
+            </p>
 
             <p>    Help spread the word about this workshop. Here's how:"; 
     
