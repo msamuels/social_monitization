@@ -84,9 +84,10 @@ $app->get('/termsandconditions', function () use ($app){
     // Email RSVPer to let them know we received their RSVP
         $subject_supporter = "Your RSVP was received!";    
         
-        $body_supporter = "<p> Unforunately the Advocacy, Policy and Leadership Workshop is now at capacity. As a result you have been added to the waiting list. We will contact you if space becomes avaialable. </p>
+        $body_supporter = "<p> Thank you for your interest in the the Advocacy, Policy and Leadership Workshop. <br/>Unforunately the event is now at capacity. As a result you have been added to the waiting list. We will contact you if space becomes avaialable. </p>
 
-            <p> Get updates on this workshop or other intiatives by singing up as a Supporter on ShareItCamp.com. 
+            <p> <strong>Get Notified</strong><br/>
+            Get updates on this workshop or other intiatives by singing up as a Supporter on ShareItCamp.com. 
                             
             <p>            Head over to ";          
         $body_supporter .= "<a href='https://www.shareitcamp.com/get-started/supporter/register'>  https://www.shareitcamp.com/get-started/supporter/register </a>";       
