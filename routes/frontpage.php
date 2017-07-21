@@ -84,27 +84,13 @@ $app->get('/termsandconditions', function () use ($app){
     // Email RSVPer to let them know we received their RSVP
         $subject_supporter = "Your RSVP was received!";    
         
-        $body_supporter = "<p> We have received your RSVP for the Advocacy, Policy and Leadership Workshop. If you have any questions please email JA55APL@shareitcamp.com. </p>
+        $body_supporter = "<p> Unforunately the Advocacy, Policy and Leadership Workshop is now at capacity. As a result you have been added to the waiting list. We will contact you if space becomes avaialable. </p>
 
-            <p>    <b>Details:</b></br>
-            Date: July 27, 2017</br>
-            Time: 2p - 5pm</br>
-            Location: Mona School of Business and Management. Kingston, Jamaica. </br>
-            </p>
-
-            <p>    Help spread the word about this workshop. Here's how:"; 
-    
-             $body_supporter .= " 
-                <ul>
-                    <li>Register as a supporter on ShareItCamp.com and you will be notified when Advocacy, Policy and Leadership Workshop announces an update. 
-                    </li>
-                      <li>You can then easily share workshop info on your social networks (e.g. Facebook, Twitter, LinkedIn, etc) from ShareItCamp. <br/>Please use hashtag #JA55APL when you share.
-                    </li>
-                </ul>      
-            </p>         
+            <p> Get updates on this workshop or other intiatives by singing up as a Supporter on ShareItCamp.com. 
+                            
             <p>            Head over to ";          
         $body_supporter .= "<a href='https://www.shareitcamp.com/get-started/supporter/register'>  https://www.shareitcamp.com/get-started/supporter/register </a>";       
-        $body_supporter .= "  to create a Supporter account in a few short steps. Lend your support to Advocacy, Policy and Leadership Workshop and its efforts. </p><br />"; 
+        $body_supporter .= "  to create a Supporter account in a few short steps. </p><br />"; 
             
             $body_supporter .= "<a href='https://www.shareitcamp.com/get-started/supporter/register' 
                     style='
