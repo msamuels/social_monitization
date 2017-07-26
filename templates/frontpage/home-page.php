@@ -8,6 +8,8 @@
 
 
 
+              <!--
+
               <div class="col-sm-7">
                   <div class="feature-detail">
 
@@ -33,7 +35,19 @@
                   </div>
               </div>
 
+              -->
 
+              <div class="col-sm-7">
+
+                  <div class="title-box">
+                          <p class="title-alt">Join ShareItCamp Today!</p>
+                          <h3 class="fadeIn animated wow" data-wow-delay=".1s">Support Projects That Support You.</h3>
+                           <br/> 
+
+                          <a href="/get-started/supporter/register" data-wow-delay=".4s" style="margin-top: 0px;" class="btn btn-primary btn-rounded w-lg animated fadeInDown wow">Join ShareItCamp</a>
+                  </div>
+
+              </div>
 
               <div class="col-sm-5">
                         <a href="supporter/campaign/advocacy-policy-leadership-workshop">
@@ -43,9 +57,7 @@
                           <br>
                         <a href="https://www.shareitcamp.com/producer/jamaica-55-advocacy-policy-and-leadership-workshop" class="btn btn-primary w-lg" data-wow-delay=".4s">Learn More</a>
 
-                         | 
-
-                          <a href="/get-started/supporter/register" class="btn btn-default w-lg" data-wow-delay=".4s">Join ShareItCamp</a> 
+                         
                     </div>
 
               </div>
