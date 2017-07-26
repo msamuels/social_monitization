@@ -8,34 +8,7 @@
 
 
 
-              <!--
-
-              <div class="col-sm-7">
-                  <div class="feature-detail">
-
-                      <div class="title-box">
-                          <p class="title-alt">RSVP TODAY!</p>
-                          <h3 class="fadeIn animated wow" data-wow-delay=".1s">Advocacy, Policy and Leadership Workshop</h3>
-                          <div class="border"></div>
-                      </div>
-
-                          <form class="form-inline" action="/ja55-rsvp" enctype="multipart/form-data" method="POST" role="form">
-                                <div class="form-group">
-                                  <label for="Name"></label>
-                                  <input type="text" class="form-field-large form-control" name="rsvpName" id="exampleInputName2" placeholder="Name">
-                                </div>
-                                <div class="form-group">
-                                  <label for="EmailAddress"></label>
-                                  <input type="email" class="form-field-large form-control" name="rsvpEmail" id="exampleInputEmail2" placeholder="Email Address">
-                                </div>
-                                <button type="submit" class="form-field-large-btn btn btn-default" style="margin-top: 0px;">RSVP</button>
-                          </form>
-
-                      
-                  </div>
-              </div>
-
-              -->
+              
 
               <div class="col-sm-7">
 
@@ -52,7 +25,7 @@
               <div class="col-sm-5">
                   <h3> <strong>FEATURED PROJECT</strong></h3>
 
-                        <a href="supporter/campaign/advocacy-policy-leadership-workshop">
+                        <a href="producer/jamaica-55-advocacy-policy-and-leadership-workshop">
                             <img src="images/aplbanner.jpg" class="img-responsive fadeIn animated wow" data-wow-delay=".2s">
                         </a>
                       <div class="row" style="text-align: center;">
