@@ -8,44 +8,31 @@
 
 
 
+              
+
               <div class="col-sm-7">
-                  <div class="feature-detail">
 
-                      <div class="title-box">
-                          <p class="title-alt">RSVP TODAY!</p>
-                          <h3 class="fadeIn animated wow" data-wow-delay=".1s">Advocacy, Policy and Leadership Workshop</h3>
-                          <div class="border"></div>
-                      </div>
+                  <div class="title-box">
+                          <p class="title-alt">Join ShareItCamp Today!</p>
+                          <h3 class="fadeIn animated wow" data-wow-delay=".1s">Support Projects That Support You.</h3>
+                           <br/> 
 
-                          <form class="form-inline" action="/ja55-rsvp" enctype="multipart/form-data" method="POST" role="form">
-                                <div class="form-group">
-                                  <label for="Name"></label>
-                                  <input type="text" class="form-field-large form-control" name="rsvpName" id="exampleInputName2" placeholder="Name">
-                                </div>
-                                <div class="form-group">
-                                  <label for="EmailAddress"></label>
-                                  <input type="email" class="form-field-large form-control" name="rsvpEmail" id="exampleInputEmail2" placeholder="Email Address">
-                                </div>
-                                <button type="submit" class="form-field-large-btn btn btn-default" style="margin-top: 0px;">RSVP</button>
-                          </form>
-
-                      
+                          <a href="/get-started/supporter/register" data-wow-delay=".4s" style="margin-top: 0px;" class="btn btn-primary btn-rounded w-lg animated fadeInDown wow">Join ShareItCamp</a>
                   </div>
+
               </div>
 
-
-
               <div class="col-sm-5">
-                        <a href="supporter/campaign/advocacy-policy-leadership-workshop">
+                  <h3> <strong>FEATURED PROJECT</strong></h3>
+
+                        <a href="producer/jamaica-55-advocacy-policy-and-leadership-workshop">
                             <img src="images/aplbanner.jpg" class="img-responsive fadeIn animated wow" data-wow-delay=".2s">
                         </a>
                       <div class="row" style="text-align: center;">
                           <br>
-                        <a href="https://www.shareitcamp.com/producer/jamaica-55-advocacy-policy-and-leadership-workshop" class="btn btn-primary w-lg" data-wow-delay=".4s">Learn More</a>
+                        <a href="https://www.shareitcamp.com/producer/jamaica-55-advocacy-policy-and-leadership-workshop" class="btn btn-default w-lg" data-wow-delay=".4s">Learn More</a>
 
-                         | 
-
-                          <a href="/get-started/supporter/register" class="btn btn-default w-lg" data-wow-delay=".4s">Join ShareItCamp</a> 
+                         
                     </div>
 
               </div>
