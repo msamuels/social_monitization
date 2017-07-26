@@ -50,12 +50,14 @@
               </div>
 
               <div class="col-sm-5">
+                  <h3> <strong>FEATURED PROJECT</strong></h3>
+
                         <a href="supporter/campaign/advocacy-policy-leadership-workshop">
                             <img src="images/aplbanner.jpg" class="img-responsive fadeIn animated wow" data-wow-delay=".2s">
                         </a>
                       <div class="row" style="text-align: center;">
                           <br>
-                        <a href="https://www.shareitcamp.com/producer/jamaica-55-advocacy-policy-and-leadership-workshop" class="btn btn-primary w-lg" data-wow-delay=".4s">Learn More</a>
+                        <a href="https://www.shareitcamp.com/producer/jamaica-55-advocacy-policy-and-leadership-workshop" class="btn btn-default w-lg" data-wow-delay=".4s">Learn More</a>
 
                          
                     </div>
