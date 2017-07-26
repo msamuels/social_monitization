@@ -399,6 +399,22 @@ CREATE TABLE IF NOT EXISTS `targeting` (
   KEY `fk_targeting_1_idx` (`campaign_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=big5;
 
+DROP TABLE IF EXISTS `social_media_platform`;
+CREATE TABLE IF NOT EXISTS `social_media_platform` (
+  `social_media_id` int(11) NOT NULL AUTO_INCREMENT,
+  `social_media_name` varchar(255) COLLATE latin1_general_ci NOT NULL,
+  PRIMARY KEY (`social_media_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
+DROP TABLE IF EXISTS `supporter_handles`;
+CREATE TABLE IF NOT EXISTS `supporter_handles` (
+  `supporter_handle_id` int(11) NOT NULL,
+  `supporter_id` int(11) NOT NULL,
+  `social_media_id` int(11) NOT NULL,
+  `handle` varchar(255) COLLATE latin1_general_ci NOT NULL,
+  `follower_count` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
