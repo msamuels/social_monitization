@@ -29,10 +29,59 @@
                 <form action="/update-account" method="POST" id="account" class="form-horizontal">
 
                     <div class="form-group">
-                        <label class="control-label col-sm-4"># of Friends: </label>
+                        <label class="control-label col-sm-4"># of FB Friends: </label>
                         <div class="col-sm-8">
                             <input type="number" class="form-control" name="num_followers"
                                    value="<?php echo $supporter->id_follower_count; ?>"/>
+                        </div>
+                    </div>
+
+                    <!-- Twitter -->
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" style="text-align:right">
+                        </label>
+                        <div class="col-sm-4" style="text-align:left">
+                        Twitter handle
+                            <input type="text" class="form-control"
+                                   name="twitter_handle" value="<?php echo $twitter_handle; ?>" />
+                        </div>
+                        # of Twitter friends
+                        <div class="col-sm-4" style="text-align:left">
+                            <input type="text" class="form-control"
+                                   name="followers_twitter"  value="<?php echo $twitter_count; ?>" />
+                        </div>
+                    </div>
+
+                    <!-- Linkedin -->
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" style="text-align:right">
+                        </label>
+                        <div class="col-sm-4" style="text-align:left">
+                        Linkedin handle
+                            <input type="text" class="form-control"
+                                   name="linkedin_handle"  value="<?php echo $linkedin_handle; ?>"/>
+                        </div>
+                        # of Linkedin friends
+                        <div class="col-sm-4" style="text-align:left">
+                            <input type="text" class="form-control"
+                                   name="followers_linkedin"  value="<?php echo $linkedin_count; ?>"/>
+                        </div>
+                    </div>
+
+
+                    <!-- Instagram -->
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" style="text-align:right">
+                        </label>
+                        <div class="col-sm-4" style="text-align:left">
+                        Instagram handle
+                            <input type="text" class="form-control"
+                                   name="instagram_handle"  value="<?php echo $instagram_handle; ?>"/>
+                        </div>
+                        # of Instagram friends
+                        <div class="col-sm-4" style="text-align:left">
+                            <input type="text" class="form-control"
+                                   name="followers_instagram"  value="<?php echo $instagram_count; ?>"/>
                         </div>
                     </div>
 

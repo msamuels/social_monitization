@@ -472,6 +472,33 @@ $app->get("/my-account", $authenticate($app), function () use ($app) {
     // get the organization affiliation
     $affiliations = Organization_affiliation::find_all_by_supporter_id($supporter->id_supporter);
 
+    $social_affiliations = Supporter_handles::find_all_by_supporter_id($supporter->id_supporter);
+
+    // get social affiliation
+    foreach($social_affiliations as $aff){
+        $social= array();
+
+        if($aff->social_media_id == 1){
+            $facebook_count = $aff->follower_count;
+            $facebook_handle = $aff->handle;
+        }
+
+        if($aff->social_media_id == 2){
+            $twitter_count = $aff->follower_count;
+            $twitter_handle = $aff->handle;
+        }
+
+        if($aff->social_media_id == 3){
+            $linkedin_count = $aff->follower_count;
+            $linkedin_handle = $aff->handle;
+        }
+
+        if($aff->social_media_id == 4){
+            $instagram_count = $aff->follower_count;
+            $instagram_handle = $aff->handle;
+        }
+    }
+
     // get the ids and query the Org table by them.
     $vals = array();
     foreach($affiliations as $af) {
@@ -507,7 +534,7 @@ $app->get("/my-account", $authenticate($app), function () use ($app) {
 
     $app->render('supporter/account.php', array('supporter' => $supporter,
         'nonprofits' => $nonprofits, 'schools' => $schools, 'affiliations' => $affiliations,
-        'my_nonprofit'=> $my_nonprofit, 'my_school'=> $my_school, 'success_info' => $success_info, 'orgs' => $orgs));
+        'my_nonprofit'=> $my_nonprofit, 'my_school'=> $my_school, 'success_info' => $success_info, 'orgs' => $orgs, 'facebook_count'=>$facebook_count,'facebook_count'=>$facebook_handle,'twitter_count'=>$twitter_count,'twitter_handle'=>$twitter_handle,'linkedin_count'=>$linkedin_count,'linkedin_handle'=>$linkedin_handle,'instagram_count'=>$instagram_count,'instagram_handle'=>$instagram_handle));
 });
 
 
