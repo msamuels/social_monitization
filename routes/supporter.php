@@ -568,6 +568,39 @@ $app->post('/update-account', function () use ($app){
             $fields_to_update
         );
 
+        // update handles: Twitter
+        $twitter_handles = Supporter_handles::all(array('conditions' => array('supporter_id = ? AND social_media_id = ?', $supporter->id_supporter, 2)));
+
+        $twitter_fields = array('supporter_id' => $supporter->id_supporter, 'social_media_id' => 2, 'handle' => $req['twitter_handle'], 'follower_count' => $req['followers_twitter']);
+
+        if(count($twitter_handles) == 0) {
+            Supporter_handles::create($twitter_fields);
+       } else {
+            $twitter_handles->update_attributes($twitter_fields);
+        }
+
+        // update handles: Linkedin
+        $linkedin_handles = Supporter_handles::all(array('conditions' => array('supporter_id = ? AND social_media_id = ?', $supporter->id_supporter, 3)));
+
+        $linkedin_fields = array('supporter_id' => $supporter->id_supporter, 'social_media_id' => 3, 'handle' => $req['linkedin_handle'], 'follower_count' => $req['followers_linkedin']);
+
+        if(count($linkedin_handles) == 0) {
+            Supporter_handles::create($linkedin_fields);
+       } else {
+            $linkedin_handles->update_attributes($linkedin_fields);
+        }
+
+        // update handles: Instagram
+        $instagram_handles = Supporter_handles::all(array('conditions' => array('supporter_id = ? AND social_media_id = ?', $supporter->id_supporter, 4)));
+
+        $instagram_fields = array('supporter_id' => $supporter->id_supporter, 'social_media_id' => 4, 'handle' => $req['instagram_handle'], 'follower_count' => $req['followers_instagram']);
+
+        if(count($instagram_handles) == 0) {
+            Supporter_handles::create($instagram_fields);
+       } else {
+            $instagram_handles->update_attributes($instagram_fields);
+        }
+
         // if no organization affiliation selected just move on.
         if($req['organization_affiliation'] != '') {
 
