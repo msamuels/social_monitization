@@ -118,22 +118,16 @@
                         </div>
                     </div>
 
-                    <!--<div class="form-group">
-                        <label class="control-label col-sm-4" style="text-align:right">Interests:</label>
-                        <SELECT NAME="interests" MULTIPLE SIZE=5>
-                            <OPTION VALUE="sports">sports
-                            <OPTION VALUE="music">music
-                            <OPTION VALUE="outdoors">onions
-                            <OPTION VALUE="culture">tomatoes
-                            <OPTION VALUE="religion">olives
-                        </SELECT>
-                    </div>-->
+                     <label class="control-label col-sm-4" style="text-align:right">Social Handles</label>
+                   
 
                     <div class="form-group">
+                     <br/>
+                    <br/>
                         <label class="control-label col-sm-4" style="text-align:right">
                             <a href="#"
                                class="helptip"
-                               title="We want to help the organizations understand how many people they are able to reach with their message; why it's important to collaborate. We do not share your name or any other identifying information about you.">
+                               title="Helps us connect with you and properly credit you with reward points for sharing posts. We do not share your name or any other identifying information about you.">
                                 <img class="icon-3" src="/images/yellow-question-mark-icon.png">
                             </a>
                            
@@ -171,7 +165,7 @@
                         <label class="control-label col-sm-4" style="text-align:right">                           
                         </label>
                         <div class="col-sm-4" style="text-align:left">
-                        Linkedin handle
+                        LinkedIn handle
                             <input type="text" class="form-control"
                                    name="linkedin_handle" />
                         </div>
@@ -200,7 +194,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-4">Location</label>
+                        <label class="control-label col-sm-4"><span class="required">* </span>Location</label>
                         <select name="country">
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Albania">Albania</option>
