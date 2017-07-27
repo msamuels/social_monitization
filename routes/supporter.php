@@ -475,6 +475,16 @@ $app->get("/my-account", $authenticate($app), function () use ($app) {
     $social_affiliations = Supporter_handles::find_all_by_supporter_id($supporter->id_supporter);
 
     // get social affiliation
+
+    $facebook_count = 0;
+    $facebook_handle = "";
+    $twitter_count = 0;
+    $twitter_handle = "";
+    $linkedin_count = 0;
+    $linkedin_handle = "";
+    $instagram_count = 0;
+    $instagram_handle = "";
+
     foreach($social_affiliations as $aff){
         $social= array();
 
@@ -534,7 +544,7 @@ $app->get("/my-account", $authenticate($app), function () use ($app) {
 
     $app->render('supporter/account.php', array('supporter' => $supporter,
         'nonprofits' => $nonprofits, 'schools' => $schools, 'affiliations' => $affiliations,
-        'my_nonprofit'=> $my_nonprofit, 'my_school'=> $my_school, 'success_info' => $success_info, 'orgs' => $orgs, 'facebook_count'=>$facebook_count,'facebook_count'=>$facebook_handle,'twitter_count'=>$twitter_count,'twitter_handle'=>$twitter_handle,'linkedin_count'=>$linkedin_count,'linkedin_handle'=>$linkedin_handle,'instagram_count'=>$instagram_count,'instagram_handle'=>$instagram_handle));
+        'my_nonprofit'=> $my_nonprofit, 'my_school'=> $my_school, 'success_info' => $success_info, 'orgs' => $orgs, 'facebook_count'=>$facebook_count,'facebook_handle'=>$facebook_handle,'twitter_count'=>$twitter_count,'twitter_handle'=>$twitter_handle,'linkedin_count'=>$linkedin_count,'linkedin_handle'=>$linkedin_handle,'instagram_count'=>$instagram_count,'instagram_handle'=>$instagram_handle));
 });
 
 
