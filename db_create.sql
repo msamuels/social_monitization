@@ -406,13 +406,24 @@ CREATE TABLE IF NOT EXISTS `social_media_platform` (
   PRIMARY KEY (`social_media_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
+--
+-- Dumping data for table `social_media_platform`
+--
+
+INSERT INTO `social_media_platform` (`social_media_id`, `social_media_name`) VALUES
+(1, 'Facebook'),
+(2, 'Instagram'),
+(3, 'Twitter'),
+(4, 'Linkedin');
+
 DROP TABLE IF EXISTS `supporter_handles`;
-CREATE TABLE IF NOT EXISTS `supporter_handles` (
-  `supporter_handle_id` int(11) NOT NULL,
+CREATE TABLE `supporter_handles` (
+  `supporter_handle_id` int(11) NOT NULL AUTO_INCREMENT,
   `supporter_id` int(11) NOT NULL,
   `social_media_id` int(11) NOT NULL,
   `handle` varchar(255) COLLATE latin1_general_ci NOT NULL,
-  `follower_count` int(11) NOT NULL
+  `follower_count` int(11) NOT NULL,
+  PRIMARY KEY (`supporter_handle_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

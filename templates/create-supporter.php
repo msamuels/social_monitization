@@ -74,9 +74,9 @@
 
         <div class="row">
 
-            <div class="col-sm-2"></div>
+            <div class="col-sm-3"></div>
 
-            <div class="col-sm-9 intro-form">
+            <div class="col-sm-6 intro-form">
 
                 <H3>CREATE A SUPPORTER ACCOUNT</H3>
 
