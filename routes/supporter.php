@@ -53,10 +53,35 @@ $app->post('/save-supporter', function () use ($app){
 
         }
 
-        // Save school affiliation information
-        if($req['school_affiliation'] != '--') {
-            $supporter_school = Organization_affiliation::create(
-                array('supporter_id' => $supporter->id_supporter, 'organization_id' => $req['school_affiliation']
+        // Save Facebook affiliation
+        if($req['followers_fb'] != "") {
+try{
+            $fb_handles = Supporter_handles::create(
+                array('supporter_id' => $supporter->id_supporter, 'social_media_id' => 1, 'handle' => $req['fb_handle'], 'follower_count' => $req['followers_fb']
+                ));
+}catch(Exception $e){
+echo $e->getMessage();exit;
+}exit;
+        }
+
+        // Save Twitter affiliation
+        if($req['followers_twitter'] != "") {
+            $twitter_handles = Supporter_handles::create(
+                array('supporter_id' => $supporter->id_supporter, 'social_media_id' => 2, 'handle' => $req['twitter_handle'], 'follower_count' => $req['followers_twitter']
+                ));
+        }
+
+        // Save Linkedin affiliation
+        if($req['followers_linkedin'] != "") {
+            $linkedin_handles = Supporter_handles::create(
+                array('supporter_id' => $supporter->id_supporter, 'social_media_id' => 3, 'handle' => $req['linkedin_handle'], 'follower_count' => $req['followers_linkedin']
+                ));
+        }
+
+        // Save Instagram affiliation
+        if($req['followers_instagram'] != "") {
+            $instagram_handles = Supporter_handles::create(
+                array('supporter_id' => $supporter->id_supporter, 'social_media_id' => 4, 'handle' => $req['instagram_handle'], 'follower_count' => $req['followers_instagram']
                 ));
         }
 

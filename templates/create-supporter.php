@@ -74,9 +74,9 @@
 
         <div class="row">
 
-            <div class="col-sm-3"></div>
+            <div class="col-sm-2"></div>
 
-            <div class="col-sm-6 intro-form">
+            <div class="col-sm-9 intro-form">
 
                 <H3>CREATE A SUPPORTER ACCOUNT</H3>
 
@@ -136,11 +136,66 @@
                                title="We want to help the organizations understand how many people they are able to reach with their message; why it's important to collaborate. We do not share your name or any other identifying information about you.">
                                 <img class="icon-3" src="/images/yellow-question-mark-icon.png">
                             </a>
-                            <span class="required">* </span># of Facebook Friends
+                           
                         </label>
-                        <div class="col-sm-8" style="text-align:left">
+                        <div class="col-sm-4" style="text-align:left">
+                        <span class="required">* </span>Facebook handle
+                            <input type="text" class="form-control"
+                                   name="fb_handle" />
+                        </div>
+                        <span class="required">* </span># of FB friends
+                        <div class="col-sm-4" style="text-align:left">
                             <input type="text" class="form-control"
                                    name="followers_fb" />
+                        </div>
+                    </div>
+
+                    <!-- Twitter -->
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" style="text-align:right">                           
+                        </label>
+                        <div class="col-sm-4" style="text-align:left">
+                        Twitter handle
+                            <input type="text" class="form-control"
+                                   name="twitter_handle" />
+                        </div>
+                        # of Twitter friends
+                        <div class="col-sm-4" style="text-align:left">
+                            <input type="text" class="form-control"
+                                   name="followers_twitter" />
+                        </div>
+                    </div>
+
+                    <!-- Linkedin -->
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" style="text-align:right">                           
+                        </label>
+                        <div class="col-sm-4" style="text-align:left">
+                        Linkedin handle
+                            <input type="text" class="form-control"
+                                   name="linkedin_handle" />
+                        </div>
+                        # of Linkedin friends
+                        <div class="col-sm-4" style="text-align:left">
+                            <input type="text" class="form-control"
+                                   name="followers_linkedin" />
+                        </div>
+                    </div>
+
+
+                    <!-- Instagram -->
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" style="text-align:right">                           
+                        </label>
+                        <div class="col-sm-4" style="text-align:left">
+                        Instagram handle
+                            <input type="text" class="form-control"
+                                   name="instagram_handle" />
+                        </div>
+                        # of Instagram friends
+                        <div class="col-sm-4" style="text-align:left">
+                            <input type="text" class="form-control"
+                                   name="followers_instagram" />
                         </div>
                     </div>
 
