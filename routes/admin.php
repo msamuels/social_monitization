@@ -160,12 +160,11 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
         $body_supporter = "<p>Good Day, </p><br/>";
 
 
-    $body_supporter = "<p>".$producer->org_name. " is asking for your support for their ".$campaign->campaign_name."
-     effort. Click on the link below to find
-    out more. If you would like to support, please log-in and share this initiative with your network. </p>";
+    $body_supporter = "<p>".$producer->org_name. " is asking for you to support the ".$campaign->campaign_name.". Click on the link below to find
+    out more.</p>";
     $baseurl =  $destination = $app->config('configs')['base_url'];
     $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->friendly_url."'>Click here to support</a><br/>";
-    $body_supporter .= "<p>For sharing the initiative you will earn 5 points.</p><br/>";
+    $body_supporter .= "<p>As a reminder, for logging-in and sharing this initiative you will earn reward points.</p><br/>";
     $body_supporter .= "<p>Thanks, <br />
         The ShareItCamp team</p>";
 
