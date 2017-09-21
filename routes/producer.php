@@ -143,7 +143,7 @@ $app->post('/save-campaign', $authenticate($app), function () use ($app){
     $upload = new \Wilsonshop\Utils\Upload($destination, 'screen_shot');
 
     // ensure only allowed filetypes make it in
-    $allowed =  array('png', 'PNG' ,'jpg', 'JPG');
+    $allowed =  array('png', 'PNG' ,'jpg' ,'jpeg' ,'JPG');
     $filename = $upload->file_name;
     $ext = pathinfo($filename, PATHINFO_EXTENSION);
     if(!in_array($ext,$allowed) ) {
