@@ -54,7 +54,7 @@ $app->post('/save-producer', function () use ($app){
 
            $app->flash('success_info', 'Producer email already exists');
 
-           $app->redirect('/create-producer');
+           $app->redirect('/producer/create-producer');
        }
  
        $password = password_hash($req['password'], PASSWORD_DEFAULT);
