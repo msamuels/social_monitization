@@ -22,8 +22,13 @@
                         <li><a href="mailto:info@shareitcamp.com">contact us: info@shareitcamp.com</a></li>
                     </ul>
 
-                    <p class="text-muted m-b-0">  Copyright 2016 shareitcamp.com. All rights reserved<br/>
+                    <p class="text-muted m-b-0">  Copyright 2017 shareitcamp.com. All rights reserved<br/>
                        <a href="/termsandconditions">Terms of Service</a> |  <a href="/privacy-policy">Privacy Policy</a></p>
+
+                       <p>
+                              <br><br> Developed with care by <a href="http://wilsonshop.biz/" target="blank">Wilson Shop Web Development Co. </a>
+                              
+                            </p>
 
                 </div>
             </div>
