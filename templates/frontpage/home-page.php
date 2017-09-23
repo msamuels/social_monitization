@@ -12,7 +12,7 @@
 
           <div class="home-wrapper text-center">
               <h2 class="animated fadeInDown wow text-white" data-wow-delay=".1s">
-                  Support. This Simple Investment Makes <span class="text-colored">A Big Difference</span>
+                  Share projects with your social netwoks and earn reward points!
               </h2>
               <p class="animated fadeInDown wow text-light animated" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
                 Shareticamp is a platform where individuals get together to help promote intiatives that matter to them.
