@@ -69,7 +69,7 @@
         </div>
 
         <div class="row alert alert-success ">
-            By signing up as a supporter you can earn points that can be exchanged for rewards. After this, each time you log into ShareItCamp.com and share an initiative with to your social networks you earn reward points. 
+            By signing up as a supporter you can earn reward points each time you log into ShareItCamp.com and share an initiative with to your social networks. 
         </div>
 
         <div class="row">
@@ -144,54 +144,9 @@
                         </div>
                     </div>
 
-                    <!-- Twitter -->
-                    <div class="form-group">
-                        <label class="control-label col-sm-4" style="text-align:right">                           
-                        </label>
-                        <div class="col-sm-4" style="text-align:left">
-                        Twitter handle
-                            <input type="text" class="form-control"
-                                   name="twitter_handle" />
-                        </div>
-                        # of Twitter friends
-                        <div class="col-sm-4" style="text-align:left">
-                            <input type="text" class="form-control"
-                                   name="followers_twitter" />
-                        </div>
-                    </div>
-
-                    <!-- Linkedin -->
-                    <div class="form-group">
-                        <label class="control-label col-sm-4" style="text-align:right">                           
-                        </label>
-                        <div class="col-sm-4" style="text-align:left">
-                        LinkedIn handle
-                            <input type="text" class="form-control"
-                                   name="linkedin_handle" />
-                        </div>
-                        # of Linkedin friends
-                        <div class="col-sm-4" style="text-align:left">
-                            <input type="text" class="form-control"
-                                   name="followers_linkedin" />
-                        </div>
-                    </div>
 
 
-                    <!-- Instagram -->
-                    <div class="form-group">
-                        <label class="control-label col-sm-4" style="text-align:right">                           
-                        </label>
-                        <div class="col-sm-4" style="text-align:left">
-                        Instagram handle
-                            <input type="text" class="form-control"
-                                   name="instagram_handle" />
-                        </div>
-                        # of Instagram friends
-                        <div class="col-sm-4" style="text-align:left">
-                            <input type="text" class="form-control"
-                                   name="followers_instagram" />
-                        </div>
-                    </div>
+                   
 
                     <div class="form-group">
                         <label class="control-label col-sm-4"><span class="required">* </span>Location</label>
@@ -451,60 +406,9 @@
                     </div>
 
 
-                    <div class="form-group">
-                        <label class="control-label col-sm-4" style="text-align:right">School (optional):</label>
-                        <SELECT NAME="school_affiliation">
-                            <option VALUE="--">--</option>	
-                            <option VALUE="2">Alpha Tri-State New York Alumnae Association</option>
-							<option VALUE="3">Ardenne Alumni Association (NY Chapter)</option>
-							<option VALUE="4">Bethany Past Students Association</option>
-							<option VALUE="5">Bethlehem Teachers College Alumni Association, NY</option>
-							<option VALUE="6">Camperdown Past Students Association</option>
-							<option VALUE="7">Charlemont High School Foundation</option>
-							<option VALUE="8">Clarendon College Alumni Association of NY</option>
-							<option VALUE="9">Cornwall College Old Boys' Association, NY</option>
-							<option VALUE="10">Denham Town High School Alumni Association</option>
-							<option VALUE="11">Dinthill Technical High School Alumni Association</option>
-							<option VALUE="12">Eastern Hanover Alumni Association</option>
-							<option VALUE="13">Edwin Allen High School Alumni Association Mid-Atlantic Chapter</option>
-							<option VALUE="14">Excelsior Alumni Association</option>
-							<option VALUE="15">Friends of Port Maria</option>
-							<option VALUE="16">Garvey Maceo Past Students' Association</option>
-							<option VALUE="17">Glenmuir Alumni Association - NY Chapter</option>
-							<option VALUE="18">Godfrey Stewart HS Alumni Association International Inc.</option>
-							<option VALUE="19">Grantham College Alumni Association</option>
-							<option VALUE="20">Holmwood Technical HS PSA New York Chapter</option>
-							<option VALUE="21">Immaculate Conception H S Alumnae Assn, NY</option>
-							<option VALUE="22">Jamaican Civic & Cultural Association of Rockland</option>
-							<option VALUE="23">Jamaica College Old Boys' Association</option>
-							<option VALUE="24">Kingston College Old Boys' Association USA Inc.</option>
-							<option VALUE="25">Kingston Technical High School Alumni Association</option>
-							<option VALUE="26">Knox Association of Past Students</option>
-							<option VALUE="27">Lime Hall Primary Alumni Association</option>
-							<option VALUE="28">Manning's Past Students' Association, NY</option>
-							<option VALUE="29">Manchester High School Alumni Association</option>
-							<option VALUE="30">Meadowbrook High School Alumni Association NY</option>
-							<option VALUE="31">Merl Grove High School Past Students Association NY</option>
-							<option VALUE="32">Mico Old Students Association</option>
-							<option VALUE="33">Morant Bay High School Alumni Association</option>
-							<option VALUE="34">New Day School Alumni Association NY Chapter Inc</option>
-							<option VALUE="35">Ole Farmers Association North America, Inc.</option>
-							<option VALUE="36">Pike Past Students' Association – NY Chapter</option>
-							<option VALUE="37">Rusea's Old Students Association</option>
-							<option VALUE="38">Shortwood Past Students Association</option>
-							<option VALUE="39">St. Andrew Alumnae Association, Inc., NY Chapter</option>
-							<option VALUE="40">St. Andrew Technical H S Alumni Assn. NE Chapter</option>
-							<option VALUE="41">St. Catherine HS Alumni Association Northeast Inc</option>
-							<option VALUE="42">St. Elizabeth Technical HS Alumni Association</option>
-							<option VALUE="43">St. George's College Old Boys Association of the North East</option>
-							<option VALUE="44">St. Hugh's HS Alumnae Association USA Inc.</option>
-							<option VALUE="45">St. Jago Alumni Association</option>
-							<option VALUE="46">University of Technology Alumni Association</option>
-							<option VALUE="47">Westwood Old Girls Association</option>
-							<option VALUE="48">Wolmer's Alumni Association</option>
-							<option VALUE="49">York Street Past Students' Association Inc.</option>
-                        </SELECT>
-                    </div>
+                    
+
+
 
                     <br/>
 
@@ -513,7 +417,7 @@
                     </p>
 
                     <p style="text-align: center">
-                        By submitting this form you agree to shareitcamp.com terms.
+                        By submitting this form you agree to shareitcamp.com <a href="https://www.shareitcamp.com/termsandconditions" target="blank">terms</a>.
                     </p>
 
                 </form>
