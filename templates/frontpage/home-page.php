@@ -47,7 +47,7 @@
                       <img src="images/icons/idea.svg" width="48" alt="img">
                       <div class="service-detail">
                           <h4>Organizations Post Projects</h4>
-                          <p>We work with organizations who are focused on making a positive impact on the communities they serve. These organizations join our platform and post information related to the work they are doing (think toy drives, fundraisers, petitions, or products and services).</p>
+                          <p>We work with organizations who are focused on making a positive impact on the communities they serve. These organizations join our platform and post projects they would like promoted (e.g. fundraisers, events, resources, etc.).</p>
                       </div> <!-- /service-detail -->
                   </div> <!-- /service-item -->
               </div> <!-- /col -->
@@ -57,7 +57,7 @@
                       <img src="images/icons/share.svg" width="48" alt="img">
                       <div class="service-detail">
                           <h4>You Share It</h4>
-                          <p>You are alerted by email once a new campaign is posted. Support the campaigns you like (by clicking support) and sharing it with the social network you like. </p>
+                          <p>You are alerted by email once a new project is posted. If it's a project you like, you can help to promote it by sharing it with the social networks. </p>
                       </div> <!-- /service-detail -->
                   </div> <!-- /service-item -->
               </div> <!-- /col -->
@@ -67,7 +67,7 @@
                       <img src="images/icons/rating.svg" width="48" alt="img">
                       <div class="service-detail">
                           <h4>You Receive Points</h4>
-                          <p>For each campaign you support, you will receive points. It’s like a regular rewards program, but instead of shopping and getting points, you get point for supporting an initiative.  </p>
+                          <p>For each project you share you receive 'rewared points'. It’s like a regular rewards program, but instead of shopping and getting points, you get point for helping to promote an initiative.  </p>
                       </div> <!-- /service-detail -->
                   </div> <!-- /service-item -->
               </div> <!-- /col -->
