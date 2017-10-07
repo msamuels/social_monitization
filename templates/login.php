@@ -57,6 +57,10 @@
                     <div class="alert alert-danger"><?php echo $error; ?></div>
                 <?php } ?>
 
+                <?php
+                    echo '<a href="' . htmlspecialchars($fb_login_url) . '">Log in with Facebook!</a>';
+                ?>
+
                 <form action="/login" method="POST" id="login" class="form-horizontal">
 
                     <div class="form-group">
