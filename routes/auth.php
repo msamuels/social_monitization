@@ -114,15 +114,31 @@ $app->get("/login", function () use ($app) {
 
 
     $fb = new Facebook\Facebook([
-        'app_id' => $configs['fb_app_id'], // Replace {app-id} with your app id
+        'app_id' => $configs['fb_app_id'],
         'app_secret' => $configs['fb_app_secret'],
-        'default_graph_version' => 'v2.2',
+        'default_graph_version' => 'v2.5',
     ]);
 
     $helper = $fb->getRedirectLoginHelper();
 
-    $permissions = ['email']; // Optional permissions
-    $loginUrl = $helper->getLoginUrl($configs['app_url'].'/fb-callback', $permissions);
+    try {
+      $accessToken = $helper->getAccessToken();
+    } catch(Facebook\Exceptions\FacebookResponseException $e) {
+      // When Graph returns an error
+      echo 'Graph returned an error: ' . $e->getMessage();
+      exit;
+    } catch(Facebook\Exceptions\FacebookSDKException $e) {
+      // When validation fails or other local issues
+      echo 'Facebook SDK returned an error: ' . $e->getMessage();
+      exit;
+    }
+
+    $loginUrl = '';
+
+    if(!isset($accessToken)) {
+        $permissions = ['email']; // Optional permissions
+        $loginUrl = $helper->getLoginUrl($configs['app_url'].'/fb-callback', $permissions);
+    }
 
    $app->render('login.php', array('error' => $error, 'username_value' => $username_value,
       'username_error' => $username_error, 'password_error' => $password_error, 'urlRedirect' => $urlRedirect,
@@ -203,36 +219,31 @@ $app->get("/fb-callback", function () use ($app) {
     $configs = $app->config('configs');
 
     $fb = new Facebook\Facebook([
-        'app_id' => $configs['fb_app_id'], // Replace {app-id} with your app id
+        'app_id' => $configs['fb_app_id'],
         'app_secret' =>  $configs['fb_app_secret'],
-        'default_graph_version' => 'v2.2'
+        'default_graph_version' => 'v2.5'
     ]);
 
     $helper = $fb->getRedirectLoginHelper();
+
     try {
-      $accessToken = $helper->getAccessToken();
+        $accessToken = $helper->getAccessToken();
+        $fb->setDefaultAccessToken($accessToken);
+
+        // Logged in!
+        //$_SESSION['facebook_access_token'] = (string) $accessToken;
+        $response = $fb->get('/me?fields=email');
+        $user = $response->getGraphUser();
+
     } catch(Facebook\Exceptions\FacebookResponseException $e) {
-      // When Graph returns an error
-      echo 'Graph returned an error: ' . $e->getMessage();
-      exit;
+        // When Graph returns an error
+        echo 'Graph returned an error: ' . $e->getMessage();
+        exit;
     } catch(Facebook\Exceptions\FacebookSDKException $e) {
-      // When validation fails or other local issues
-      echo 'Facebook SDK returned an error: ' . $e->getMessage();
-      exit;
+        // When validation fails or other local issues
+        echo 'Facebook SDK returned an error: ' . $e->getMessage();
+        exit;
     }
-
-    if (isset($accessToken)) {
-      // Logged in!
-      $_SESSION['facebook_access_token'] = (string) $accessToken;
-
-      // Now you can redirect to another page and use the
-      // access token from $_SESSION['facebook_access_token']
-    } elseif ($helper->getError()) {
-      // The user denied the request
-    }
-
-    $response = $fb->get('/me?fields=email');
-    $user = $response->getGraphUser();
 
     var_dump($user);exit;
 
