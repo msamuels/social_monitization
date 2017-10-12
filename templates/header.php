@@ -76,7 +76,7 @@
         FB.init({
             appId: <?php echo $configs['fb_app_id']; ?>,
             xfbml: true,
-            version: 'v2.6'
+            version: 'v2.1'
         });
     };
 

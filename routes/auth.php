@@ -1,7 +1,42 @@
 <?php
 
 $authenticate = function ($app) {
+
     return function () use ($app) {
+
+        if (isset($_SESSION['FBRLH_state'])) {
+
+            $configs = parse_ini_file('../config.ini');
+
+            // if facebook login then try get user email
+            $fb = new Facebook\Facebook([
+                'app_id' => $configs['fb_app_id'], // integer
+                'app_secret' =>  $configs['fb_app_secret'], // string
+                'default_graph_version' => 'v2.1',
+            ]);
+
+            $helper = $fb->getRedirectLoginHelper();
+
+            $accessToken = $app->request->get('token'); // @TODO double check this is the way to get rquest
+            $fb->setDefaultAccessToken($accessToken);
+
+            $response = $fb->get('/me?fields=name,email');
+            $user = $response->getGraphUser();
+
+            $supporter = Supporter::find_by_email_address($user['email']);
+
+            // if the user isn't in the system then create the user
+            if (count($supporter) == 0) {
+                Supporter::create(array('user_name' => 'fb-user',
+                'email_address'=>$user['email'] ));
+            }
+
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['user_type'] = 'supporter';
+            $_SESSION['user'] = $user['name'];
+
+        }
+
         if (!isset($_SESSION['user'])) {
             $_SESSION['urlRedirect'] = $app->request()->getPathInfo();
             $app->flash('error', 'Login required');
@@ -137,7 +172,7 @@ $app->get("/login", function () use ($app) {
 
     if(!isset($accessToken)) {
         $permissions = ['email']; // Optional permissions
-        $loginUrl = $helper->getLoginUrl($configs['app_url'].'/fb-callback', $permissions);
+        $loginUrl = $helper->getLoginUrl($configs['app_url'].'/fblogin.php', $permissions);
     }
 
    $app->render('login.php', array('error' => $error, 'username_value' => $username_value,
