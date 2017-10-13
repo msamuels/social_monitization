@@ -4,20 +4,20 @@ $authenticate = function ($app) {
 
     return function () use ($app) {
 
-        if (isset($_SESSION['FBRLH_state'])) {
+        if (isset($_SESSION['FBRLH_state']) && !isset($_SESSION['user'])) {
 
             $configs = parse_ini_file('../config.ini');
 
             // if facebook login then try get user email
             $fb = new Facebook\Facebook([
-                'app_id' => $configs['fb_app_id'], // integer
-                'app_secret' =>  $configs['fb_app_secret'], // string
+                'app_id' => $configs['fb_app_id'], // integer,
+                'app_secret' => $configs['fb_app_secret'], // string
                 'default_graph_version' => 'v2.1',
             ]);
 
             $helper = $fb->getRedirectLoginHelper();
 
-            $accessToken = $app->request->get('token'); // @TODO double check this is the way to get rquest
+            $accessToken = $app->request->get('token');
             $fb->setDefaultAccessToken($accessToken);
 
             $response = $fb->get('/me?fields=name,email');
@@ -27,14 +27,24 @@ $authenticate = function ($app) {
 
             // if the user isn't in the system then create the user
             if (count($supporter) == 0) {
-                Supporter::create(array('user_name' => 'fb-user',
+                // create username from name with timestamp added for uniqueness
+                $username = strtolower($user['name']) . date('s');
+
+                Supporter::create(array('user_name' => $username,
                 'email_address'=>$user['email'] ));
+
+                    $_SESSION['user'] = $username;
+            }
+
+            // if the user exists use the existing username (tie fb account to existing)
+            else {
+                $_SESSION['user'] = $supporter->user_name;
             }
 
             $_SESSION['email'] = $user['email'];
             $_SESSION['user_type'] = 'supporter';
-            $_SESSION['user'] = $user['name'];
 
+            $app->view()->setData('user', $_SESSION['user']);
         }
 
         if (!isset($_SESSION['user'])) {

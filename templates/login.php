@@ -58,7 +58,7 @@
                 <?php } ?>
 
                 <?php
-                    //echo '<a href="' . htmlspecialchars($fb_login_url) . '">Log in with Facebook!</a>';
+                    echo '<a href="' . htmlspecialchars($fb_login_url) . '">Log in with Facebook!</a>';
                 ?>
 
                 <form action="/login" method="POST" id="login" class="form-horizontal">
