@@ -4,6 +4,8 @@ require '../vendor/autoload.php';
 
     session_start();
 
+    $configs = parse_ini_file('../config.ini');
+
     $fb = new Facebook\Facebook([
         'app_id' => $configs['fb_app_id'], // integer
         'app_secret' => $configs['fb_app_secret'], // string
@@ -65,7 +67,7 @@ require '../vendor/autoload.php';
 
         //$app->redirect('/supporter/campaigns/pending');
 
-        header('Location: '.$configs['base_url'].'/supporter/campaigns/pending?token='.$accessToken);
+        header('Location: '.$configs['base_url'].'/welcome?token='.$accessToken);
 
     }
 

@@ -93,4 +93,5 @@
 </script>
 
 
-<?php require_once('navigation.php'); ?>
+<?php include('navigation.php'); ?>
+

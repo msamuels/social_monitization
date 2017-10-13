@@ -163,7 +163,7 @@ $app->get('/supporter/campaigns', $authenticate($app), function () use($app) {
 
 # Allow the user to select a campaign to support
 $app->get('/supporter/campaigns/pending', $authenticate($app), function () use ($app){
-    
+
     // Get suporter. Join on campaign_response and get all the campaign ids already supported
     // Get all campaigns where the supporter hasn't supported
     $user_name = $app->view()->getData('user');
@@ -826,3 +826,10 @@ $app->post("/supporter/email-claim-points", function () use ($app) {
     $app->redirect('/supporter/campaign/'.$campaign->friendly_url);
 
 });
+
+// Welcome facebook user
+$app->get("/welcome", $authenticate($app), function () use ($app){
+
+    $app->render('supporter/welcome.php');
+});
+
