@@ -29,6 +29,7 @@ $authenticate = function ($app) {
             if (count($supporter) == 0 || is_null($supporter)) {
                 // create username from name with timestamp added for uniqueness
                 $username = strtolower($user['name']) . date('s');
+                $username = preg_replace('/\s+/', '', $username);
 
                 Supporter::create(array('user_name' => $username,
                 'email_address'=>$user['email'] ));
