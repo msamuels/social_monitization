@@ -1,7 +1,52 @@
 <?php
 
 $authenticate = function ($app) {
+
     return function () use ($app) {
+
+        if (isset($_SESSION['FBRLH_state']) && !isset($_SESSION['user'])) {
+
+            $configs = parse_ini_file('../config.ini');
+
+            // if facebook login then try get user email
+            $fb = new Facebook\Facebook([
+                'app_id' => $configs['fb_app_id'], // integer,
+                'app_secret' => $configs['fb_app_secret'], // string
+                'default_graph_version' => 'v2.1',
+            ]);
+
+            $helper = $fb->getRedirectLoginHelper();
+
+            $accessToken = $app->request->get('token');
+            $fb->setDefaultAccessToken($accessToken);
+
+            $response = $fb->get('/me?fields=name,email');
+            $user = $response->getGraphUser();
+
+            $supporter = Supporter::find_by_email_address($user['email']);
+
+            // if the user isn't in the system then create the user
+            if (count($supporter) == 0) {
+                // create username from name with timestamp added for uniqueness
+                $username = strtolower($user['name']) . date('s');
+
+                Supporter::create(array('user_name' => $username,
+                'email_address'=>$user['email'] ));
+
+                    $_SESSION['user'] = $username;
+            }
+
+            // if the user exists use the existing username (tie fb account to existing)
+            else {
+                $_SESSION['user'] = $supporter->user_name;
+            }
+
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['user_type'] = 'supporter';
+
+            $app->view()->setData('user', $_SESSION['user']);
+        }
+
         if (!isset($_SESSION['user'])) {
             $_SESSION['urlRedirect'] = $app->request()->getPathInfo();
             $app->flash('error', 'Login required');
@@ -112,16 +157,33 @@ $app->get("/login", function () use ($app) {
       $password_error = $flash['errors']['password'];
    }
 
+
     $fb = new Facebook\Facebook([
-        'app_id' => $configs['fb_app_id'], // Replace {app-id} with your app id
+        'app_id' => $configs['fb_app_id'],
         'app_secret' => $configs['fb_app_secret'],
-        'default_graph_version' => 'v2.2',
+        'default_graph_version' => 'v2.5',
     ]);
 
     $helper = $fb->getRedirectLoginHelper();
 
-    $permissions = ['email']; // Optional permissions
-    $loginUrl = $helper->getLoginUrl($configs['app_url'].'/fb-callback', $permissions);
+    try {
+      $accessToken = $helper->getAccessToken();
+    } catch(Facebook\Exceptions\FacebookResponseException $e) {
+      // When Graph returns an error
+      echo 'Graph returned an error: ' . $e->getMessage();
+      exit;
+    } catch(Facebook\Exceptions\FacebookSDKException $e) {
+      // When validation fails or other local issues
+      echo 'Facebook SDK returned an error: ' . $e->getMessage();
+      exit;
+    }
+
+    $loginUrl = '';
+
+    if(!isset($accessToken)) {
+        $permissions = ['email']; // Optional permissions
+        $loginUrl = $helper->getLoginUrl($configs['app_url'].'/fblogin.php', $permissions);
+    }
 
    $app->render('login.php', array('error' => $error, 'username_value' => $username_value,
       'username_error' => $username_error, 'password_error' => $password_error, 'urlRedirect' => $urlRedirect,
@@ -202,26 +264,43 @@ $app->get("/fb-callback", function () use ($app) {
     $configs = $app->config('configs');
 
     $fb = new Facebook\Facebook([
-        'app_id' => $configs['fb_app_id'], // Replace {app-id} with your app id
+        'app_id' => $configs['fb_app_id'],
         'app_secret' =>  $configs['fb_app_secret'],
-        'default_graph_version' => 'v2.2',
-        'default_access_token' => isset($_SESSION['facebook_access_token']) ? $_SESSION['facebook_access_token'] : 'APP-ID|APP-SECRET'
+        'default_graph_version' => 'v2.5'
     ]);
 
-    $response = $fb->get('/me?fields=id,name');
-    $user = $response->getGraphUser();
+    $helper = $fb->getRedirectLoginHelper();
+
+    try {
+        $accessToken = $helper->getAccessToken();
+        $fb->setDefaultAccessToken($accessToken);
+
+        // Logged in!
+        //$_SESSION['facebook_access_token'] = (string) $accessToken;
+        $response = $fb->get('/me?fields=email');
+        $user = $response->getGraphUser();
+
+    } catch(Facebook\Exceptions\FacebookResponseException $e) {
+        // When Graph returns an error
+        echo 'Graph returned an error: ' . $e->getMessage();
+        exit;
+    } catch(Facebook\Exceptions\FacebookSDKException $e) {
+        // When validation fails or other local issues
+        echo 'Facebook SDK returned an error: ' . $e->getMessage();
+        exit;
+    }
 
     var_dump($user);exit;
 
-    echo 'Name: ' . $user['name'];
+    echo 'email: ' . $user['email'];
 
     $_SESSION['email'] = $user['email'];
-    $_SESSION['user'] = $user['name'];
+    $_SESSION['user'] = 'fb-user';
     $_SESSION['user_type'] = 'supporter';
-    exit;
-// User is logged in with a long-lived access token.
-// You can redirect them to a members-only page.
+
+    // User is logged in with a long-lived access token.
+    // You can redirect them to a members-only page.
     header('Location: '.$configs['base_url'].'/supporter/campaigns/pending');
 
 
-});
+}); 
