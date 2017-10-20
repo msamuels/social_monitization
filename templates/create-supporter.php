@@ -77,10 +77,12 @@
             <div class="col-sm-3"></div>
 
             <div class="col-sm-6 intro-form">
+
                 <?php
-                    echo '<a href="' . htmlspecialchars($fb_login_url) . '">Log in with Facebook!</a>';
+                    echo '<a href="' . htmlspecialchars($fb_login_url) . '" class="btn btn-social btn-block btn-facebook" style="width: 50%"><span class="fa fa-facebook"></span>Sign in with Facebook!</a>';
                 ?>
-                <p> OR </p>
+                <br />
+                <p>&nbsp;Or...</p>
 
                 <H3>CREATE A SUPPORTER ACCOUNT</H3>
 

@@ -33,6 +33,10 @@
 
     <link href="/css/override.css?<?php echo date('s')?>" rel="stylesheet">
 
+    <!-- Bootstrap social -->
+    <link href="/css/bootstrap-social.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+
     <link href="/css/jquery-ui.min.css" rel="stylesheet">
 
     <script src="/js/jquery-3.0.0.min.js"></script>
