@@ -26,7 +26,7 @@ $authenticate = function ($app) {
             $supporter = Supporter::find_by_email_address($user['email']);
 
             // if the user isn't in the system then create the user
-            if (count($supporter) == 0) {
+            if (count($supporter) == 0 || is_null($supporter)) {
                 // create username from name with timestamp added for uniqueness
                 $username = strtolower($user['name']) . date('s');
 
