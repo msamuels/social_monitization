@@ -155,17 +155,17 @@ $app->post('/admin/approve-campaign', $authenticate($app), function () use ($app
     // Email supporter to let them know campaign has been approved by producer
     $headers .= 'BCC: '. implode(",", $supporter_email) . "\r\n";
 
-    $subject_supporter = 'Please Support '.$campaign->campaign_name;
+    $subject_supporter = 'Please Share '.$campaign->campaign_name;
 
         $body_supporter = "<p>Good Day, </p><br/>";
 
 
-    $body_supporter = "<p>".$producer->org_name. " is asking for you to support the ".$campaign->campaign_name.". Click on the link below to find
+    $body_supporter = "<p>".$producer->org_name. " is asking you to share their ".$campaign->campaign_name." post. Click on the link below to find
     out more.</p>";
     $baseurl =  $destination = $app->config('configs')['base_url'];
-    $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->friendly_url."'>Click here to support</a><br/>";
-    $body_supporter .= "<p>As a reminder, for logging-in and sharing this initiative you will earn reward points.</p><br/>";
-    $body_supporter .= "<p>Thanks, <br />
+    $body_supporter .= "<a href='".$baseurl."/supporter/campaign/".$campaign->friendly_url."'>Visit the post and share</a><br/>";
+    $body_supporter .= "<p>As a reminder, when you log-in and share this initiative you also earn reward points.</p><br/>";
+    $body_supporter .= "<p>Thanks in advance, <br />
         The ShareItCamp team</p>";
 
     mail(null, $subject_supporter, $body_supporter, $headers);
