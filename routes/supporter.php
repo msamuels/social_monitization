@@ -4,19 +4,46 @@
 $app->get('/get-started/supporter/register', function() use($app) {
 
     $path = explode('/', $app->request->getPath());
-
+    $configs = parse_ini_file('../config.ini');
 
     $my_nonprofit = '';
     $my_school = '';
 
     $non_profits = Organization::find('all', array('conditions' => array('type in (?)', 'non-profit')));
 
+    $fb = new Facebook\Facebook([
+        'app_id' => $configs['fb_app_id'],
+        'app_secret' => $configs['fb_app_secret'],
+        'default_graph_version' => 'v2.5',
+    ]);
+
+    $helper = $fb->getRedirectLoginHelper();
+
+    try {
+      $accessToken = $helper->getAccessToken();
+    } catch(Facebook\Exceptions\FacebookResponseException $e) {
+      // When Graph returns an error
+      echo 'Graph returned an error: ' . $e->getMessage();
+      exit;
+    } catch(Facebook\Exceptions\FacebookSDKException $e) {
+      // When validation fails or other local issues
+      echo 'Facebook SDK returned an error: ' . $e->getMessage();
+      exit;
+    }
+
+    $loginUrl = '';
+
+    if(!isset($accessToken)) {
+        $permissions = ['email']; // Optional permissions
+        $loginUrl = $helper->getLoginUrl($configs['app_url'].'/fblogin.php', $permissions);
+    }
+
     $success_info = NULL;
     if (isset($flash['success_info'])) {
         $success_info = $flash['success_info'];
     }
 
-    $app->render('create-supporter.php', array('path' => $path, 'non_profits' => $non_profits));
+    $app->render('create-supporter.php', array('path' => $path, 'non_profits' => $non_profits, 'fb_login_url' => $loginUrl));
 });
 
 # Save supporter
