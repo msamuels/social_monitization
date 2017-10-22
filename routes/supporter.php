@@ -293,6 +293,10 @@ $app->get('/supporter/campaign/:id_title', function ($id_title) use($app) {
 
     $reward = Reward::find_by_campaign_id($campaign->campaign_id);
 
+    if (is_null($campaign)) {
+        $app->redirect('/not-found');
+    }
+
     $producer = $campaign->getProducer();
 
     $supportedCampaigns = Campaign_response::find('all',

@@ -113,3 +113,10 @@ $app->get('/termsandconditions', function () use ($app){
     $app->flash('success_info', 'Thank You. Please check your email for confirmation.');
     $app->redirect('/producer/Jamaica-55-Advocacy-Policy-and-Leadership-Workshop'); 
 });
+
+# FAQ page
+$app->get('/not-found', function () use ($app){
+
+    $app->render('frontpage/not-found.php');
+});
+
