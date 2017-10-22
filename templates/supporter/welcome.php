@@ -1,4 +1,8 @@
-section class="section" id="features">
+<script>
+ window.location.href="/supporter/campaigns/pending";
+</script>
+
+<section class="section" id="features">
     <div class="container">
 
         <div class="row">

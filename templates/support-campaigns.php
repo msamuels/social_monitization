@@ -2,6 +2,9 @@
     <div class="container">
 
         <H1>Campaigns</H1>
+
+        <p>Welcome! Take a look at some of our campaigns</p>
+
         <div class="row" id="supporters-list">
 
             <div class="col-sm-2"></div>
