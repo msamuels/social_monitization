@@ -593,18 +593,24 @@ $app->get('/account', $authenticate($app), function () use ($app){
 		$headers .= 'BCC: '. implode(",", $supporter_email) . "\r\n";    
 		$subject_supporter = "Help ".$producer->org_name. " achieve their goals! ";    
 		
-		$body_supporter = "<p> The team at ".$producer->org_name. " needs your help to make their upcoming initiatives a success. One way you can help is by spreading the word about these initiatives to your social networks.  </p><br />        
+		$body_supporter = "<p>Greetings, </p>
 
-            <p>    To make doing this easy ".$producer->org_name. " is partnering with "; 
+						<p> The team at ".$producer->org_name. " needs your help to make their upcoming initiatives successful . One way you can help is by spreading the word about these initiatives to your social networks.
+						</p>       
+
+            <p>    To make this easy (and rewarding - more on this later) ".$producer->org_name. " is partnering with "; 
 
             $body_supporter .= "  <a href='https://www.shareitcamp.com/'> ShareItCamp.com </a> ";
 
-            $body_supporter .= ". Here is how it works: 
+            $body_supporter .= ". Here's how it works: 
                 <ul>
-                    <li>When you sign up as supporter on ShareItCamp.com you will be notified when ".$producer->org_name. " announces a new project or event. 
+                    <li>When you sign up as a supporter on ShareItCamp.com you will be notified by email when ".$producer->org_name. " posts a new project they'd like shared.  
                     </li>
 
-                      <li>You can then easily share it on your social networks (e.g. Facebook, Twitter) from ShareItCamp
+                      <li>You can then easily share it on your social networks (e.g. Facebook, Twitter) from ShareItCamp.com.
+                    </li>
+
+                     <li> For each initiative you share you earn reward points that can be redeemed for items such as Amazon gift cards. 
                     </li>
 
                 </ul>      
