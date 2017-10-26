@@ -33,6 +33,11 @@
             <div class="col-sm-6">
 
                 <H1>Create Campaign</H1>
+
+                <?php if(isset($success_info)){ ?>
+                    <div class="alert alert-success"><?php echo $success_info; ?></div>
+                <?php } ?>
+
                 <span class="required">* </span> = Required fields
                 <form action="/save-campaign" enctype="multipart/form-data" method="POST" class="form-horizontal"
                       role="form" id="create-campaign">

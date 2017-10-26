@@ -85,7 +85,11 @@ $app->post('/save-producer', function () use ($app){
 
         mail($to, $subject, $body, $headers);
 
-        $app->flash('success_info', 'Producer Saved');
+        $_SESSION['email'] = $producer->email_address;
+        $_SESSION['user_type'] = 'producer';
+        $_SESSION['user'] =  $producer->user_name;
+
+        $app->flash('success_info', 'Welcome! Your producer account has been created.');
 
         $app->redirect('/create-campaign');
 
@@ -111,7 +115,15 @@ $app->get('/producer', function () use ($app){
 
 # Producer create campaign
 $app->get('/create-campaign', $authenticate($app), function () use ($app){
-    $app->render('/producer/create-campaign.php');
+
+    $flash = $app->view()->getData('flash');
+
+    $success_info = '';
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
+    }
+
+    $app->render('/producer/create-campaign.php', array('success_info' => $success_info));
 });
 
 # edit campaign
