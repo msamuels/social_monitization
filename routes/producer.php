@@ -43,6 +43,8 @@ $app->get('/producer/create-producer', function () use ($app){
 # Save producers
 $app->post('/save-producer', function () use ($app){
 
+    unset($_SESSION["FBRLH_state"]);
+
     if ($app->request->getMethod() == 'POST') {
 
        $req = $app->request->post();
@@ -82,7 +84,6 @@ $app->post('/save-producer', function () use ($app){
         $body .= "Thanks, <br />The shareitcamp team";
 
         mail($to, $subject, $body, $headers);
-
 
         $app->flash('success_info', 'Producer Saved');
 
