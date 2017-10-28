@@ -138,6 +138,8 @@
                             </a>
                            
                         </label>
+
+                        <!--
                         <div class="col-sm-4" style="text-align:left">
                         <span class="required">* </span>Facebook handle
                             <input type="text" class="form-control"
@@ -148,6 +150,8 @@
                             <input type="text" class="form-control"
                                    name="followers_fb" />
                         </div>
+                        -->
+                        
                     </div>
 
 
