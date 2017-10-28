@@ -124,9 +124,11 @@
                         </div>
                     </div>
 
+                    <!--
                      <label class="control-label col-sm-4" style="text-align:right">Social Handles</label>
-                   
+                   -->
 
+                     <!--
                     <div class="form-group">
                      <br/>
                     <br/>
@@ -138,20 +140,25 @@
                             </a>
                            
                         </label>
+                        -->
 
                         <!--
                         <div class="col-sm-4" style="text-align:left">
                         <span class="required">* </span>Facebook handle
                             <input type="text" class="form-control"
                                    name="fb_handle" />
-                        </div>
-                        <span class="required">* </span># of FB friends
+                        </div>    
+                        -->
+
+                        <label class="control-label col-sm-4" style="text-align:right">
+                        <span class="required" aria-required="true">*</span> # of FB Friends
+                        </label>
                         <div class="col-sm-4" style="text-align:left">
                             <input type="text" class="form-control"
                                    name="followers_fb" />
                         </div>
-                        -->
-                        
+                    
+
                     </div>
 
 
