@@ -76,7 +76,7 @@
 
             <div class="col-sm-3"></div>
 
-            <div class="col-sm-6 intro-form">
+            <div class="col-sm-7 intro-form">
 
                 <?php
                     echo '<a href="' . htmlspecialchars($fb_login_url) . '" class="btn btn-social btn-block btn-facebook" style="width: 50%"><span class="fa fa-facebook"></span>Sign in with Facebook!</a>';
@@ -130,9 +130,7 @@
 
                    
                     <div class="form-group">
-                     <br/>
-                    <br/>
-                      <!--
+                                          <!--
                         <label class="control-label col-sm-4" style="text-align:right">
                             <a href="#"
                                class="helptip"
