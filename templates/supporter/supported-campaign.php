@@ -128,10 +128,8 @@
                     </a>
                 </div>
                 
-                <div class="fb-share-button"
-                     data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>"
-                     data-layout="button_count" data-mobile-iframe="true">
-                </div>
+               <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="addthis_inline_share_toolbox"></div>
 
             </div>
 

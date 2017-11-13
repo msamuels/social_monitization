@@ -73,6 +73,11 @@
 
 <body data-spy="scroll" data-target="#navbar-menu">
 
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a091963b75e1753"></script>
+
+
+
 <?php $configs = parse_ini_file('../config.ini'); ?>
 
 <script>
