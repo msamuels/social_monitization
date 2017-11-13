@@ -57,6 +57,8 @@
 						<?php } ?>
 					</p>
                     <div class="row">
+
+                    <!-- REMOVE OLD SHARE BUTTONS
                             <div class="col-sm-3 sharebuttongap">
                                 <span class="fb-share-button" style="margin-bottom: 5px;"
                                       data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $campaign->friendly_url; ?>"
@@ -81,9 +83,10 @@
                                 </span>
                             </div>
 
-
+                    -->
                           
-
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="addthis_inline_share_toolbox" style="margin-top: 1em;"></ div>
 
 
                             <div class="col-sm-12">
@@ -150,7 +153,7 @@
 
                     </div>
                     <div class="col-sm-11" style="text-align: left;">
-                        <p><strong>Visit:</strong> <a href="<?php echo $campaign->url; ?>" class="highlighted-1"
+                        <p><strong>Visit:</strong> <a href="<?php echo $campaign->url; ?>" class="highlighted-1" 
                                                       target="_blank"><?php echo $campaign->url; ?></a></p>
                     </div>
                 </div>
