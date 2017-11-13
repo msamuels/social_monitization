@@ -86,7 +86,7 @@
                     -->
                           
                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                <div class="addthis_inline_share_toolbox" style="margin-top: 1em;"></ div>
+                <div class="addthis_inline_share_toolbox"></ div>
 
 
                             <div class="col-sm-12">
@@ -132,7 +132,7 @@
                 </div>
                 
                <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                <div class="addthis_inline_share_toolbox"></div>
+                <div class="addthis_inline_share_toolbox" style="margin-top: 1em;"></div>
 
             </div>
 
