@@ -22,7 +22,7 @@
 	            var calendar = $("#calendar").calendar(
 		            {
 			            tmpl_path: "/bootstrap-calendar/tmpls/",
-			            events_source: function () { return []; }
+			            events_source:  "/producer-events/<?php echo $producer->org_name; ?>"
 		            });			
             </script>
             <!-- End Boostrap calendar -->

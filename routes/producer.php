@@ -654,3 +654,55 @@ $app->get('/account', $authenticate($app), function () use ($app){
 	$app->flash('success_info', 'Email sent');    
 	$app->redirect('/campaigns'); 
 });
+
+
+$app->get('/producer-events/:producername', function ($producername) use ($app){
+
+    $flash = $app->view()->getData('flash');
+
+    //find the prducer by name
+    $producer = Producer::find_by_friendly_url($producername);
+
+    // if no producer found then route might just actual page
+    if(is_null($producer)){
+        $app->redirect('/'.$name);
+    }
+
+    // get the campaigns for this producer
+    $options = array('conditions' => array("id_producer = $producer->id_producer"));
+    $producer_campaigns = Account::all($options);
+
+    // loop
+    $campaign_ids = array();
+    foreach ($producer_campaigns as $pc) {
+        $campaign_ids[] = $pc->campaign_id;
+    }
+
+    $excluded_from_home = $app->config('configs')['excluded_from_home'];
+
+    $options_1 = array('order' => 'campaign_id desc', 'conditions' => array("approved = 'Y' AND campaign_id NOT IN (?) ", $excluded_from_home ));
+
+    // find campaigns for that producer
+    $options_2 = array('order' => 'campaign_id desc', 'conditions' => array("approved = 'Y' AND campaign_id in (?) AND start_date >= (?) AND (?)", $campaign_ids, date('Y-m-01'), date('Y-m-t')));
+   
+    if(count($campaign_ids) == 0){
+        $campaigns = Campaign::all($options_1);
+    } else {
+        $campaigns = Campaign::all($options_2);
+    }
+
+    $out = array();
+
+    foreach ($campaigns as $campaign) {
+        $out[] = array(
+            'id' => $campaign->id,
+            'title' => $campaign->campaign_name,
+            'url' => $campaign->url,
+            'start' => strtotime($campaign->start_date) . '000',
+            'end' => strtotime($campaign->end_date) .'000'
+        );
+    }
+
+    echo json_encode(array('success' => 1, 'result' => $out));
+
+});
