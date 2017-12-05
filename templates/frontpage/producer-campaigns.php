@@ -12,6 +12,13 @@
             <div class="col-sm-6">
 
                 <div id="calendar"></div>
+                <div>
+                    RSVP Key: <br />
+                    Yes – you will receive an email reminder of the event<br />
+                    No – you will not receive any reminder<br />
+                    Maybe – You will receive a reminder but event will not count on your attendance<br />
+                    MyCamp Rewards Icon – Chance for immediate reward for sharing/attending<br />
+                </div>
 
             </div>
 
@@ -32,7 +39,7 @@
                 <?php if (count($campaigns) > 0) {
                         foreach ($campaigns as $campaign) {
                 ?>
-                    <li><?php echo $campaign->start_date ."" . $campaign->campaign_name; ?></li>
+                    <li><?php echo date_format($campaign->start_date, 'F d, Y ') ."&nbsp;&nbsp;&nbsp;" . $campaign->campaign_name; ?></li>
                 <?php } } ?>
                 </ul>
             </div>
