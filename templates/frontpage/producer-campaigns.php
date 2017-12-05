@@ -1,18 +1,80 @@
 <section class="section" id="features">
     <div class="container">
 
-        <H1><?php echo $producer->org_name; ?></H1>
+        <H1>Calendar | <?php echo $producer->org_name; ?></H1>
 
         <?php if (isset($success_info)) { ?>
             <div class="alert alert-success"><?php echo $success_info; ?></div>
         <?php } ?>
 
+        <div class="row" id="supporters-list">
+
+            <div class="col-sm-6">
+
+                <div id="calendar"></div>
+
+            </div>
+
+            <!-- Boostrap calendar -->
+            <script type="text/javascript" src="/bootstrap-calendar/js/calendar.js"></script>
+            <script type="text/javascript" src="/js/underscore-min.js"></script>
+            <script type="text/javascript">
+	            var calendar = $("#calendar").calendar(
+		            {
+			            tmpl_path: "/bootstrap-calendar/tmpls/",
+			            events_source: function () { return []; }
+		            });			
+            </script>
+            <!-- End Boostrap calendar -->
+
+            <div class="col-sm-6">
+                <ul>
+                <?php if (count($campaigns) > 0) {
+                        foreach ($campaigns as $campaign) {
+                ?>
+                    <li><?php echo $campaign->start_date ."" . $campaign->campaign_name; ?></li>
+                <?php } } ?>
+                </ul>
+            </div>
+
+        </div>
 
         <div class="row" id="supporters-list">
 
-          
+            <div class="col-sm-12">                        
+                    <?php
+                    if (count($campaigns) > 0) {
+                    foreach ($campaigns as $campaign){ 
+                    ?>
+                <!--Pricing Column-->
+                <article class="pricing-column col-sm-4">
+                    <div class="inner-box fadeIn animated wow" data-wow-delay=".1s">
+                        <div class="plan-header text-center">
+                            <h3 class="plan-title"><a href="supporter/campaign/<?php echo $campaign->friendly_url; ?>">
+                                    <?php echo $campaign->campaign_name; ?></a></h3>
 
-             <div class="col-sm-6">
+                            <div class="thumbnail thumbnail-box">
+                                <a href="supporter/campaign/<?php echo $campaign->friendly_url; ?>">
+			                        <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
+                                </a>
+		                     </div>
+
+                        </div>
+
+                        Yes | No | Maybe
+
+                        </div>
+                </article>
+            <?php } }?>
+
+            </div><!-- end column -->
+
+        </div><!-- end row -->
+
+
+        <div class="row">
+
+             <div class="col-sm-12">
                     <div class="col-sm-12" style="text-align:left;">
                         <div class="row"><h3>About <?php echo $producer->org_name; ?></h3>
                         </div>
@@ -21,64 +83,7 @@
                         </div>
                     </div>
              </div>
-
-
-
-
-            <div class="col-sm-6">
-
-
-                <ul class="list-things" style="list-style: none">
-                   <div class="row" style="text-align: left;"><br><h3>Initiatives</h3>
-                        <hr>
-                        
-                    <?php
-                    if (count($campaigns) > 0) {
-                        foreach ($campaigns as $campaign) {
-                            ?>
-                                <div>
-                                    <li class="list-item">
-                                        <p>
-                                            <strong>
-                                                <a href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">
-                                                    <?php echo $campaign->campaign_name; ?>
-                                                </a>
-                                            </strong></p>
-                                       
-                                        <p class="by-line"><i> by <?php echo $campaign->getProducer()->org_name; ?></i></p>
-                                       
-                                        <div class="thumbnail thumbnail-box-prod">
-                                            <a href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">
-                                                <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>"
-                                                     style="max-height: 450px;margin-bottom: 15px;" height="500" width="300"/>
-                                            </a>
-
-                                              <div style="display: block;width: auto;margin: 0px 25px;"><?php echo substr($campaign->copy, 0, 50); ?>
-                                            ...  <a style="text-decoration: underline"
-                                                  href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">Learn More
-                                                  </a>
-                                                </div>
-
-                                        </div>
-                                      
-
-                                    </li>
-                                </div>
-                            <?php
-                        }
-                    }
-                    ?>
-
-                </ul>
-            </div>
-
-        
-
         </div>
-
-
-
-
 
 
     </div><!--end container -->
