@@ -426,7 +426,7 @@ CREATE TABLE `supporter_handles` (
   PRIMARY KEY (`supporter_handle_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
-CREATE TABLE `social_monitization`.`campaign_alert_preference` (
+CREATE TABLE `campaign_alert_preference` (
   `cap_id` INT NULL AUTO_INCREMENT,
   `campaign_id` INT NULL,
   `supporter_id` INT NULL,
