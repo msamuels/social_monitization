@@ -35,7 +35,7 @@
             <!-- End Boostrap calendar -->
 
             <div class="col-sm-6">
-                <ul>
+                <ul style="border:1px solid grey; padding: 10px">
                 <?php if (count($campaigns) > 0) {
                         foreach ($campaigns as $campaign) {
                 ?>
