@@ -23,7 +23,7 @@
             </div>
 
             <!-- Boostrap calendar -->
-            <script type="text/javascript" src="/bootstrap-calendar/components/underscore/underscore-min.js"></script>
+            <script type="text/javascript" src="/js/underscore-min.js"></script>
             <script type="text/javascript" src="/bootstrap-calendar/js/calendar.js"></script>
             <script type="text/javascript">
                 $( document ).ready(function() {
