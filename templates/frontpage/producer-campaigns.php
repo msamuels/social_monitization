@@ -12,8 +12,8 @@
             <div class="col-sm-6">
 
                 <div id="calendar"></div>
-                <div>
-                    RSVP Key: <br />
+                <div><br />
+                    <strong>RSVP Key:</strong> <br />
                     Yes – you will receive an email reminder of the event<br />
                     No – you will not receive any reminder<br />
                     Maybe – You will receive a reminder but event will not count on your attendance<br />
@@ -79,7 +79,17 @@
 
                         </div>
 
-                        Yes | No | Maybe
+                        <div class="btn-preference">
+                            <a class="btn btn-success">Yes</a>
+                            <a class="btn btn-danger">No</a>
+                            <a class="btn btn-info">Maybe</a>
+                        <div>
+
+                        <div>
+                            <button class="btn support-btns" id="share-it" href="#share-buttons">
+                                Share
+                            </button>
+                        </div>
 
                         </div>
                 </article>
