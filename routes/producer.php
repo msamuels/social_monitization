@@ -698,11 +698,14 @@ $app->get('/producer-events/:producername', function ($producername) use ($app){
             'id' => $campaign->id,
             'title' => $campaign->campaign_name,
             'url' => $campaign->url,
+            'class' => 'event-important',
             'start' => strtotime($campaign->start_date) . '000',
-            'end' => strtotime($campaign->end_date) .'000'
+            'end' => strtotime($campaign->start_date) . '001'
         );
     }
 
     echo json_encode(array('success' => 1, 'result' => $out));
+    exit();
 
 });
+
