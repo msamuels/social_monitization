@@ -23,23 +23,34 @@
             </div>
 
             <!-- Boostrap calendar -->
+            <script type="text/javascript" src="/bootstrap-calendar/components/underscore/underscore-min.js"></script>
             <script type="text/javascript" src="/bootstrap-calendar/js/calendar.js"></script>
-            <script type="text/javascript" src="/js/underscore-min.js"></script>
             <script type="text/javascript">
-	            var calendar = $("#calendar").calendar(
-		            {
-			            tmpl_path: "/bootstrap-calendar/tmpls/",
-			            events_source:  "/producer-events/<?php echo $producer->org_name; ?>"
-		            });			
+                $( document ).ready(function() {
+
+	                var calendar = $("#calendar").calendar(
+		                {
+			                tmpl_path: "/bootstrap-calendar/tmpls/",
+			                events_source:  "/producer-events/<?php echo $producer->org_name; ?>"
+		                });
+
+                });
+
             </script>
             <!-- End Boostrap calendar -->
 
             <div class="col-sm-6">
-                <ul style="border:1px solid grey; padding: 10px">
+                <ul class="calendar-events">
                 <?php if (count($campaigns) > 0) {
                         foreach ($campaigns as $campaign) {
                 ?>
-                    <li><?php echo date_format($campaign->start_date, 'F d, Y ') ."&nbsp;&nbsp;&nbsp;" . $campaign->campaign_name; ?></li>
+                    <li>
+                        <strong><?php echo date_format($campaign->start_date, 'F d, Y '); ?></strong>
+                        &nbsp;&nbsp;&nbsp; 
+                        <a href="supporter/campaign/<?php echo $campaign->friendly_url; ?>">
+                            <?php echo $campaign->campaign_name; ?>
+                        </a>
+                    </li>
                 <?php } } ?>
                 </ul>
             </div>
