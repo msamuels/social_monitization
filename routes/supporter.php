@@ -868,23 +868,40 @@ $app->post('/save-campaign-alert-preference', function () use ($app){
         $user_name = $app->view()->getData('user');
         $supporter = Supporter::find_by_user_name($user_name);
 
+        $str_preference = $req['preference'];
+
         $campaign_preference = Campaign_alert_preference::find('all', array('conditions' => array('campaign_id = ? AND 
         supporter_id = ?', $req['campaign_id'], $supporter->id_supporter)));
 
         if(count($campaign_preference) > 0) {
-            $response = $campaign_preference[0]->update_attributes(array('preference' => $req['preference']
+            $response = $campaign_preference[0]->update_attributes(array('preference' => $str_preference
                 ));
         } else {
             // insert new preference
             $response = Campaign_alert_preference::create(
                 array('campaign_id' => $req['campaign_id'], 
-            'supporter_id' => $supporter->id_supporter, 'preference' => $req['preference']));
+            'supporter_id' => $supporter->id_supporter, 'preference' => $str_preference));
         }
 
         $campaign = Campaign::find($req['campaign_id']);
         $producer = $campaign->getProducer();
 
-        $app->flash('success_info', 'Campaign preference saved');
+        $selected_pref = "";
+
+        // show user message
+        switch ($str_preference) {
+            case 'yes':
+                $selected_pref = "You will receive an email reminder of the event";
+            case 'no':
+                $selected_pref = "You will not receive any reminder";
+            case 'maybe':
+                $selected_pref = "You will receive a reminder but event will not count on your attendance";
+        }
+
+        $user_message = 'Campaign preference saved for: '.
+            $campaign->campaign_name. '.<br /> <strong>'.ucfirst($str_preference). '</strong> - ' .$selected_pref;
+
+        $app->flash('success_info', $user_message);
 
         $url = '/producer/'.$producer->org_name;
 
