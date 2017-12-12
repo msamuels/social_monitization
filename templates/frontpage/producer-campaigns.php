@@ -79,17 +79,23 @@
 
                         </div>
 
-                        <div class="btn-preference">
-                            <a class="btn btn-success">Yes</a>
-                            <a class="btn btn-danger">No</a>
-                            <a class="btn btn-info">Maybe</a>
-                        <div>
+                        <?php if (isset($_SESSION['user_type'])) { ?>
+                        <form action="/save-campaign-alert-preference" method="POST" id="pref">
+                            <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>">
+                            <div class="btn-preference">
+                                <input type="button" name="preference" value="yes" class="btn btn-success">Yes
+                                <input type="button" name="preference" value="no" class="btn btn-danger">No
+                                <input type="button" name="preference" value="maybe" class="btn btn-info">Maybe
+                            <div>
+                        </form>
 
                         <div>
                             <button class="btn support-btns" id="share-it" href="#share-buttons">
                                 Share
                             </button>
                         </div>
+
+                        <?php } ?>
 
                         </div>
                 </article>
