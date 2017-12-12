@@ -890,12 +890,15 @@ $app->post('/save-campaign-alert-preference', function () use ($app){
 
         // show user message
         switch ($str_preference) {
-            case 'yes':
+            case "yes":
                 $selected_pref = "You will receive an email reminder of the event";
-            case 'no':
+                break;
+            case "no":
                 $selected_pref = "You will not receive any reminder";
-            case 'maybe':
+                break;
+            case "maybe":
                 $selected_pref = "You will receive a reminder but event will not count on your attendance";
+                break;
         }
 
         $user_message = 'Campaign preference saved for: '.
