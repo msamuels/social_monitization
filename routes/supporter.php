@@ -865,8 +865,11 @@ $app->post('/save-campaign-alert-preference', function () use ($app){
 
         $req = $app->request->post();
 
+        $user_name = $app->view()->getData('user');
+        $supporter = Supporter::find_by_user_name($user_name);
+
         $campaign_preference = Campaign_alert_preference::find('all', array('conditions' => array('campaign_id = ? AND 
-        supporter_id = ?', $req['campaign_id'], $req['supporter_id'])));
+        supporter_id = ?', $req['campaign_id'], $supporter->id_supporter)));
 
         if(count($campaign_preference) > 0) {
             $response = $campaign_preference[0]->update_attributes(array('preference' => $req['preference']
@@ -878,9 +881,13 @@ $app->post('/save-campaign-alert-preference', function () use ($app){
             'supporter_id' => $supporter->id_supporter, 'preference' => $req['preference']));
         }
 
+        $campaign = Campaign::find($req['campaign_id']);
+
         $app->flash('success_info', 'Campaign preference saved');
 
-        $app->redirect('/producer/'.$req['campaign_id']);
+        $url = '/producer/'.$campaign->friendly_url;
+
+        $app->redirect($url);
 
     }
 
