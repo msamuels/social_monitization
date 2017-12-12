@@ -47,7 +47,7 @@
                     <li>
                         <strong><?php echo date_format($campaign->start_date, 'F d, Y '); ?></strong>
                         &nbsp;&nbsp;&nbsp; 
-                        <a href="supporter/campaign/<?php echo $campaign->friendly_url; ?>">
+                        <a href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">
                             <?php echo $campaign->campaign_name; ?>
                         </a>
                     </li>
@@ -72,7 +72,7 @@
                                     <?php echo $campaign->campaign_name; ?></a></h3>
 
                             <div class="thumbnail thumbnail-box">
-                                <a href="supporter/campaign/<?php echo $campaign->friendly_url; ?>">
+                                <a href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">
 			                        <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?> "  style="max-height: 450px;" width="300" height="500"/>
                                 </a>
 		                     </div>
