@@ -882,10 +882,11 @@ $app->post('/save-campaign-alert-preference', function () use ($app){
         }
 
         $campaign = Campaign::find($req['campaign_id']);
+        $producer = $campaign->getProducer();
 
         $app->flash('success_info', 'Campaign preference saved');
 
-        $url = '/producer/'.$campaign->friendly_url;
+        $url = '/producer/'.$producer->org_name;
 
         $app->redirect($url);
 
