@@ -4,9 +4,29 @@
     border-top: 1px solid #f5f5f5;
 }
 
+.btn-preference {
+    padding: 0px 20px 25px 25px;
+}
+
 .campaign_image{
     max-width: 100%;
 }
+
+.calendar-events {
+    border: 1px solid rgba(0,0,0,.12);
+    padding: 0px;
+    margin-top: 31px;
+}
+
+ul.calendar-events li{
+    border-top: 1px solid rgba(0,0,0,.12);
+    padding: 16px 16px 0;
+}
+
+ul.calendar-events li:first-child {
+    border-width: 0;
+}
+
 .thumbnail-box{
     height:460px;
 }
@@ -89,6 +109,10 @@ width: 139px;
 
 .plan-title {
     height: 2em;
+}
+
+.pricing-column .inner-box {
+    padding: 0px 0px 5px;
 }
 
 .required{

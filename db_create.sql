@@ -426,6 +426,13 @@ CREATE TABLE `supporter_handles` (
   PRIMARY KEY (`supporter_handle_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
+CREATE TABLE `campaign_alert_preference` (
+  `cap_id` INT NULL AUTO_INCREMENT,
+  `campaign_id` INT NULL,
+  `supporter_id` INT NULL,
+  `preference` ENUM('yes', 'no', 'maybe') NULL,
+  PRIMARY KEY (`cap_id`));
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -14,6 +14,8 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href="/bootstrap/css/bootstrap.min.css?<?php echo date('s')?>" rel="stylesheet">
+    <link rel="stylesheet" href="/bootstrap-calendar/css/calendar.css">
+
     <!-- Animate -->
     <link href="/css/animate.css" rel="stylesheet">
 
@@ -50,7 +52,6 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script>
         tinymce.init({ selector:'textarea' });
@@ -75,7 +76,6 @@
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a091963b75e1753"></script>
-
 
 
 <?php $configs = parse_ini_file('../config.ini'); ?>

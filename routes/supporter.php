@@ -858,3 +858,32 @@ $app->get("/welcome", $authenticate($app), function () use ($app){
     $app->render('supporter/welcome.php');
 });
 
+# Save pref
+$app->post('/save-campaign-alert-preference', function () use ($app){
+
+    if ($app->request->getMethod() == 'POST') {
+
+        $req = $app->request->post();
+
+        $campaign_preference = Campaign_alert_preference::find('all', array('conditions' => array('campaign_id = ? AND 
+        supporter_id = ?', $req['campaign_id'], $req['supporter_id'])));
+
+        if(count($campaign_preference) > 0) {
+            $response = $campaign_preference[0]->update_attributes(array('preference' => $req['preference']
+                ));
+        } else {
+            // insert new preference
+            $response = Campaign_alert_preference::create(
+                array('campaign_id' => $req['campaign_id'], 
+            'supporter_id' => $supporter->id_supporter, 'preference' => $req['preference']));
+        }
+
+        $app->flash('success_info', 'Campaign preference saved');
+
+        $app->redirect('/producer/'.$req['campaign_id']);
+
+    }
+
+});
+
+
