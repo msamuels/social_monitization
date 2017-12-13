@@ -683,7 +683,7 @@ $app->get('/producer-events/:producername', function ($producername) use ($app){
     $options_1 = array('order' => 'campaign_id desc', 'conditions' => array("approved = 'Y' AND campaign_id NOT IN (?) ", $excluded_from_home ));
 
     // find campaigns for that producer
-    $options_2 = array('order' => 'campaign_id desc', 'conditions' => array("approved = 'Y' AND campaign_id in (?) AND start_date >= (?) AND (?)", $campaign_ids, date('Y-m-01'), date('Y-m-t')));
+    $options_2 = array('order' => 'campaign_id desc', 'conditions' => array("approved = 'Y' AND campaign_id in (?) ", $campaign_ids));
    
     if(count($campaign_ids) == 0){
         $campaigns = Campaign::all($options_1);
