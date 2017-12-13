@@ -9,12 +9,26 @@
 
         <div class="row" id="supporters-list">
 
+            <div class="col-sm-6 page-header">
+
+                <h3></h3>
+            </div>
+
             <div class="col-sm-6">
-            <div class="btn-group">
-				<button class="btn btn-primary" data-calendar-nav="prev">&lt;&lt; Prev</button>
-				<button class="btn" data-calendar-nav="today">Today</button>
-				<button class="btn btn-primary" data-calendar-nav="next">Next &gt;&gt;</button>
-			</div>
+               <div class="btn-group">
+				    <button class="btn btn-primary" data-calendar-nav="prev">&lt;&lt; Prev</button>
+				    <button class="btn" data-calendar-nav="today">Today</button>
+				    <button class="btn btn-primary" data-calendar-nav="next">Next &gt;&gt;</button>
+			    </div>
+            
+            </div>
+
+        </div>
+
+        <div class="row" id="supporters-list">
+
+            <div class="col-sm-6">
+
                 <div id="calendar"></div>
                 <div><br />
                     <strong>RSVP Key:</strong> <br />
@@ -35,7 +49,17 @@
 	                var calendar = $("#calendar").calendar(
 		                {
 			                tmpl_path: "/bootstrap-calendar/tmpls/",
-			                events_source:  "/producer-events/<?php echo $producer->id_producer; ?>"
+			                events_source:  "/producer-events/<?php echo $producer->id_producer; ?>",
+                            onAfterViewLoad: function(view) {
+			                            $('.page-header h3').text(this.getTitle());
+			                            $('.btn-group button').removeClass('active');
+			                            $('button[data-calendar-view="' + view + '"]').addClass('active');
+		                            },
+                            classes: {
+	                            months: {
+		                            general: 'label'
+	                            }
+                            }
 		                });
 
                 $('.btn-group button[data-calendar-nav]').each(function() {
