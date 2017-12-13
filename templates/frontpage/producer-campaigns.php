@@ -10,7 +10,11 @@
         <div class="row" id="supporters-list">
 
             <div class="col-sm-6">
-
+            <div class="btn-group">
+				<button class="btn btn-primary" data-calendar-nav="prev">&lt;&lt; Prev</button>
+				<button class="btn" data-calendar-nav="today">Today</button>
+				<button class="btn btn-primary" data-calendar-nav="next">Next &gt;&gt;</button>
+			</div>
                 <div id="calendar"></div>
                 <div><br />
                     <strong>RSVP Key:</strong> <br />
@@ -33,6 +37,20 @@
 			                tmpl_path: "/bootstrap-calendar/tmpls/",
 			                events_source:  "/producer-events/<?php echo $producer->org_name; ?>"
 		                });
+
+                $('.btn-group button[data-calendar-nav]').each(function() {
+		                var $this = $(this);
+		                $this.click(function() {
+			                calendar.navigate($this.data('calendar-nav'));
+		                });
+	                });
+
+	                $('.btn-group button[data-calendar-view]').each(function() {
+		                var $this = $(this);
+		                $this.click(function() {
+			                calendar.view($this.data('calendar-view'));
+		                });
+	                });
 
                 });
 
