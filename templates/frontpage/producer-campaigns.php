@@ -35,7 +35,7 @@
 	                var calendar = $("#calendar").calendar(
 		                {
 			                tmpl_path: "/bootstrap-calendar/tmpls/",
-			                events_source:  "/producer-events/<?php echo $producer->org_name; ?>"
+			                events_source:  "/producer-events/<?php echo $producer->id_producer; ?>"
 		                });
 
                 $('.btn-group button[data-calendar-nav]').each(function() {

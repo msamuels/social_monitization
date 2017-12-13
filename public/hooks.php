@@ -6,7 +6,7 @@ $app->hook('slim.before.dispatch', function () use ($app) {
 
     $base_url = $app->config('configs')['base_url'];
 
-    if ($app->router()->getCurrentRoute()->getPattern() == "/producer-events/:producername") {
+    if ($app->router()->getCurrentRoute()->getPattern() == "/producer-events/:id_producer") {
             // do nothing. mainly dont render the header and footer.
     } else {
 

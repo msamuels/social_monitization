@@ -656,12 +656,12 @@ $app->get('/account', $authenticate($app), function () use ($app){
 });
 
 
-$app->get('/producer-events/:producername', function ($producername) use ($app){
+$app->get('/producer-events/:id_producer', function ($id_producer) use ($app){
 
     $flash = $app->view()->getData('flash');
 
     //find the prducer by name
-    $producer = Producer::find_by_friendly_url($producername);
+    $producer = Producer::find_by_id_producer($id_producer);
 
     // if no producer found then route might just actual page
     if(is_null($producer)){
