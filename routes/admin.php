@@ -219,8 +219,23 @@ $app->post('/resend-campaign-notification', $authenticate($app), function () use
     $campaign = Campaign::find($req['campaign_id']);
 
     // grab all the supporters to email
+
+    $criteria = array('conditions' => array("preference = 'no' AND campaign_id = (?) ", $campaign->campaign_id ));
+
+    $supporters_who_said_no = Campaign_alert_preference::all($criteria);
+
+    // loop over $supporters_who_said_no and get ids of supporters
+	$supporter_nos = array();
+	foreach ($supporters_who_said_no as $supporter_opt_out) {
+	    $supporter_nos[] = $supporter_opt_out->supporter_id;
+	}
+
+
     $supporter_email = array();
-    $supporters = Supporter::find('all');
+
+    // do a WHERE NOT IN (?) query to get people to mail to
+    $supporters = Supporter::find('all',
+ array('conditions' => array('id_supporter NOT in (?)', array($supporter_nos))));
 
     foreach ($supporters as $supporter) {
         array_push($supporter_email, $supporter->email_address);
