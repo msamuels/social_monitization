@@ -906,7 +906,7 @@ $app->post('/save-campaign-alert-preference', function () use ($app){
 
         $app->flash('success_info', $user_message);
 
-        $url = '/producer/'.$producer->org_name;
+        $url = '/producer/'.$producer->friendly_url;
 
         $app->redirect($url);
 
