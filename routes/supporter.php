@@ -214,13 +214,16 @@ $app->get('/supporter/campaigns/pending', $authenticate($app), function () use (
         ORDER BY campaign_id DESC', $ar_campaigns, 'Y')));
     }
 
+    // get producers
+    $producers = Producer::find('all');
+
     $success_info = '';
     if (isset($flash['success_info'])) {
         $success_info = $flash['success_info'];
     }
 
     $app->render('support-campaigns.php', array('campaigns' => $campaigns, 'user_id' => $supporter->id,
-        'isPEnding' => true, 'success_info' => $success_info));
+        'isPEnding' => true, 'producers' => $producers, 'success_info' => $success_info));
 });
 
 

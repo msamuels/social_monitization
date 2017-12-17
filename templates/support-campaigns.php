@@ -7,9 +7,16 @@
 
         <div class="row" id="supporters-list">
 
-            <div class="col-sm-2"></div>
+            <div class="col-sm-3">
+                <ul>
+                    <li><h3>Producers</h3></li>
+                <?php foreach($producers as $producer) { ?>
+                    <li><a href="/producer/<?php echo $producer->friendly_url; ?>"><?php echo $producer->org_name; ?></a></li>
+                <?php } ?>
+                </ul>
+            </div>
 
-            <div class="col-sm-8">
+            <div class="col-sm-9">
 
                 <ul class="list-things" style="list-style: none">
                     <?php
@@ -53,8 +60,6 @@
 
                 </ul>
             </div>
-
-            <div class="col-sm-2"></div>
 
         </div>
 
