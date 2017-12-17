@@ -18,12 +18,12 @@
 
             <div class="col-sm-9">
 
-                <ul class="list-things" style="list-style: none">
+
                     <?php
                     if (count($campaigns) > 0) {
                         foreach ($campaigns as $campaign) {
                             ?>
-                            <li class="list-item">
+                            <div class="list-item col-sm-4">
                                 <p><strong>
                                         <a href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">
                                             <?php echo $campaign->campaign_name; ?>
@@ -52,13 +52,13 @@
                                     <button class="btn support-btns" type="submit">Support Campaign</button>
                                 </form>
 
-                            </li>
+                            </div>
                             <?php
                         }
                     }
                     ?>
 
-                </ul>
+
             </div>
 
         </div>
