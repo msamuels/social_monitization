@@ -547,7 +547,7 @@ $app->get('/producer/:name', function ($name) use ($app){
     $options_2 = array('order' => 'campaign_id desc', 'conditions' => array("approved = 'Y' AND campaign_id in (?)", $campaign_ids));
    
     if(count($campaign_ids) == 0){
-        $campaigns = Campaign::all($options_1);
+        $campaigns = array();
     } else {
         $campaigns = Campaign::all($options_2);
     }
@@ -669,7 +669,7 @@ $app->get('/producer-events/:id_producer', function ($id_producer) use ($app){
     }
 
     // get the campaigns for this producer
-    $options = array('conditions' => array("id_producer = $producer->id_producer"));
+    $options = array('conditions' => array("id_producer" => $producer->id_producer));
     $producer_campaigns = Account::all($options);
 
     // loop
@@ -686,7 +686,7 @@ $app->get('/producer-events/:id_producer', function ($id_producer) use ($app){
     $options_2 = array('order' => 'campaign_id desc', 'conditions' => array("approved = 'Y' AND campaign_id in (?) ", $campaign_ids));
    
     if(count($campaign_ids) == 0){
-        $campaigns = Campaign::all($options_1);
+        $campaigns = array();
     } else {
         $campaigns = Campaign::all($options_2);
     }
