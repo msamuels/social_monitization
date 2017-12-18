@@ -215,7 +215,7 @@ $app->get('/supporter/campaigns/pending', $authenticate($app), function () use (
     }
 
     // get producers
-    $producers = Producer::find('all');
+    $producers = Producer::find('all',array('order' => 'org_name ASC'));
 
     $success_info = '';
     if (isset($flash['success_info'])) {
