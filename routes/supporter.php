@@ -172,13 +172,16 @@ $app->get('/supporter/campaigns', $authenticate($app), function () use($app) {
         $supportedCampaign->setCampaign($campaign);
     }
 
+    // get producers
+    $producers = Producer::find('all',array('order' => 'org_name ASC'));
+
     $success_info = '';
     if (isset($flash['success_info'])) {
         $success_info = $flash['success_info'];
     }
 
     $app->render('supported-campaigns.php', array('supported_campaigns' => $supportedCampaigns,
-        'success_info' => $success_info, 'base_url' => $base_url, 'isPending' => false));
+        'success_info' => $success_info, 'producers' => $producers,  'base_url' => $base_url, 'isPending' => false));
 });
 
 

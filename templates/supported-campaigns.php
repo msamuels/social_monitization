@@ -3,9 +3,16 @@
 
         <div class="row" id="supporters-list">
 
-            <div class="col-sm-2"></div>
+            <div class="col-sm-3">
+                <ul>
+                    <li><h3>Producers</h3></li>
+                <?php foreach($producers as $producer) { ?>
+                    <li><a href="/producer/<?php echo $producer->friendly_url; ?>"><?php echo $producer->org_name; ?></a></li>
+                <?php } ?>
+                </ul>
+            </div>
 
-            <div class="col-sm-8">
+            <div class="col-sm-9">
                 <!-- Show campaigns supported -->
                 <H1>Supported Campaigns</H1>
 
@@ -13,12 +20,11 @@
                     <div class="alert alert-success"><?php echo $success_info; ?></div>
                 <?php } ?>
 
-                <ul class="list-things">
                     <?php
                     if (count($supported_campaigns) > 0) {
                         foreach ($supported_campaigns as $supported_campaign) {
                             ?>
-                            <li class="list-item">
+                            <div class="list-item col-sm-4">
                                 <p>
                                     <a href="/supporter/campaign/<?php echo $supported_campaign->campaign->friendly_url; ?>">
                                         <?php echo $supported_campaign->campaign->campaign_name; ?>
@@ -41,17 +47,13 @@
                                 <div class="fb-share-button"
                                      data-href="<?php echo $base_url; ?>/supporter/campaign/<?php echo $supported_campaign->campaign->friendly_url; ?>"
                                      data-layout="button_count" data-mobile-iframe="true"></div>
-                            </li>
+                            </div>
                             <?php
                         }
                     }
                     ?>
 
-                </ul>
-
             </div>
-
-            <div class="col-sm-2"></div>
 
 
         </div>
