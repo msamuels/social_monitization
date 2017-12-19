@@ -132,9 +132,9 @@
                         </form>
 
                         <div>
-                            <button class="btn support-btns" id="share-it" href="#share-buttons">
+                            <a href="/producer/<?php echo $campaign->friendly_url; ?>" class="btn support-btns" id="share-it" href="#share-buttons">
                                 Share
-                            </button>
+                            </a>
                         </div>
 
                         <?php } ?>
