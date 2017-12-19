@@ -23,7 +23,7 @@
                     if (count($campaigns) > 0) {
                         foreach ($campaigns as $campaign) {
                             ?>
-                            <div class="list-item col-sm-4">
+                            <div class="list-item col-sm-4" style="margin-bottom: 100px;">
                                 <p><strong>
                                         <a href="/supporter/campaign/<?php echo $campaign->friendly_url; ?>">
                                             <?php echo $campaign->campaign_name; ?>

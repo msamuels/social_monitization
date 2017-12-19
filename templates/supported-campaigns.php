@@ -24,7 +24,7 @@
                     if (count($supported_campaigns) > 0) {
                         foreach ($supported_campaigns as $supported_campaign) {
                             ?>
-                            <div class="list-item col-sm-4">
+                            <div class="list-item col-sm-4" style="margin-bottom: 100px;">
                                 <p>
                                     <a href="/supporter/campaign/<?php echo $supported_campaign->campaign->friendly_url; ?>">
                                         <?php echo $supported_campaign->campaign->campaign_name; ?>
