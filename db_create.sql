@@ -433,6 +433,20 @@ CREATE TABLE `campaign_alert_preference` (
   `preference` ENUM('yes', 'no', 'maybe') NULL,
   PRIMARY KEY (`cap_id`));
 
+CREATE TABLE `member_producers` (
+  `member_producers_id` INT NOT NULL,
+  `parent_producer_id` INT NULL,
+  `member_producer_id` INT NULL,
+  PRIMARY KEY (`member_producers_id`));
+
+CREATE TABLE `include_member_campaign` (
+  `id` INT NOT NULL,
+  `campaign_id` INT NULL,
+  `parent_producer_id` INT NULL,
+  `member_producer_id` INT NULL,
+  `include` ENUM('YES','NO') NULL,
+  PRIMARY KEY (`id`));
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

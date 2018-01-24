@@ -23,7 +23,7 @@
                                     </a>
                                 </strong></p>
                             <p>
-                            <p class="by-line"><i> by <?php echo $campaign->getProducer()->org_name; ?></i></p>
+                            <p class="by-line"><i> by <?php //echo $campaign->getProducer()->org_name; ?></i></p>
                             <p>
                             <p>
                                 <a href="/producer/campaign/<?php echo $campaign->campaign_id; ?>">

@@ -709,3 +709,52 @@ $app->get('/producer-events/:id_producer', function ($id_producer) use ($app){
 
 });
 
+# Show campaign performance of approved campaign
+$app->get('/member-campaigns', $authenticate($app), function () use ($app){
+
+	$user_name = $app->view()->getData('user');
+    $producer = Producer::find_by_user_name($user_name);
+
+	// find all members of this producer
+	$options = array('conditions' => array("parent_producer_id = $producer->id_producer"));
+	$member_producers = Member_producers::all($options);
+
+	$member_ids = array();
+
+    foreach ($member_producers as $member) {
+        $member_ids[] = $member->member_producer_id;
+    }
+
+	// find all campaigns from those members
+	if (count($member_ids) == 0) {
+    	$campaigns = array();
+	} else {
+    	$campaigns = Include_member_campaign::find_all_by_member_producer_id($member_ids);
+	}
+
+	$campaign_ids = array();
+
+	if (count($campaigns) > 0) {
+
+		foreach ($campaigns as $camp) {
+		    $campaign_ids[] = $camp->campaign_id;
+		}
+
+	}
+
+
+    if (count($campaign_ids) == 0) {
+        $campaign_details = array();
+    } else {
+		$campaign_details = Campaign::find_all_by_campaign_id($campaign_ids);
+	}
+
+    $flash = $app->view()->getData('flash');
+
+    $success_info = '';
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
+    }
+
+    $app->render('producer/list-member-campaigns.php', array('campaign_details' => $campaign_details, 'success_info' => $success_info));
+});
