@@ -27,6 +27,15 @@
                             <li class="list-item">
                                 <?php echo $campaign->campaign_name; ?>
                                 <br />
+                                Organization: <?php echo $campaign->getProducer()->org_name; ?>
+                                <br />
+
+                                <p>
+                                    <a href="/producer/campaign/<?php echo $campaign->campaign_id; ?>">
+                                        <img src="/images/screenshots/<?php echo $campaign->screen_shot; ?>"
+                                             height="200" width="200"/>
+                                    </a>
+                                </p>
 
                                 <form method="POST" action="/producer/save-include-member-campaign">
 
@@ -36,7 +45,7 @@
 
 
                                     <button name="pref" class="btn btn-success" type="submit" value="YES">Include</button>
-                                    <button name="pref" class="btn btn-success" type="submit" value="NO">Ignore</button>
+                                    <button name="pref" class="btn btn-danger" type="submit" value="NO">Ignore</button>
 
                                 </form>
 

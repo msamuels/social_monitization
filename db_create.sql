@@ -427,20 +427,20 @@ CREATE TABLE `supporter_handles` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 CREATE TABLE `campaign_alert_preference` (
-  `cap_id` INT NULL AUTO_INCREMENT,
+  `cap_id` INT NOT NULL AUTO_INCREMENT,
   `campaign_id` INT NULL,
   `supporter_id` INT NULL,
   `preference` ENUM('yes', 'no', 'maybe') NULL,
   PRIMARY KEY (`cap_id`));
 
 CREATE TABLE `member_producers` (
-  `member_producers_id` INT NOT NULL,
+  `member_producers_id` INT NOT NULL AUTO_INCREMENT,
   `parent_producer_id` INT NULL,
   `member_producer_id` INT NULL,
   PRIMARY KEY (`member_producers_id`));
 
 CREATE TABLE `include_member_campaign` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT; ,
   `campaign_id` INT NULL,
   `parent_producer_id` INT NULL,
   `member_producer_id` INT NULL,

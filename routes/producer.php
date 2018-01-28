@@ -709,7 +709,7 @@ $app->get('/producer-events/:id_producer', function ($id_producer) use ($app){
 
 });
 
-# Show campaign performance of approved campaign
+# Show member campaigns so prdocer can select to include them or not
 $app->get('/member-campaigns', $authenticate($app), function () use ($app){
 
 	$user_name = $app->view()->getData('user');
@@ -729,7 +729,7 @@ $app->get('/member-campaigns', $authenticate($app), function () use ($app){
 	if (count($member_ids) == 0) {
     	$campaigns = array();
 	} else {
-    	$campaigns = Include_member_campaign::find_all_by_member_producer_id($member_ids);
+        $campaigns = Account::find_all_by_id_producer($member_ids);
 	}
 
 	$campaign_ids = array();
@@ -771,10 +771,19 @@ $app->post('/producer/save-include-member-campaign', $authenticate($app), functi
 	$include_decision = array('campaign_id' => $req['campaign_id'],
         'parent_producer_id' => $producer->id_producer, 'member_producer_id' => $req['member_producer_id'], 'include' => $req['pref']);
 
-	Include_member_campaign::create($include_decision);
+    // check if the preference already saved
+    $filter = array('conditions' => array("member_producer_id" => $req['member_producer_id'],
+                "campaign_id" => $req['campaign_id']));
+    $preferences = Include_member_campaign::all($filter);
+
+    if (count($preferences) > 0 ) {
+        $app->redirect('/member-campaigns');
+    } else {
+	    Include_member_campaign::create($include_decision);
+    }
 
 
     $app->flash('success_info', 'Include Preference saved');
 
-    $app->redirect('/campaigns');
+    $app->redirect('/member-campaigns');
 });
