@@ -11,11 +11,9 @@
 
         <div class="row">
 
-            <div class="col-sm-3"></div>
-
             <div class="col-sm-6">
 
-                <H1>ACCOUNT SETUP</H1>
+                <H1>Account Setup</H1>
 
 
                 <H3>INVITE SUPPORTERS</H3>
@@ -24,10 +22,6 @@
                             <p> Does your organization have passionate members or friends of your organization? Why not ask them to help you promote your next initiative. Simply enter their email addresses below and we’ll send an email with instructions about how to sign up.</p>
 
                     </div>
-
-                <?php if (isset($success_info)) { ?>
-                    <div class="alert alert-success"><?php echo $success_info; ?></div>
-                <?php } ?>
 
                 <form action="/invite-supporters" enctype="multipart/form-data" method="POST" class="form-horizontal"
                       role="form">
@@ -119,9 +113,35 @@
 
                 </form>
             </div>
-        </div>
 
-        <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+
+                <p>
+                    <h1>Select organizations you support.</h1>	
+
+                    <?php if (isset($success_info)) { ?>
+                        <div class="alert alert-success"><?php echo $success_info; ?></div>
+                    <?php } ?>
+
+                </p>
+
+                <p>
+                    <ul>
+                    <?php foreach($all_producers as $producer) { ?>
+                        <li>
+                            <form action="/producer/save-membership" method="POST">
+                                <input type="hidden" name="member_producer_id" value="<?php echo $producer->id_producer; ?>"> <?php echo $producer->org_name; ?>
+                                <button type="submit" class="btn btn-success">Support</button>
+
+                            </form>
+                        </li>
+                    <?php } ?>
+                    <ul>
+                </p>
+
+            </div>
+
+        </div>
 
     </div><!--end container -->
 </section><!--end section -->

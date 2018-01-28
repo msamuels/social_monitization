@@ -563,12 +563,24 @@ $app->get('/producer/:name', function ($name) use ($app){
 
 // invite supporters
 $app->get('/account', $authenticate($app), function () use ($app){    
+
+    $flash = $app->view()->getData('flash');
+
     $path = explode('/', $app->request->getPath());    
+
+	$user_name = $app->view()->getData('user');
+    $producer = Producer::find_by_user_name($user_name);
+
+    $all_producers = Producer::find('all');
+
     $success_info = NULL;    
-        if (isset($flash['success_info'])) {        
-            $success_info = $flash['success_info'];    
-            }    
-            $app->render('producer/account.php', array('path' => $path, 'success_info' => $success_info)); 
+
+    if (isset($flash['success_info'])) {
+        $success_info = $flash['success_info'];
+    }
+
+    $app->render('producer/account.php', array('path' => $path,
+        'all_producers' => $all_producers, 'success_info' => $success_info)); 
 });
 
 # Email potential supporters 
@@ -786,4 +798,24 @@ $app->post('/producer/save-include-member-campaign', $authenticate($app), functi
     $app->flash('success_info', 'Include Preference saved');
 
     $app->redirect('/member-campaigns');
+});
+
+# Producer become a member of another org
+$app->post('/producer/save-membership', $authenticate($app), function () use ($app){
+
+    $req = $app->request->post();
+
+	$user_name = $app->view()->getData('user');
+    $producer = Producer::find_by_user_name($user_name);
+
+    // check if the preference already saved
+    $fields = array("member_producer_id" => $req['member_producer_id'],
+                "parent_producer_id" => $producer->id_producer);
+
+    Member_producers::create($fields);
+
+    $app->flash('success_info', 'You can now select campaigns from that
+             organization show on your calendar');
+
+    $app->redirect('/account');
 });

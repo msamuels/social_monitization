@@ -10,7 +10,7 @@
                 <H1>Your member campaigns:</H1>
 
                     <div>
-                            <p> Member campaigns</p>
+                            <p> Select Include to show the campaign on your calendar or Ignore to not do so (no selection is equivalent to Ignore).</p>
 
                     </div>
 
