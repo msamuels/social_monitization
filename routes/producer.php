@@ -758,3 +758,23 @@ $app->get('/member-campaigns', $authenticate($app), function () use ($app){
 
     $app->render('producer/list-member-campaigns.php', array('campaign_details' => $campaign_details, 'success_info' => $success_info));
 });
+
+
+# Producer Approve campaign
+$app->post('/producer/save-include-member-campaign', $authenticate($app), function () use ($app){
+
+    $req = $app->request->post();
+
+	$user_name = $app->view()->getData('user');
+    $producer = Producer::find_by_user_name($user_name);
+
+	$include_decision = array('campaign_id' => $req['campaign_id'],
+        'parent_producer_id' => $producer->id_producer, 'member_producer_id' => $req['member_producer_id'], 'include' => $req['pref']);
+
+	Include_member_campaign::create($include_decision);
+
+
+    $app->flash('success_info', 'Include Preference saved');
+
+    $app->redirect('/campaigns');
+});

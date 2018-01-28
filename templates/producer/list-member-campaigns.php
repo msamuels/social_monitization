@@ -14,7 +14,7 @@
 
                     </div>
 
-                <?php if (isset($success_info)) { ?>
+                <?php if (isset($success_info) && $success_info != "") { ?>
                     <div class="alert alert-success"><?php echo $success_info; ?></div>
                 <?php } ?>
 
@@ -26,6 +26,20 @@
                         ?>
                             <li class="list-item">
                                 <?php echo $campaign->campaign_name; ?>
+                                <br />
+
+                                <form method="POST" action="/producer/save-include-member-campaign">
+
+                                    <input type="hidden" name="campaign_id" value="<?php echo $campaign->campaign_id; ?>">
+
+                                    <input type="hidden" name="member_producer_id" value="<?php echo $campaign->getProducer()->id_producer; ?>">
+
+
+                                    <button name="pref" class="btn btn-success" type="submit" value="YES">Include</button>
+                                    <button name="pref" class="btn btn-success" type="submit" value="NO">Ignore</button>
+
+                                </form>
+
                             </li>
                     <?php } } ?>
 
