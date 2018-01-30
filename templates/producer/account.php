@@ -128,11 +128,16 @@
                 <p>
                     <ul>
                     <?php foreach($all_producers as $producer) { ?>
-                        <li>
+                        <li style="margin-bottom: 15px; border-bottom: 1px solid  #0f0f0f;">
                             <form action="/producer/save-membership" method="POST">
-                                <input type="hidden" name="member_producer_id" value="<?php echo $producer->id_producer; ?>"> <?php echo $producer->org_name; ?>
+                                <p>
+                                <input type="hidden" name="member_producer_id" value="<?php echo $producer->id_producer; ?>"> <?php echo $producer->org_name; ?></p>
+                        <p>
+                        Member: <?php echo $producer->isMember($parent->id_producer); ?>
+                        </p>
+                        <p>
                                 <button type="submit" class="btn btn-success">Support</button>
-
+                        </p>
                             </form>
                         </li>
                     <?php } ?>

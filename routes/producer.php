@@ -589,7 +589,7 @@ $app->get('/account', $authenticate($app), function () use ($app){
     }
 
     $app->render('producer/account.php', array('path' => $path,
-        'all_producers' => $all_producers, 'success_info' => $success_info)); 
+        'all_producers' => $all_producers, 'parent'=> $producer, 'success_info' => $success_info)); 
 });
 
 # Email potential supporters 
