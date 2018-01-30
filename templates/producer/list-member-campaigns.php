@@ -25,9 +25,9 @@
                             foreach ($campaign_details as $campaign) {
                         ?>
                             <li class="list-item">
-                                <?php echo $campaign->campaign_name; ?>
+                                <strong><?php echo $campaign->campaign_name; ?></strong>
                                 <br />
-                                Organization: <?php echo $campaign->getProducer()->org_name; ?>
+                                <strong>Organization:</strong> <?php echo $campaign->getProducer()->org_name; ?>
                                 <br />
 
                                 <p>
@@ -48,6 +48,8 @@
                                     <button name="pref" class="btn btn-danger" type="submit" value="NO">Ignore</button>
 
                                 </form>
+
+                                <p>Preference: <?php echo $campaign->isIncludeIgnore($producer->id_producer); ?></p>
 
                             </li>
                     <?php } } ?>

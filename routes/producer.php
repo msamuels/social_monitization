@@ -790,7 +790,9 @@ $app->get('/member-campaigns', $authenticate($app), function () use ($app){
         $success_info = $flash['success_info'];
     }
 
-    $app->render('producer/list-member-campaigns.php', array('campaign_details' => $campaign_details, 'success_info' => $success_info));
+    $app->render('producer/list-member-campaigns.php',
+        array('campaign_details' => $campaign_details,  'producer' => $producer,
+            'success_info' => $success_info));
 });
 
 
