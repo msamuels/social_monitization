@@ -690,12 +690,25 @@ $app->get('/producer-events/:id_producer', function ($id_producer) use ($app){
         $campaign_ids[] = $pc->campaign_id;
     }
 
+    // find member campaigns to include on this producer's calendar
+    $filter = array('conditions' => array("parent_producer_id" => $producer->id_producer,
+                "include" => "YES"));
+    $member_campaigns = Include_member_campaign::all($filter);
+
+    foreach ($member_campaigns as $mc) {
+        $campaign_ids[] = $mc->campaign_id;
+    }
+
     $excluded_from_home = $app->config('configs')['excluded_from_home'];
 
-    $options_1 = array('order' => 'campaign_id desc', 'conditions' => array("approved = 'Y' AND campaign_id NOT IN (?) ", $excluded_from_home ));
+    $options_1 = array('order' => 'campaign_id desc',
+        'conditions' => array("approved = 'Y' AND campaign_id NOT IN (?) ",
+            $excluded_from_home ));
 
     // find campaigns for that producer
-    $options_2 = array('order' => 'campaign_id desc', 'conditions' => array("approved = 'Y' AND campaign_id in (?) ", $campaign_ids));
+    $options_2 = array('order' => 'campaign_id desc',
+        'conditions' => array("approved = 'Y' AND campaign_id in (?) ",
+            array_unique($campaign_ids)));
    
     if(count($campaign_ids) == 0){
         $campaigns = array();

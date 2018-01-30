@@ -38,9 +38,10 @@
                     <?php } ?>
 
                     <?php if ($_SESSION['user_type'] == "producer") { ?>
-                        <li><a href="/campaigns">Campaigns</a></li>
-                        <li><a href="/create-campaign">Create Campaign</a></li>
-                        <li><a href="/create-reward">Create Rewards</a></li>
+                        <li><a href="/campaigns">My Campaigns</a></li>
+                        <li><a href="/member-campaigns">Members</a></li>
+                        <li><a href="/create-campaign">Create Campaigns</a></li>
+                        <li><a href="/create-reward">Rewards</a></li>
                         <li><a href="/invoices">Invoices</a></li>
                         <li><a href="/account">Account</a></li>
                     <?php } ?>
@@ -65,9 +66,14 @@
                         <a href="/logout">Logout</a>
                     <?php } ?>
                 </li>
+
+                <?php if (!isset($_SESSION['user_type'])) { ?>
                 <li>
                     <a href="/get-started/supporter/register" class="btn btn-inverse btn-bordered navbar-btn">Signup</a>
                 </li>
+
+                <?php } ?>
+
             </ul>
 
         </div>
