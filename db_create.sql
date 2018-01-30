@@ -434,17 +434,17 @@ CREATE TABLE `campaign_alert_preference` (
   PRIMARY KEY (`cap_id`));
 
 CREATE TABLE `member_producers` (
-  `member_producers_id` INT NOT NULL AUTO_INCREMENT,
-  `parent_producer_id` INT NULL,
-  `member_producer_id` INT NULL,
+  `member_producers_id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_producer_id` int(11) DEFAULT NULL,
+  `member_producer_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`member_producers_id`));
 
 CREATE TABLE `include_member_campaign` (
-  `id` INT NOT NULL AUTO_INCREMENT; ,
-  `campaign_id` INT NULL,
-  `parent_producer_id` INT NULL,
-  `member_producer_id` INT NULL,
-  `include` ENUM('YES','NO') NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `campaign_id` int(11) DEFAULT NULL,
+  `parent_producer_id` int(11) DEFAULT NULL,
+  `member_producer_id` int(11) DEFAULT NULL,
+  `include` enum('YES','NO') DEFAULT NULL,
   PRIMARY KEY (`id`));
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
