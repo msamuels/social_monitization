@@ -578,7 +578,7 @@ $app->get('/account', $authenticate($app), function () use ($app){
     $path = explode('/', $app->request->getPath());    
 
 	$user_name = $app->view()->getData('user');
-    $producer = Producer::find_by_user_name($user_name);
+    $parent_producer = Producer::find_by_user_name($user_name);
 
     $all_producers = Producer::find('all');
 
@@ -589,7 +589,7 @@ $app->get('/account', $authenticate($app), function () use ($app){
     }
 
     $app->render('producer/account.php', array('path' => $path,
-        'all_producers' => $all_producers, 'parent'=> $producer, 'success_info' => $success_info)); 
+        'all_producers' => $all_producers, 'parent'=> $parent_producer, 'success_info' => $success_info));
 });
 
 # Email potential supporters 

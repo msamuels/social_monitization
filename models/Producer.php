@@ -3,9 +3,9 @@ class Producer extends ActiveRecord\Model
  {
     static $table_name = 'producers';
 
-    public function isMember($member_producer_id) {
+    public function isMember($parent_id, $member_producer_id) {
 
-        $filter = array('conditions' => array("parent_producer_id" => $this->id_producer,
+        $filter = array('conditions' => array("parent_producer_id" => $parent_id,
                 "member_producer_id" => $member_producer_id));
 
         $member = Member_producers::all($filter);
