@@ -133,11 +133,15 @@
                                 <p>
                                 <input type="hidden" name="member_producer_id" value="<?php echo $producer->id_producer; ?>"> <?php echo $producer->org_name; ?></p>
                         <p>
-                        Member: <?php echo $producer->isMember($parent->id_producer, $producer->id_producer); ?>
+                        Member: <?php $is_member = $producer->isMember($parent->id_producer, $producer->id_producer);
+echo $is_member;
+?>
                         </p>
+                        <?php if ($is_member == "NO") { ?>
                         <p>
                                 <button type="submit" class="btn btn-success">Support</button>
                         </p>
+                        <?php } ?>
                             </form>
                         </li>
                     <?php } ?>
