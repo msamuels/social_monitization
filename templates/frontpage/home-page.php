@@ -15,7 +15,7 @@
                   Share projects with your social netwoks and earn reward points!
               </h2>
               <p class="animated fadeInDown wow text-light animated" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
-                Shareticamp is a platform where individuals get together to help promote intiatives that matter to them.
+                ShareItCamp is a platform where individuals get together to help promote intiatives that matter to them.
             </p>
             <a href="/get-started/supporter/register" class="btn btn-primary btn-shadow btn-rounded w-lg animated fadeInDown wow" data-wow-delay=".4s">Join ShareItCamp</a>
             <div class="clearfix"></div>
