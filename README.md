@@ -20,9 +20,6 @@ Marlon's site
 # Restart server to have changes take affect
 `sudo service apache2 restart`
 
-#login POC
-https://github.com/briannesbitt/Slim-ContextSensitiveLoginLogout/blob/master/index.php
-
 # Change permissions
 chmod 755 images/screenshots
 chmod 755 images/rewards
